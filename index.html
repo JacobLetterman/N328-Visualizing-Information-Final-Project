@@ -33,7 +33,7 @@
     <script>    
 
     //Making Bar Chart for Function for ATK stat
-    var BAR_WIDTH = 25;
+    var BAR_WIDTH = 10;
 	var MAX_BAR_HEIGHT = 200;
     var Attack = [ ];
 
@@ -70,7 +70,7 @@
 		}
 
     //Calling the Data, creating bar chart
-    d3.csv('Pokemon Data.csv', function(data) 
+    d3.csv('Pokemon Data.csv').then(data) 
 		{
 			var record = data[0];
 
@@ -83,7 +83,7 @@
 
 			drawBarChart();
 
-		});
+		};
     //Mouse over function for later
     //d3.select("#circleCustomTooltip")
         //.on("mouseover", function(){return tooltip2.style("visibility", "visible");})
