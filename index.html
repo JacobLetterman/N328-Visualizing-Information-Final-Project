@@ -5,44 +5,40 @@
         <title></title>
     </head>
     <body>
-    Pets numbers from a neighborhood survey:<br>
-    
-    <p><svg id="svg1" width="400" height="200">
-      
-        <rect id="bar1" x="50" y="50" width="30" height="100" style="fill: steelblue"/>
-        <rect id="bar2" x="112" y="50" width="30" height="100" style="fill: steelblue"/>
-        <rect id="bar3" x="174" y="50" width="30" height="100" style="fill: steelblue"/>
-    
-        <text x="50" y="145">cats</text>
-        <text x="112" y="145">dogs</text>
-        <text x="174" y="145">iguanas</text>
-    
-    
-          <line x1="40" x2="220" y1="130" y2="130" stroke="black"/>
-          <line x1="40" x2="40" y1="0" y2="150" stroke="black"/>
-    
-    </svg>
-    
-    <svg></svg>
-      <script type="text/javascript">
-        
-        var CHART_HEIGHT = 130;
-        
-        var pets = [45, 21, 102];
-        
-        var selection = d3.select('#svg1').selectAll('rect').data(pets)
-        
-        selection.attr('height', 
-            function(d) 
-            { 
-                return (d/102) * CHART_HEIGHT; 
+    Testing to see if this loads:<br>
+
+    <script>
+        d3.csv("/data/Pokemon Data.csv", function(data) {
+            for (var i = 0; i < data.length; i++) {
+                console.log(data[i].Dex_No);
+                console.log(data[i].Name);
             }
-        );
-    
-        selection.attr('y', function(d) { return (1-d/102) * CHART_HEIGHT; });
-    
-     
-      </script>
-      
+        });
+        </script>
+    <script>    
+    var svg = d3.select("#my_dataviz")
+        .append("svg")
+        .attr("width", 400)
+        .attr("height", 400)
+
+    svg.append("circle")
+        .attr("id", "circleBasicTooltip")
+        .attr("cx", 150)
+        .attr("cy", 200)
+        .attr("r", 40)
+        .attr("fill", "#69b3a2")
+
+    var tooltip = d3.select("#my_dataviz")
+        .append("div")
+        .style("position", "absolute")
+        .style("visibility", "hidden")
+        .text("Positive Average");
+
+    d3.select("#circleBasicTooltip")
+        .on("mouseover", function(){return tooltip.style("visibility", "visible");})
+        .on("mousemove", function(){return tooltip.style("top", (event.pageY-800)+"px").style("left",(event.pageX-800)+"px");})
+        .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
+
+    </script>
     </body>
 </html>
