@@ -1,39 +1,62 @@
 <html>
 <head>
-	<title>Project 1 - sample code</title>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
-	<style>
-    	text { 
-			font-family: Arial; 
-			font-size: 15px;
-		}
-		.axis path, .axis line {
-			fill: none;
-			stroke: black;
-			shape-rendering: crispEdges;
-		}
-		.tick text {
-			fill: black;
-			font-size: 11px;
-		}
+    <div id="Area"></div>
 
-		rect {
-			stroke: white;
-		}
-	</style>
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v4.js"></script>
 </head>
 <body>
 
-	<svg id="main" width="600" height="600">
-		<text id='label' x='20' y='20'>Energy prodcution for the US</text>
-		<g transform="translate(20,40)"></g>
-	</svg>
 
 	
-	<script>
-var BAR_WIDTH=10,MAX_BAR_HEIGHT=100,energyProduction=[];function drawBarChart(){var r=d3.max(energyProduction);d3.select("#main").select("g").selectAll("rect").data(energyProduction).enter().append("rect").attr("width",BAR_WIDTH).attr("height",function(t,e){return t/r*MAX_BAR_HEIGHT}).attr("x",function(r,t){return BAR_WIDTH*t}).attr("y",function(t,e){return(1-t/r)*MAX_BAR_HEIGHT})}d3.csv("C:\Users\jacob\Downloads\energy_us (1).csv",function(r){for(var t=0;t<r.length;t++)for(var e=r[t],n=1980;n<=2012;n++){var a=e[n];"--"===a?a=0:"NA"===a?a=0:"(s)"===a?a=0:"W"===a&&(a=0),energyProduction.push(+a)}drawBarChart()});
-		
-	</script>
+    <script>
+
+        // set the dimensions and margins of the graph
+        var margin = {top: 10, right: 40, bottom: 30, left: 30},
+            width = 450 - margin.left - margin.right,
+            height = 400 - margin.top - margin.bottom;
+        
+        // append the svg object to the body of the page
+        var svG = d3.select("#scatter_area")
+          .append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+          .append("g")
+            .attr("transform",
+                  "translate(" + margin.left + "," + margin.top + ")");
+        
+        // Create data
+        var data = [ {x:10, y:20}, {x:40, y:90}, {x:80, y:50} ]
+        
+        // X scale and Axis
+        var x = d3.scaleLinear()
+            .domain([0, 100])         // This is the min and the max of the data: 0 to 100 if percentages
+            .range([0, width]);       // This is the corresponding value I want in Pixel
+        svG
+          .append('g')
+          .attr("transform", "translate(0," + height + ")")
+          .call(d3.axisBottom(x));
+        
+        // X scale and Axis
+        var y = d3.scaleLinear()
+            .domain([0, 100])         // This is the min and the max of the data: 0 to 100 if percentages
+            .range([height, 0]);       // This is the corresponding value I want in Pixel
+        svG
+          .append('g')
+          .call(d3.axisLeft(y));
+        
+        // Add 3 dots for 0, 50 and 100%
+        svG
+          .selectAll("whatever")
+          .data(data)
+          .enter()
+          .append("circle")
+            .attr("cx", function(d){ return x(d.x) })
+            .attr("cy", function(d){ return y(d.y) })
+            .attr("r", 7)
+        
+        
+        </script>
 </body>
 
 
