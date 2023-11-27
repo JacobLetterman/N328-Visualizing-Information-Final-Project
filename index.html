@@ -1,26 +1,25 @@
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-         <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
-        <title></title>
+        <title>Project 1 - sample code</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
         <style>
-    	text { 
-			font-family: Arial; 
-			font-size: 15px;
-		}
-		.axis path, .axis line {
-			fill: none;
-			stroke: black;
-			shape-rendering: crispEdges;
-		}
-		.tick text {
-			fill: black;
-			font-size: 11px;
-		}
-
-		rect {
-			stroke: white;
-		}
+            text { 
+                font-family: Arial; 
+                font-size: 15px;
+            }
+            .axis path, .axis line {
+                fill: none;
+                stroke: black;
+                shape-rendering: crispEdges;
+            }
+            .tick text {
+                fill: black;
+                font-size: 11px;
+            }
+    
+            rect {
+                stroke: white;
+            }
 	</style>
     </head>
     <svg id="main" width="600" height="600">
@@ -32,20 +31,20 @@
 	</svg>
     <script>    
 
-    //Making Bar Chart for Function for ATK stat
-    var BAR_WIDTH = 10;
-	var MAX_BAR_HEIGHT = 200;
-    var Attack = [ ];
 
-    //Draw Bar Chart Function
-    function drawBarChart() 
+var BAR_WIDTH = 10;
+		var MAX_BAR_HEIGHT = 100;
+
+		var energyProduction = [ ];
+
+		function drawBarChart() 
 		{
 			
 
-			var maxValue = d3.max(Attack);
+			var maxValue = d3.max(energyProduction);
 
 
-			var selection = d3.select('svg').select('g').selectAll('rect').data(Attack);
+			var selection = d3.select('svg').select('g').selectAll('rect').data(energyProduction);
 
 			var rectangles = selection.enter().append('rect');
 			
@@ -68,22 +67,22 @@
 
 			});
 		}
+			
 
-    //Calling the Data, creating bar chart
-    d3.csv('Pokemon Data.csv').then(data) 
+		d3.csv('energy_us.csv', function(data) 
 		{
 			var record = data[0];
 
-			// loop through all dex no that is between 1 and 20
-			for (var Dex_No= 1; Dex_No<=20; Dex_No++) 
+			// loop through all years, from 1980 to 2012
+			for (var year=1980; year<=2012; year++) 
 			{
-				var value = record[Dex_No];	
-				Attack.push(+value);
+				var value = record[year];	
+				energyProduction.push(+value);
 			}
 
 			drawBarChart();
 
-		};
+		});
     //Mouse over function for later
     //d3.select("#circleCustomTooltip")
         //.on("mouseover", function(){return tooltip2.style("visibility", "visible");})
