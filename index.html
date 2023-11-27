@@ -3,38 +3,92 @@
         <meta charset="UTF-8">
          <script src="https://d3js.org/d3.v4.js"></script>
         <title></title>
+        <style>
+    	text { 
+			font-family: Arial; 
+			font-size: 15px;
+		}
+		.axis path, .axis line {
+			fill: none;
+			stroke: black;
+			shape-rendering: crispEdges;
+		}
+		.tick text {
+			fill: black;
+			font-size: 11px;
+		}
+
+		rect {
+			stroke: white;
+		}
+	</style>
     </head>
-    <div id="div_customContent"></div>
+    <svg id="main" width="600" height="600">
+		<text id='label' x='20' y='20'>Bar Chart of the Attack of all Pokemon</text>
+		<g transform="translate(20,40)">
+		
+
+		</g>
+	</svg>
     <script>    
 
-var svg_customContent = d3.select("#div_customContent")
-  .append("svg")
-    .attr("width", 450)
-    .attr("height", 450)
+    //Making Bar Chart for Function for ATK stat
+    var BAR_WIDTH = 10;
+	var MAX_BAR_HEIGHT = 100;
+    var Atk_Stat = [ ];
 
-svg_customContent.append("circle")
-  .attr("id", "circleCustomTooltip")
-  .attr("cx", 150)
-  .attr("cy", 200)
-  .attr("r", 40)
-  .attr("fill", "#69b3a2")
+    //Draw Bar Chart FUnction
+    function drawBarChart() 
+		{
+			
 
-var tooltip2 = d3.select("#div_customContent")
-  .append("div")
-    .style("position", "absolute")
-    .style("visibility", "visible")
-    .style("background-color", "white")
-    .style("border", "solid")
-    .style("border-width", "1px")
-    .style("border-radius", "5px")
-    .style("padding", "10px")
-    .html("<p>I'm a tooltip written in HTML</p><img src='https://github.com/holtzy/D3-graph-gallery/blob/master/img/section/ArcSmal.png?raw=true'></img><br>Fancy<br><span style='font-size: 40px;'>Isn't it?</span>");
+			var maxValue = d3.max(Atk_Stat);
 
 
-d3.select("#circleCustomTooltip")
-  .on("mouseover", function(){return tooltip2.style("visibility", "visible");})
-  .on("mousemove", function(){return tooltip2.style("top", (event.pageY-0)+"px").style("left",(event.pageX-0)+"px");})
-  .on("mouseout", function(){return tooltip2.style("visibility", "hidden");});
+			var selection = d3.select('svg').select('g').selectAll('rect').data(Atk_Stat);
+
+			var rectangles = selection.enter().append('rect');
+			
+			rectangles.attr('width', BAR_WIDTH)
+			
+			rectangles.attr('x', function(d, i) {
+				return i * BAR_WIDTH;
+			})
+			
+			rectangles.attr('height', function(d) 
+			{
+				var n = d / maxValue;
+				return n * MAX_BAR_HEIGHT;
+			});
+
+			rectangles.attr('y', function(d) 
+			{
+				var n = 1 - (d / maxValue);
+				return n * MAX_BAR_HEIGHT;
+
+			});
+		}
+
+    //Calling the Data, creating bar chart
+    d3.csv('Pokemon Data.csv', function(data) 
+		{
+			var record = data[0];
+
+			// loop through all dex no that is between 1 and 20
+			for (var Dex_No= 1; Dex_No<=20; Dex_No++) 
+			{
+				var value = record[Dex_No];	
+				Atk_Stat.push(+value);
+			}
+
+			drawBarChart();
+
+		});
+    //Mouse over function for later
+    //d3.select("#circleCustomTooltip")
+        //.on("mouseover", function(){return tooltip2.style("visibility", "visible");})
+        //.on("mousemove", function(){return tooltip2.style("top", (event.pageY-0)+"px").style("left",(event.pageX-0)+"px");})
+        //.on("mouseout", function(){return tooltip2.style("visibility", "hidden");});
     </script>
     </body>
 </html>
