@@ -35,17 +35,17 @@
     //Making Bar Chart for Function for ATK stat
     var BAR_WIDTH = 10;
 	var MAX_BAR_HEIGHT = 100;
-    var Atk_Stat = [ ];
+    var Attack = [ ];
 
     //Draw Bar Chart Function
     function drawBarChart() 
 		{
 			
 
-			var maxValue = d3.max(Atk_Stat);
+			var maxValue = d3.max(Attack);
 
 
-			var selection = d3.select('svg').select('g').selectAll('rect').data(Atk_Stat);
+			var selection = d3.select('svg').select('g').selectAll('rect').data(Attack);
 
 			var rectangles = selection.enter().append('rect');
 			
@@ -78,7 +78,7 @@
 			for (var Dex_No= 1; Dex_No<=20; Dex_No++) 
 			{
 				var value = record[Dex_No];	
-				Atk_Stat.push(+value);
+				Attack.push(+value);
 			}
 
 			drawBarChart();
