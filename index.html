@@ -9,8 +9,8 @@
 
 var svg_customContent = d3.select("#div_customContent")
   .append("svg")
-    .attr("width", 400)
-    .attr("height", 400)
+    .attr("width", 450)
+    .attr("height", 450)
 
 svg_customContent.append("circle")
   .attr("id", "circleCustomTooltip")
@@ -33,7 +33,7 @@ var tooltip2 = d3.select("#div_customContent")
 
 d3.select("#circleCustomTooltip")
   .on("mouseover", function(){return tooltip2.style("visibility", "visible");})
-  .on("mousemove", function(){return tooltip2.style("top", (event.pageY-239)+"px").style("left",(event.pageX-80)+"px");})
+  .on("mousemove", function(){return tooltip2.style("top", (event.pageY-300)+"px").style("left",(event.pageX-180)+"px");})
   .on("mouseout", function(){return tooltip2.style("visibility", "hidden");});
     </script>
     </body>
