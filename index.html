@@ -1,7 +1,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-         <script src="https://d3js.org/d3.v4.js"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
         <title></title>
         <style>
     	text { 
@@ -24,7 +24,7 @@
 	</style>
     </head>
     <svg id="main" width="600" height="600">
-		<text id='label' x='20' y='20'>Bar Chart of the Attack of all Pokemon</text>
+		<text id='label' x='20' y='20'>Bar Chart of the Attack of 20 Pokemon</text>
 		<g transform="translate(20,40)">
 		
 
@@ -37,7 +37,7 @@
 	var MAX_BAR_HEIGHT = 100;
     var Atk_Stat = [ ];
 
-    //Draw Bar Chart FUnction
+    //Draw Bar Chart Function
     function drawBarChart() 
 		{
 			
