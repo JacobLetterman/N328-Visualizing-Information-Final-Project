@@ -33,7 +33,7 @@ var tooltip2 = d3.select("#div_customContent")
 
 d3.select("#circleCustomTooltip")
   .on("mouseover", function(){return tooltip2.style("visibility", "visible");})
-  .on("mousemove", function(){return tooltip2.style("top", (event.pageX-300)+"px").style("left",(event.pageY-180)+"px");})
+  .on("mousemove", function(){return tooltip2.style("top", (event.pageY-30)+"px").style("left",(event.pageX-18)+"px");})
   .on("mouseout", function(){return tooltip2.style("visibility", "hidden");});
     </script>
     </body>
