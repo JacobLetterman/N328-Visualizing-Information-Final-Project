@@ -34,60 +34,9 @@
 
 	
 	<script>
-
-		var BAR_WIDTH = 10;
-		var MAX_BAR_HEIGHT = 100;
-
-		var energyProduction = [ ];
-
-		function drawBarChart() 
-		{
-			
-
-			var maxValue = d3.max(energyProduction);
-
-
-			var selection = d3.select('svg').select('g').selectAll('rect').data(energyProduction);
-
-			var rectangles = selection.enter().append('rect');
-			
-			rectangles.attr('width', BAR_WIDTH)
-			
-			rectangles.attr('x', function(d, i) {
-				return i * BAR_WIDTH;
-			})
-			
-			rectangles.attr('height', function(d) 
-			{
-				var n = d / maxValue;
-				return n * MAX_BAR_HEIGHT;
-			});
-
-			rectangles.attr('y', function(d) 
-			{
-				var n = 1 - (d / maxValue);
-				return n * MAX_BAR_HEIGHT;
-
-			});
-		}
-			
-
-		d3.csv('energy_us (1).csv', function(data) 
-		{
-			var record = data[0];
-
-			// loop through all years, from 1980 to 2012
-			for (var year=1980; year<=2012; year++) 
-			{
-				var value = record[year];	
-				energyProduction.push(+value);
-			}
-
-			drawBarChart();
-
-		});
-		
-	</script>
+        var BAR_WIDTH=10,MAX_BAR_HEIGHT=100,energyProduction=[];function drawBarChart(){var r=d3.max(energyProduction);d3.select("#main").select("g").selectAll("rect").data(energyProduction).enter().append("rect").attr("width",BAR_WIDTH).attr("height",function(t,e){return t/r*MAX_BAR_HEIGHT}).attr("x",function(r,t){return BAR_WIDTH*t}).attr("y",function(t,e){return(1-t/r)*MAX_BAR_HEIGHT})}d3.csv("energy_us.csv",function(r){for(var t=0;t<r.length;t++)for(var e=r[t],n=1980;n<=2012;n++){var a=e[n];"--"===a?a=0:"NA"===a?a=0:"(s)"===a?a=0:"W"===a&&(a=0),energyProduction.push(+a)}drawBarChart()});
+                
+            </script>
 </body>
 
 
