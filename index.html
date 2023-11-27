@@ -4,17 +4,6 @@
          <script src="https://d3js.org/d3.v3.min.js"></script>
         <title></title>
     </head>
-    <body>
-    Testing to see if this loads:<br>
-
-    <script>
-        d3.csv("/data/Pokemon Data.csv", function(data) {
-            for (var i = 0; i < data.length; i++) {
-                console.log(data[i].Dex_No);
-                console.log(data[i].Name);
-            }
-        });
-        </script>
     <script>    
     var svg = d3.select("#my_dataviz")
         .append("svg")
