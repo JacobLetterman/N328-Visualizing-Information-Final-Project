@@ -1,63 +1,91 @@
 <html>
 <head>
-    <div id="scatter_area"></div>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <style>
+    	text { 
+			font-family: Arial; 
+			font-size: 15px;
+		}
+		.axis path, .axis line {
+			fill: none;
+			stroke: black;
+			shape-rendering: crispEdges;
+		}
+		.tick text {
+			fill: black;
+			font-size: 11px;
+		}
 
-    <!-- Load d3.js -->
-    <script src="https://d3js.org/d3.v4.js"></script>
+		rect {
+			stroke: white;
+		}
+	</style>
 </head>
 <body>
 
+	<svg id="main" width="600" height="600">
+		<text id='label' x='20' y='20'>Energy prodcution for the US</text>
+		<g transform="translate(20,40)">
+		
+
+		</g>
+	</svg>
 
 	
-    <script>
+	<script>
 
-        // set the dimensions and margins of the graph
-        var margin = {top: 10, right: 40, bottom: 30, left: 30},
-            width = 450 - margin.left - margin.right,
-            height = 400 - margin.top - margin.bottom;
-        
-        // append the svg object to the body of the page
-        var svG = d3.select("#scatter_area")
-          .append("svg")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom)
-          .append("g")
-            .attr("transform",
-                  "translate(" + margin.left + "," + margin.top + ")");
-        
-        // Create data
-        var data = [ {x:10, y:20}, {x:40, y:90}, {x:80, y:50} ]
-        
-        // X scale and Axis
-        var x = d3.scaleLinear()
-            .domain([0, 100])         // This is the min and the max of the data: 0 to 100 if percentages
-            .range([0, width]);       // This is the corresponding value I want in Pixel
-        svG
-          .append('g')
-          .attr("transform", "translate(0," + height + ")")
-          .call(d3.axisBottom(x));
-        
-        // X scale and Axis
-        var y = d3.scaleLinear()
-            .domain([0, 100])         // This is the min and the max of the data: 0 to 100 if percentages
-            .range([height, 0]);       // This is the corresponding value I want in Pixel
-        svG
-          .append('g')
-          .call(d3.axisLeft(y));
-        
-        // Add 3 dots for 0, 50 and 100%
-        svG
-          .selectAll("whatever")
-          .data(data)
-          .enter()
-          .append("circle")
-            .attr("cx", function(d){ return x(d.x) })
-            .attr("cy", function(d){ return y(d.y) })
-            .attr("r", 7)
-        
-        
-        </script>
+		var BAR_WIDTH = 10;
+		var MAX_BAR_HEIGHT = 100;
+
+		var energyProduction = [ ];
+
+		function drawBarChart() 
+		{
+			
+
+			var maxValue = d3.max(energyProduction);
+
+
+			var selection = d3.select('svg').select('g').selectAll('rect').data(energyProduction);
+
+			var rectangles = selection.enter().append('rect');
+			
+			rectangles.attr('width', BAR_WIDTH)
+			
+			rectangles.attr('x', function(d, i) {
+				return i * BAR_WIDTH;
+			})
+			
+			rectangles.attr('height', function(d) 
+			{
+				var n = d / maxValue;
+				return n * MAX_BAR_HEIGHT;
+			});
+
+			rectangles.attr('y', function(d) 
+			{
+				var n = 1 - (d / maxValue);
+				return n * MAX_BAR_HEIGHT;
+
+			});
+		}
+			
+
+		d3.csv('energy_us.csv', function(data) 
+		{
+			var record = data[0];
+
+			// loop through all years, from 1980 to 2012
+			for (var year=1980; year<=2012; year++) 
+			{
+				var value = record[year];	
+				energyProduction.push(+value);
+			}
+            console.log("")
+			drawBarChart();
+
+		});
+		
+	</script>
 </body>
-
-
 </html>
