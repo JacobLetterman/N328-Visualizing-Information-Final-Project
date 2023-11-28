@@ -24,11 +24,12 @@
 <body>
 
 	<svg id="main" width="600" height="600">
-		<text id='label' x='20' y='20'>Attack stat for the first 20 pokemon</text>
+		<text id='label' x='20' y='20'>Different Methods for Clickable objects and Mapping the Dataset</text>
 	</svg>
-
+    
 	
 	<script>
+        //Loading the data and mapping the different 
         d3.csv('Pokemon Data.csv', function(d){
             {
                 var Dex_No = d.map(function(d) { return d.Dex_No; });
@@ -45,22 +46,44 @@
                 var Speed = d.map(function(d) { return d.Speed; });
             };
         })
-            console.log(data[0]);
+        //Logging to see if the above code worked
+            console.log(data[1]);
 
-        for (var i=0;i<11;i++)
-        {
-            var f;
-            var countryname =new Array();
-            var dot = new Array();
-            dot = svg.append("g").append("circle").attr("class", "dot").attr("id",i)
-            .style("fill", function(d) { return colorScale(BST[i]); }).call(position);
-        }
+        //Creating circles as a constant
+        const circles = d3.range(20).map(i => ({
+            x: Math.random() * (width - radius * 2) + radius,
+            y: Math.random() * (height - radius * 2) + radius,
+            index: i
+            }));
 
-        dot.on("click", function(d){click(d)}) 
-        function click(d) 
-        {
-            console.log(d.title); 
-        }
+        //Selecting the circles and changing the colors
+        svg.selectAll("circle")
+            .data(circles)
+            .join("circle")
+            .attr("cx", d => d.x)
+            .attr("cy", d => d.y)
+            .attr("r", radius)
+            .attr("fill", d => d3.schemeCategory10[d.index % 10])
+            .on("click", function(){
+                PointColors = [PointColors[1], PointColors[0]]
+                d3.select(this).style("fill", PointColors[0]);});
+
+        //Genuinely don't remember what this does
+        //for (var i=0;i<11;i++)
+        //{
+        //    var f;
+        //    var countryname =new Array();
+        //    var dot = new Array();
+        //    dot = svg.append("g").append("circle").attr("class", "dot").attr("id",i)
+        //    .style("fill", function(d) { return colorScale(BST[i]); }).call(position);
+        //}
+
+        //Function to log if the button has been pressed, not using just yet as it could conflict with color changer. Rather not risk it, yet
+        //dot.on("click", function(d){click(d)}) 
+        //function click(d) 
+        //{
+        //    console.log(d.title); 
+        //}
 	</script>
 </body>
 </html>
