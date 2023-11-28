@@ -1,6 +1,6 @@
 <html>
 <head>
-    <script src="https://d3js.org/d3.js"></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
     <style>
     	text { 
 			font-family: Arial; 
@@ -25,32 +25,42 @@
 
 	<svg id="main" width="600" height="600">
 		<text id='label' x='20' y='20'>Attack stat for the first 20 pokemon</text>
-		<g transform="translate(20,40)">
-		
-
-		</g>
 	</svg>
 
 	
 	<script>
         d3.csv('Pokemon Data.csv', function(d){
-            return {
-                Dex_No : +d.Dex_No,
-                Name : d.Name,
-                Base_Name : d.Base_Name,
-                Type_1 : d.d.Type_1,
-                Type_2 : d.Type_2,
-                Best_Stat_Total : +d.BST,
-                Health_Points : +d.HP,
-                Attack_Stat : +d.Attack,
-                Defense_Stat : +d.Defense,
-                Special_Attack_Stat : +Sp_Attack,
-                Special_Defense_Stat : +Sp_Defense,
-                Speed_Stat : +Speed
+            {
+                var Dex_No = d.map(function(d) { return d.Dex_No; });
+                var Name = d.map(function(d) { return d.Name; });
+                var Base_Name = d.map(function(d) { return d.Base_Name; });
+                var Type_1 = d.map(function(d) { return d.Type_1; });
+                var Type_2 = d.map(function(d) { return d.Type_2; });
+                var BST = d.map(function(d) { return d.BST; });
+                var HP = d.map(function(d) { return d.HP; });
+                var Attack = d.map(function(d) { return d.Attack; });
+                var Defense = d.map(function(d) { return d.Defense; });
+                var Sp_Attack = d.map(function(d) { return d.Sp_Attack; });
+                var Sp_Defense = d.map(function(d) { return d.Sp_Defense; });
+                var Speed = d.map(function(d) { return d.Speed; });
             };
         })
             console.log(data[0]);
 
+        for (var i=0;i<11;i++)
+        {
+            var f;
+            var countryname =new Array();
+            var dot = new Array();
+            dot = svg.append("g").append("circle").attr("class", "dot").attr("id",i)
+            .style("fill", function(d) { return colorScale(BST[i]); }).call(position);
+        }
+
+        dot.on("click", function(d){click(d)}) 
+        function click(d) 
+        {
+            console.log(d.title); 
+        }
 	</script>
 </body>
 </html>
