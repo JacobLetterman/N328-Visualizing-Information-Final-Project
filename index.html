@@ -24,7 +24,7 @@
 <body>
 
 	<svg id="main" width="600" height="600">
-		<text id='label' x='20' y='20'>Energy prodcution for the US</text>
+		<text id='label' x='20' y='20'>Attack stat for the first 20 pokemon</text>
 		<g transform="translate(20,40)">
 		
 
@@ -33,59 +33,25 @@
 
 	
 	<script>
+        d3.csv('Pokemon Data.csv', function(d){
+            return {
+                Dex_No : +d.Dex_No,
+                Name : d.Name,
+                Base_Name : d.Base_Name,
+                Type_1 : d.d.Type_1,
+                Type_2 : d.Type_2,
+                Best_Stat_Total : +d.BST,
+                Health_Points : +d.HP,
+                Attack_Stat : +d.Attack,
+                Defense_Stat : +d.Defense,
+                Special_Attack_Stat : +Sp_Attack,
+                Special_Defense_Stat : +Sp_Defense,
+                Speed_Stat : +Speed
+            };
+        }).then(function(data){
+            console.log(data[0]);
+        });
 
-		var BAR_WIDTH = 10;
-		var MAX_BAR_HEIGHT = 250;
-
-		var Atk_Stat = [ ];
-
-		function drawBarChart() 
-		{
-			
-
-			var maxValue = d3.max(Atk_Stat);
-
-
-			var selection = d3.select('svg').select('g').selectAll('rect').data(Atk_Stat);
-
-			var rectangles = selection.enter().append('rect');
-			
-			rectangles.attr('width', BAR_WIDTH)
-			
-			rectangles.attr('x', function(d, i) {
-				return i * BAR_WIDTH;
-			})
-			
-			rectangles.attr('height', function(d) 
-			{
-				var n = d / maxValue;
-				return n * MAX_BAR_HEIGHT;
-			});
-
-			rectangles.attr('y', function(d) 
-			{
-				var n = 1 - (d / maxValue);
-				return n * MAX_BAR_HEIGHT;
-
-			});
-		}
-			
-
-		d3.csv('Pokemon Data.csv', function(data) 
-		{
-			var record = data.map(function(d){return d.col8});
-
-			// loop through 20 pokemon
-			for (var Dex_No=1; Dex_No<=20; Dex_No++) 
-			{
-				var value = record[Dex_No];	
-				Atk_Stat.push(+value);
-			}
-            console.log(record)
-			drawBarChart();
-
-		});
-		
 	</script>
 </body>
 </html>
