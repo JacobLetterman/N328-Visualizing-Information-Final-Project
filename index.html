@@ -1,5 +1,6 @@
 <html>
 <head>
+    <title>Sample Code for the foreseeable future, or until I learn D3 well enough</title>
     <script src="https://d3js.org/d3.v4.js"></script>
     <style>
     	text { 
@@ -23,7 +24,7 @@
 </head>
 <body>
 
-	<svg id="main" width="600" height="600">
+	<svg id="circle" width="600" height="600">
 		<text id='label' x='20' y='20'>Different Methods for Clickable objects and Mapping the Dataset</text>
 	</svg>
     
@@ -47,7 +48,8 @@
             };
         })
         //Logging to see if the above code worked
-            console.log(data[1]);
+            console.log(Dex_No[0]);
+            consloe.log(HP[0]);
 
         //Creating circles as a constant
         const circles = d3.range(20).map(i => ({
@@ -68,7 +70,7 @@
                 PointColors = [PointColors[1], PointColors[0]]
                 d3.select(this).style("fill", PointColors[0]);});
 
-        //Genuinely don't remember what this does
+        //Genuinely don't remember what this does, commenting it out until I do
         //for (var i=0;i<11;i++)
         //{
         //    var f;
