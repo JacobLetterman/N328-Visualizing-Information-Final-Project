@@ -1,8 +1,7 @@
 <html>
 <head>
     <title>Sample Code for the foreseeable future, or until I learn D3 well enough</title>
-    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-    <meta content="utf-8" http-equiv="encoding">
+    <script src="https://d3js.org/d3.v3.min.js"></script>
     <style>
     	text { 
 			font-family: Arial; 
@@ -31,35 +30,23 @@
     
 	
 	<script>
-        //Loading the data and mapping the different 
-        d3.csv('Pokemon Data.csv', function(d){
-            {
-                var Dex_No = d.map(function(d) { return d.Dex_No; });
-                var Name = d.map(function(d) { return d.Name; });
-                var Base_Name = d.map(function(d) { return d.Base_Name; });
-                var Type_1 = d.map(function(d) { return d.Type_1; });
-                var Type_2 = d.map(function(d) { return d.Type_2; });
-                var BST = d.map(function(d) { return d.BST; });
-                var HP = d.map(function(d) { return d.HP; });
-                var Attack = d.map(function(d) { return d.Attack; });
-                var Defense = d.map(function(d) { return d.Defense; });
-                var Sp_Attack = d.map(function(d) { return d.Sp_Attack; });
-                var Sp_Defense = d.map(function(d) { return d.Sp_Defense; });
-                var Speed = d.map(function(d) { return d.Speed; });
-            };
-        })
-        //Logging to see if the above code worked
-            console.log(Dex_No[0]);
-            consloe.log(HP[0]);
+        //Loading the data
+        d3.csv("Pokemon Data.csv").then(function(data) {
+            console.log(data[0]);
+            });
 
         //Creating circles as a constant
+        
+        const svg = d3.create("svg")
+            .attr("viewBox", [0, 0, width, height])
+            .attr("stroke-width", 2);
+
         const circles = d3.range(20).map(i => ({
             x: Math.random() * (width - radius * 2) + radius,
             y: Math.random() * (height - radius * 2) + radius,
             index: i
             }));
 
-        //Selecting the circles and changing the colors
         svg.selectAll("circle")
             .data(circles)
             .join("circle")
@@ -67,9 +54,31 @@
             .attr("cy", d => d.y)
             .attr("r", radius)
             .attr("fill", d => d3.schemeCategory10[d.index % 10])
-            .on("click", function(){
-                PointColors = [PointColors[1], PointColors[0]]
-                d3.select(this).style("fill", PointColors[0]);});
+            .on("click", clicked);
+
+        function clicked(event, d) {
+            if (event.defaultPrevented) return; // dragged
+
+            d3.select(this).transition()
+                .attr("fill", "black")
+                .attr("r", radius * 2)
+            .transition()
+                .attr("r", radius)
+                .attr("fill", d3.schemeCategory10[d.index % 10]);
+                }
+
+            return svg.node();
+
+
+        //This changes the color of the circle when it is clicked, commenting it out until other part works
+        //var toggleColor = (function(){
+        //var currentColor = "white";
+
+            //return function(){
+                //currentColor = currentColor == "white" ? "magenta" : "white";
+                //d3.select(this).style("fill", currentColor);
+                //}
+            //})();
 
         //Genuinely don't remember what this does, commenting it out until I do
         //for (var i=0;i<11;i++)
