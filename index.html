@@ -38,7 +38,7 @@
         //This is the start to code that makes the website actually look good
         var svg = d3.select("svg");
         svg.append('line')
-            .attr('x1', 125)
+            .attr('x1', 135)
             .attr('y1', 155)
             .attr('x2', 200)
             .attr('y2', 200)
@@ -66,11 +66,11 @@
         svg.append('circle')
             .attr('cx', 250)
             .attr('cy', 250)
-            .attr('r', 50)
+            .attr('r', 33)
             .attr('stroke', 'black')
-            .attr('fill', '#69a3b2');
+            .attr('fill', '#ff3ff3');
 
-        //This is text
+        //This is regular text
         var svg = d3.select("svg");
         svg.append('text')
             .attr('x', 200)
@@ -80,17 +80,7 @@
             .text('Placeholder Text');
 
         //This for rotatation, checking to see if I need previous text code or not
-        var margin = {top: 30, right: 40, bottom: 50, left: 50};
-        var svg = d3.select("svg");
-        svg.append("g")
-            .attr("class", "x axis")
-            .attr("transform", "translate(0," + height + ")")
-            .call(xAxis)
-            .selectAll("text")  
-            .style("text-anchor", "end")
-            .attr("dx", "-.8em")
-            .attr("dy", ".15em")
-            .attr("transform", "rotate(-65)");
+        <text transform="translate(200,100)rotate(180)">Hello!</text>
 
         //This changes the color of the circle when it is clicked, commenting it out until other part works
         //var toggleColor = (function(){
