@@ -36,14 +36,15 @@
             }));
         
         //This is the start to code that makes the website actually look good
-        
+        var svg = d3.select("svg");
         svg.append('line')
             .attr('x1', 125)
             .attr('y1', 155)
             .attr('x2', 200)
             .attr('y2', 200)
             .attr('stroke','black');
-        
+
+        var svg = d3.select("svg");
         svg.append('line')
             .attr('x1', 200)
             .attr('y1', 200)
@@ -52,15 +53,16 @@
             .attr('stroke','black');
 
         //Looooooooooooooooong Line
-        
+        var svg = d3.select("svg");
         svg.append('line')
             .attr('x1', 200)
             .attr('y1', 200)
             .attr('x2', 400)
             .attr('y2', 200)
+            .attr('stroke','black');
 
         //Test circle for below/above average  
-
+        var svg = d3.select("svg");
         svg.append('circle')
             .attr('cx', 250)
             .attr('cy', 250)
@@ -69,7 +71,7 @@
             .attr('fill', '#69a3b2');
 
         //This is text
-        
+        var svg = d3.select("svg");
         svg.append('text')
             .attr('x', 200)
             .attr('y', 200)
@@ -79,6 +81,7 @@
 
         //This for rotatation, checking to see if I need previous text code or not
         var margin = {top: 30, right: 40, bottom: 50, left: 50};
+        var svg = d3.select("svg");
         svg.append("g")
             .attr("class", "x axis")
             .attr("transform", "translate(0," + height + ")")
