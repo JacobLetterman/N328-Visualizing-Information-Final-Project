@@ -24,7 +24,7 @@
 </head>
 <body>
 
-	<svg id="circle" width="600" height="600">
+	<svg id="main" width="600" height="600">
 		<text id='label' x='20' y='20'>Different Methods for Clickable objects and Mapping the Dataset</text>
 	</svg>
     
@@ -34,42 +34,27 @@
         d3.csv("Pokemon Data.csv").then(function(data) {
             console.log(data[0]);
             });
-
-        //Creating circles as a constant
         
-        const svg = d3.create("svg")
-            .attr("viewBox", [0, 0, width, height])
-            .attr("stroke-width", 2);
+        //This is the start to code that makes the website actually look good
+        var svg = d3.select('#segment').append('svg').attr('width',800).attr('height',200)
+        svg.append('line')
+            .attr('x1',10)
+            .attr('y1', 10)
+            .attr('x2', 350)
+            .attr('y2', 100)
+            .attr('stroke','black')
+        
+        //This is text, seeing if this conflicts with previous code
+        var svg = d3.select('#segment').append('svg').attr('width', 800).attr('height',200)
+        svg.append('text')
+            .attr('x',100)
+            .attr('y', 50)
+            .attr('stroke','black')
+            .style('font-size',19)
+            .text('Placeholder Text')
 
-        const circles = d3.range(20).map(i => ({
-            x: Math.random() * (width - radius * 2) + radius,
-            y: Math.random() * (height - radius * 2) + radius,
-            index: i
-            }));
-
-        svg.selectAll("circle")
-            .data(circles)
-            .join("circle")
-            .attr("cx", d => d.x)
-            .attr("cy", d => d.y)
-            .attr("r", radius)
-            .attr("fill", d => d3.schemeCategory10[d.index % 10])
-            .on("click", clicked);
-
-        function clicked(event, d) {
-            if (event.defaultPrevented) return; // dragged
-
-            d3.select(this).transition()
-                .attr("fill", "black")
-                .attr("r", radius * 2)
-            .transition()
-                .attr("r", radius)
-                .attr("fill", d3.schemeCategory10[d.index % 10]);
-                }
-
-            return svg.node();
-
-
+        //This for rotatation, checking to see if I need previous text code or not
+        
         //This changes the color of the circle when it is clicked, commenting it out until other part works
         //var toggleColor = (function(){
         //var currentColor = "white";
