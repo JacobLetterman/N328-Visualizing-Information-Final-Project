@@ -24,7 +24,7 @@
 </head>
 <body>
 
-	<svg id="main" width="600" height="600">
+	<svg id="main" width="2000" height="2000">
 		<text id='label' x='20' y='20'>Different Methods for Clickable objects and Mapping the Dataset</text>
 	</svg>
     
@@ -38,17 +38,24 @@
         //This is the start to code that makes the website actually look good
         var svg = d3.select("svg");
         svg.append('line')
-            .attr('x1',10)
-            .attr('y1', 10)
-            .attr('x2', 350)
+            .attr('x1', 25)
+            .attr('y1', 55)
+            .attr('x2', 100)
             .attr('y2', 100)
             .attr('stroke','black');
         
+        var svg = d3.select("svg");
+        svg.append('line')
+            .attr('x1', 100)
+            .attr('y1', 100)
+            .attr('x2', 150)
+            .attr('y2', 100)
+            .attr('stroke','black');
         //This is text, seeing if this conflicts with previous code
         var svg = d3.select("svg");
         svg.append('text')
-            .attr('x',100)
-            .attr('y', 50)
+            .attr('x', 100)
+            .attr('y', 100)
             .attr('stroke','black')
             .style('font-size',19)
             .text('Placeholder Text');
