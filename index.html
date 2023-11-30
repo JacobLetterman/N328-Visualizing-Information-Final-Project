@@ -78,6 +78,14 @@
             .attr('y2', 200)
             .attr('stroke','black');
 
+        var svg = d3.select("svg"); //Line for under circles
+        svg.append('line')
+            .attr('x1', 200)
+            .attr('y1', 266)
+            .attr('x2', 400)
+            .attr('y2', 266)
+            .attr('stroke','black');    
+            
         //Test circle for below/above average  
         var svg = d3.select("svg");
         svg.append('circle')
@@ -94,6 +102,7 @@
             .attr('r', 33)
             .attr('stroke', 'black')
             .attr('fill', 'blue'); 
+
         //This is regular text
         var svg = d3.select("svg");
         svg.append('text')
