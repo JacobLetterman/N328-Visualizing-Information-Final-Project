@@ -21,13 +21,7 @@
 			stroke: white;
 		}
 	</style>
-    <select>
-        <option value="o1">Option 1</option>
-        <option value="o2">Option 2</option>
-        <option value="o3">Option 3</option>
-        <option value="o4">Whatever</option>
-        <option value='o5'>Same</option>
-      </select>
+    <select id="selectButton"></select>
 </head>
 <body>
 
@@ -39,7 +33,7 @@
 	<script>
         //Loading the data, changing what it saves everytime to make sure it works
         d3.csv("Pokemon Data.csv",(function(data) {
-            console.log(data[203]);
+            console.log(data[505]);
             }));
         
         //This is the start to code that makes the website actually look good
@@ -59,6 +53,22 @@
             .attr('y2', 400)
             .attr('stroke','black');
 
+        var svg = d3.select("svg"); //Second Column
+        svg.append('line')
+            .attr('x1', 173)
+            .attr('y1', 155)
+            .attr('x2', 233)
+            .attr('y2', 200)
+            .attr('stroke','black');
+
+        var svg = d3.select("svg");
+        svg.append('line')
+            .attr('x1', 233)
+            .attr('y1', 200)
+            .attr('x2', 233)
+            .attr('y2', 400)
+            .attr('stroke','black');
+            
         //Looooooooooooooooong Line
         var svg = d3.select("svg");
         svg.append('line')
@@ -77,6 +87,13 @@
             .attr('stroke', 'black')
             .attr('fill', 'red'); 
 
+        var svg = d3.select("svg"); //Second Circle
+        svg.append('circle')
+            .attr('cx', 283)
+            .attr('cy', 283)
+            .attr('r', 33)
+            .attr('stroke', 'black')
+            .attr('fill', 'blue'); 
         //This is regular text
         var svg = d3.select("svg");
         svg.append('text')
@@ -84,10 +101,7 @@
             .attr('y', 200)
             .attr('stroke','black')
             .style('font-size', 19)
-            .text('Placeholder Text');
-
-        
-        
+            .text('Dex Number');
 
         //This for rotatation, checking to see if it breaks anything
         //<text id = 'Rotation' transform="translate(200,100)rotate(180)">Hello!</text>
