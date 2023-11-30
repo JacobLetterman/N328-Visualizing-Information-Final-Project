@@ -21,7 +21,7 @@
 			stroke: white;
 		}
 	</style>
-    <select id="selectButton"></select>
+    
 </head>
 <body>
 
@@ -55,20 +55,20 @@
 
         var svg = d3.select("svg"); //Second Column
         svg.append('line')
-            .attr('x1', 173)
+            .attr('x1', 206)
             .attr('y1', 155)
-            .attr('x2', 233)
+            .attr('x2', 266)
             .attr('y2', 200)
             .attr('stroke','black');
 
         var svg = d3.select("svg");
         svg.append('line')
-            .attr('x1', 233)
+            .attr('x1', 200)
             .attr('y1', 200)
-            .attr('x2', 233)
+            .attr('x2', 200)
             .attr('y2', 400)
             .attr('stroke','black');
-            
+
         //Looooooooooooooooong Line
         var svg = d3.select("svg");
         svg.append('line')
@@ -89,8 +89,8 @@
 
         var svg = d3.select("svg"); //Second Circle
         svg.append('circle')
-            .attr('cx', 283)
-            .attr('cy', 283)
+            .attr('cx', 299)
+            .attr('cy', 233)
             .attr('r', 33)
             .attr('stroke', 'black')
             .attr('fill', 'blue'); 
@@ -105,6 +105,9 @@
 
         //This for rotatation, checking to see if it breaks anything
         //<text id = 'Rotation' transform="translate(200,100)rotate(180)">Hello!</text>
+
+        //<select id="selectButton"></select>
+        //Works, but isn't needed yet
 
         //This changes the color of the circle when it is clicked, commenting it out until other part works
         //var toggleColor = (function(){
