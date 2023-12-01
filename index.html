@@ -120,13 +120,13 @@
             .style('font-size', 19)
             .text('Dex Number');
 
-        //This for rotatation
+        //This for rotatation, still not rotating
         var svg = d3.select('svg');
         svg.append('text')
             .attr('x', 200)
             .attr('y', 400)
             .attr('stroke','black')
-            .attr('transform', 'rotate(45)')
+            .style('transform', 'rotate(45)')
             .style('font-size', 19)
             .text('Dex Number');
             
