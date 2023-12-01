@@ -78,6 +78,14 @@
             .attr('y2', 200)
             .attr('stroke','black');
 
+        var svg = d3.select("svg"); //2nd column line
+        svg.append('line')
+            .attr('x1', 266)
+            .attr('y1', 200)
+            .attr('x2', 466)
+            .attr('y2', 200)
+            .attr('stroke','black');
+
         var svg = d3.select("svg"); //Line for under circles
         svg.append('line')
             .attr('x1', 200)
@@ -85,7 +93,7 @@
             .attr('x2', 400)
             .attr('y2', 266)
             .attr('stroke','black');    
-            
+
         //Test circle for below/above average  
         var svg = d3.select("svg");
         svg.append('circle')
@@ -101,20 +109,31 @@
             .attr('cy', 233)
             .attr('r', 33)
             .attr('stroke', 'black')
-            .attr('fill', 'blue'); 
+            .attr('fill', 'steelblue'); 
 
         //This is regular text
         var svg = d3.select("svg");
         svg.append('text')
             .attr('x', 200)
-            .attr('y', 200)
+            .attr('y', 400)
             .attr('stroke','black')
             .style('font-size', 19)
             .text('Dex Number');
 
         //This for rotatation, checking to see if it breaks anything
-        //<text id = 'Rotation' transform="translate(200,100)rotate(180)">Hello!</text>
-
+        var array = ['Dex_No','Name','Base_Name','Type_1','Type_2','BST','HP','Attack','Defense','Sp_Attack','Sp_Defense','Speed'];
+        svg.selectAll('text.rotation')
+            .data(array)
+            .enter()
+            .append('text')
+            .text((d)=>d)
+            .classed('rotation', true)
+            .attr('fill', 'black')
+            .attr('transform', (d,i)=>{
+                return 'translate( '+xScale(i)+' , '+220+'),'+ 'rotate(45)';})
+            .attr('x', 0)
+            .attr('y', 0)
+       
         //<select id="selectButton"></select>
         //Works, but isn't needed yet
 
