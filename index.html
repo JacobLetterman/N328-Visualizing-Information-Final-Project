@@ -120,8 +120,12 @@
             .style('font-size', 19)
             .text('Dex Number');
 
-        //This for rotatation, checking to see if it breaks anything
-        var array = ['Dex_No','Name','Base_Name','Type_1','Type_2','BST','HP','Attack','Defense','Sp_Attack','Sp_Defense','Speed'];
+        //This for rotatation, seems to be rotating at a point off of the svg
+        xScale = d3.scaleLinear()
+    		     .domain([0, 8])
+    			 .range([0, 500]);
+                 
+        var array = ['Dex No','Name','Base Name','Type 1','Type 2','BST','HP','Attack','Defense','Sp Attack','Sp Defense','Speed'];
         svg.selectAll('text.rotation')
             .data(array)
             .enter()
