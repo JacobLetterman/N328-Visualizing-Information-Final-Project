@@ -122,9 +122,9 @@
 
         //This for rotatation, seems to be rotating at a point off of the svg
         xScale = d3.scaleLinear()
-    		     .domain([0, 8])
-    			 .range([0, 500]);
-                 
+    		     .domain([0, 12])
+    			 .range([100, 500]);
+
         var array = ['Dex No','Name','Base Name','Type 1','Type 2','BST','HP','Attack','Defense','Sp Attack','Sp Defense','Speed'];
         svg.selectAll('text.rotation')
             .data(array)
