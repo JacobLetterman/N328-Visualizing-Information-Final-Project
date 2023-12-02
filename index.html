@@ -37,7 +37,7 @@
             }));
         
         //This is the start to code that makes the website actually look good
-        var svg = d3.select("svg");
+        var svg = d3.select("svg"); //First Column
         svg.append('line')
             .attr('x1', 140)
             .attr('y1', 155)
@@ -50,7 +50,7 @@
             .attr('x1', 200)
             .attr('y1', 200)
             .attr('x2', 200)
-            .attr('y2', 400)
+            .attr('y2', 600)
             .attr('stroke','black');
 
         var svg = d3.select("svg"); //Second Column
@@ -63,10 +63,42 @@
 
         var svg = d3.select("svg");
         svg.append('line')
-            .attr('x1', 200)
+            .attr('x1', 266)
             .attr('y1', 200)
-            .attr('x2', 200)
-            .attr('y2', 400)
+            .attr('x2', 266)
+            .attr('y2', 600)
+            .attr('stroke','black');
+
+        var svg = d3.select("svg"); //Third Column
+        svg.append('line')
+            .attr('x1', 272)
+            .attr('y1', 155)
+            .attr('x2', 332)
+            .attr('y2', 200)
+            .attr('stroke','black');
+
+        var svg = d3.select("svg");
+        svg.append('line')
+            .attr('x1', 332)
+            .attr('y1', 200)
+            .attr('x2', 332)
+            .attr('y2', 600)
+            .attr('stroke','black');
+
+        var svg = d3.select("svg"); //Fourth Column
+        svg.append('line')
+            .attr('x1', 338)
+            .attr('y1', 155)
+            .attr('x2', 398)
+            .attr('y2', 200)
+            .attr('stroke','black');
+
+        var svg = d3.select("svg");
+        svg.append('line')
+            .attr('x1', 398)
+            .attr('y1', 200)
+            .attr('x2', 398)
+            .attr('y2', 600)
             .attr('stroke','black');
 
         //Looooooooooooooooong Line
