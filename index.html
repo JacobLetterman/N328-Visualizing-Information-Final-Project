@@ -115,18 +115,12 @@
 
         //Test circle for different colors 
         var svg = d3.select("svg"); //First Circle
-        var circle1 = svg.append('circle').attr('cx', 233).attr('cy', 233).attr('r', 33).attr('stroke', 'black').attr('fill', 'white').on("click", function(){toggleColor});
+        var circle1 = svg.append('circle').attr('cx', 233).attr('cy', 233).attr('r', 33).attr('stroke', 'black').attr('fill', 'white')
+        .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
+            d3.select(this).style("fill", PointColors[0]);});// Testing a janky function
+
         var svg = d3.select("svg"); //Second Circle
         svg.append('circle').attr('cx', 299).attr('cy', 233).attr('r', 33).attr('stroke', 'black').attr('fill', 'steelblue'); 
-
-        //On CLick Function for circle 1, testing to see if it works
-        var toggleColor = (function(){
-            var currentColor = "white";
-            return function(){
-                currentColor = currentColor == "white" ? "lime" : "white";
-                d3.select(this).style("fill", currentColor);
-            }
-        })();
 
         //This is regular text
         var svg = d3.select("svg");
