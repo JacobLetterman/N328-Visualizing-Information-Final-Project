@@ -33,49 +33,25 @@
 	<script>
         //Loading the data, changing what it saves everytime to make sure it works
         d3.csv("Pokemon Data.csv",(function(data) {
-            console.log(data[505]);
+            console.log(data[152]);
             }));
         
         //This is the start to code that makes the website actually look good
-        var svg = d3.select("svg"); //First Column
-        svg.append('line')
-            .attr('x1', 140)
-            .attr('y1', 155)
-            .attr('x2', 200)
-            .attr('y2', 200)
-            .attr('stroke','black');
+        //Condensed certain lines to make the code not look as bad
+        var svg = d3.select("svg"); //First Column, Dex Number
+        svg.append('line').attr('x1', 140).attr('y1', 155).attr('x2', 200).attr('y2', 200).attr('stroke','black');
 
         var svg = d3.select("svg");
-        svg.append('line')
-            .attr('x1', 200)
-            .attr('y1', 200)
-            .attr('x2', 200)
-            .attr('y2', 600)
-            .attr('stroke','black');
+        svg.append('line').attr('x1', 200).attr('y1', 200).attr('x2', 200).attr('y2', 600).attr('stroke','black');
 
-        var svg = d3.select("svg"); //Second Column
-        svg.append('line')
-            .attr('x1', 206)
-            .attr('y1', 155)
-            .attr('x2', 266)
-            .attr('y2', 200)
-            .attr('stroke','black');
+        var svg = d3.select("svg"); //Second Column, Name
+        svg.append('line').attr('x1', 206).attr('y1', 155).attr('x2', 266).attr('y2', 200).attr('stroke','black');
 
         var svg = d3.select("svg");
-        svg.append('line')
-            .attr('x1', 266)
-            .attr('y1', 200)
-            .attr('x2', 266)
-            .attr('y2', 600)
-            .attr('stroke','black');
+        svg.append('line').attr('x1', 266).attr('y1', 200).attr('x2', 266).attr('y2', 600).attr('stroke','black');
 
-        var svg = d3.select("svg"); //Third Column
-        svg.append('line')
-            .attr('x1', 272)
-            .attr('y1', 155)
-            .attr('x2', 332)
-            .attr('y2', 200)
-            .attr('stroke','black');
+        var svg = d3.select("svg"); //Third Column, Base Name
+        svg.append('line').attr('x1', 272).attr('y1', 155).attr('x2', 332).attr('y2', 200).attr('stroke','black');
 
         var svg = d3.select("svg");
         svg.append('line')
@@ -85,7 +61,7 @@
             .attr('y2', 600)
             .attr('stroke','black');
 
-        var svg = d3.select("svg"); //Fourth Column
+        var svg = d3.select("svg"); //Fourth Column, Type 1
         svg.append('line')
             .attr('x1', 338)
             .attr('y1', 155)
@@ -101,12 +77,44 @@
             .attr('y2', 600)
             .attr('stroke','black');
 
+        var svg = d3.select("svg"); //Fifth Column, Type 2
+        svg.append('line')
+            .attr('x1', 404)
+            .attr('y1', 155)
+            .attr('x2', 464)
+            .attr('y2', 200)
+            .attr('stroke','black');
+
+        var svg = d3.select("svg");
+        svg.append('line')
+            .attr('x1', 464)
+            .attr('y1', 200)
+            .attr('x2', 464)
+            .attr('y2', 600)
+            .attr('stroke','black');
+
+        var svg = d3.select("svg"); //Sixth Column, BST, Base Stat Total
+        svg.append('line')
+            .attr('x1', 470)
+            .attr('y1', 155)
+            .attr('x2', 530)
+            .attr('y2', 200)
+            .attr('stroke','black');
+
+        var svg = d3.select("svg");
+        svg.append('line')
+            .attr('x1', 530)
+            .attr('y1', 200)
+            .attr('x2', 530)
+            .attr('y2', 600)
+            .attr('stroke','black');
+
         //Looooooooooooooooong Line
         var svg = d3.select("svg");
         svg.append('line')
             .attr('x1', 200)
             .attr('y1', 200)
-            .attr('x2', 400)
+            .attr('x2', 1000)
             .attr('y2', 200)
             .attr('stroke','black');
 
@@ -114,7 +122,7 @@
         svg.append('line')
             .attr('x1', 266)
             .attr('y1', 200)
-            .attr('x2', 466)
+            .attr('x2', 1066)
             .attr('y2', 200)
             .attr('stroke','black');
 
@@ -122,7 +130,7 @@
         svg.append('line')
             .attr('x1', 200)
             .attr('y1', 266)
-            .attr('x2', 400)
+            .attr('x2', 600)
             .attr('y2', 266)
             .attr('stroke','black');    
 
@@ -152,7 +160,7 @@
             .style('font-size', 19)
             .text('Dex Number');
 
-        //This for rotatation, still not rotating
+        //This for rotatation. Rotates, but not where I need it
         var svg = d3.select('svg');
         svg.append('text')
             .attr('x', 200)
