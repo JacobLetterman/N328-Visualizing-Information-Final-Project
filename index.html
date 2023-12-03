@@ -114,6 +114,7 @@
         svg.append('line').attr('x1', 200).attr('y1', 266).attr('x2', 1000).attr('y2', 266).attr('stroke','black');    
 
         //Test circle for different colors 
+        var PointColors = ['white', 'lime']
         var svg = d3.select("svg"); //First Circle
         var circle1 = svg.append('circle').attr('cx', 233).attr('cy', 233).attr('r', 33).attr('stroke', 'black').attr('fill', 'white')
         .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
