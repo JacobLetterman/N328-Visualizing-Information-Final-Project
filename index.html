@@ -113,13 +113,13 @@
         var PointColors2 = ['red', 'lime']
 
         var svg = d3.select("svg"); //First Circle
-        var circle1 = svg.append('circle').attr('cx', 233).attr('cy', 233).attr('r', 33).attr('stroke', 'white').attr('fill', 'white')
+        var circle1 = svg.append('circle').attr('cx', 233).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
             d3.select(this).style("fill", PointColors[0]);});// It's janky, but it works so I'm not gonna question it
             //Eventually want this as a reset button for the graphs and dropdown buttons, but need data to work first
 
         var svg = d3.select("svg"); //Second Circle
-        svg.append('circle').attr('cx', 299).attr('cy', 233).attr('r', 33).attr('stroke', 'white').attr('fill', 'lime')
+        svg.append('circle').attr('cx', 299).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'lime')
             .on("click", function(){PointColors2 = [PointColors2[1], PointColors2[0]]
             d3.select(this).style("fill", PointColors2[0]);});
             //This is going to turn on/off the graphs for later parts 
