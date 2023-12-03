@@ -115,9 +115,18 @@
 
         //Test circle for different colors 
         var svg = d3.select("svg"); //First Circle
-        svg.append('circle').attr('cx', 233).attr('cy', 233).attr('r', 33).attr('stroke', 'black').attr('fill', 'red'); 
+        var circle1 = svg.append('circle').attr('cx', 233).attr('cy', 233).attr('r', 33).attr('stroke', 'black').attr('fill', 'white'); 
         var svg = d3.select("svg"); //Second Circle
         svg.append('circle').attr('cx', 299).attr('cy', 233).attr('r', 33).attr('stroke', 'black').attr('fill', 'steelblue'); 
+
+        var colorIt = function() {
+        this.circle1.show = this.circle1.show == "true" ? false : true;
+        this.style.backgroundColor = this.circle1.show == "true" ? "lime" : "white";
+        },
+        helloDiv = document.getElementById("main");
+        helloDiv.circle1.show = true;
+
+        helloDiv.onclick = colorIt;
 
         //This is regular text
         var svg = d3.select("svg");
