@@ -115,10 +115,11 @@
 
         //Test circle for different colors 
         var svg = d3.select("svg"); //First Circle
-        var circle1 = svg.append('circle').attr('cx', 233).attr('cy', 233).attr('r', 33).attr('stroke', 'black').attr('fill', 'white'); 
+        var circle1 = svg.append('circle').attr('cx', 233).attr('cy', 233).attr('r', 33).attr('stroke', 'black').attr('fill', 'white').on("click", toggleColor);
         var svg = d3.select("svg"); //Second Circle
         svg.append('circle').attr('cx', 299).attr('cy', 233).attr('r', 33).attr('stroke', 'black').attr('fill', 'steelblue'); 
 
+        //On CLick Function for circle 1, testing to see if it works
         var toggleColor = (function(){
         var currentColor = "white";
             return function(){
