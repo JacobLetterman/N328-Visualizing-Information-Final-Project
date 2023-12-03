@@ -32,124 +32,86 @@
 	
 	<script>
         //Loading the data, changing what it saves everytime to make sure it works
-        d3.csv("Pokemon Data.csv",(function(data) {
-            console.log(data[152]);
-            }));
+        d3.csv("Pokemon Data.csv",(function(data) {console.log(data[152]);}));
         
         //This is the start to code that makes the website actually look good
         //Condensed certain lines to make the code not look as bad
         var svg = d3.select("svg"); //First Column, Dex Number
         svg.append('line').attr('x1', 140).attr('y1', 155).attr('x2', 200).attr('y2', 200).attr('stroke','black');
-
         var svg = d3.select("svg");
         svg.append('line').attr('x1', 200).attr('y1', 200).attr('x2', 200).attr('y2', 600).attr('stroke','black');
 
         var svg = d3.select("svg"); //Second Column, Name
         svg.append('line').attr('x1', 206).attr('y1', 155).attr('x2', 266).attr('y2', 200).attr('stroke','black');
-
         var svg = d3.select("svg");
         svg.append('line').attr('x1', 266).attr('y1', 200).attr('x2', 266).attr('y2', 600).attr('stroke','black');
 
         var svg = d3.select("svg"); //Third Column, Base Name
         svg.append('line').attr('x1', 272).attr('y1', 155).attr('x2', 332).attr('y2', 200).attr('stroke','black');
-
         var svg = d3.select("svg");
-        svg.append('line')
-            .attr('x1', 332)
-            .attr('y1', 200)
-            .attr('x2', 332)
-            .attr('y2', 600)
-            .attr('stroke','black');
+        svg.append('line').attr('x1', 332).attr('y1', 200).attr('x2', 332).attr('y2', 600).attr('stroke','black');
 
         var svg = d3.select("svg"); //Fourth Column, Type 1
-        svg.append('line')
-            .attr('x1', 338)
-            .attr('y1', 155)
-            .attr('x2', 398)
-            .attr('y2', 200)
-            .attr('stroke','black');
-
+        svg.append('line').attr('x1', 338).attr('y1', 155).attr('x2', 398).attr('y2', 200).attr('stroke','black');
         var svg = d3.select("svg");
-        svg.append('line')
-            .attr('x1', 398)
-            .attr('y1', 200)
-            .attr('x2', 398)
-            .attr('y2', 600)
-            .attr('stroke','black');
+        svg.append('line').attr('x1', 398).attr('y1', 200).attr('x2', 398).attr('y2', 600).attr('stroke','black');
 
         var svg = d3.select("svg"); //Fifth Column, Type 2
-        svg.append('line')
-            .attr('x1', 404)
-            .attr('y1', 155)
-            .attr('x2', 464)
-            .attr('y2', 200)
-            .attr('stroke','black');
-
+        svg.append('line').attr('x1', 404).attr('y1', 155).attr('x2', 464).attr('y2', 200).attr('stroke','black');
         var svg = d3.select("svg");
-        svg.append('line')
-            .attr('x1', 464)
-            .attr('y1', 200)
-            .attr('x2', 464)
-            .attr('y2', 600)
-            .attr('stroke','black');
+        svg.append('line').attr('x1', 464).attr('y1', 200).attr('x2', 464).attr('y2', 600).attr('stroke','black');
 
         var svg = d3.select("svg"); //Sixth Column, BST, Base Stat Total
-        svg.append('line')
-            .attr('x1', 470)
-            .attr('y1', 155)
-            .attr('x2', 530)
-            .attr('y2', 200)
-            .attr('stroke','black');
-
+        svg.append('line').attr('x1', 470).attr('y1', 155).attr('x2', 530).attr('y2', 200).attr('stroke','black');
         var svg = d3.select("svg");
-        svg.append('line')
-            .attr('x1', 530)
-            .attr('y1', 200)
-            .attr('x2', 530)
-            .attr('y2', 600)
-            .attr('stroke','black');
+        svg.append('line').attr('x1', 530).attr('y1', 200).attr('x2', 530).attr('y2', 600).attr('stroke','black');
 
-        //Looooooooooooooooong Line
+        var svg = d3.select("svg"); //Seventh Column, HP
+        svg.append('line').attr('x1', 536).attr('y1', 155).attr('x2', 596).attr('y2', 200).attr('stroke','black');
         var svg = d3.select("svg");
-        svg.append('line')
-            .attr('x1', 200)
-            .attr('y1', 200)
-            .attr('x2', 1000)
-            .attr('y2', 200)
-            .attr('stroke','black');
+        svg.append('line').attr('x1', 596).attr('y1', 200).attr('x2', 596).attr('y2', 600).attr('stroke','black');
 
-        var svg = d3.select("svg"); //2nd column line
-        svg.append('line')
-            .attr('x1', 266)
-            .attr('y1', 200)
-            .attr('x2', 1066)
-            .attr('y2', 200)
-            .attr('stroke','black');
+        var svg = d3.select("svg"); //Eighth Column, ATK
+        svg.append('line').attr('x1', 602).attr('y1', 155).attr('x2', 662).attr('y2', 200).attr('stroke','black');
+        var svg = d3.select("svg");
+        svg.append('line').attr('x1', 662).attr('y1', 200).attr('x2', 662).attr('y2', 600).attr('stroke','black');
 
+        var svg = d3.select("svg"); //Ninth Column, Defense
+        svg.append('line').attr('x1', 668).attr('y1', 155).attr('x2', 728).attr('y2', 200).attr('stroke','black');
+        var svg = d3.select("svg");
+        svg.append('line').attr('x1', 728).attr('y1', 200).attr('x2', 728).attr('y2', 600).attr('stroke','black');
+
+        var svg = d3.select("svg"); //Tenth Column, Sp_ATK
+        svg.append('line').attr('x1', 734).attr('y1', 155).attr('x2', 794).attr('y2', 200).attr('stroke','black');
+        var svg = d3.select("svg");
+        svg.append('line').attr('x1', 794).attr('y1', 200).attr('x2', 794).attr('y2', 600).attr('stroke','black');
+
+        var svg = d3.select("svg"); //Eleventh Column, Sp_Def
+        svg.append('line').attr('x1', 800).attr('y1', 155).attr('x2', 860).attr('y2', 200).attr('stroke','black');
+        var svg = d3.select("svg");
+        svg.append('line').attr('x1', 860).attr('y1', 200).attr('x2', 860).attr('y2', 600).attr('stroke','black');
+
+        var svg = d3.select("svg"); //Twelfth Column, Speed
+        svg.append('line').attr('x1', 866).attr('y1', 155).attr('x2', 926).attr('y2', 200).attr('stroke','black');
+        var svg = d3.select("svg");
+        svg.append('line').attr('x1', 926).attr('y1', 200).attr('x2', 926).attr('y2', 600).attr('stroke','black');
+
+        var svg = d3.select("svg"); //Ending Line
+        svg.append('line').attr('x1', 932).attr('y1', 155).attr('x2', 992).attr('y2', 200).attr('stroke','black');
+        var svg = d3.select("svg");
+        svg.append('line').attr('x1', 992).attr('y1', 200).attr('x2', 992).attr('y2', 600).attr('stroke','black');
+
+        //Other Lines
+        var svg = d3.select("svg");//Looooooooooooooooong Line
+        svg.append('line').attr('x1', 200).attr('y1', 200).attr('x2', 1000).attr('y2', 200).attr('stroke','black');
         var svg = d3.select("svg"); //Line for under circles
-        svg.append('line')
-            .attr('x1', 200)
-            .attr('y1', 266)
-            .attr('x2', 600)
-            .attr('y2', 266)
-            .attr('stroke','black');    
+        svg.append('line').attr('x1', 200).attr('y1', 266).attr('x2', 1000).attr('y2', 266).attr('stroke','black');    
 
-        //Test circle for below/above average  
-        var svg = d3.select("svg");
-        svg.append('circle')
-            .attr('cx', 233)
-            .attr('cy', 233)
-            .attr('r', 33)
-            .attr('stroke', 'black')
-            .attr('fill', 'red'); 
-
+        //Test circle for different colors 
+        var svg = d3.select("svg"); //First Circle
+        svg.append('circle').attr('cx', 233).attr('cy', 233).attr('r', 33).attr('stroke', 'black').attr('fill', 'red'); 
         var svg = d3.select("svg"); //Second Circle
-        svg.append('circle')
-            .attr('cx', 299)
-            .attr('cy', 233)
-            .attr('r', 33)
-            .attr('stroke', 'black')
-            .attr('fill', 'steelblue'); 
+        svg.append('circle').attr('cx', 299).attr('cy', 233).attr('r', 33).attr('stroke', 'black').attr('fill', 'steelblue'); 
 
         //This is regular text
         var svg = d3.select("svg");
@@ -172,7 +134,8 @@
             
         //<select id="selectButton"></select>
         //Works, but isn't needed yet
-
+        //var svg = d3.select("svg"); 2nd column line
+        //svg.append('line').attr('x1', 266).attr('y1', 200).attr('x2', 1066).attr('y2', 200).attr('stroke','black');
         //This changes the color of the circle when it is clicked, commenting it out until other part works
         //var toggleColor = (function(){
         //var currentColor = "white";
