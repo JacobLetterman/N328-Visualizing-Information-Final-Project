@@ -41,65 +41,41 @@
         var svg = d3.select("svg"); //First Column, Dex Number
         svg.append('line').attr('x1', 140).attr('y1', 155).attr('x2', 200).attr('y2', 200).attr('stroke','black');
         svg.append('line').attr('x1', 200).attr('y1', 200).attr('x2', 200).attr('y2', 600).attr('stroke','black');
-
-        var svg = d3.select("svg"); //Second Column, Name
+        //Second Column, Name
         svg.append('line').attr('x1', 206).attr('y1', 155).attr('x2', 266).attr('y2', 200).attr('stroke','black');
-        var svg = d3.select("svg");
         svg.append('line').attr('x1', 266).attr('y1', 200).attr('x2', 266).attr('y2', 600).attr('stroke','black');
-
-        var svg = d3.select("svg"); //Third Column, Base Name
+        //Third Column, Base Name
         svg.append('line').attr('x1', 272).attr('y1', 155).attr('x2', 332).attr('y2', 200).attr('stroke','black');
-        var svg = d3.select("svg");
         svg.append('line').attr('x1', 332).attr('y1', 200).attr('x2', 332).attr('y2', 600).attr('stroke','black');
-
-        var svg = d3.select("svg"); //Fourth Column, Type 1
+        //Fourth Column, Type 1
         svg.append('line').attr('x1', 338).attr('y1', 155).attr('x2', 398).attr('y2', 200).attr('stroke','black');
-        var svg = d3.select("svg");
         svg.append('line').attr('x1', 398).attr('y1', 200).attr('x2', 398).attr('y2', 600).attr('stroke','black');
-
-        var svg = d3.select("svg"); //Fifth Column, Type 2
+        //Fifth Column, Type 2
         svg.append('line').attr('x1', 404).attr('y1', 155).attr('x2', 464).attr('y2', 200).attr('stroke','black');
-        var svg = d3.select("svg");
         svg.append('line').attr('x1', 464).attr('y1', 200).attr('x2', 464).attr('y2', 600).attr('stroke','black');
-
-        var svg = d3.select("svg"); //Sixth Column, BST, Base Stat Total
+        //Sixth Column, BST, Base Stat Total
         svg.append('line').attr('x1', 470).attr('y1', 155).attr('x2', 530).attr('y2', 200).attr('stroke','black');
-        var svg = d3.select("svg");
         svg.append('line').attr('x1', 530).attr('y1', 200).attr('x2', 530).attr('y2', 600).attr('stroke','black');
-
-        var svg = d3.select("svg"); //Seventh Column, HP
+        //Seventh Column, HP
         svg.append('line').attr('x1', 536).attr('y1', 155).attr('x2', 596).attr('y2', 200).attr('stroke','black');
-        var svg = d3.select("svg");
         svg.append('line').attr('x1', 596).attr('y1', 200).attr('x2', 596).attr('y2', 600).attr('stroke','black');
-
-        var svg = d3.select("svg"); //Eighth Column, ATK
+        //Eighth Column, ATK
         svg.append('line').attr('x1', 602).attr('y1', 155).attr('x2', 662).attr('y2', 200).attr('stroke','black');
-        var svg = d3.select("svg");
         svg.append('line').attr('x1', 662).attr('y1', 200).attr('x2', 662).attr('y2', 600).attr('stroke','black');
-
-        var svg = d3.select("svg"); //Ninth Column, Defense
+        //Ninth Column, Defense
         svg.append('line').attr('x1', 668).attr('y1', 155).attr('x2', 728).attr('y2', 200).attr('stroke','black');
-        var svg = d3.select("svg");
         svg.append('line').attr('x1', 728).attr('y1', 200).attr('x2', 728).attr('y2', 600).attr('stroke','black');
-
-        var svg = d3.select("svg"); //Tenth Column, Sp_ATK
+        //Tenth Column, Sp_ATK
         svg.append('line').attr('x1', 734).attr('y1', 155).attr('x2', 794).attr('y2', 200).attr('stroke','black');
-        var svg = d3.select("svg");
         svg.append('line').attr('x1', 794).attr('y1', 200).attr('x2', 794).attr('y2', 600).attr('stroke','black');
-
-        var svg = d3.select("svg"); //Eleventh Column, Sp_Def
+        //Eleventh Column, Sp_Def
         svg.append('line').attr('x1', 800).attr('y1', 155).attr('x2', 860).attr('y2', 200).attr('stroke','black');
-        var svg = d3.select("svg");
         svg.append('line').attr('x1', 860).attr('y1', 200).attr('x2', 860).attr('y2', 600).attr('stroke','black');
-
-        var svg = d3.select("svg"); //Twelfth Column, Speed
+        //Twelfth Column, Speed
         svg.append('line').attr('x1', 866).attr('y1', 155).attr('x2', 926).attr('y2', 200).attr('stroke','black');
-        var svg = d3.select("svg");
         svg.append('line').attr('x1', 926).attr('y1', 200).attr('x2', 926).attr('y2', 600).attr('stroke','black');
-
-        var svg = d3.select("svg"); //Ending Line
+        //Line before graphs
         svg.append('line').attr('x1', 932).attr('y1', 155).attr('x2', 992).attr('y2', 200).attr('stroke','black');
-        var svg = d3.select("svg");
         svg.append('line').attr('x1', 992).attr('y1', 200).attr('x2', 992).attr('y2', 600).attr('stroke','black');
 
         //Other Lines
@@ -110,18 +86,17 @@
 
         //Test circle for different colors 
         var PointColors = ['white', 'lime']
-        var PointColors2 = ['red', 'lime']
 
         var svg = d3.select("svg"); //First Circle
         var circle1 = svg.append('circle').attr('cx', 233).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
-            d3.select(this).style("fill", PointColors[0]);});// It's janky, but it works so I'm not gonna question it
+            d3.select(this).style("fill", PointColors[0]);});// It's janky, but it works, so I'm not gonna question it
             //Eventually want this as a reset button for the graphs and dropdown buttons, but need data to work first
 
         var svg = d3.select("svg"); //Second Circle
         svg.append('circle').attr('cx', 299).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'lime')
-            .on("click", function(){PointColors2 = [PointColors2[1], PointColors2[0]]
-            d3.select(this).style("fill", PointColors2[0]);});
+            .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
+            d3.select(this).style("fill", PointColors[0]);});
             //This is going to turn on/off the graphs for later parts 
 
         //This is regular text
@@ -135,18 +110,11 @@
             
         //<select id="selectButton"></select>
         //Works, but isn't needed yet
+
+        //Randomly line that I added, but don't remember why
         //var svg = d3.select("svg"); 2nd column line
         //svg.append('line').attr('x1', 266).attr('y1', 200).attr('x2', 1066).attr('y2', 200).attr('stroke','black');
 
-        //Genuinely don't remember what this does, commenting it out until I do
-        //for (var i=0;i<11;i++)
-        //{
-        //    var f;
-        //    var countryname =new Array();
-        //    var dot = new Array();
-        //    dot = svg.append("g").append("circle").attr("class", "dot").attr("id",i)
-        //    .style("fill", function(d) { return colorScale(BST[i]); }).call(position);
-        //}
         //var svg = d3.select("svg");
         //Function to log if the button has been pressed, not using just yet as it could conflict with color changer. Rather not risk it, yet
         //dot.on("click", function(d){click(d)}) 
