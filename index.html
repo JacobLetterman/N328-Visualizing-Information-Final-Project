@@ -32,8 +32,14 @@
 	
 	<script>
         //Loading the data, changing what it saves everytime to make sure it works
-        d3.csv("Pokemon Data.csv",(function(data) {console.log(data[152]);}));
+        var data = d3.csv("Pokemon Data.csv");
         
+        d3.select("body").selectAll("p")
+            .data(data)
+            .enter()
+            .append("p")
+            .text(function(d) { return d; });
+
         //This is the start to code that makes the website actually look good
         //Condensed certain lines to make the code not look as bad
         var svg = d3.select("svg"); //First Column, Dex Number
