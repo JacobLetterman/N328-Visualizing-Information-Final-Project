@@ -124,7 +124,7 @@
         var currentColor = "white";
             return function(){
                 currentColor = currentColor == "white" ? "lime" : "white";
-                d3.select(circle1).style("fill", currentColor);
+                d3.select(this).style("fill", currentColor);
             }
         })();
 
