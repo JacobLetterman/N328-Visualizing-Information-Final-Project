@@ -119,14 +119,13 @@
         var svg = d3.select("svg"); //Second Circle
         svg.append('circle').attr('cx', 299).attr('cy', 233).attr('r', 33).attr('stroke', 'black').attr('fill', 'steelblue'); 
 
-        var colorIt = function() {
-        this.circle1.show = this.circle1.show == "true" ? false : true;
-        this.style.backgroundColor = this.circle1.show == "true" ? "lime" : "white";
-        },
-        helloDiv = document.getElementById("main");
-        helloDiv.circle1.show = true;
-
-        helloDiv.onclick = colorIt;
+        var toggleColor = (function(){
+        var currentColor = "white";
+            return function(){
+                currentColor = currentColor == "white" ? "lime" : "white";
+                d3.select(circle1).style("fill", currentColor);
+            }
+        })();
 
         //This is regular text
         var svg = d3.select("svg");
