@@ -34,17 +34,12 @@
         //Loading the data, changing what it saves everytime to make sure it works
         var data = d3.csv("Pokemon Data.csv");
         
-        d3.select("body").selectAll("p")
-            .data(data)
-            .enter()
-            .append("p")
-            .text(function(data) { return data; });
+        d3.select("body").selectAll("p").data(data).enter().append("p").text(function(data) { return data; });
 
         //This is the start to code that makes the website actually look good
         //Condensed certain lines to make the code not look as bad
         var svg = d3.select("svg"); //First Column, Dex Number
         svg.append('line').attr('x1', 140).attr('y1', 155).attr('x2', 200).attr('y2', 200).attr('stroke','black');
-        var svg = d3.select("svg");
         svg.append('line').attr('x1', 200).attr('y1', 200).attr('x2', 200).attr('y2', 600).attr('stroke','black');
 
         var svg = d3.select("svg"); //Second Column, Name
@@ -115,46 +110,33 @@
 
         //Test circle for different colors 
         var PointColors = ['white', 'lime']
+        var PointColors2 = ['red', 'lime']
+
         var svg = d3.select("svg"); //First Circle
         var circle1 = svg.append('circle').attr('cx', 233).attr('cy', 233).attr('r', 33).attr('stroke', 'black').attr('fill', 'white')
-        .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
-            d3.select(this).style("fill", PointColors[0]);});// Testing a janky function
+            .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
+            d3.select(this).style("fill", PointColors[0]);});// It's janky, but it works so I'm not gonna question it
+            //Eventually want this as a reset button for the graphs and dropdown buttons, but need data to work first
 
         var svg = d3.select("svg"); //Second Circle
-        svg.append('circle').attr('cx', 299).attr('cy', 233).attr('r', 33).attr('stroke', 'black').attr('fill', 'steelblue'); 
+        svg.append('circle').attr('cx', 299).attr('cy', 233).attr('r', 33).attr('stroke', 'black').attr('fill', 'lime')
+            .on("click", function(){PointColors2 = [PointColors2[1], PointColors2[0]]
+            d3.select(this).style("fill", PointColors2[0]);});
+            //This is going to turn on/off the graphs for later parts 
 
         //This is regular text
         var svg = d3.select("svg");
-        svg.append('text')
-            .attr('x', 200)
-            .attr('y', 400)
-            .attr('stroke','black')
-            .style('font-size', 19)
-            .text('Dex Number');
+        svg.append('text').attr('x', 200).attr('y', 400).attr('stroke','black').style('font-size', 19).text('Dex Number');
 
         //This for rotatation. Rotates, but not where I need it
         var svg = d3.select('svg');
-        svg.append('text')
-            .attr('x', 200)
-            .attr('y', 400)
-            .attr('stroke','black')
-            .attr('transform', 'rotate(20)')
-            .style('font-size', 19)
-            .text('Dex Number');
+        svg.append('text').attr('x', 200).attr('y', 400).attr('stroke','black').attr('transform', 'rotate(20)').style('font-size', 19)
+        .text('Dex Number');
             
         //<select id="selectButton"></select>
         //Works, but isn't needed yet
         //var svg = d3.select("svg"); 2nd column line
         //svg.append('line').attr('x1', 266).attr('y1', 200).attr('x2', 1066).attr('y2', 200).attr('stroke','black');
-        //This changes the color of the circle when it is clicked, commenting it out until other part works
-        //var toggleColor = (function(){
-        //var currentColor = "white";
-
-        //    return function(){
-        //        currentColor = currentColor == "white" ? "magenta" : "white";
-        //        d3.select(this).style("fill", currentColor);
-        //        }
-        //    })();
 
         //Genuinely don't remember what this does, commenting it out until I do
         //for (var i=0;i<11;i++)
