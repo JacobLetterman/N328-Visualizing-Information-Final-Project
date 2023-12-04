@@ -152,7 +152,12 @@
 
 
         //Start of actually printing the data
-        svg.append('text').attr('x',210).attr('y',275).text(function(d) { return d.Dex_No; }).style('font-size',15)
+        const data2 = svg.selectAll(null)
+            .data(data)
+            .enter()
+            .append("data2");
+        const path = data2.append("path")
+            .datum(d => d.values)
         //<select id="selectButton"></select>
         //Works, but isn't needed yet
 
