@@ -34,34 +34,47 @@
         //Loading the data, changing what it saves everytime to make sure it works
         var data = d3.csv("Pokemon Data.csv");
         
-        d3.select("body").selectAll("p").data(data).enter().append("p").text(function(data) { return data; });
+        //Line Rotation
+        lin = ['Dex Number', 'Name', 'Base Name', 'Type 1', 'Type 2', 'BST', 'HP', 'Attack', 'Defense', 'Sp_Attack', 'Sp_Defense', 'Speed']
 
-        var Dex_Number = [],
-            Name = [],
-            Base_Name = [],
-            Type_1 = [],
-            Type_2 = [],
-            BST = [],
-            HP = [],
-            Attack = [],
-            Defense = [],
-            Sp_Attack = [],
-            Sp_Defense = [],
-            Speed = [];
-        data.map(function(d) {
-            Dex_Number.push(d.Dex_Number);
-            Name.push(d.Name);
-            Base_Name.push(d.Base_Name);
-            Type_1.push(d.Type_1);
-            Type_2.push(d.Type_2);
-            BST.push(d.BST);
-            HP.push(d.HP);
-            Attack.push(d.Attack);
-            Defense.push(d.Defense);
-            Sp_Attack.push(d.Sp_Attack);
-            Sp_Defense.psuh(d.Defense);
-            Speed.push(d.Speed);
-        });
+        lineData = [{x:0,y:200},
+            {x:100, y:200},
+            {x:500,y:200}]
+
+        const line = d3.line()
+			.x((d)=> d.x)
+	   		.y((d)=> d.y);
+
+        const xScale = d3.scaleLinear()
+    		.domain([0, 8])
+    		.range([0, 500]);
+  
+        svg.datum(lineData).append('path')
+		    .attr('fill', 'none')
+		    .attr('stroke', "steelblue")
+		    .attr('d', line);	
+
+        svg.selectAll('text.norotation')
+            .data(lin)
+            .enter()
+            .append('text')
+            .text((d)=>d)
+            .classed('norotation', true)
+            .attr('fill', 'black')
+            .attr('x', (d,i)=> xScale(i))
+            .attr('y', 200)
+
+        svg.selectAll('text.rotation')
+            .data(lin)
+            .enter()
+            .append('text')
+            .text((d)=>d)
+            .classed('rotation', true)
+            .attr('fill', 'black')
+            .attr('transform', (d,i)=>{
+                return 'translate( '+xScale(i)+' , '+220+'),'+ 'rotate(45)';})
+            .attr('x', 0)
+            .attr('y', 0)
 
         //This is the start to code that makes the website actually look good
         //Condensed certain lines to make the code not look as bad
