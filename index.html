@@ -35,25 +35,7 @@
         var data = d3.csv("Pokemon Data.csv");
         
         //Line Rotation
-        lin = ['Dex Number', 'Name', 'Base Name', 'Type 1', 'Type 2', 'BST', 'HP', 'Attack', 'Defense', 'Sp_Attack', 'Sp_Defense', 'Speed']
-
-        var svg = d3.select('svg');
-
-        var text = svg.selectAll('text')
-            .data(lin)
-            .enter()
-            .append('text')
-            .text( function (d) { 
-            return "test";
-            })
-            .attr("font-family", "sans-serif")
-            .attr("font-size", "21px")
-            .attr("fill", "black")
-            .attr("class", "sequence-node-label")
-            .attr("transform", function(d, i){
-                var y = (i + 1) * 20;
-                return "translate(0,"+y+"),rotate(345)";
-            });
+        var columnNames = ['Dex Number', 'Name', 'Base Name', 'Type 1', 'Type 2', 'BST', 'HP', 'Attack', 'Defense', 'Sp_Attack', 'Sp_Defense', 'Speed']
 
         //This is the start to code that makes the website actually look good
         //Condensed certain lines to make the code not look as bad
@@ -161,7 +143,7 @@
 
         //This for rotatation. Rotates, but not where I need it
         var svg = d3.select('svg');
-        svg.append('text').attr('x', 200).attr('y', 400).attr('stroke','black').attr('transform', 'rotate(20)').style('font-size', 19)
+        svg.append('text').attr('x', 140).attr('y', 155).attr('stroke','black').attr('transform', 'rotate(25)').style('font-size', 19)
         .text('Dex Number');
             
         //<select id="selectButton"></select>
