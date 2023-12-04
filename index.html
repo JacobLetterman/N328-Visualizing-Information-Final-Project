@@ -41,7 +41,7 @@
             {x:100, y:200},
             {x:500,y:200}]
 
-        const line = d3.append()
+        const line = d3.line()
 			.x((d)=> d.x)
 	   		.y((d)=> d.y);
 
@@ -52,17 +52,7 @@
         svg.datum(lineData).append('path')
 		    .attr('fill', 'none')
 		    .attr('stroke', "steelblue")
-		    .attr('d', line);	
-
-        svg.selectAll('text.norotation')
-            .data(lin)
-            .enter()
-            .append('text')
-            .text((d)=>d)
-            .classed('norotation', true)
-            .attr('fill', 'black')
-            .attr('x', (d,i)=> xScale(i))
-            .attr('y', 200)
+		    .attr('d', line);
 
         svg.selectAll('text.rotation')
             .data(lin)
