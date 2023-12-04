@@ -150,6 +150,9 @@
             .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
             d3.select(this).style("fill", PointColors[0]);});
 
+
+        //Start of actually printing the data
+        svg.append('text').attr('x',210).attr('y',275).text(function(d) { return d.Dex_No; }).style('font-size',15)
         //<select id="selectButton"></select>
         //Works, but isn't needed yet
 
