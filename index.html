@@ -37,34 +37,23 @@
         //Line Rotation
         lin = ['Dex Number', 'Name', 'Base Name', 'Type 1', 'Type 2', 'BST', 'HP', 'Attack', 'Defense', 'Sp_Attack', 'Sp_Defense', 'Speed']
 
-        lineData = [{x:0,y:200},
-            {x:100, y:200},
-            {x:500,y:200}]
+        var svg = d3.select('svg');
 
-        const line = d3.line()
-			.x((d)=> d.x)
-	   		.y((d)=> d.y);
-
-        const xScale = d3.scaleLinear()
-    		.domain([0, 8])
-    		.range([0, 500]);
-  
-        lineData.append('path')
-		    .attr('fill', 'none')
-		    .attr('stroke', "steelblue")
-		    .attr('d', line);
-
-        svg.selectAll('text.rotation')
+        var text = svg.selectAll('text')
             .data(lin)
             .enter()
             .append('text')
-            .text((d)=>d)
-            .classed('rotation', true)
-            .attr('fill', 'black')
-            .attr('transform', (d,i)=>{
-                return 'translate( '+xScale(i)+' , '+220+'),'+ 'rotate(45)';})
-            .attr('x', 0)
-            .attr('y', 0)
+            .text( function (d) { 
+            return "test";
+            })
+            .attr("font-family", "sans-serif")
+            .attr("font-size", "21px")
+            .attr("fill", "black")
+            .attr("class", "sequence-node-label")
+            .attr("transform", function(d, i){
+                var y = (i + 1) * 20;
+                return "translate(0,"+y+"),rotate(345)";
+            });
 
         //This is the start to code that makes the website actually look good
         //Condensed certain lines to make the code not look as bad
