@@ -27,10 +27,18 @@
 
 	<svg id="main" width="2000" height="2000">
 		<text id='label' x='20' y='20'>Different Methods for Clickable objects and Mapping the Dataset</text>
+        <text transform="translate(140,155)rotate(36)">Dex Number</text>
         <text transform="translate(206,155)rotate(36)">Name</text>
         <text transform="translate(263,150)rotate(36)">Base Name</text>
         <text transform="translate(336,150)rotate(36)">Type 1</text>
         <text transform="translate(402,150)rotate(36)">Type 2</text>
+        <text transform="translate(468,155)rotate(36)">BST</text>
+        <text transform="translate(534,155)rotate(36)">BHP</text>
+        <text transform="translate(600,155)rotate(36)">Attack</text>
+        <text transform="translate(666,155)rotate(36)">Defense</text>
+        <text transform="translate(732,150)rotate(36)">Sp Attack</text>
+        <text transform="translate(798,150)rotate(36)">Sp Defense</text>
+        <text transform="translate(864,150)rotate(36)">Speed</text>
 	</svg>
     
 	
@@ -141,15 +149,6 @@
         svg.append('circle').attr('cx', 959).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
             d3.select(this).style("fill", PointColors[0]);});
-
-        //This is regular text
-        var svg = d3.select("svg");
-        svg.append('text').attr('x', 200).attr('y', 400).attr('stroke','black').style('font-size', 19).text('Dex Number');
-
-        //This for rotatation. Rotates, but not where I need it
-        var svg = d3.select('svg');
-        svg.append('text').attr('x', 183).attr('y', 20).attr('stroke','black').attr('transform', 'rotate(40)').style('font-size', 19)
-        .text('Dex Number');
 
         //<select id="selectButton"></select>
         //Works, but isn't needed yet
