@@ -143,8 +143,12 @@
 
         //This for rotatation. Rotates, but not where I need it
         var svg = d3.select('svg');
-        svg.append('text').attr('x', 185).attr('y', 20).attr('stroke','black').attr('transform', 'rotate(40)').style('font-size', 19)
+        svg.append('text').attr('x', 183).attr('y', 20).attr('stroke','black').attr('transform', 'rotate(40)').style('font-size', 19)
         .text('Dex Number');
+
+        var svg = d3.select('svg');
+        svg.append('text').attr('x', 249).attr('y', 20).attr('stroke','black').attr('transform', 'rotate(40)').style('font-size', 19)
+        .text('Name');
             
         //<select id="selectButton"></select>
         //Works, but isn't needed yet
