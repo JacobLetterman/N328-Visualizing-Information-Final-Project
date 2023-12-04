@@ -36,6 +36,33 @@
         
         d3.select("body").selectAll("p").data(data).enter().append("p").text(function(data) { return data; });
 
+        var Dex_Number = [],
+            Name = [],
+            Base_Name = [],
+            Type_1 = [],
+            Type_2 = [],
+            BST = [],
+            HP = [],
+            Attack = [],
+            Defense = [],
+            Sp_Attack = [],
+            Sp_Defense = [],
+            Speed = [];
+        data.map(function(d) {
+            Dex_Number.push(d.Dex_Number);
+            Name.push(d.Name);
+            Base_Name.push(d.Base_Name);
+            Type_1.push(d.Type_1);
+            Type_2.push(d.Type_2);
+            BST.push(d.BST);
+            HP.push(d.HP);
+            Attack.push(d.Attack);
+            Defense.push(d.Defense);
+            Sp_Attack.push(d.Sp_Attack);
+            Sp_Defense.psuh(d.Defense);
+            Speed.push(d.Speed);
+        });
+
         //This is the start to code that makes the website actually look good
         //Condensed certain lines to make the code not look as bad
         var svg = d3.select("svg"); //First Column, Dex Number
