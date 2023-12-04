@@ -84,20 +84,33 @@
         var svg = d3.select("svg"); //Line for under circles
         svg.append('line').attr('x1', 200).attr('y1', 266).attr('x2', 1000).attr('y2', 266).attr('stroke','black');    
 
-        //Test circle for different colors 
+        //Different Circles, messy code for now
         var PointColors = ['white', 'lime']
-
         var svg = d3.select("svg"); //First Circle
-        var circle1 = svg.append('circle').attr('cx', 233).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
+        svg.append('circle').attr('cx', 233).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
             d3.select(this).style("fill", PointColors[0]);});// It's janky, but it works, so I'm not gonna question it
             //Eventually want this as a reset button for the graphs and dropdown buttons, but need data to work first
-
-        var svg = d3.select("svg"); //Second Circle
-        svg.append('circle').attr('cx', 299).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'lime')
+        //Second Circle
+        svg.append('circle').attr('cx', 299).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
+            .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
+            d3.select(this).style("fill", PointColors[0]);});//This is going to turn on/off the graphs for later parts 
+        //Third
+        svg.append('circle').attr('cx', 365).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
             d3.select(this).style("fill", PointColors[0]);});
-            //This is going to turn on/off the graphs for later parts 
+        //Fourth
+        svg.append('circle').attr('cx', 431).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
+            .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
+            d3.select(this).style("fill", PointColors[0]);});
+        //Fifth
+        svg.append('circle').attr('cx', 497).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
+            .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
+            d3.select(this).style("fill", PointColors[0]);});
+        //Sixth
+        svg.append('circle').attr('cx', 563).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
+            .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
+            d3.select(this).style("fill", PointColors[0]);});
 
         //This is regular text
         var svg = d3.select("svg");
