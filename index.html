@@ -118,10 +118,8 @@
         var ColorChange = function(){
             if (d3.select('circle').attr('fill', 'lime')){
                 return d3.select('circle').attr('fill', 'white')}  
-            if (d3.select('circle').attr('fill', 'white')){
-                return d3.select('circle').attr("fill", 'lime')}
             else{
-                return d3.select('circle').attr('fill','blue')}};
+                return d3.select('circle').attr("fill", 'lime')}};
 
         //Different Circles, messy code for now
         var svg = d3.select("svg"); //First Circle
