@@ -28,7 +28,7 @@
 	<svg id="main" width="2000" height="2000">
 		<text id='label' x='20' y='20'>Different stats for all the different Pokemon</text>
         <text transform="translate(126,141)rotate(36)">Dex Number</text>
-        <text transform="translate(206,155)rotate(36)">Name</text>
+        <text transform="translate(193,155)rotate(33)">Name</text>
         <text transform="translate(257,144)rotate(36)">Base Name</text>
         <text transform="translate(336,150)rotate(36)">Type 1</text>
         <text transform="translate(402,150)rotate(36)">Type 2</text>
@@ -119,11 +119,8 @@
 
         //Different Circles, messy code for now
         var PointColors = ['white', 'lime']
-        var svg = d3.select("svg"); //First Circle
-        svg.append('circle').attr('cx', 233).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
-            .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
-            d3.select(this).style("fill", PointColors[0]);});// It's janky, but it works, so I'm not gonna question it
-            //Eventually want this as a reset button for the graphs and dropdown buttons, but need data to work first
+        var svg = d3.select("svg");
+
         //Second Circle
         svg.append('circle').attr('cx', 299).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
