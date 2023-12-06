@@ -168,7 +168,7 @@
 
         //Function for mouseover effect
         var svg = d3.select('svg');
-        var tooltip = d3.select('main').style("position", "absolute").style("visibility", "visible").text("Sort By Alphabetical");
+        var tooltip = d3.append('svg').style("position", "absolute").style("visibility", "visible").text("Sort By Alphabetical");
         d3.select("CircleAlpha")
             .on("mouseover", function(){return tooltip.style("visibility", "visible");})
             .on("mousemove", function(){return tooltip.style("top", (event.pageY-300)+"px").style("left",(event.pageX-300)+"px");})
