@@ -170,7 +170,7 @@
         var tooltip = d3.select("main").append("div").style("position", "absolute").style("visibility", "visible").text("Sort By Alphabetical");
         d3.select("CircleAlpha")
             .on("mouseover", function(){return tooltip.style("visibility", "visible");})
-            .on("mousemove", function(){return tooltip.style("top", (event.pageY-0)+"px").style("left",(event.pageX-0)+"px");})
+            .on("mousemove", function(){return tooltip.style("top", (event.pageY-20)+"px").style("left",(event.pageX-20)+"px");})
             .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
 
         //Start of actually printing the data
@@ -188,9 +188,9 @@
         var By_Stat = 3; 
         //This is the start of actually putting the data in
         var svg = d3.select("svg");
-        var Spot_1 = svg.append('text').text('1 _Bulbasaur_Bulbasaur').style('font size', 13).attr('x',205).attr('y',285).attr('stroke', 'black')
-        var Spot_2 = svg.append('text').text('2 _Ivysaur___Ivysaur').style('font size', 13).attr('x',205).attr('y',315).attr('stroke', 'black')
-        var Spot_3 = svg.append('text').text('3 _Venusaur_Venusaur').style('font size', 13).attr('x',205).attr('y',345).attr('stroke', 'black')
+        var Spot_1 = svg.append('text').text('1 _Bulbasaur__Bulbasaur').style('font size', 13).attr('x',205).attr('y',285).attr('stroke', 'black')
+        var Spot_2 = svg.append('text').text('2 _Ivysaur____Ivysaur').style('font size', 13).attr('x',205).attr('y',315).attr('stroke', 'black')
+        var Spot_3 = svg.append('text').text('3 _Venusaur__Venusaur').style('font size', 13).attr('x',205).attr('y',345).attr('stroke', 'black')
 
         //Function to start print bar 
 
