@@ -115,13 +115,13 @@
 
         //Section for Color Change Function
         var PointColors = ['white', 'lime']
-        var colorChange = function(){PointColors = [PointColors[1], PointColors[0]]
-            d3.select(this).style("fill", PointColors[0]);};
+        var ColorChange = PointColors = [PointColors[1], PointColors[0]]
+            d3.select(this).style("fill", PointColors[0]);
 
         //Different Circles, messy code for now
         var svg = d3.select("svg"); //First Circle
         svg.append('circle').attr('cx', 233).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
-            .on("click", function(d){colorChange(d)});// It's janky, but it works, so I'm not gonna question it
+            .on("click", function(d){return ColorChange(d)});// It's janky, but it works, so I'm not gonna question it
             //Eventually want this as a reset button for the graphs and dropdown buttons, but need data to work first
         //Second Circle
         svg.append('circle').attr('cx', 299).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
