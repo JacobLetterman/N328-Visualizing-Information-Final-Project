@@ -68,8 +68,8 @@
         //This is the start to code that makes the website actually look good
         //Condensed certain lines to make the code not look as bad
         var svg = d3.select("svg"); //First Column, Dex Number
-        svg.append('line').attr('x1', 140).attr('y1', 155).attr('x2', 200).attr('y2', 200).attr('stroke','black');
-        svg.append('line').attr('x1', 200).attr('y1', 200).attr('x2', 200).attr('y2', 600).attr('stroke','black');
+        svg.append('line').attr('x1', 130).attr('y1', 155).attr('x2', 190).attr('y2', 200).attr('stroke','black');
+        svg.append('line').attr('x1', 190).attr('y1', 200).attr('x2', 190).attr('y2', 600).attr('stroke','black');
         //Second Column, Name
         svg.append('line').attr('x1', 173).attr('y1', 155).attr('x2', 233).attr('y2', 200).attr('stroke','black');
         svg.append('line').attr('x1', 233).attr('y1', 200).attr('x2', 233).attr('y2', 600).attr('stroke','black');
@@ -122,7 +122,7 @@
         var svg = d3.select("svg");
 
         //Second Circle
-        svg.append('circle').attr('cx', 266).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
+        svg.append('circle').attr('cx', 282).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
             d3.select(this).style("fill", PointColors[0]);});//This is going to turn on/off the graphs for later parts 
         //Third
@@ -182,9 +182,9 @@
         var By_Stat = 3; 
         //This is the start of actually putting the data in
         var svg = d3.select("svg");
-        var Spot_1 = svg.append('text').text('1 Bulbasaur').style('font size', 13).attr('x',215).attr('y',285).attr('stroke', 'black')
-        var Spot_2 = svg.append('text').text('2 Ivysaur').style('font size', 13).attr('x',215).attr('y',315).attr('stroke', 'black')
-        var Spot_3 = svg.append('text').text('3 Venusaur').style('font size', 13).attr('x',215).attr('y',345).attr('stroke', 'black')
+        var Spot_1 = svg.append('text').text('1     Bulbasaur').style('font size', 13).attr('x',215).attr('y',285).attr('stroke', 'black')
+        var Spot_2 = svg.append('text').text('2     Ivysaur').style('font size', 13).attr('x',215).attr('y',315).attr('stroke', 'black')
+        var Spot_3 = svg.append('text').text('3     Venusaur').style('font size', 13).attr('x',215).attr('y',345).attr('stroke', 'black')
 
         //Function to start print bar 
 
