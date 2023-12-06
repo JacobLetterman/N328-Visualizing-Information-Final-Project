@@ -113,18 +113,12 @@
         var svg = d3.select("svg"); //Line for under circles
         svg.append('line').attr('x1', 200).attr('y1', 266).attr('x2', 1400).attr('y2', 266).attr('stroke','black');    
 
-        //Section for Color Change Function
-        var PointColors = ['white', 'lime']
-        var ColorChange = function(){
-            if (d3.select('circle').attr('fill', 'lime')){
-                d3.select('circle').attr('fill', 'white')}  
-            else{
-                d3.select('circle').attr("fill", 'lime')}};
-
         //Different Circles, messy code for now
+        var PointColors = ['white', 'lime']
         var svg = d3.select("svg"); //First Circle
         svg.append('circle').attr('cx', 233).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
-            .on("click", function(d){return ColorChange(d)});// It's janky, but it works, so I'm not gonna question it
+            .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
+            d3.select(this).style("fill", PointColors[0]);});// It's janky, but it works, so I'm not gonna question it
             //Eventually want this as a reset button for the graphs and dropdown buttons, but need data to work first
         //Second Circle
         svg.append('circle').attr('cx', 299).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
@@ -181,7 +175,11 @@
         var SpAtk_Avg = 73;
         var SpDef_Avg = 72;
         var Speed_Avg = 70;
-        
+
+        //Organizing the Data
+        var By_Alpha = 2;
+        var By_Stat = 3; //This is the start of actually putting the data in, probably in a dumb way
+        var first_poke = <text id ='Bulbasaur' x = '205' y = '285'>1 Bulbasaur Bulbasaur GRASS POISON 318 45 49 49 65 65 45</text>;
 
         //Function to start print bar 
 
