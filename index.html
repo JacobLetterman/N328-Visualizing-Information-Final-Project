@@ -169,9 +169,10 @@
         //Function for mouseover effect
         var svg = d3.select('svg');
         d3.select('body').append('div');
-        d3.select('body').append('div').attr('id', 'tooltip').attr('style', 'position: absolute; opacity: 0;');
-        d3.select("svg").select('CircleAlpha')
-            .on('mouseover', function() {d3.select('#tooltip').style('opacity', 1).text('Sort By Alphabetical')})
+        d3.select('body').append('div').attr('id', 'tooltip').attr('style', 'position: absolute; opacity: 0;').text('Sort By Alphabetical');
+        d3.select('body').append('svg').attr('width', 300).attr('height', 300);
+        d3.select('CircleAlpha')
+            .on('mouseover', function(d) {d3.select('#tooltip').style('opacity', 1).text('Sort By Alphabetical')})
             .on('mousemove', function() {d3.select('#tooltip').style('left', d3.event.pageX + 'px').style('top', d3.event.pageY + 'px')})
             .on('mouseout', function() {d3.select('#tooltip').style('opacity', 0)})
 
