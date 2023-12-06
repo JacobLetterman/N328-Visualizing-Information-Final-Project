@@ -167,14 +167,10 @@
             d3.select(this).style("fill", PointColors[0]);});
 
         //Function for mouseover effect
-        d3.select('body').append('div').attr('id', 'tooltip').attr('style', 'position: absolute; opacity: 0;').style("background-color", "white")
-            .style("border", "solid")
-            .style("border-width", "1px")
-            .style("border-radius", "5px")
-            .style("padding", "10px");
+        d3.select('body').append('div').attr('id', 'tooltip').attr('style', 'position: absolute; opacity: 0;').style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px");
         d3.select('body').append('svg').attr('width', 300).attr('height', 300);
         d3.select('svg').selectAll('circle').data('Sort By Alphabetical').attr('r', 30).attr('cy', 233).attr('cx', 282)
-        .on('mouseover', function(d) {d3.select('#tooltip').style('opacity', 1).text('Sort By Alphabetical')})
+        .on('mouseover', function(d) {d3.select('#tooltip').transition().duration(200).style('opacity', 1).text('Sort By Alphabetical')})
         .on('mouseout', function() {d3.select('#tooltip').style('opacity', 0)})
         .on('mousemove', function() {d3.select('#tooltip').style('left', (d3.event.pageX+10) + 'px').style('top', (d3.event.pageY+10) + 'px')})
 
@@ -193,9 +189,9 @@
         var By_Stat = 3; 
         //This is the start of actually putting the data in
         var svg = d3.select("svg");
-        var Spot_1 = svg.append('text').text('1 _Bulbasaur__Bulbasaur').style('font size', 13).attr('x',205).attr('y',285).attr('stroke', 'black')
-        var Spot_2 = svg.append('text').text('2 _Ivysaur____Ivysaur').style('font size', 13).attr('x',205).attr('y',315).attr('stroke', 'black')
-        var Spot_3 = svg.append('text').text('3 _Venusaur__Venusaur').style('font size', 13).attr('x',205).attr('y',345).attr('stroke', 'black')
+        var Spot_1 = svg.append('text').text('1 _ Bulbasaur__Bulbasaur__GRASS__POISON').style('font size', 13).attr('x',205).attr('y',285).attr('stroke', 'black')
+        var Spot_2 = svg.append('text').text('2 _ Ivysaur____Ivysaur__GRASS__POISON').style('font size', 13).attr('x',205).attr('y',315).attr('stroke', 'black')
+        var Spot_3 = svg.append('text').text('3 _ Venusaur__Venusaur__GRASS__POISON').style('font size', 13).attr('x',205).attr('y',345).attr('stroke', 'black')
 
         //Function to start print bar 
 
