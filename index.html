@@ -62,6 +62,8 @@
                 Speed : +d.Speed
             };
         })
+        console.log(Base_Name[0]);
+        console.log(BST[10]);
         
         //Line Rotation
         var columnNames = ['Dex Number', 'Name', 'Base Name', 'Type 1', 'Type 2', 'BST', 'HP', 'Attack', 'Defense', 'Special Attack', 'Special Defense', 'Speed']
@@ -114,6 +116,10 @@
         var svg = d3.select("svg"); //Line for under circles
         svg.append('line').attr('x1', 200).attr('y1', 266).attr('x2', 1400).attr('y2', 266).attr('stroke','black');    
 
+        //Functions
+        var bar_fucntion = 1;
+
+
         //Different Circles, messy code for now
         var PointColors = ['white', 'lime']
         var svg = d3.select("svg"); //First Circle
@@ -139,8 +145,8 @@
             d3.select(this).style("fill", PointColors[0]);});
         //Sixth
         svg.append('circle').attr('cx', 563).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
-            .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
-            d3.select(this).style("fill", PointColors[0]);});
+            .on("click", function(d){PointColors = [PointColors[1], PointColors[0]]
+            d3.select(this).style("fill", PointColors[0]);});//Start of calling function for posting bar graphs, bar_function(d);
         //Seventh
         svg.append('circle').attr('cx', 629).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
@@ -179,7 +185,12 @@
 
         //Organizing the Data
         var By_Alpha = 2;
-        var By_Stat = 3; //This is the start of actually putting the data in, probably in a dumb way
+        var By_Stat = 3; 
+        //This is the start of actually putting the data in
+        var svg = d3.select("svg");
+        var Spot_1 = svg.append('text').text('1 Bulbasaur Bulbasaur GRASS POISON 318 45 49 49 65 65 45').attr('x',205).attr('y',285).attr('stroke', 'black')
+        var Spot_2 = svg.append('text').text('2,Ivysaur,Ivysaur,GRASS,POISON,405,60,62,63,80,80,60').attr('x',205).attr('y',285).attr('stroke', 'black')
+        var Spot_3 = svg.append('text').text('3,Venusaur,Venusaur,GRASS,POISON,525,80,82,83,100,100,80').attr('x',205).attr('y',285).attr('stroke', 'black')
 
         //Function to start print bar 
 
