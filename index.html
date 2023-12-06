@@ -116,10 +116,10 @@
         //Section for Color Change Function
         var PointColors = ['white', 'lime']
         var ColorChange = function(){[PointColors[1], PointColors[0]]
-            if (d3.select('circle').style('fill', PointColors[1])){
-                return d3.select('circle').style('fill', PointColors[0])}  
-            if (d3.select('circle').style('fill', PointCOlors[0])){
-                return d3.select('circle').style("fill", PointColors[1])}
+            if (d3.select('circle').style('fill', 'lime')){
+                return d3.select('circle').style('fill', 'white')}  
+            if (d3.select('circle').style('fill', 'white')){
+                return d3.select('circle').style("fill", 'lime')}
             else{
                 return d3.select('circle').style('fill','blue')}};
 
