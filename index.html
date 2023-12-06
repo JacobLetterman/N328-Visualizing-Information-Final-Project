@@ -116,12 +116,12 @@
         //Section for Color Change Function
         var PointColors = ['white', 'lime']
         var ColorChange = function(){
-            if (d3.select('circle').style('fill', 'lime')){
-                return d3.select('circle').style('fill', 'white')}  
-            if (d3.select('circle').style('fill', 'white')){
-                return d3.select('circle').style("fill", 'lime')}
+            if (d3.select('circle').attr('fill', 'lime')){
+                return d3.select('circle').attr('fill', 'white')}  
+            if (d3.select('circle').attr('fill', 'white')){
+                return d3.select('circle').attr("fill", 'lime')}
             else{
-                return d3.select('circle').style('fill','blue')}};
+                return d3.select('circle').attr('fill','blue')}};
 
         //Different Circles, messy code for now
         var svg = d3.select("svg"); //First Circle
