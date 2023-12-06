@@ -168,11 +168,12 @@
 
         //Function for mouseover effect
         var svg = d3.select('svg');
-        var tooltip = d3.append('svg').style("position", "absolute").style("visibility", "visible").text("Sort By Alphabetical");
-        d3.select("CircleAlpha")
-            .on("mouseover", function(){return tooltip.style("visibility", "visible");})
-            .on("mousemove", function(){return tooltip.style("top", (event.pageY-300)+"px").style("left",(event.pageX-300)+"px");})
-            .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
+        d3.select('body').append('div');
+        d3.select('body').append('div').attr('id', 'tooltip').attr('style', 'position: absolute; opacity: 0;');
+        d3.select("svg").selectAll('CircleAlpha')
+            .on('mouseover', function(d) {d3.select('#tooltip').transition().duration(200).style('opacity', 1).text('Sort By Alphabetical')})
+            .on('mousemove', function() {d3.select('#tooltip').style('left', d3.event.pageX + 'px').style('top', d3.event.pageY + 'px')})
+            .on('mouseout', function() {d3.select('#tooltip').style('opacity', 0)})
 
         //Start of actually printing the data
         //Starting with Averages as they will be called a good amount going forward
