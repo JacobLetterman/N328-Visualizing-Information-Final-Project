@@ -45,10 +45,25 @@
 
 	<script>
         //Loading the data, changing what it saves everytime to make sure it works
-        var data = d3.csv("Pokemon Data.csv");
+        data = d3.csv("Pokemon Data.csv", function(d){
+            return{
+                Dex_No : +d['Dex Number'],
+                Name : d.Name,
+                Base_Name : d['Base Name'],
+                Type_1 : d['Type 1'],
+                Type_2 : d['Type 2'],
+                BST : +d['Base Stat Total'],
+                HP : +d.HP,
+                Attack : +d.Attack,
+                Defense : +d.Defense,
+                Sp_Attack : +d['Special Attack'],
+                Sp_Defense : +d['Special Defense'],
+                Speed : +d.Speed
+            };
+        })
         
         //Line Rotation
-        var columnNames = ['Dex Number', 'Name', 'Base Name', 'Type 1', 'Type 2', 'BST', 'HP', 'Attack', 'Defense', 'Sp_Attack', 'Sp_Defense', 'Speed']
+        var columnNames = ['Dex Number', 'Name', 'Base Name', 'Type 1', 'Type 2', 'BST', 'HP', 'Attack', 'Defense', 'Special Attack', 'Special Defense', 'Speed']
 
         //This is the start to code that makes the website actually look good
         //Condensed certain lines to make the code not look as bad
@@ -98,12 +113,15 @@
         var svg = d3.select("svg"); //Line for under circles
         svg.append('line').attr('x1', 200).attr('y1', 266).attr('x2', 1400).attr('y2', 266).attr('stroke','black');    
 
-        //Different Circles, messy code for now
+        //Section for Color Change Function
         var PointColors = ['white', 'lime']
+        var colorChange = function(){PointColors = [PointColors[1], PointColors[0]]
+            d3.select(this).style("fill", PointColors[0]);};
+
+        //Different Circles, messy code for now
         var svg = d3.select("svg"); //First Circle
         svg.append('circle').attr('cx', 233).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
-            .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
-            d3.select(this).style("fill", PointColors[0]);});// It's janky, but it works, so I'm not gonna question it
+            .on("click", function(d){colorChange(d)});// It's janky, but it works, so I'm not gonna question it
             //Eventually want this as a reset button for the graphs and dropdown buttons, but need data to work first
         //Second Circle
         svg.append('circle').attr('cx', 299).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
@@ -152,15 +170,18 @@
 
 
         //Start of actually printing the data
-        const data2 = svg.selectAll(null)
-            .data(data)
-            .enter()
-            .append("data2");
-        const path = data2.append("path")
-            .datum(d => d.values)
-            .attr('x', 210)
-            .attr('y', 210)
-        console.log(path)
+        //Starting with Averages as they will be called a good amount going forward
+        var BST_Avg = 441;
+        var HP_Avg = 71;
+        var Atk_Avg = 81;
+        var Def_Avg = 75;
+        var SpAtk_Avg = 73;
+        var SpDef_Avg = 72;
+        var Speed_Avg = 70;
+        
+
+        //Function to start print bar 
+
         //<select id="selectButton"></select>
         //Works, but isn't needed yet
 
