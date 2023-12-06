@@ -110,8 +110,7 @@
         //Other Lines
         var svg = d3.select("svg");//Looooooooooooooooong Line to hold Graphs
         svg.append('line').attr('x1', 100).attr('y1', 200).attr('x2', 1400).attr('y2', 200).attr('stroke','black');
-        var svg = d3.select("svg"); //Line for under circles
-        svg.append('line').attr('x1', 100).attr('y1', 266).attr('x2', 1400).attr('y2', 266).attr('stroke','black');    
+        svg.append('line').attr('x1', 100).attr('y1', 266).attr('x2', 1400).attr('y2', 266).attr('stroke','black');//Line for under circles    
 
         //Functions
         var bar_fucntion = 1;
@@ -190,10 +189,12 @@
         //This is the start of actually putting the data in
         var svg = d3.select("svg");
         var Spot_1 = svg.append('text').text('1 _ Bulbasaur _Bulbasaur_GRASS__POISON').style('font size', 13).attr('x',195).attr('y',285).attr('stroke', 'black')
-        var Spot_1_5 = svg.append('text').text('318 _45 _49 _49 _65 _65 _45').style('font size', 13).attr('x',618).attr('y',285).attr('stroke', 'black')
-        var Spot_2 = svg.append('text').text('2 _ Ivysaur_ __Ivysaur___GRASS__POISON').style('font size', 13).attr('x',195).attr('y',315).attr('stroke', 'black')
+        var Spot_1_5 = svg.append('text').text('318 _ 45 _ 49 _ 49 _ 65 _ 65 _ 45').style('font size', 13).attr('x',618).attr('y',285).attr('stroke', 'black')
+        var Spot_2 = svg.append('text').text('2 _ Ivysaur_ __Ivysaur___ GRASS__POISON').style('font size', 13).attr('x',195).attr('y',315).attr('stroke', 'black')
         var Spot_3 = svg.append('text').text('3 _ Venusaur _Venusaur__GRASS__POISON').style('font size', 13).attr('x',195).attr('y',345).attr('stroke', 'black')
 
+        //Lines for the different rows
+        svg.append('line').attr('x1', 195).attr('y1', 295).attr('x2', 1400).attr('y2', 295).attr('stroke','black');
         //Function to start print bar 
 
         //<select id="selectButton"></select>
