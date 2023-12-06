@@ -167,7 +167,11 @@
             d3.select(this).style("fill", PointColors[0]);});
 
         //Function for mouseover effect
-        d3.select('body').append('div').attr('id', 'tooltip').attr('style', 'position: absolute; opacity: 0;');
+        d3.select('body').append('div').attr('id', 'tooltip').attr('style', 'position: absolute; opacity: 0;').style("background-color", "white")
+            .style("border", "solid")
+            .style("border-width", "1px")
+            .style("border-radius", "5px")
+            .style("padding", "10px");
         d3.select('body').append('svg').attr('width', 300).attr('height', 300);
         d3.select('svg').selectAll('circle').data('Sort By Alphabetical').attr('r', 30).attr('cy', 233).attr('cx', 282)
         .on('mouseover', function(d) {d3.select('#tooltip').style('opacity', 1).text('Sort By Alphabetical')})
