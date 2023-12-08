@@ -27,7 +27,7 @@
 
 	<svg id="main" width="2000" height="2000">
 		<text id='label' x='20' y='20'>Different stats for all the different Pokemon</text>
-        <text transform="translate(114,133)rotate(43)">Dex Number</text>
+        <text transform="translate(110,129)rotate(45)">Dex Number</text>
         <text transform="translate(192,161)rotate(33)">Name</text>
         <text transform="translate(257,144)rotate(36)">Base Name</text>
         <text transform="translate(336,150)rotate(36)">Type 1</text>
@@ -188,13 +188,13 @@
         var By_Stat = 3; 
         //This is the start of actually putting the data in
         var svg = d3.select("svg");
-        var Spot_1 = svg.append('text').text('1 _ Bulbasaur _ Bulbasaur_GRASS__POISON').style('font size', 13).attr('x',195).attr('y',285).attr('stroke', 'black')
-        var Spot_1_5 = svg.append('text').text('318 _ 45 _ 49 _ 49 _ 65 _ 65 _ 45').style('font size', 13).attr('x',618).attr('y',285).attr('stroke', 'black')
-        var Spot_2 = svg.append('text').text('2 _ Ivysaur_ __Ivysaur___ GRASS__POISON').style('font size', 13).attr('x',195).attr('y',315).attr('stroke', 'black')
-        var Spot_3 = svg.append('text').text('3 _ Venusaur _Venusaur__GRASS__POISON').style('font size', 13).attr('x',195).attr('y',345).attr('stroke', 'black')
+        var Spot_1 = svg.append('text').text('1 _ Bulbasaur _ Bulbasaur_GRASS__POISON').style('font size', 13).attr('x',195).attr('y',300).attr('stroke', 'black')
+        var Spot_1_5 = svg.append('text').text('318 _ 45 _ 49 _ 49 _ 65 _ 65 _ 45').style('font size', 13).attr('x',618).attr('y',300).attr('stroke', 'black')
+        var Spot_2 = svg.append('text').text('2 _ Ivysaur_ __Ivysaur___ GRASS__POISON').style('font size', 13).attr('x',195).attr('y',345).attr('stroke', 'black')
+        var Spot_3 = svg.append('text').text('3 _ Venusaur _Venusaur__GRASS__POISON').style('font size', 13).attr('x',195).attr('y',380).attr('stroke', 'black')
 
         //Lines for the different rows
-        svg.append('line').attr('x1', 190).attr('y1', 287).attr('x2', 1400).attr('y2', 287).attr('stroke','black').style('stroke-width',10);
+        svg.append('line').attr('x1', 160).attr('y1', 287).attr('x2', 1400).attr('y2', 287).attr('stroke','black').style('stroke-width',3);
         //Function to start print bar 
 
         //<select id="selectButton"></select>
