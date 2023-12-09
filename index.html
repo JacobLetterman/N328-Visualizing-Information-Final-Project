@@ -83,8 +83,8 @@
         svg.append('line').attr('x1', 459).attr('y1', 155).attr('x2', 519).attr('y2', 200).attr('stroke','black');
         svg.append('line').attr('x1', 519).attr('y1', 200).attr('x2', 519).attr('y2', 600).attr('stroke','black');
         //Sixth Column, BST, Base Stat Total
-        svg.append('line').attr('x1', 486).attr('y1', 155).attr('x2', 546).attr('y2', 200).attr('stroke','black');
-        svg.append('line').attr('x1', 546).attr('y1', 200).attr('x2', 546).attr('y2', 600).attr('stroke','black');
+        svg.append('line').attr('x1', 525).attr('y1', 155).attr('x2', 585).attr('y2', 200).attr('stroke','black');
+        svg.append('line').attr('x1', 585).attr('y1', 200).attr('x2', 585).attr('y2', 600).attr('stroke','black');
         //Seventh Column, HP
         svg.append('line').attr('x1', 552).attr('y1', 155).attr('x2', 612).attr('y2', 200).attr('stroke','black');
         svg.append('line').attr('x1', 612).attr('y1', 200).attr('x2', 612).attr('y2', 600).attr('stroke','black');
@@ -165,7 +165,7 @@
         .on('mouseout', function() {d3.select('#tooltip').style('opacity', 0)})
         .on('mousemove', function() {d3.select('#tooltip').style('left', (d3.event.pageX+10) + 'px').style('top', (d3.event.pageY+10) + 'px')});
         
-        d3.select('body').append('svg').attr('id', 'tooltip').attr('style', 'position: absolute; opacity: 0;').style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px");
+        d3.select('body').append('svg').attr('id', 'tooltip2').attr('style', 'position: absolute; opacity: 0;').style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px");
         d3.select('svg').select('CircleBeta').data('Sort By Alphabetical').attr('r', 30).attr('cy', 233).attr('cx', 383)
         .on('mouseover', function(d) {d3.select('#tooltip2').transition().duration(200).style('opacity', 1).text('Sort By Alphabetical')})
         .on('mouseout', function() {d3.select('#tooltip2').style('opacity', 0)})
