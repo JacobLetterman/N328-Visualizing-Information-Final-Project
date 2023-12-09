@@ -27,7 +27,7 @@
 
 	<svg id="main" width="2000" height="2000">
 		<text id='label' x='20' y='20'>Different stats for all the different Pokemon</text>
-        <text transform="translate(100,120)rotate(48)">Dex Number</text>
+        <text transform="translate(94,120)rotate(48)">Dex Number</text>
         <text transform="translate(192,161)rotate(35)">Name</text>
         <text transform="translate(257,144)rotate(36)">Base Name</text>
         <text transform="translate(336,150)rotate(36)">Type 1</text>
@@ -124,6 +124,10 @@
         svg.append('circle').attr('id','CircleAlpha').attr('cx', 282).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
             d3.select(this).style("fill", PointColors[0]);});
+        //Third Circle
+        svg.append('circle').attr('id','CircleAlpha').attr('cx', 383).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
+            .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
+            d3.select(this).style("fill", PointColors[0]);});
         //Sixth
         svg.append('circle').attr('id','CircleEpsilon').attr('cx', 579).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click", function(d){PointColors = [PointColors[1], PointColors[0]]
@@ -154,14 +158,14 @@
             d3.select(this).style("fill", PointColors[0]);});
 
         //Function for mouseover effect, may do it for each circle
-        d3.select('body').append('main').attr('id', 'tooltip').attr('style', 'position: absolute; opacity: 0;').style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px");
+        d3.select('body').append('svg').attr('id', 'tooltip').attr('style', 'position: absolute; opacity: 0;').style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px");
         //d3.select('body').append('svg').attr('width', 3000).attr('height', 3000);
         d3.select('svg').select('CircleAlpha').data('Sort By Alphabetical').attr('r', 30).attr('cy', 233).attr('cx', 282)
         .on('mouseover', function(d) {d3.select('#tooltip').transition().duration(200).style('opacity', 1).text('Sort By Alphabetical')})
         .on('mouseout', function() {d3.select('#tooltip').style('opacity', 0)})
         .on('mousemove', function() {d3.select('#tooltip').style('left', (d3.event.pageX+10) + 'px').style('top', (d3.event.pageY+10) + 'px')});
         
-        d3.select('body').append('main').attr('id', 'tooltip').attr('style', 'position: absolute; opacity: 0;').style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px");
+        d3.select('body').append('svg').attr('id', 'tooltip').attr('style', 'position: absolute; opacity: 0;').style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px");
         d3.select('svg').select('CircleBeta').data('Sort By Alphabetical').attr('r', 30).attr('cy', 233).attr('cx', 383)
         .on('mouseover', function(d) {d3.select('#tooltip2').transition().duration(200).style('opacity', 1).text('Sort By Alphabetical')})
         .on('mouseout', function() {d3.select('#tooltip2').style('opacity', 0)})
