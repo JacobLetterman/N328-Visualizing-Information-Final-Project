@@ -27,7 +27,7 @@
 
 	<svg id="main" width="2000" height="2000">
 		<text id='label' x='20' y='20'>Different stats for all the different Pokemon</text>
-        <text transform="translate(105,125)rotate(46)">Dex Number</text>
+        <text transform="translate(100,120)rotate(48)">Dex Number</text>
         <text transform="translate(192,161)rotate(35)">Name</text>
         <text transform="translate(257,144)rotate(36)">Base Name</text>
         <text transform="translate(336,150)rotate(36)">Type 1</text>
@@ -123,45 +123,33 @@
         //Second Circle
         svg.append('circle').attr('id','CircleAlpha').attr('cx', 282).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
-            d3.select(this).style("fill", PointColors[0]);});//This is going to turn on/off the graphs for later parts 
-        //Third
-        svg.append('circle').attr('cx', 365).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
-            .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
-            d3.select(this).style("fill", PointColors[0]);});
-        //Fourth
-        svg.append('circle').attr('cx', 431).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
-            .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
-            d3.select(this).style("fill", PointColors[0]);});
-        //Fifth
-        svg.append('circle').attr('cx', 497).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
-            .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
             d3.select(this).style("fill", PointColors[0]);});
         //Sixth
-        svg.append('circle').attr('cx', 579).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
+        svg.append('circle').attr('id','CircleEpsilon').attr('cx', 579).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click", function(d){PointColors = [PointColors[1], PointColors[0]]
             d3.select(this).style("fill", PointColors[0]);});//Start of calling function for posting bar graphs, bar_function(d);
         //Seventh
-        svg.append('circle').attr('cx', 645).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
+        svg.append('circle').attr('id','CircleZeta').attr('cx', 645).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
             d3.select(this).style("fill", PointColors[0]);});
         //Eighth
-        svg.append('circle').attr('cx', 711).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
+        svg.append('circle').attr('id','CircleEta').attr('cx', 711).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
             d3.select(this).style("fill", PointColors[0]);});
         //Ninth
-        svg.append('circle').attr('cx', 777).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
+        svg.append('circle').attr('id','CircleTheta').attr('cx', 777).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
             d3.select(this).style("fill", PointColors[0]);});
         //Tenth
-        svg.append('circle').attr('cx', 843).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
+        svg.append('circle').attr('id','CircleIota').attr('cx', 843).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
             d3.select(this).style("fill", PointColors[0]);});
         //Eleventh
-        svg.append('circle').attr('cx', 909).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
+        svg.append('circle').attr('id','CircleKappa').attr('cx', 909).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
             d3.select(this).style("fill", PointColors[0]);});
         //Twelfth
-        svg.append('circle').attr('cx', 975).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
+        svg.append('circle').attr('id','CircleLambda').attr('cx', 975).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
             d3.select(this).style("fill", PointColors[0]);});
 
@@ -171,7 +159,15 @@
         d3.select('svg').selectAll('circle').data('Sort By Alphabetical').attr('r', 30).attr('cy', 233).attr('cx', 282)
         .on('mouseover', function(d) {d3.select('#tooltip').transition().duration(200).style('opacity', 1).text('Sort By Alphabetical')})
         .on('mouseout', function() {d3.select('#tooltip').style('opacity', 0)})
-        .on('mousemove', function() {d3.select('#tooltip').style('left', (d3.event.pageX+10) + 'px').style('top', (d3.event.pageY+10) + 'px')})
+        .on('mousemove', function() {d3.select('#tooltip').style('left', (d3.event.pageX+10) + 'px').style('top', (d3.event.pageY+10) + 'px')});
+
+        d3.select('body').append('div').attr('id', 'tooltip2').attr('style', 'position: absolute; opacity: 0;').style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px");
+        d3.select('body').append('svg').attr('width', 300).attr('height', 300);
+        d3.select('svg').selectAll('circle').data('Sort By Alphabetical').attr('r', 30).attr('cy', 233).attr('cx', 383)
+        .on('mouseover', function(d) {d3.select('#tooltip2').transition().duration(200).style('opacity', 1).text('Sort By Alphabetical')})
+        .on('mouseout', function() {d3.select('#tooltip2').style('opacity', 0)})
+        .on('mousemove', function() {d3.select('#tooltip2').style('left', (d3.event.pageX+10) + 'px').style('top', (d3.event.pageY+10) + 'px')});
+
 
         //Start of actually printing the data
         //Starting with Averages as they will be called a good amount going forward
@@ -188,14 +184,17 @@
         var By_Stat = 3; 
         //This is the start of actually putting the data in
         var svg = d3.select("svg");
-        var Spot_1 = svg.append('text').text('1 _ _Bulbasaur _Bulbasaur_GRASS__POISON').style('font size', 13).attr('x',195).attr('y',300).attr('stroke', 'black')
-        var Spot_1_5 = svg.append('text').text('318 _ 45 _ 49 _ 49 _ 65 _ 65 _ 45').style('font size', 13).attr('x',618).attr('y',300).attr('stroke', 'black')
-        var Spot_2 = svg.append('text').text('2 _ _Ivysaur_ __Ivysaur___ GRASS__POISON').style('font size', 13).attr('x',195).attr('y',345).attr('stroke', 'black')
-        var Spot_3 = svg.append('text').text('3 _ _Venusaur _Venusaur__GRASS__POISON').style('font size', 13).attr('x',195).attr('y',390).attr('stroke', 'black')
-
+        var Spot_1 = svg.append('text').text('1 _ _Bulbasaur _Bulbasaur_GRASS__POISON').style('font size', 13).attr('x',195).attr('y',325).attr('stroke', 'black')
+        var Spot_1_5 = svg.append('text').text('318 _ 45 _ 49 _ 49 _ 65 _ 65 _ 45').style('font size', 13).attr('x',618).attr('y',325).attr('stroke', 'black')
+        var Spot_2 = svg.append('text').text('2 _ _Ivysaur_ __Ivysaur___ GRASS__POISON').style('font size', 13).attr('x',195).attr('y',370).attr('stroke', 'black')
+        var Spot_2_5 = svg.append('text').text('405 _ 60 _ 62 _ 63 _ 80 _ 80 _ 60').style('font size', 13).attr('x',618).attr('y',370).attr('stroke', 'black')
+        var Spot_3 = svg.append('text').text('3 _ _Venusaur _Venusaur__GRASS__POISON').style('font size', 13).attr('x',195).attr('y',415).attr('stroke', 'black')
+        
         //Lines for the different rows
-        svg.append('line').attr('x1', 160).attr('y1', 303).attr('x2', 1400).attr('y2', 303).attr('stroke','black').style('stroke-width',3);
-        //Function to start print bar 
+        svg.append('line').attr('x1', 160).attr('y1', 328).attr('x2', 1400).attr('y2', 328).attr('stroke','black').style('stroke-width',3);
+        svg.append('line').attr('x1', 160).attr('y1', 373).attr('x2', 1400).attr('y2', 373).attr('stroke','black').style('stroke-width',3);
+        svg.append('line').attr('x1', 160).attr('y1', 418).attr('x2', 1400).attr('y2', 418).attr('stroke','black').style('stroke-width',3);
+        //Function to start printing bar graphs
 
         //<select id="selectButton"></select>
         //Works, but isn't needed yet
