@@ -154,15 +154,15 @@
             d3.select(this).style("fill", PointColors[0]);});
 
         //Function for mouseover effect, may do it for each circle
-        d3.select('body').append('div').attr('id', 'tooltip').attr('style', 'position: absolute; opacity: 0;').style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px");
+        d3.select('body').append('main').attr('id', 'tooltip').attr('style', 'position: absolute; opacity: 0;').style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px");
         //d3.select('body').append('svg').attr('width', 3000).attr('height', 3000);
-        d3.select('svg').select('circle').data('Sort By Alphabetical').attr('r', 30).attr('cy', 233).attr('cx', 282)
+        d3.select('svg').select('CircleAlpha').data('Sort By Alphabetical').attr('r', 30).attr('cy', 233).attr('cx', 282)
         .on('mouseover', function(d) {d3.select('#tooltip').transition().duration(200).style('opacity', 1).text('Sort By Alphabetical')})
         .on('mouseout', function() {d3.select('#tooltip').style('opacity', 0)})
         .on('mousemove', function() {d3.select('#tooltip').style('left', (d3.event.pageX+10) + 'px').style('top', (d3.event.pageY+10) + 'px')});
         
-        d3.select('body').append('div').attr('id', 'tooltip').attr('style', 'position: absolute; opacity: 0;').style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px");
-        d3.select('svg').select('circle').data('Sort By Alphabetical').attr('r', 30).attr('cy', 233).attr('cx', 383)
+        d3.select('body').append('main').attr('id', 'tooltip').attr('style', 'position: absolute; opacity: 0;').style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px");
+        d3.select('svg').select('CircleBeta').data('Sort By Alphabetical').attr('r', 30).attr('cy', 233).attr('cx', 383)
         .on('mouseover', function(d) {d3.select('#tooltip2').transition().duration(200).style('opacity', 1).text('Sort By Alphabetical')})
         .on('mouseout', function() {d3.select('#tooltip2').style('opacity', 0)})
         .on('mousemove', function() {d3.select('#tooltip2').style('left', (d3.event.pageX+10) + 'px').style('top', (d3.event.pageY+10) + 'px')});
@@ -185,14 +185,14 @@
         var svg = d3.select("svg");
         var Spot_1 = svg.append('text').text('1 _ _Bulbasaur _Bulbasaur_GRASS__POISON').style('font size', 13).attr('x',195).attr('y',325).attr('stroke', 'black')
         var Spot_1_5 = svg.append('text').text('318 _ 45 _ 49 _ 49 _ 65 _ 65 _ 45').style('font size', 13).attr('x',618).attr('y',325).attr('stroke', 'black')
-        var Spot_2 = svg.append('text').text('2 _ _Ivysaur_ __Ivysaur___ GRASS__POISON').style('font size', 13).attr('x',195).attr('y',450).attr('stroke', 'black')
-        var Spot_2_5 = svg.append('text').text('405 _ 60 _ 62 _ 63 _ 80 _ 80 _ 60').style('font size', 13).attr('x',618).attr('y',450).attr('stroke', 'black')
-        var Spot_3 = svg.append('text').text('3 _ _Venusaur _Venusaur__GRASS__POISON').style('font size', 13).attr('x',195).attr('y',575).attr('stroke', 'black')
+        var Spot_2 = svg.append('text').text('2 _ _Ivysaur_ __Ivysaur___ GRASS__POISON').style('font size', 13).attr('x',195).attr('y',387).attr('stroke', 'black')
+        var Spot_2_5 = svg.append('text').text('405 _ 60 _ 62 _ 63 _ 80 _ 80 _ 60').style('font size', 13).attr('x',618).attr('y',387).attr('stroke', 'black')
+        var Spot_3 = svg.append('text').text('3 _ _Venusaur _Venusaur__GRASS__POISON').style('font size', 13).attr('x',195).attr('y',449).attr('stroke', 'black')
         
         //Lines for the different rows
         svg.append('line').attr('x1', 160).attr('y1', 328).attr('x2', 1400).attr('y2', 328).attr('stroke','black').style('stroke-width',3);
-        svg.append('line').attr('x1', 160).attr('y1', 453).attr('x2', 1400).attr('y2', 373).attr('stroke','black').style('stroke-width',3);
-        svg.append('line').attr('x1', 160).attr('y1', 578).attr('x2', 1400).attr('y2', 418).attr('stroke','black').style('stroke-width',3);
+        svg.append('line').attr('x1', 160).attr('y1', 390).attr('x2', 1400).attr('y2', 390).attr('stroke','black').style('stroke-width',3);
+        svg.append('line').attr('x1', 160).attr('y1', 452).attr('x2', 1400).attr('y2', 452).attr('stroke','black').style('stroke-width',3);
         //Function to start printing bar graphs
 
         //<select id="selectButton"></select>
