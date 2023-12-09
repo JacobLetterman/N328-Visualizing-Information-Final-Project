@@ -27,11 +27,11 @@
 
 	<svg id="main" width="2000" height="2000">
 		<text id='label' x='20' y='20'>Different stats for all the different Pokemon</text>
-        <text transform="translate(90,120)rotate(46)">Dex Number</text>
-        <text transform="translate(192,161)rotate(35)">Name</text>
+        <text transform="translate(90,122)rotate(46)">Dex Number</text>
+        <text transform="translate(192,161)rotate(37)">Name</text>
         <text transform="translate(257,144)rotate(36)">Base Name</text>
-        <text transform="translate(336,150)rotate(36)">Type 1</text>
-        <text transform="translate(402,150)rotate(36)">Type 2</text>
+        <text transform="translate(344,150)rotate(34)">Type 1</text>
+        <text transform="translate(428,150)rotate(35)">Type 2</text>
         <text transform="translate(471,158)rotate(35)">BST</text>
         <text transform="translate(540,161)rotate(34)">HP</text>
         <text transform="translate(600,155)rotate(36)">Attack</text>
@@ -83,8 +83,8 @@
         svg.append('line').attr('x1', 459).attr('y1', 155).attr('x2', 519).attr('y2', 200).attr('stroke','black');
         svg.append('line').attr('x1', 519).attr('y1', 200).attr('x2', 519).attr('y2', 600).attr('stroke','black');
         //Sixth Column, BST, Base Stat Total
-        svg.append('line').attr('x1', 525).attr('y1', 155).attr('x2', 585).attr('y2', 200).attr('stroke','black');
-        svg.append('line').attr('x1', 585).attr('y1', 200).attr('x2', 585).attr('y2', 600).attr('stroke','black');
+        svg.append('line').attr('x1', 545).attr('y1', 155).attr('x2', 606).attr('y2', 200).attr('stroke','black');
+        svg.append('line').attr('x1', 606).attr('y1', 200).attr('x2', 606).attr('y2', 600).attr('stroke','black');
         //Seventh Column, HP
         svg.append('line').attr('x1', 552).attr('y1', 155).attr('x2', 612).attr('y2', 200).attr('stroke','black');
         svg.append('line').attr('x1', 612).attr('y1', 200).attr('x2', 612).attr('y2', 600).attr('stroke','black');
@@ -161,7 +161,7 @@
         d3.select('body').append('div').attr('id', 'tooltip').attr('style', 'position: absolute; opacity: 0;').style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px");
         d3.select('body').append('svg').attr('width', 300).attr('height', 300)
         d3.select('svg').select('CircleAlpha').data('Sort By Alphabetical').attr('r', 30).attr('cy', 233).attr('cx', 282)
-        d3.select('svg').select('CircleBeta').data('Sort By Alphabetical').attr('r',30).attr('cy',233).attr('cx',384)
+        //d3.select('svg').select('CircleBeta').data('Sort By Alphabetical').attr('r',30).attr('cy',233).attr('cx',384)
         .on('mouseover', function(d) {d3.select('#tooltip').transition().duration(200).style('opacity', 1).text('Sort By Alphabetical')})
         .on('mouseout', function() {d3.select('#tooltip').style('opacity', 0)})
         .on('mousemove', function() {d3.select('#tooltip').style('left', (d3.event.pageX+10) + 'px').style('top', (d3.event.pageY+10) + 'px')});
