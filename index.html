@@ -30,21 +30,21 @@
         <text transform="translate(91,134)rotate(43)">Dex Number</text>
         <text transform="translate(188,160)rotate(37)">Name</text>
         <text transform="translate(256,142)rotate(36)">Base Name</text>
-        <text transform="translate(344,150)rotate(34)">Type 1</text>
+        <text transform="translate(374,150)rotate(34)">Type 1</text>
         <text transform="translate(471,158)rotate(35)">Type 2</text>
-        <text transform="translate(471,158)rotate(35)">BST</text>
+        <text transform="translate(566,158)rotate(35)">BST</text>
         <text transform="translate(540,161)rotate(34)">HP</text>
         <text transform="translate(600,155)rotate(36)">Attack</text>
         <text transform="translate(666,155)rotate(36)">Defense</text>
         <text transform="translate(732,150)rotate(36)">Sp Attack</text>
         <text transform="translate(866,144)rotate(36)">Sp Defense</text>
-        <text transform="translate(932,152)rotate(36)">Speed</text>
+        <text transform="translate(936,152)rotate(36)">Speed</text>
 	</svg>
     
 	
 
 	<script>
-        //Loading the data, changing what it saves everytime to make sure it works
+        //Loading the data, want this to be phyiscally on the site, but still working towards a solution
         data = d3.csv("Pokemon Data.csv", function(d){
             return{
                 Dex_No : +d['Dex Number'],
@@ -112,7 +112,7 @@
         svg.append('line').attr('x1', 100).attr('y1', 200).attr('x2', 1400).attr('y2', 200).attr('stroke','black');
         svg.append('line').attr('x1', 100).attr('y1', 266).attr('x2', 1400).attr('y2', 266).attr('stroke','black');//Line for under circles    
 
-        //Functions
+        //Functions, place for all fucntion, as I want to condese them into 
         var bar_fucntion = 1;
 
 
@@ -126,6 +126,10 @@
             d3.select(this).style("fill", PointColors[0]);});
         //Third Circle
         svg.append('circle').attr('id','CircleBeta').attr('cx', 383).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
+            .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
+            d3.select(this).style("fill", PointColors[0]);});
+        //FourthCircle
+        svg.append('circle').attr('id','CircleThree').attr('cx', 383).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
             d3.select(this).style("fill", PointColors[0]);});
         //Sixth
@@ -158,8 +162,8 @@
             d3.select(this).style("fill", PointColors[0]);});
 
         //Function for mouseover effect, may do it for each circle
-        d3.select('body').append('div').attr('id', 'tooltip').attr('style', 'position: absolute; opacity: 0;').style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px");
-        d3.select('body').append('svg').attr('width', 300).attr('height', 300)
+        d3.select('body').append('div').attr('id', 'tooltip').attr('style', 'position: absolute; opacity: 0;');
+        d3.select('body').append('svg').attr('width', 300).attr('height', 300);
         d3.select('svg').select('CircleAlpha').data('Sort By Alphabetical').attr('r', 30).attr('cy', 233).attr('cx', 282)
         //d3.select('svg').select('CircleBeta').data('Sort By Alphabetical').attr('r',30).attr('cy',233).attr('cx',384)
         .on('mouseover', function(d) {d3.select('#tooltip').transition().duration(200).style('opacity', 1).text('Sort By Alphabetical')})
@@ -178,18 +182,19 @@
         var SpDef_Avg = 72;
         var Speed_Avg = 70;
 
-        //Organizing the Data
+        //Organizing the Data, want Alpha and Beta to make the data alphabetaical when clicked
         var By_Alpha = 2;
-        var By_Stat = 3; 
+
         //This is the start of actually putting the data in
         var svg = d3.select("svg");
         var Spot_1 = svg.append('text').text('1 _ _Bulbasaur _Bulbasaur_GRASS__POISON').style('font size', 13).attr('x',195).attr('y',325).attr('stroke', 'black')
         var Spot_1_5 = svg.append('text').text('318 __ 45 _ _ 49 _ _ 49 _ 65 _ 65 _ 45').style('font size', 13).attr('x',618).attr('y',325).attr('stroke', 'black')
         var Spot_2 = svg.append('text').text('2 _ _Ivysaur_ __Ivysaur___ GRASS__POISON').style('font size', 13).attr('x',195).attr('y',387).attr('stroke', 'black')
         var Spot_2_5 = svg.append('text').text('405 __ 60 _ _ 62 _ _ 63 _ 80 _ 80 _ 60').style('font size', 13).attr('x',618).attr('y',387).attr('stroke', 'black')
-        var Spot_3 = svg.append('text').text('3 _ _Venusaur _Venusaur__ GRASS__POISON').style('font size', 13).attr('x',195).attr('y',449).attr('stroke', 'black')
-        var Spot_4_25 = svg.append('text').text('Mega').style('font size',13).attr('x',215).attr('y',503).attr('stroke', 'black')
-        var Spot_4 = svg.append('text').text('3 _ _Venusaur _Venusaur _GRASS _POISON').style('font size', 13).attr('x',195).attr('y',511).attr('stroke', 'black')
+        var Spot_3 = svg.append('text').text('3 _ _Venusaur _Venusaur__GRASS__POISON').style('font size', 13).attr('x',195).attr('y',449).attr('stroke', 'black')
+        var Spot_4_25 = svg.append('text').text('Mega').style('font size',13).attr('x',225).attr('y',510).attr('stroke', 'black')
+        var Spot_4 = svg.append('text').text('3 _ _ Venusaur _Venusaur _GRASS _POISON').style('font size', 13).attr('x',195).attr('y',511).attr('stroke', 'black')
+        
         //Lines for the different rows
         svg.append('line').attr('x1', 160).attr('y1', 328).attr('x2', 1400).attr('y2', 328).attr('stroke','black').style('stroke-width',3);
         svg.append('line').attr('x1', 160).attr('y1', 390).attr('x2', 1400).attr('y2', 390).attr('stroke','black').style('stroke-width',3);
@@ -202,21 +207,14 @@
         svg.append('line').attr('x1', 160).attr('y1', 824).attr('x2', 1400).attr('y2', 824).attr('stroke','black').style('stroke-width',3);
         svg.append('line').attr('x1', 160).attr('y1', 886).attr('x2', 1400).attr('y2', 886).attr('stroke','black').style('stroke-width',3);
         //Function to start printing bar graphs
+        //Everytime the buttons are clicked, want to have the corresponding bar chart become active
+        //Also want to make it so when you hover over the bar it shows how much the difference is between the average and the number, blue for positive, red for negative
 
         //<select id="selectButton"></select>
         //Works, but isn't needed yet
+        //This puts the top ten of each category on screen and replaces whatever text is currently on there
 
-        //Random line that I added, but don't remember why
-        //var svg = d3.select("svg"); 2nd column line
-        //svg.append('line').attr('x1', 266).attr('y1', 200).attr('x2', 1066).attr('y2', 200).attr('stroke','black');
-
-        //var svg = d3.select("svg");
-        //Function to log if the button has been pressed, not using just yet as it could conflict with color changer. Rather not risk it, yet
-        //dot.on("click", function(d){click(d)}) 
-        //function click(d) 
-        //{
-        //    console.log(d.title); 
-        //}
+        
 	</script>
 </body>
 </html>
