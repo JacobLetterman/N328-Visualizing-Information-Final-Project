@@ -27,9 +27,9 @@
 
 	<svg id="main" width="2000" height="2000">
 		<text id='label' x='20' y='20'>Different stats for all the different Pokemon</text>
-        <text transform="translate(91,140)rotate(46)">Dex Number</text>
+        <text transform="translate(91,134)rotate(43)">Dex Number</text>
         <text transform="translate(188,160)rotate(37)">Name</text>
-        <text transform="translate(254,144)rotate(36)">Base Name</text>
+        <text transform="translate(256,142)rotate(36)">Base Name</text>
         <text transform="translate(344,150)rotate(34)">Type 1</text>
         <text transform="translate(471,158)rotate(35)">Type 2</text>
         <text transform="translate(471,158)rotate(35)">BST</text>
@@ -69,43 +69,43 @@
         //Condensed certain lines to make the code not look as bad
         var svg = d3.select("svg"); //First Column, Dex Number
         svg.append('line').attr('x1', 100).attr('y1', 155).attr('x2', 160).attr('y2', 200).attr('stroke','black');
-        svg.append('line').attr('x1', 160).attr('y1', 200).attr('x2', 160).attr('y2', 600).attr('stroke','black');
+        svg.append('line').attr('x1', 160).attr('y1', 200).attr('x2', 160).attr('y2', 900).attr('stroke','black');
         //Second Column, Name
         svg.append('line').attr('x1', 170).attr('y1', 155).attr('x2', 230).attr('y2', 200).attr('stroke','black');
-        svg.append('line').attr('x1', 230).attr('y1', 200).attr('x2', 230).attr('y2', 600).attr('stroke','black');
+        svg.append('line').attr('x1', 230).attr('y1', 200).attr('x2', 230).attr('y2', 900).attr('stroke','black');
         //Third Column, Base Name
         svg.append('line').attr('x1', 272).attr('y1', 155).attr('x2', 332).attr('y2', 200).attr('stroke','black');
-        svg.append('line').attr('x1', 332).attr('y1', 200).attr('x2', 332).attr('y2', 600).attr('stroke','black');
+        svg.append('line').attr('x1', 332).attr('y1', 200).attr('x2', 332).attr('y2', 900).attr('stroke','black');
         //Fourth Column, Type 1
         svg.append('line').attr('x1', 374).attr('y1', 155).attr('x2', 434).attr('y2', 200).attr('stroke','black');
-        svg.append('line').attr('x1', 434).attr('y1', 200).attr('x2', 434).attr('y2', 600).attr('stroke','black');
+        svg.append('line').attr('x1', 434).attr('y1', 200).attr('x2', 434).attr('y2', 900).attr('stroke','black');
         //Fifth Column, Type 2
         svg.append('line').attr('x1', 459).attr('y1', 155).attr('x2', 519).attr('y2', 200).attr('stroke','black');
-        svg.append('line').attr('x1', 519).attr('y1', 200).attr('x2', 519).attr('y2', 600).attr('stroke','black');
+        svg.append('line').attr('x1', 519).attr('y1', 200).attr('x2', 519).attr('y2', 900).attr('stroke','black');
         //Sixth Column, BST, Base Stat Total
         svg.append('line').attr('x1', 545).attr('y1', 155).attr('x2', 606).attr('y2', 200).attr('stroke','black');
-        svg.append('line').attr('x1', 606).attr('y1', 200).attr('x2', 606).attr('y2', 600).attr('stroke','black');
+        svg.append('line').attr('x1', 606).attr('y1', 200).attr('x2', 606).attr('y2', 900).attr('stroke','black');
         //Seventh Column, HP
         svg.append('line').attr('x1', 611).attr('y1', 155).attr('x2', 672).attr('y2', 200).attr('stroke','black');
-        svg.append('line').attr('x1', 672).attr('y1', 200).attr('x2', 672).attr('y2', 600).attr('stroke','black');
+        svg.append('line').attr('x1', 672).attr('y1', 200).attr('x2', 672).attr('y2', 900).attr('stroke','black');
         //Eighth Column, ATK
         svg.append('line').attr('x1', 677).attr('y1', 155).attr('x2', 738).attr('y2', 200).attr('stroke','black');
-        svg.append('line').attr('x1', 738).attr('y1', 200).attr('x2', 738).attr('y2', 600).attr('stroke','black');
+        svg.append('line').attr('x1', 738).attr('y1', 200).attr('x2', 738).attr('y2', 900).attr('stroke','black');
         //Ninth Column, Defense
         svg.append('line').attr('x1', 743).attr('y1', 155).attr('x2', 804).attr('y2', 200).attr('stroke','black');
-        svg.append('line').attr('x1', 804).attr('y1', 200).attr('x2', 804).attr('y2', 600).attr('stroke','black');
+        svg.append('line').attr('x1', 804).attr('y1', 200).attr('x2', 804).attr('y2', 900).attr('stroke','black');
         //Tenth Column, Sp_ATK
         svg.append('line').attr('x1', 809).attr('y1', 155).attr('x2', 870).attr('y2', 200).attr('stroke','black');
-        svg.append('line').attr('x1', 870).attr('y1', 200).attr('x2', 870).attr('y2', 600).attr('stroke','black');
+        svg.append('line').attr('x1', 870).attr('y1', 200).attr('x2', 870).attr('y2', 900).attr('stroke','black');
         //Eleventh Column, Sp_Def
         svg.append('line').attr('x1', 875).attr('y1', 155).attr('x2', 936).attr('y2', 200).attr('stroke','black');
-        svg.append('line').attr('x1', 936).attr('y1', 200).attr('x2', 936).attr('y2', 600).attr('stroke','black');
+        svg.append('line').attr('x1', 936).attr('y1', 200).attr('x2', 936).attr('y2', 900).attr('stroke','black');
         //Twelfth Column, Speed
         svg.append('line').attr('x1', 941).attr('y1', 155).attr('x2', 1002).attr('y2', 200).attr('stroke','black');
-        svg.append('line').attr('x1', 1002).attr('y1', 200).attr('x2', 1002).attr('y2', 600).attr('stroke','black');
+        svg.append('line').attr('x1', 1002).attr('y1', 200).attr('x2', 1002).attr('y2', 900).attr('stroke','black');
         //Line before graphs
         svg.append('line').attr('x1', 1007).attr('y1', 155).attr('x2', 1068).attr('y2', 200).attr('stroke','black');
-        svg.append('line').attr('x1', 1068).attr('y1', 200).attr('x2', 1068).attr('y2', 600).attr('stroke','black');
+        svg.append('line').attr('x1', 1068).attr('y1', 200).attr('x2', 1068).attr('y2', 900).attr('stroke','black');
 
         //Other Lines
         var svg = d3.select("svg");//Looooooooooooooooong Line to hold Graphs
@@ -188,7 +188,8 @@
         var Spot_2 = svg.append('text').text('2 _ _Ivysaur_ __Ivysaur___ GRASS__POISON').style('font size', 13).attr('x',195).attr('y',387).attr('stroke', 'black')
         var Spot_2_5 = svg.append('text').text('405 __ 60 _ _ 62 _ _ 63 _ 80 _ 80 _ 60').style('font size', 13).attr('x',618).attr('y',387).attr('stroke', 'black')
         var Spot_3 = svg.append('text').text('3 _ _Venusaur _Venusaur__GRASS__POISON').style('font size', 13).attr('x',195).attr('y',449).attr('stroke', 'black')
-        var Spot_4 = svg.append('text').text('3 _ Mega Venusaur _Venusaur _GRASS _POISON').style('font size', 13).attr('x',195).attr('y',511).attr('stroke', 'black')
+        var Spot_4_25 = svg.append('text').text('Mega').style('font size',13).attr('x',195).('y',507).attr('stroke', 'black')
+        var Spot_4 = svg.append('text').text('3 _ _Venusaur _Venusaur _GRASS _POISON').style('font size', 13).attr('x',195).attr('y',511).attr('stroke', 'black')
         //Lines for the different rows
         svg.append('line').attr('x1', 160).attr('y1', 328).attr('x2', 1400).attr('y2', 328).attr('stroke','black').style('stroke-width',3);
         svg.append('line').attr('x1', 160).attr('y1', 390).attr('x2', 1400).attr('y2', 390).attr('stroke','black').style('stroke-width',3);
