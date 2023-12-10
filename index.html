@@ -27,11 +27,11 @@
 
 	<svg id="main" width="2000" height="2000">
 		<text id='label' x='20' y='20'>Different stats for all the different Pokemon</text>
-        <text transform="translate(90,122)rotate(46)">Dex Number</text>
-        <text transform="translate(192,161)rotate(37)">Name</text>
+        <text transform="translate(90,119)rotate(46)">Dex Number</text>
+        <text transform="translate(188,160)rotate(37)">Name</text>
         <text transform="translate(257,144)rotate(36)">Base Name</text>
         <text transform="translate(344,150)rotate(34)">Type 1</text>
-        <text transform="translate(428,150)rotate(35)">Type 2</text>
+        <text transform="translate(471,158)rotate(35)">Type 2</text>
         <text transform="translate(471,158)rotate(35)">BST</text>
         <text transform="translate(540,161)rotate(34)">HP</text>
         <text transform="translate(600,155)rotate(36)">Attack</text>
@@ -86,26 +86,26 @@
         svg.append('line').attr('x1', 545).attr('y1', 155).attr('x2', 606).attr('y2', 200).attr('stroke','black');
         svg.append('line').attr('x1', 606).attr('y1', 200).attr('x2', 606).attr('y2', 600).attr('stroke','black');
         //Seventh Column, HP
-        svg.append('line').attr('x1', 552).attr('y1', 155).attr('x2', 612).attr('y2', 200).attr('stroke','black');
-        svg.append('line').attr('x1', 612).attr('y1', 200).attr('x2', 612).attr('y2', 600).attr('stroke','black');
+        svg.append('line').attr('x1', 611).attr('y1', 155).attr('x2', 672).attr('y2', 200).attr('stroke','black');
+        svg.append('line').attr('x1', 672).attr('y1', 200).attr('x2', 672).attr('y2', 600).attr('stroke','black');
         //Eighth Column, ATK
-        svg.append('line').attr('x1', 618).attr('y1', 155).attr('x2', 678).attr('y2', 200).attr('stroke','black');
-        svg.append('line').attr('x1', 678).attr('y1', 200).attr('x2', 678).attr('y2', 600).attr('stroke','black');
+        svg.append('line').attr('x1', 677).attr('y1', 155).attr('x2', 738).attr('y2', 200).attr('stroke','black');
+        svg.append('line').attr('x1', 738).attr('y1', 200).attr('x2', 738).attr('y2', 600).attr('stroke','black');
         //Ninth Column, Defense
-        svg.append('line').attr('x1', 684).attr('y1', 155).attr('x2', 744).attr('y2', 200).attr('stroke','black');
-        svg.append('line').attr('x1', 744).attr('y1', 200).attr('x2', 744).attr('y2', 600).attr('stroke','black');
+        svg.append('line').attr('x1', 743).attr('y1', 155).attr('x2', 804).attr('y2', 200).attr('stroke','black');
+        svg.append('line').attr('x1', 804).attr('y1', 200).attr('x2', 804).attr('y2', 600).attr('stroke','black');
         //Tenth Column, Sp_ATK
-        svg.append('line').attr('x1', 750).attr('y1', 155).attr('x2', 810).attr('y2', 200).attr('stroke','black');
-        svg.append('line').attr('x1', 810).attr('y1', 200).attr('x2', 810).attr('y2', 600).attr('stroke','black');
+        svg.append('line').attr('x1', 809).attr('y1', 155).attr('x2', 870).attr('y2', 200).attr('stroke','black');
+        svg.append('line').attr('x1', 870).attr('y1', 200).attr('x2', 870).attr('y2', 600).attr('stroke','black');
         //Eleventh Column, Sp_Def
-        svg.append('line').attr('x1', 816).attr('y1', 155).attr('x2', 876).attr('y2', 200).attr('stroke','black');
-        svg.append('line').attr('x1', 876).attr('y1', 200).attr('x2', 876).attr('y2', 600).attr('stroke','black');
+        svg.append('line').attr('x1', 875).attr('y1', 155).attr('x2', 936).attr('y2', 200).attr('stroke','black');
+        svg.append('line').attr('x1', 936).attr('y1', 200).attr('x2', 936).attr('y2', 600).attr('stroke','black');
         //Twelfth Column, Speed
-        svg.append('line').attr('x1', 886).attr('y1', 155).attr('x2', 942).attr('y2', 200).attr('stroke','black');
-        svg.append('line').attr('x1', 942).attr('y1', 200).attr('x2', 942).attr('y2', 600).attr('stroke','black');
+        svg.append('line').attr('x1', 941).attr('y1', 155).attr('x2', 1002).attr('y2', 200).attr('stroke','black');
+        svg.append('line').attr('x1', 1002).attr('y1', 200).attr('x2', 1002).attr('y2', 600).attr('stroke','black');
         //Line before graphs
-        svg.append('line').attr('x1', 948).attr('y1', 155).attr('x2', 1008).attr('y2', 200).attr('stroke','black');
-        svg.append('line').attr('x1', 1008).attr('y1', 200).attr('x2', 1008).attr('y2', 600).attr('stroke','black');
+        svg.append('line').attr('x1', 1007).attr('y1', 155).attr('x2', 1068).attr('y2', 200).attr('stroke','black');
+        svg.append('line').attr('x1', 1068).attr('y1', 200).attr('x2', 1068).attr('y2', 600).attr('stroke','black');
 
         //Other Lines
         var svg = d3.select("svg");//Looooooooooooooooong Line to hold Graphs
@@ -129,7 +129,7 @@
             .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
             d3.select(this).style("fill", PointColors[0]);});
         //Sixth
-        svg.append('circle').attr('id','CircleEpsilon').attr('cx', 579).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
+        svg.append('circle').attr('id','CircleEpsilon').attr('cx', 563).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click", function(d){PointColors = [PointColors[1], PointColors[0]]
             d3.select(this).style("fill", PointColors[0]);});//Start of calling function for posting bar graphs, bar_function(d);
         //Seventh
