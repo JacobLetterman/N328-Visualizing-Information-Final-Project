@@ -27,9 +27,9 @@
 
 	<svg id="main" width="2000" height="2000">
 		<text id='label' x='20' y='20'>Different stats for all the different Pokemon</text>
-        <text transform="translate(90,119)rotate(46)">Dex Number</text>
+        <text transform="translate(91,140)rotate(46)">Dex Number</text>
         <text transform="translate(188,160)rotate(37)">Name</text>
-        <text transform="translate(257,144)rotate(36)">Base Name</text>
+        <text transform="translate(254,144)rotate(36)">Base Name</text>
         <text transform="translate(344,150)rotate(34)">Type 1</text>
         <text transform="translate(471,158)rotate(35)">Type 2</text>
         <text transform="translate(471,158)rotate(35)">BST</text>
@@ -37,8 +37,8 @@
         <text transform="translate(600,155)rotate(36)">Attack</text>
         <text transform="translate(666,155)rotate(36)">Defense</text>
         <text transform="translate(732,150)rotate(36)">Sp Attack</text>
-        <text transform="translate(792,144)rotate(36)">Sp Defense</text>
-        <text transform="translate(866,152)rotate(36)">Speed</text>
+        <text transform="translate(866,144)rotate(36)">Sp Defense</text>
+        <text transform="translate(932,152)rotate(36)">Speed</text>
 	</svg>
     
 	
@@ -184,15 +184,22 @@
         //This is the start of actually putting the data in
         var svg = d3.select("svg");
         var Spot_1 = svg.append('text').text('1 _ _Bulbasaur _Bulbasaur_GRASS__POISON').style('font size', 13).attr('x',195).attr('y',325).attr('stroke', 'black')
-        var Spot_1_5 = svg.append('text').text('318 _ 45 _ 49 _ 49 _ 65 _ 65 _ 45').style('font size', 13).attr('x',618).attr('y',325).attr('stroke', 'black')
+        var Spot_1_5 = svg.append('text').text('318 __ 45 _ _ 49 _ _ 49 _ 65 _ 65 _ 45').style('font size', 13).attr('x',618).attr('y',325).attr('stroke', 'black')
         var Spot_2 = svg.append('text').text('2 _ _Ivysaur_ __Ivysaur___ GRASS__POISON').style('font size', 13).attr('x',195).attr('y',387).attr('stroke', 'black')
-        var Spot_2_5 = svg.append('text').text('405 _ 60 _ 62 _ 63 _ 80 _ 80 _ 60').style('font size', 13).attr('x',618).attr('y',387).attr('stroke', 'black')
+        var Spot_2_5 = svg.append('text').text('405 __ 60 _ _ 62 _ _ 63 _ 80 _ 80 _ 60').style('font size', 13).attr('x',618).attr('y',387).attr('stroke', 'black')
         var Spot_3 = svg.append('text').text('3 _ _Venusaur _Venusaur__GRASS__POISON').style('font size', 13).attr('x',195).attr('y',449).attr('stroke', 'black')
-        
+        var Spot_4 = svg.append('text').text('3 _ Mega Venusaur _Venusaur _GRASS _POISON').style('font size', 13).attr('x',195).attr('y',511).attr('stroke', 'black')
         //Lines for the different rows
         svg.append('line').attr('x1', 160).attr('y1', 328).attr('x2', 1400).attr('y2', 328).attr('stroke','black').style('stroke-width',3);
         svg.append('line').attr('x1', 160).attr('y1', 390).attr('x2', 1400).attr('y2', 390).attr('stroke','black').style('stroke-width',3);
         svg.append('line').attr('x1', 160).attr('y1', 452).attr('x2', 1400).attr('y2', 452).attr('stroke','black').style('stroke-width',3);
+        svg.append('line').attr('x1', 160).attr('y1', 514).attr('x2', 1400).attr('y2', 514).attr('stroke','black').style('stroke-width',3);
+        svg.append('line').attr('x1', 160).attr('y1', 576).attr('x2', 1400).attr('y2', 576).attr('stroke','black').style('stroke-width',3);
+        svg.append('line').attr('x1', 160).attr('y1', 638).attr('x2', 1400).attr('y2', 638).attr('stroke','black').style('stroke-width',3);
+        svg.append('line').attr('x1', 160).attr('y1', 700).attr('x2', 1400).attr('y2', 700).attr('stroke','black').style('stroke-width',3);
+        svg.append('line').attr('x1', 160).attr('y1', 762).attr('x2', 1400).attr('y2', 762).attr('stroke','black').style('stroke-width',3);
+        svg.append('line').attr('x1', 160).attr('y1', 824).attr('x2', 1400).attr('y2', 824).attr('stroke','black').style('stroke-width',3);
+        svg.append('line').attr('x1', 160).attr('y1', 886).attr('x2', 1400).attr('y2', 886).attr('stroke','black').style('stroke-width',3);
         //Function to start printing bar graphs
 
         //<select id="selectButton"></select>
