@@ -174,7 +174,6 @@
         .on('mouseout', function() {d3.select('#tooltip').style('opacity', 0)})
         .on('mousemove', function() {d3.select('#tooltip').style('left', (d3.event.pageX+10) + 'px').style('top', (d3.event.pageY+10) + 'px')})
 
-        var svg = d3.select('svg');
         d3.select('body').append('div').attr('id', 'tooltip2').attr('style', 'position: absolute; opacity: 0;').style("background-color", "white")
             .style("border", "solid")
             .style("border-width", "1px")
