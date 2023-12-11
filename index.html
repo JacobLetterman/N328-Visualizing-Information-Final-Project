@@ -128,58 +128,56 @@
             }
         })();
 
+        var tooltip = d3.select("body")
+            .append("div")
+            .style("position", "absolute")
+            .style("z-index", "10")
+            .style("visibility", "hidden")
+            .text("Sort By Alphabetical");
+
+        var sampleSVG = d3.select("main")
+            .append("svg:svg")
+            .attr("class", "sample")
+            .attr("width", 300)
+            .attr("height", 300);
+
         //Second Circle
         svg.append('circle').attr('id','CircleAlpha').attr('cx', 282).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
-            .on("click", toggleColor);
+            .on("click", toggleColor)
+            .on("mouseover", function(){return tooltip.style("visibility", "visible");})
+            .on("mousemove", function(){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
+            .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
         //Third Circle
         svg.append('circle').attr('id','CircleBeta').attr('cx', 383).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
-            .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
-            d3.select(this).style("fill", PointColors[0]);});
+            .on("click", toggleColor);
         //FourthCircle
         svg.append('circle').attr('id','CircleThree').attr('cx', 477).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
-            .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
-            d3.select(this).style("fill", PointColors[0]);});
+            .on("click", toggleColor);
         //Sixth
         svg.append('circle').attr('id','CircleEpsilon').attr('cx', 639).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
-            .on("click", function(d){PointColors = [PointColors[1], PointColors[0]]
-            d3.select(this).style("fill", PointColors[0]);});//Start of calling function for posting bar graphs, bar_function(d);
+            .on("click", toggleColor);//Start of calling function for posting bar graphs, bar_function(d);
         //Seventh
         svg.append('circle').attr('id','CircleZeta').attr('cx', 705).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
-            .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
-            d3.select(this).style("fill", PointColors[0]);});
+            .on("click", toggleColor);
         //Eighth
         svg.append('circle').attr('id','CircleEta').attr('cx', 771).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
-            .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
-            d3.select(this).style("fill", PointColors[0]);});
+            .on("click", toggleColor);
         //Ninth
         svg.append('circle').attr('id','CircleTheta').attr('cx', 837).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
-            .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
-            d3.select(this).style("fill", PointColors[0]);});
+            .on("click", toggleColor);
         //Tenth
         svg.append('circle').attr('id','CircleIota').attr('cx', 903).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
-            .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
-            d3.select(this).style("fill", PointColors[0]);});
+            .on("click", toggleColor);
         //Eleventh
         svg.append('circle').attr('id','CircleKappa').attr('cx', 969).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
-            .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
-            d3.select(this).style("fill", PointColors[0]);});
+            .on("click", toggleColor);
         //Twelfth
         svg.append('circle').attr('id','CircleLambda').attr('cx', 1035).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
-            .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
-            d3.select(this).style("fill", PointColors[0]);});
+            .on("click", toggleColor);
 
         //Function for mouseover effect, may do it for each circle
         //var svg = d3.select('svg');
-        d3.select('body').append('div').attr('id', 'tooltip').attr('style', 'position: absolute; opacity: 0;').style("background-color", "white")
-            .style("border", "solid")
-            .style("border-width", "1px")
-            .style("border-radius", "5px")
-            .style("padding", "10px");
-        d3.select('body').append('svg').attr('width', 300).attr('height', 300);
-        d3.select('svg').selectAll('circle').data('Sort By Alphabetical').attr('r', 30).attr('cy', 233).attr('cx', 282)
-        .on('mouseover', function(d) {d3.select('#tooltip').style('opacity', 1).text('Sort By Alphabetical')})
-        .on('mouseout', function() {d3.select('#tooltip').style('opacity', 0)})
-        .on('mousemove', function() {d3.select('#tooltip').style('left', (d3.event.pageX+10) + 'px').style('top', (d3.event.pageY+10) + 'px')});
+        
         
         //Start of actually printing the data
         //Starting with Averages as they will be called a good amount going forward
