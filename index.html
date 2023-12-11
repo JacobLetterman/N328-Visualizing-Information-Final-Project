@@ -172,13 +172,13 @@
         d3.select('svg').selectAll('circle').data('Sort By Alphabetical').attr('r', 30).attr('cy', 233).attr('cx', 282)
         .on('mouseover', function(d) {d3.select('#tooltip').style('opacity', 1).text('Sort By Alphabetical')})
         .on('mouseout', function() {d3.select('#tooltip').style('opacity', 0)})
-        .on('mousemove', function() {d3.select('#tooltip').style('left', (d3.event.pageX+10) + 'px').style('top', (d3.event.pageY+10) + 'px')})
+        .on('mousemove', function() {d3.select('#tooltip').style('left', (d3.event.pageX+10) + 'px').style('top', (d3.event.pageY+10) + 'px')});
         
     
         d3.select('svg').selectAll('circle').data('Sort By Alphabetical').attr('r', 30).attr('cy', 233).attr('cx', 383)
         .on('mouseover', function(d) {d3.select('#tooltip').style('opacity', 1).text('Sort By Alphabetical')})
         .on('mouseout', function() {d3.select('#tooltip').style('opacity', 0)})
-        .on('mousemove', function() {d3.select('#tooltip').style('left', (d3.event.pageX+10) + 'px').style('top', (d3.event.pageY+10) + 'px')})
+        .on('mousemove', function() {d3.select('#tooltip').style('left', (d3.event.pageX+10) + 'px').style('top', (d3.event.pageY+10) + 'px')});
         //Start of actually printing the data
         //Starting with Averages as they will be called a good amount going forward
         var BST_Avg = 441;
