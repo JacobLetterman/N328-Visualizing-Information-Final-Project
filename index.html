@@ -117,13 +117,20 @@
 
 
         //Different Circles, messy code for now
-        var PointColors = ['white', 'lime']
+        
         var svg = d3.select("svg");
+        var toggleColor = (function(){
+            var currentColor = "white";
+
+            return function(){
+                currentColor = currentColor == "white" ? "lime" : "white";
+                d3.select(this).style("fill", currentColor);
+            }
+        })();
 
         //Second Circle
         svg.append('circle').attr('id','CircleAlpha').attr('cx', 282).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
-            .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
-            d3.select(this).style("fill", PointColors[0]);});
+            .on("click", toggleColor);
         //Third Circle
         svg.append('circle').attr('id','CircleBeta').attr('cx', 383).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click", function(){PointColors = [PointColors[1], PointColors[0]]
@@ -174,11 +181,6 @@
         .on('mouseout', function() {d3.select('#tooltip').style('opacity', 0)})
         .on('mousemove', function() {d3.select('#tooltip').style('left', (d3.event.pageX+10) + 'px').style('top', (d3.event.pageY+10) + 'px')});
         
-    
-        d3.select('svg').selectAll('circle').data('Sort By Alphabetical').attr('r', 30).attr('cy', 233).attr('cx', 383)
-        .on('mouseover', function(d) {d3.select('#tooltip').style('opacity', 1).text('Sort By Alphabetical')})
-        .on('mouseout', function() {d3.select('#tooltip').style('opacity', 0)})
-        .on('mousemove', function() {d3.select('#tooltip').style('left', (d3.event.pageX+10) + 'px').style('top', (d3.event.pageY+10) + 'px')});
         //Start of actually printing the data
         //Starting with Averages as they will be called a good amount going forward
         var BST_Avg = 441;
