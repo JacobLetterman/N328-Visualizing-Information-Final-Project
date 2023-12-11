@@ -150,11 +150,14 @@
         svg.append('circle').attr('id','CircleAlpha').attr('cx', 282).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click", toggleColor)
             .on("mouseover", function(){return tooltip.style("visibility", "visible");})
-            .on("mousemove", function(){return tooltip.style("top", (event.pageX+10)+"px").style("left",(event.pageY+10)+"px");})
+            .on("mousemove", function(){return tooltip.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
             .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
         //Third Circle
         svg.append('circle').attr('id','CircleBeta').attr('cx', 383).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
-            .on("click", toggleColor);
+            .on("click", toggleColor)
+            .on("mouseover", function(){return tooltip.style("visibility", "visible");})
+            .on("mousemove", function(){return tooltip.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
+            .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
         //FourthCircle
         svg.append('circle').attr('id','CircleThree').attr('cx', 477).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click", toggleColor);
