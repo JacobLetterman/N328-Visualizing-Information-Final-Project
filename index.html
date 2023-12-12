@@ -68,6 +68,8 @@
             };
         })
         
+        var AverageBSEChart = [{group:'BSE',value:123}]
+
         //Line Rotation
         var columnNames = ['Dex Number', 'Name', 'Base Name', 'Type 1', 'Type 2', 'BST', 'HP', 'Attack', 'Defense', 'Special Attack', 'Special Defense', 'Speed']
 
@@ -134,10 +136,10 @@
             }
         })();
 
-        var tooltip = d3.select("body").append("div").transition().duration(200).style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").text("Sort By Alphabetical");
+        var tooltip = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").text("Sort By Alphabetical");
         var sampleSVG = d3.select("main").append("svg:svg").attr("class", "sample").attr("width", 300).attr("height", 300);
-        var tooltip2 = d3.select("body").append("div").transition().duration(200).style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").text("Turn On Bar Chart");
-
+        var tooltip2 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").text("Turn On Bar Chart");
+        var tooltip3 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").html('https://archives.bulbagarden.net/media/upload/f/fb/0001Bulbasaur.png')
 
         //Second Circle
         svg.append('circle').attr('id','CircleAlpha').attr('cx', 282).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
@@ -210,6 +212,9 @@
         //This is the start of actually putting the data in
         var svg = d3.select("svg");
         var Spot_1 = svg.append('text').text('1 _ _Bulbasaur _Bulbasaur_GRASS__POISON').style('font size', 13).attr('x',195).attr('y',325).attr('stroke', 'black')
+            .on("mouseover", function(){return tooltip3.style("visibility", "visible");})
+            .on("mousemove", function(){return tooltip3.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
+            .on("mouseout", function(){return tooltip3.style("visibility", "hidden");});
         var Spot_1_5 = svg.append('text').text('318 __ 45 _ _ 49 _ _ 49 _ 65 _ 65 _ 45').style('font size', 13).attr('x',618).attr('y',325).attr('stroke', 'black')
         var Spot_2 = svg.append('text').text('2 _ _Ivysaur_ __Ivysaur___ GRASS__POISON').style('font size', 13).attr('x',195).attr('y',387).attr('stroke', 'black')
         var Spot_2_5 = svg.append('text').text('405 __ 60 _ _ 62 _ _ 63 _ 80 _ 80 _ 60').style('font size', 13).attr('x',618).attr('y',387).attr('stroke', 'black')
@@ -230,7 +235,7 @@
         svg.append('line').attr('x1', 160).attr('y1', 886).attr('x2', 1400).attr('y2', 886).attr('stroke','black').style('stroke-width',3);
         
         //This puts the top ten of each category on screen and replaces whatever text is currently on there 
-        var TopTen = ['Top Ten BST','Top Ten HP','Top Ten Attack','Top Ten Defense', 'Top Ten Sp Attack', 'Top Ten Sp Defense', 'Top Ten Speed']
+        var TopTen = ['Top Ten lists','Top Ten BST','Top Ten HP','Top Ten Attack','Top Ten Defense', 'Top Ten Sp Attack', 'Top Ten Sp Defense', 'Top Ten Speed']
         
         d3.select("#selectButton")
             .style("left", "10px")
