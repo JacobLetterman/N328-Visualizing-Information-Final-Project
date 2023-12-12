@@ -30,7 +30,7 @@
     
 </head>
 <body>
-    <select id="selectButton"></select>
+    <select id="selectButton" transform="translate(50,155)"></select>
 	<svg id="main" width="2000" height="2000">
 		<text id='label' x='20' y='20'>Different stats for all the different Pokemon</text>
         <text transform="translate(89,134)rotate(43)">Dex Number</text>
@@ -119,7 +119,7 @@
         svg.append('line').attr('x1', 160).attr('y1', 266).attr('x2', 1400).attr('y2', 266).attr('stroke','black');//Line for under circles    
 
         //Functions, place for all function, as I want to condese them into 
-        var bar_fucntion = 1;
+        //var bar_fucntion = (function(){return});
 
 
         //Different Circles, messy code for now
@@ -134,9 +134,9 @@
             }
         })();
 
-        var tooltip = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").text("Sort By Alphabetical");
+        var tooltip = d3.select("body").append("div").transition().duration(200).style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").text("Sort By Alphabetical");
         var sampleSVG = d3.select("main").append("svg:svg").attr("class", "sample").attr("width", 300).attr("height", 300);
-        var tooltip2 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").text("Turn On Bar Chart");
+        var tooltip2 = d3.select("body").append("div").transition().duration(200).style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").text("Turn On Bar Chart");
 
 
         //Second Circle
@@ -234,6 +234,8 @@
         
         d3.select("#selectButton")
             .attr('id','TopTen')
+            .style("left", "10px")
+            .style("top", "5px")
             .selectAll('myOptions')
      	    .data(TopTen)
             .enter()
