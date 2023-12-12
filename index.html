@@ -20,6 +20,12 @@
 		rect {
 			stroke: white;
 		}
+        
+        #TopTen {
+        left: 10px;
+        top: 5px;
+        }
+
 	</style>
     
 </head>
@@ -228,8 +234,6 @@
         
         d3.select("#selectButton")
             .attr('id','TopTen')
-            .style("left", "10px")
-            .style("top", "5px")
             .selectAll('myOptions')
      	    .data(TopTen)
             .enter()
