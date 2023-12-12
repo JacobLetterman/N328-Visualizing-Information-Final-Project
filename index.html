@@ -21,7 +21,7 @@
 			stroke: white;
 		}
         
-        #TopTen {
+        #selectButton {
         left: 10px;
         top: 5px;
         }
@@ -233,7 +233,6 @@
         var TopTen = ['Top Ten BST','Top Ten HP','Top Ten Attack','Top Ten Defense', 'Top Ten Sp Attack', 'Top Ten Sp Defense', 'Top Ten Speed']
         
         d3.select("#selectButton")
-            .attr('id','TopTen')
             .style("left", "10px")
             .style("top", "5px")
             .selectAll('myOptions')
@@ -243,10 +242,6 @@
             .text(function (d) { return d; });
         //Everytime the buttons are clicked, want to have the corresponding bar chart become active
         //Also want to make it so when you hover over the bar it shows how much the difference is between the average and the number, blue for positive, red for negative
-
-        
-
-        
 	</script>
 </body>
 </html>
