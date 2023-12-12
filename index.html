@@ -27,18 +27,18 @@
 
 	<svg id="main" width="2000" height="2000">
 		<text id='label' x='20' y='20'>Different stats for all the different Pokemon</text>
-        <text transform="translate(91,134)rotate(43)">Dex Number</text>
+        <text transform="translate(89,134)rotate(43)">Dex Number</text>
         <text transform="translate(188,160)rotate(37)">Name</text>
         <text transform="translate(256,142)rotate(36)">Base Name</text>
         <text transform="translate(374,150)rotate(34)">Type 1</text>
         <text transform="translate(471,158)rotate(35)">Type 2</text>
-        <text transform="translate(566,158)rotate(35)">BST</text>
-        <text transform="translate(540,161)rotate(34)">HP</text>
-        <text transform="translate(600,155)rotate(36)">Attack</text>
-        <text transform="translate(666,155)rotate(36)">Defense</text>
-        <text transform="translate(732,150)rotate(36)">Sp Attack</text>
+        <text transform="translate(562,159)rotate(35)">BST</text>
+        <text transform="translate(602,161)rotate(34)">HP</text>
+        <text transform="translate(668,144)rotate(36)">Attack</text>
+        <text transform="translate(734,144)rotate(36)">Defense</text>
+        <text transform="translate(800,144)rotate(36)">Sp Attack</text>
         <text transform="translate(866,144)rotate(36)">Sp Defense</text>
-        <text transform="translate(936,152)rotate(36)">Speed</text>
+        <text transform="translate(938,152)rotate(36)">Speed</text>
 	</svg>
     
 	
@@ -132,7 +132,7 @@
         var sampleSVG = d3.select("main").append("svg:svg").attr("class", "sample").attr("width", 300).attr("height", 300);
         var tooltip2 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").text("Turn On Bar Chart");
 
-        
+
         //Second Circle
         svg.append('circle').attr('id','CircleAlpha').attr('cx', 282).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click", toggleColor)
