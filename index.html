@@ -172,6 +172,7 @@
         var svg = d3.select('svg');
         var toggleAlpha1 = (function(){
             return function(){
+                var currentColor = "white";
                 Spot_1_Text = (Spot_1_Text == Text_1) ? Replace_Spot1 : Text_1;
                 Spot_1.text(Spot_1_Text);
                 currentColor = currentColor == "white" ? "lime" : "white";
