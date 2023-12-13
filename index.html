@@ -151,10 +151,7 @@
         //var bar_fucntion = (function(){return});
 
         var PointColors = ['white', 'lime'];
-        var Text_1 = '1 _ _Bulbasaur _Bulbasaur_GRASS__POISON';
-        var Replace_Spot1 = "718,10% Forme,Zygarde,DRAGON,GROUND";
-        var Spot_1_Text = Text_1;
-
+        
         var svg = d3.select("svg");
         var toggleColor = (function(){
             var currentColor = "white";
@@ -172,7 +169,25 @@
         var svg = d3.select('svg');
         var toggleAlpha1 = (function(){
             return function(){
+                var Text_1 = '1 _ _Bulbasaur _Bulbasaur_GRASS__POISON';
+                var Replace_Spot1 = "718,10% Forme,Zygarde,DRAGON,GROUND";
+                var Spot_1_Text = Text_1;
                 var currentColor = "white";
+                
+                Spot_1_Text = (Spot_1_Text == Text_1) ? Replace_Spot1 : Text_1;
+                Spot_1.text(Spot_1_Text);
+                currentColor = currentColor == "white" ? "lime" : "white";
+                d3.select(this).style("fill", currentColor);
+            }
+        })();
+
+        var toggleAlpha2 = (function(){
+            return function(){
+                var Text_1 = '1 _ _Bulbasaur _Bulbasaur_GRASS__POISON';
+                var Replace_Spot1 = "460,Abomasnow,Abomasnow,GRASS,ICE";
+                var Spot_1_Text = Text_1;
+                var currentColor = "white";
+                
                 Spot_1_Text = (Spot_1_Text == Text_1) ? Replace_Spot1 : Text_1;
                 Spot_1.text(Spot_1_Text);
                 currentColor = currentColor == "white" ? "lime" : "white";
@@ -196,7 +211,7 @@
             .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
         //Third Circle
         svg.append('circle').attr('id','CircleBeta').attr('cx', 383).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
-            .on("click", toggleColor)
+            .on("click", toggleAlpha2)
             .on("mouseover", function(){return tooltip.style("visibility", "visible");})
             .on("mousemove", function(){return tooltip.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
             .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
