@@ -120,7 +120,8 @@
         svg.append('line').attr('x1', 160).attr('y1', 200).attr('x2', 1400).attr('y2', 200).attr('stroke','black');
         svg.append('line').attr('x1', 160).attr('y1', 266).attr('x2', 1400).attr('y2', 266).attr('stroke','black');//Line for under circles    
 
-        //Functions, place for all function, as I want to condese them into other vars
+        //Functions, place for all functions for now, as I want to condese them into other vars later
+        //Works, but goes to near bottom of the page, don't know why yet
         xScale = d3.scaleBand() 
            .domain(d3.range(AverageBSEChart.length)) 
            .rangeRound([0,45]) 
@@ -157,6 +158,14 @@
             return function(){
                 currentColor = currentColor == "white" ? "lime" : "white";
                 d3.select(this).style("fill", currentColor);
+            }
+        })();
+
+        var svg = d3.select('svg');
+        var toggleAlpha = (function(){
+            return function(){
+                Spot_1 = Spot_1 == '1 _ _Bulbasaur _Bulbasaur_GRASS__POISON' ? '718,10% Forme,Zygarde,DRAGON,GROUND' : '1 _ _Bulbasaur _Bulbasaur_GRASS__POISON';
+                d3.select(this).text('718,10% Forme,Zygarde,DRAGON,GROUND')
             }
         })();
 
@@ -247,7 +256,7 @@
         var Spot_2_5 = svg.append('text').text('405 __ 60 _ _ _62 _ _ _63 _ _80 _ 80 _ 60').style('font size', 13).attr('x',618).attr('y',387).attr('stroke', 'black')
         var Spot_3 = svg.append('text').text('3 _ _Venusaur _Venusaur__GRASS__POISON').style('font size', 13).attr('x',195).attr('y',449).attr('stroke', 'black')
         var Spot_4_25 = svg.append('text').text('Mega').style('font size',13).attr('x',234).attr('y',490).attr('stroke', 'black')
-        var Spot_4 = svg.append('text').text('3 _ _ Venusaur _Venusaur _GRASS _POISON').style('font size', 13).attr('x',195).attr('y',511).attr('stroke', 'black')
+        var Spot_4 = svg.append('text').text('3 _ _ Venusaur _Venusaur _GRASS _ POISON').style('font size', 13).attr('x',195).attr('y',511).attr('stroke', 'black')
         
         //Lines for the different rows
         svg.append('line').attr('x1', 160).attr('y1', 328).attr('x2', 1400).attr('y2', 328).attr('stroke','black').style('stroke-width',3);
