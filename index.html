@@ -149,7 +149,7 @@
         });
 
         //var bar_fucntion = (function(){return});
-
+        var ImageSpot1 = "<p>Most recent image of Bulbasaur</p><img src='https://archives.bulbagarden.net/media/upload/thumb/f/fb/0001Bulbasaur.png/240px-0001Bulbasaur.png'></img>";
         var PointColors = ['white', 'lime'];
         var Text_1 = '1 _ _Bulbasaur _Bulbasaur_GRASS__POISON';
         var Spot_1_Text = Text_1;
@@ -176,9 +176,12 @@
                 var Replace_Spot1 = "718,10% Forme,Zygarde,DRAGON,GROUND";
                 var Spot_1_Text = Text_1;
                 var currentColor = "white";
+                var Replace_Image1 = "<p>Most recent image of 10% Forme</p><img src='https://bulbapedia.bulbagarden.net/wiki/File:0718Zygarde-10Percent.png'></img>";
                 
                 Spot_1_Text = (Spot_1_Text === Text_1) ? Replace_Spot1 : Text_1;
                 Spot_1.text(Spot_1_Text);
+                ImageSpot1 = ImageSpot1 ? Replace_Image1 : ImageSpot1;
+                Image1.html(IamgeSpot1);
                 currentColor = currentColor === "white" ? "lime" : "white";
                 d3.select(this).style("fill", currentColor);
             }
@@ -204,7 +207,8 @@
         var tooltip2 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").text("Turn On Bar Chart");
         
         //Section for Image tooltips, deciding if I should do them for each entry
-        var Image1 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").html("<p>Most recent image of Bulbasaur</p><img src='https://archives.bulbagarden.net/media/upload/thumb/f/fb/0001Bulbasaur.png/240px-0001Bulbasaur.png'></img>");
+        var Image1 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px")
+            .html(ImageSpot1);
 
         //Second Circle
         svg.append('circle').attr('id','CircleAlpha').attr('cx', 282).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
