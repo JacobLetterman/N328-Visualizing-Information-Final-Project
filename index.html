@@ -123,7 +123,7 @@
         //Functions, place for all function, as I want to condese them into other vars
         xScale = d3.scaleBand() 
            .domain(d3.range(AverageBSEChart.length)) 
-           .rangeRound([0,55]) 
+           .rangeRound([0,45]) 
            .paddingInner(0.05); 
 
         yScale = d3.scaleLinear()
@@ -132,7 +132,7 @@
 
         svg = d3.select('body')
 		    .append("svg")
-			.attr("width", 55)
+			.attr("width", 45)
 			.attr("height", 200);
 
         svg.selectAll("rect")
