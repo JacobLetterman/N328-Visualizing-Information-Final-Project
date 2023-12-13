@@ -149,12 +149,13 @@
         });
 
         //var bar_fucntion = (function(){return});
+        //Calling each piece of data
         var ImageSpot1 = "<p>Most recent image of Bulbasaur</p><img src='https://archives.bulbagarden.net/media/upload/thumb/f/fb/0001Bulbasaur.png/240px-0001Bulbasaur.png'></img>";
-        var PointColors = ['white', 'lime'];
-        var Text_1 = '1 _ _Bulbasaur _Bulbasaur_GRASS__POISON';
-        var Spot_1_Text = Text_1;
-        var currentColor = "white";
+        var Spot_1_Text = '1 _ _Bulbasaur _Bulbasaur_GRASS__POISON';
+        var Spot_1_5_Text = '318 __ 45 _ _ _49 _ _ _49 _ _ 65 _ _ 65 _ 45';
 
+        var currentColor = "white";
+        var PointColors = ['white', 'lime'];
         var svg = d3.select("svg");
         var toggleColor = (function(){
             var currentColor = "white";
@@ -165,24 +166,38 @@
             }
         })();
 
+        //Spot 1
         var Spot_1 = svg.append('text').text(Spot_1_Text).style('font size', 13).attr('x',195).attr('y',325).attr('stroke', 'black')
             .on("mouseover", function(){return Image1.style("visibility", "visible");})
             .on("mousemove", function(){return Image1.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
             .on("mouseout", function(){return Image1.style("visibility", "hidden");});
+        //Spot 1_5
+        var Spot_1_5 = svg.append('text').text(Spot_1_5_Text).style('font size', 13).attr('x',618).attr('y',325).attr('stroke', 'black')
+        //Spot 2
+
+
+
+        //Start of Alpha1 & Alpha2 Functions
         var svg = d3.select('svg');
         var toggleAlpha1 = (function(){
             return function(){
                 //Spot 1
-                var Text_1 = '1 _ _Bulbasaur _Bulbasaur_GRASS__POISON';
                 var Replace_Spot1 = "718 10% Forme Zygarde _DRAGON _GROUND";
-                var Spot_1_Text = Text_1;
-                var currentColor = "white";
-                var Replace_Image1 = "<p>Most recent image of 10% Forme</p><img src='https://bulbapedia.bulbagarden.net/wiki/File:0718Zygarde-10Percent.png'></img>";
+                var Replace_Image1 = "<p>Most recent image of 10% Forme Zygarde</p><img src='https://www.google.com/url?sa=i&url=https%3A%2F%2Fpokeverse.fandom.com%2Fwiki%2FZygarde&psig=AOvVaw2sNxfQmG6rWjp7BRG5DUvN&ust=1702585794004000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIjhlL2gjYMDFQAAAAAdAAAAABAI'></img>";
                 
-                Spot_1_Text = (Spot_1_Text === Text_1) ? Replace_Spot1 : Text_1;
+                Spot_1_Text = Spot_1_Text ? Replace_Spot1 : Spot_1_Text;
                 Spot_1.text(Spot_1_Text);
                 ImageSpot1 = ImageSpot1 ? Replace_Image1 : ImageSpot1;
                 Image1.html(ImageSpot1);
+
+                //Spot 1_5
+                var Spot_1_5_Text = '318 __ 45 _ _ _49 _ _ _49 _ _ 65 _ _ 65 _ 45';
+                var Replace_Spot_1_5 = '486 __ 54 _ _ _100 _ _ _71 _ _ 61 _ _ 85 _ 115';
+                Spot_1_5_Text = Spot_1_5_Text ? Replace_Spot_1_5 : Spot_1_5_Text;
+                Spot_1_5.text(Spot_1_5_Text);
+
+                //ColorChanger
+                var currentColor = "white";
                 currentColor = currentColor === "white" ? "lime" : "white";
                 d3.select(this).style("fill", currentColor);
             }
@@ -191,16 +206,17 @@
         var toggleAlpha2 = (function(){
             return function(){
                 //Spot 1
-                var Text_1 = '1 _ _Bulbasaur _Bulbasaur_GRASS__POISON';
                 var Replace_Spot1 = "460AbomasnowAbomasnow GRASS ICE";
-                var Spot_1_Text = Text_1;
-                var currentColor = "white";
-                var Replace_Image1 = "<p>Most recent image of Abomasnow</p><img src='https://bulbapedia.bulbagarden.net/wiki/File:0460Abomasnow.png'></img>";
-                
-                Spot_1_Text = (Spot_1_Text == Text_1) ? Replace_Spot1 : Text_1;
+                var Replace_Image1 = "<p>Most recent image of Abomasnow</p><img src='https://archives.bulbagarden.net/media/upload/archive/1/14/20131115181505%210460Abomasnow.png'></img>";
+                Spot_1_Text = Spot_1_Text ? Replace_Spot1 : Spot_1_Text;
                 Spot_1.text(Spot_1_Text);
                 ImageSpot1 = ImageSpot1 ? Replace_Image1 : ImageSpot1;
                 Image1.html(ImageSpot1);
+
+                //Spot 1_5
+
+                //ColorChanger
+                var currentColor = "white";
                 currentColor = currentColor == "white" ? "lime" : "white";
                 d3.select(this).style("fill", currentColor);
             }
@@ -270,7 +286,6 @@
             .on("mousemove", function(){return tooltip2.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
             .on("mouseout", function(){return tooltip2.style("visibility", "hidden");});        
         
-        //Start of actually printing the data
         //Starting with Averages as they will be called a good amount going forward
         var BST_Avg = 441;
         var HP_Avg = 71;
@@ -279,17 +294,8 @@
         var SpAtk_Avg = 73;
         var SpDef_Avg = 72;
         var Speed_Avg = 70;
-
-        //Organizing the Data, want Alpha and Beta to make the data alphabetaical when clicked
-        var By_Alpha = 2;
-
         //This is the start of actually putting the data in
         var svg = d3.select("svg");
-       // var Spot_1 = svg.append('text').text('1 _ _Bulbasaur _Bulbasaur_GRASS__POISON').style('font size', 13).attr('x',195).attr('y',325).attr('stroke', 'black')
-            //.on("mouseover", function(){return Image1.style("visibility", "visible");})
-            //.on("mousemove", function(){return Image1.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
-            //.on("mouseout", function(){return Image1.style("visibility", "hidden");});
-        var Spot_1_5 = svg.append('text').text('318 __ 45 _ _ _49 _ _ _49 _ _65 _ 65 _ 45').style('font size', 13).attr('x',618).attr('y',325).attr('stroke', 'black')
         var Spot_2 = svg.append('text').text('2 _ _Ivysaur_ __Ivysaur___ GRASS__POISON').style('font size', 13).attr('x',195).attr('y',387).attr('stroke', 'black')
         var Spot_2_5 = svg.append('text').text('405 __ 60 _ _ _62 _ _ _63 _ _80 _ 80 _ 60').style('font size', 13).attr('x',618).attr('y',387).attr('stroke', 'black')
         var Spot_3 = svg.append('text').text('3 _ _Venusaur _Venusaur__GRASS__POISON').style('font size', 13).attr('x',195).attr('y',449).attr('stroke', 'black')
