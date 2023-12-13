@@ -165,7 +165,7 @@
         var toggleAlpha = (function(){
             return function(){
                 Spot_1 = Spot_1 == '1 _ _Bulbasaur _Bulbasaur_GRASS__POISON' ? '718,10% Forme,Zygarde,DRAGON,GROUND' : '1 _ _Bulbasaur _Bulbasaur_GRASS__POISON';
-                d3.select(this).text('718,10% Forme,Zygarde,DRAGON,GROUND');
+                d3.select(Spot_1).text('718,10% Forme,Zygarde,DRAGON,GROUND');
             }
         })();
 
@@ -179,8 +179,7 @@
 
         //Second Circle
         svg.append('circle').attr('id','CircleAlpha').attr('cx', 282).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
-            .on("click", toggleColor)
-            .on('click', toggleAlpha)
+            .on("click", function(d){toggleColor.show(d);toggleAlpha.hide(d);})
             .on("mouseover", function(){return tooltip.style("visibility", "visible");})
             .on("mousemove", function(){return tooltip.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
             .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
