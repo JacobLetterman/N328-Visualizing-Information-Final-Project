@@ -151,6 +151,10 @@
         //var bar_fucntion = (function(){return});
 
         var PointColors = ['white', 'lime'];
+        var Text_ = '1 _ _Bulbasaur _Bulbasaur_GRASS__POISON';
+        var Replace_Spot1 = "718,10% Forme,Zygarde,DRAGON,GROUND";
+        var Spot_1_Text = Text_;
+
         var svg = d3.select("svg");
         var toggleColor = (function(){
             var currentColor = "white";
@@ -160,15 +164,15 @@
                 d3.select(this).style("fill", currentColor);
             }
         })();
-        var Spot_1 = svg.append('text').text('1 _ _Bulbasaur _Bulbasaur_GRASS__POISON').style('font size', 13).attr('x',195).attr('y',325).attr('stroke', 'black')
+        var Spot_1 = svg.append('text').text(Spot_1_Text).style('font size', 13).attr('x',195).attr('y',325).attr('stroke', 'black')
             .on("mouseover", function(){return Image1.style("visibility", "visible");})
             .on("mousemove", function(){return Image1.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
             .on("mouseout", function(){return Image1.style("visibility", "hidden");});
         var svg = d3.select('svg');
         var toggleAlpha = (function(){
             return function(){
-                //Spot_1 = Spot_1 == "1 _ _Bulbasaur _Bulbasaur_GRASS__POISON" ? "718,10% Forme,Zygarde,DRAGON,GROUND" : "1 _ _Bulbasaur _Bulbasaur_GRASS__POISON";
-                var Spot_1 = svg.append('text').text('718,10% Forme,Zygarde,DRAGON,GROUND').style('font size', 13).attr('x',195).attr('y',325).attr('stroke', 'black');
+                Spot_1_Text = (Spot_1_Text == Text_) ? Spot_1_Text : Text_;
+                Spot_1.text(Spot_1_Text);
             }
         })();
 
