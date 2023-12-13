@@ -153,6 +153,7 @@
         var PointColors = ['white', 'lime'];
         var Text_1 = '1 _ _Bulbasaur _Bulbasaur_GRASS__POISON';
         var Spot_1_Text = Text_1;
+        var currentColor = "white";
 
         var svg = d3.select("svg");
         var toggleColor = (function(){
@@ -176,9 +177,9 @@
                 var Spot_1_Text = Text_1;
                 var currentColor = "white";
                 
-                Spot_1_Text = (Spot_1_Text == Text_1) ? Replace_Spot1 : Text_1;
+                Spot_1_Text = (Spot_1_Text === Text_1) ? Replace_Spot1 : Text_1;
                 Spot_1.text(Spot_1_Text);
-                currentColor = currentColor == "white" ? "lime" : "white";
+                currentColor = currentColor === "white" ? "lime" : "white";
                 d3.select(this).style("fill", currentColor);
             }
         })();
