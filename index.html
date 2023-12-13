@@ -187,9 +187,9 @@
 
         //Second Circle
         svg.append('circle').attr('id','CircleAlpha').attr('cx', 282).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
-            .on("click", function(){
-                toggleColor();
-                toggleAlpha1();
+            .on("click", function(d){
+                toggleColor(d);
+                toggleAlpha1(d);
             })
             .on("mouseover", function(){return tooltip.style("visibility", "visible");})
             .on("mousemove", function(){return tooltip.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
