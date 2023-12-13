@@ -168,7 +168,7 @@
         var toggleAlpha = (function(){
             return function(){
                 Spot_1 = Spot_1 == '1 _ _Bulbasaur _Bulbasaur_GRASS__POISON' ? '718,10% Forme,Zygarde,DRAGON,GROUND' : '1 _ _Bulbasaur _Bulbasaur_GRASS__POISON';
-                d3.select(Spot_1).text('718,10% Forme,Zygarde,DRAGON,GROUND').style('font size', 13).attr('x',195).attr('y',325).attr('stroke', 'black');
+                d3.select(Spot_1).append('text').text('718,10% Forme,Zygarde,DRAGON,GROUND').style('font size', 13).attr('x',195).attr('y',325).attr('stroke', 'black');
             }
         })();
 
