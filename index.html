@@ -160,12 +160,15 @@
                 d3.select(this).style("fill", currentColor);
             }
         })();
-
+        var Spot_1 = svg.append('text').text('1 _ _Bulbasaur _Bulbasaur_GRASS__POISON').style('font size', 13).attr('x',195).attr('y',325).attr('stroke', 'black')
+            .on("mouseover", function(){return Image1.style("visibility", "visible");})
+            .on("mousemove", function(){return Image1.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
+            .on("mouseout", function(){return Image1.style("visibility", "hidden");});
         var svg = d3.select('svg');
         var toggleAlpha = (function(){
             return function(){
                 Spot_1 = Spot_1 == '1 _ _Bulbasaur _Bulbasaur_GRASS__POISON' ? '718,10% Forme,Zygarde,DRAGON,GROUND' : '1 _ _Bulbasaur _Bulbasaur_GRASS__POISON';
-                d3.select(Spot_1).text('718,10% Forme,Zygarde,DRAGON,GROUND');
+                d3.select(Spot_1).text('718,10% Forme,Zygarde,DRAGON,GROUND').style('font size', 13).attr('x',195).attr('y',325).attr('stroke', 'black');
             }
         })();
 
@@ -247,10 +250,10 @@
 
         //This is the start of actually putting the data in
         var svg = d3.select("svg");
-        var Spot_1 = svg.append('text').text('1 _ _Bulbasaur _Bulbasaur_GRASS__POISON').style('font size', 13).attr('x',195).attr('y',325).attr('stroke', 'black')
-            .on("mouseover", function(){return Image1.style("visibility", "visible");})
-            .on("mousemove", function(){return Image1.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
-            .on("mouseout", function(){return Image1.style("visibility", "hidden");});
+       // var Spot_1 = svg.append('text').text('1 _ _Bulbasaur _Bulbasaur_GRASS__POISON').style('font size', 13).attr('x',195).attr('y',325).attr('stroke', 'black')
+            //.on("mouseover", function(){return Image1.style("visibility", "visible");})
+            //.on("mousemove", function(){return Image1.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
+            //.on("mouseout", function(){return Image1.style("visibility", "hidden");});
         var Spot_1_5 = svg.append('text').text('318 __ 45 _ _ _49 _ _ _49 _ _65 _ 65 _ 45').style('font size', 13).attr('x',618).attr('y',325).attr('stroke', 'black')
         var Spot_2 = svg.append('text').text('2 _ _Ivysaur_ __Ivysaur___ GRASS__POISON').style('font size', 13).attr('x',195).attr('y',387).attr('stroke', 'black')
         var Spot_2_5 = svg.append('text').text('405 __ 60 _ _ _62 _ _ _63 _ _80 _ 80 _ 60').style('font size', 13).attr('x',618).attr('y',387).attr('stroke', 'black')
