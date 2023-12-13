@@ -125,11 +125,11 @@
         //Image/Text 1
         var ImageSpot1 = "<p>Most recent image of Bulbasaur</p><img src='https://archives.bulbagarden.net/media/upload/thumb/f/fb/0001Bulbasaur.png/240px-0001Bulbasaur.png'></img>";
         var Spot_1_Text = '1 _ _Bulbasaur _Bulbasaur_GRASS__POISON';
-        var Spot_1_5_Text = '318 __ 45 _ _ _49 _ _ _49 _ _ 65 _ _ 65 _ 45';
+        var Spot_1_5_Text = '318 __ 45 _ _ _49 _ _ _49 _ _ 65 _ _ 65 _ _ 45';
         //Image/text 2
-        var ImageSpot2 = "<p>Most recent image of Ivysaur</p><img src='https://archives.bulbagarden.net/media/upload/archive/8/81/20130810045918%210002Ivysaur.png'></img>";
+        var ImageSpot2 = "<p>Most recent image of Ivysaur</p><img src='https://archives.bulbagarden.net/media/upload/archive/8/81/20190404221349%210002Ivysaur.png'></img>";
         var Spot_2_Text = '2 _ _Ivysaur_ __Ivysaur___ GRASS__POISON';
-        var Spot_2_5_Text = '405 __ 60 _ _ _62 _ _ _63 _ _80 _ 80 _ 60';
+        var Spot_2_5_Text = '405 __ 60 _ _ _62 _ _ _63 _ _ 80 _ _ 80 _ _ 60';
         //Image/text 3
         var ImageSpot3 = "<p>Most recent image of Venusaur</p><img src='https://archives.bulbagarden.net/media/upload/archive/6/6b/20130810083010%210003Venusaur.png'></img>";
         var Spot_3_Text = '3 _ _Venusaur _Venusaur__GRASS__POISON';
@@ -140,29 +140,30 @@
         var Spot_4_5_Text = '625 __ 80 _ _ _100 _ _ _123 _ _122 _ 120 80';
         //Image/text 5
         var ImageSpot5 = "<p>Most recent image of Charmander</p><img src='https://archives.bulbagarden.net/media/upload/archive/2/27/20130810091956%210004Charmander.png'></img>";
-        var Spot_5_Text = '4 _ _Charmander_ __Charmander___ FIRE__ -';
+        var Spot_5_Text = '4 _ Charmander_ _Charmander___ FIRE__ -';
         var Spot_5_5_Text = '309 __ 39 _ _ _52 _ _ _43 _ _ 60 _ _ 50 _ 65';
         //Image/text 6
         var ImageSpot6 = "<p>Most recent image of Charmeleon</p><img src='https://archives.bulbagarden.net/media/upload/archive/0/05/20190404222345%210005Charmeleon.png'></img>";
-        var Spot_6_Text = '5 _ _Charmeleon_ __Charmeleon___ FIRE__ -';
+        var Spot_6_Text = '5 _ Charmeleon_ _Charmeleon___ FIRE__ -';
         var Spot_6_5_Text = '405 __ 58 _ _ _64 _ _ _58 _ _80 _ 65 _ 80';
         //Image/text 7
         var ImageSpot7 = "<p>Most recent image of Charizard</p><img src='https://archives.bulbagarden.net/media/upload/archive/3/38/20130810070957%210006Charizard.png'></img>";
-        var Spot_7_Text = '6 _ _Charizard_ __Charizard___ FIRE__FLYING';
+        var Spot_7_Text = '6 _ _Charizard_ _Charizard___ FIRE__FLYING';
         var Spot_7_5_Text = '534 __ 78 _ _ _84 _ _ _78 _ _109 _ 85 _ 100';
         //Image/text 8
         var ImageSpot8 = "<p>Most recent image of Mega Charizard X</p><img src='https://archives.bulbagarden.net/media/upload/3/35/0006Charizard-Mega_X.png'></img>";
-        var Spot_8_Text = '6 _ _Charizard X_ __Charizard___ FIRE__DRAGON';
+        var Spot_8_Text = '6 __Charizard X_ __Charizard___ FIRE__DRAGON';
         var Spot_8_5_Text = '634 __ 78 _ _ 130 _ _ _111 _ _130 _ 85 _ 100';
         //Image/text 9
         var ImageSpot9 = "<p>Most recent image of Mega Charizard Y</p><img src='https://archives.bulbagarden.net/media/upload/a/a0/0006Charizard-Mega_Y.png'></img>";
-        var Spot_9_Text = '6 _ _Charizard Y_ __Charizard___ FIRE__FLYING';
+        var Spot_9_Text = '6 __Charizard Y_ __Charizard___ FIRE__FLYING';
         var Spot_9_5_Text = '634 __ 78 _ _ _104 _ _ _78 _ _159 _ 115 _ 100';
         //Image/text 10
         var ImageSpot10 = "<p>Most recent image of Squirtle</p><img src='https://archives.bulbagarden.net/media/upload/archive/5/54/20110414005311%210007Squirtle.png'></img>";
         var Spot_10_Text = '7 _ _Squirtle_ __Squirtle___ WATER__ -';
         var Spot_10_5_Text = '314 __ 44 _ _ _48 _ _ _65 _ _50 _ 64 _ 43';
 
+        //Basic Color Changer
         var currentColor = "white";
         var svg = d3.select("svg");
         var toggleColor = (function(){
@@ -193,48 +194,56 @@
             .on("mousemove", function(){return Image3.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
             .on("mouseout", function(){return Image3.style("visibility", "hidden");});
         //Spot 3_5
+        var Spot_3_5 = svg.append('text').text(Spot_3_5_Text).style('font size', 13).attr('x',618).attr('y',449).attr('stroke', 'black')
         //Spot 4
         var Spot_4 = svg.append('text').text(Spot_4_Text).style('font size', 13).attr('x',195).attr('y',511).attr('stroke', 'black')
             .on("mouseover", function(){return Image4.style("visibility", "visible");})
             .on("mousemove", function(){return Image4.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
             .on("mouseout", function(){return Image4.style("visibility", "hidden");});
         //Spot 4_5
+        var Spot_4_5 = svg.append('text').text(Spot_4_5_Text).style('font size', 13).attr('x',618).attr('y',511).attr('stroke', 'black')
         //Spot 5
         var Spot_5 = svg.append('text').text(Spot_5_Text).style('font size', 13).attr('x',195).attr('y',573).attr('stroke', 'black')
             .on("mouseover", function(){return Image5.style("visibility", "visible");})
             .on("mousemove", function(){return Image5.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
             .on("mouseout", function(){return Image5.style("visibility", "hidden");});
         //Spot 5_5
+        var Spot_5_5 = svg.append('text').text(Spot_5_5_Text).style('font size', 13).attr('x',618).attr('y',573).attr('stroke', 'black')
         //Spot 6
         var Spot_6 = svg.append('text').text(Spot_6_Text).style('font size', 13).attr('x',195).attr('y',635).attr('stroke', 'black')
             .on("mouseover", function(){return Image6.style("visibility", "visible");})
             .on("mousemove", function(){return Image6.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
             .on("mouseout", function(){return Image6.style("visibility", "hidden");});
         //Spot 6_5
+        var Spot_6_5 = svg.append('text').text(Spot_6_5_Text).style('font size', 13).attr('x',618).attr('y',635).attr('stroke', 'black')
         //Spot 7
         var Spot_7 = svg.append('text').text(Spot_7_Text).style('font size', 13).attr('x',195).attr('y',697).attr('stroke', 'black')
             .on("mouseover", function(){return Image7.style("visibility", "visible");})
             .on("mousemove", function(){return Image7.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
             .on("mouseout", function(){return Image7.style("visibility", "hidden");});
         //Spot 7_5
+        var Spot_7_5 = svg.append('text').text(Spot_7_5_Text).style('font size', 13).attr('x',618).attr('y',697).attr('stroke', 'black')
         //Spot 8
         var Spot_8 = svg.append('text').text(Spot_8_Text).style('font size', 13).attr('x',195).attr('y',759).attr('stroke', 'black')
             .on("mouseover", function(){return Image8.style("visibility", "visible");})
             .on("mousemove", function(){return Image8.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
             .on("mouseout", function(){return Image8.style("visibility", "hidden");});
         //Spot 8_5
+        var Spot_8_5 = svg.append('text').text(Spot_8_5_Text).style('font size', 13).attr('x',618).attr('y',759).attr('stroke', 'black')
         //Spot 9
         var Spot_9 = svg.append('text').text(Spot_9_Text).style('font size', 13).attr('x',195).attr('y',821).attr('stroke', 'black')
             .on("mouseover", function(){return Image9.style("visibility", "visible");})
             .on("mousemove", function(){return Image9.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
             .on("mouseout", function(){return Image9.style("visibility", "hidden");});
         //Spot 9_5
+        var Spot_9_5 = svg.append('text').text(Spot_9_5_Text).style('font size', 13).attr('x',618).attr('y',821).attr('stroke', 'black')
         //Spot 10
         var Spot_10 = svg.append('text').text(Spot_10_Text).style('font size', 13).attr('x',195).attr('y',883).attr('stroke', 'black')
             .on("mouseover", function(){return Image10.style("visibility", "visible");})
             .on("mousemove", function(){return Image10.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
             .on("mouseout", function(){return Image10.style("visibility", "hidden");});
         //Spot 10_5
+        var Spot_10_5 = svg.append('text').text(Spot_10_5_Text).style('font size', 13).attr('x',618).attr('y',883).attr('stroke', 'black')
         //Mega or Preface Spots
         var Spot_Preface1 = svg.append('text').text('Mega').style('font size',13).attr('x',234).attr('y',366).attr('stroke', 'white')
         var Spot_Preface2 = svg.append('text').text('Mega').style('font size',13).attr('x',234).attr('y',490).attr('stroke', 'white')
@@ -244,7 +253,7 @@
         var toggleAlpha1 = (function(){
             return function(){
                 //Spot 1
-                var Replace_Spot1 = "718 10% Forme Zygarde __DRAGONGROUND";
+                var Replace_Spot1 = "718 10% Forme Zygarde __DRAGON GROUND";
                 var Replace_Image1 = "<p>Most recent image of 10% Forme Zygarde</p><img src='https://archives.bulbagarden.net/media/upload/f/f8/0718Zygarde-10Percent.png'></img>";
                 
                 Spot_1_Text = Spot_1_Text ? Replace_Spot1 : Spot_1_Text;
@@ -276,7 +285,7 @@
 
                 //Spot 1_5
                 var Spot_1_5_Text = '318 __ 45 _ _ _49 _ _ _49 _ _ 65 _ _ 65 _ 45';
-                var Replace_Spot_1_5 = '494 __ 90 _ _ _92 _ _ _75 _ _ 92 _ _ 85 _ 60';
+                var Replace_Spot_1_5 = '494 __ 90 _ _ _92 _ _ _75 _ _ 92 _ _ _85 _ _60';
                 Spot_1_5_Text = Spot_1_5_Text ? Replace_Spot_1_5 : Spot_1_5_Text;
                 Spot_1_5.text(Spot_1_5_Text);
 
