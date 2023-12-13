@@ -151,9 +151,9 @@
         //var bar_fucntion = (function(){return});
 
         var PointColors = ['white', 'lime'];
-        var Text_ = '1 _ _Bulbasaur _Bulbasaur_GRASS__POISON';
+        var Text_1 = '1 _ _Bulbasaur _Bulbasaur_GRASS__POISON';
         var Replace_Spot1 = "718,10% Forme,Zygarde,DRAGON,GROUND";
-        var Spot_1_Text = Text_;
+        var Spot_1_Text = Text_1;
 
         var svg = d3.select("svg");
         var toggleColor = (function(){
@@ -164,14 +164,15 @@
                 d3.select(this).style("fill", currentColor);
             }
         })();
+
         var Spot_1 = svg.append('text').text(Spot_1_Text).style('font size', 13).attr('x',195).attr('y',325).attr('stroke', 'black')
             .on("mouseover", function(){return Image1.style("visibility", "visible");})
             .on("mousemove", function(){return Image1.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
             .on("mouseout", function(){return Image1.style("visibility", "hidden");});
         var svg = d3.select('svg');
-        var toggleAlpha = (function(){
+        var toggleAlpha1 = (function(){
             return function(){
-                Spot_1_Text = (Spot_1_Text == Text_) ? Replace_Spot1 : Text_;
+                Spot_1_Text = (Spot_1_Text == Text_1) ? Replace_Spot1 : Text_1;
                 Spot_1.text(Spot_1_Text);
             }
         })();
@@ -186,7 +187,10 @@
 
         //Second Circle
         svg.append('circle').attr('id','CircleAlpha').attr('cx', 282).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
-            .on("click", toggleAlpha)
+            .on("click", function(){
+                toggleColor();
+                toggleAlpha1();
+            })
             .on("mouseover", function(){return tooltip.style("visibility", "visible");})
             .on("mousemove", function(){return tooltip.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
             .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
