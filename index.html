@@ -172,8 +172,9 @@
         var svg = d3.select('svg');
         var toggleAlpha1 = (function(){
             return function(){
+                //Spot 1
                 var Text_1 = '1 _ _Bulbasaur _Bulbasaur_GRASS__POISON';
-                var Replace_Spot1 = "718,10% Forme,Zygarde,DRAGON,GROUND";
+                var Replace_Spot1 = "718 10% Forme Zygarde _DRAGON _GROUND";
                 var Spot_1_Text = Text_1;
                 var currentColor = "white";
                 var Replace_Image1 = "<p>Most recent image of 10% Forme</p><img src='https://bulbapedia.bulbagarden.net/wiki/File:0718Zygarde-10Percent.png'></img>";
@@ -181,7 +182,7 @@
                 Spot_1_Text = (Spot_1_Text === Text_1) ? Replace_Spot1 : Text_1;
                 Spot_1.text(Spot_1_Text);
                 ImageSpot1 = ImageSpot1 ? Replace_Image1 : ImageSpot1;
-                Image1.html(IamgeSpot1);
+                Image1.html(ImageSpot1);
                 currentColor = currentColor === "white" ? "lime" : "white";
                 d3.select(this).style("fill", currentColor);
             }
@@ -189,13 +190,17 @@
 
         var toggleAlpha2 = (function(){
             return function(){
+                //Spot 1
                 var Text_1 = '1 _ _Bulbasaur _Bulbasaur_GRASS__POISON';
-                var Replace_Spot1 = "460,Abomasnow,Abomasnow,GRASS,ICE";
+                var Replace_Spot1 = "460AbomasnowAbomasnow GRASS ICE";
                 var Spot_1_Text = Text_1;
                 var currentColor = "white";
+                var Replace_Image1 = "<p>Most recent image of Abomasnow</p><img src='https://bulbapedia.bulbagarden.net/wiki/File:0460Abomasnow.png'></img>";
                 
                 Spot_1_Text = (Spot_1_Text == Text_1) ? Replace_Spot1 : Text_1;
                 Spot_1.text(Spot_1_Text);
+                ImageSpot1 = ImageSpot1 ? Replace_Image1 : ImageSpot1;
+                Image1.html(ImageSpot1);
                 currentColor = currentColor == "white" ? "lime" : "white";
                 d3.select(this).style("fill", currentColor);
             }
