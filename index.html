@@ -22,15 +22,15 @@
 		}
         
         #selectButton {
-        left: 10px;
-        top: 5px;
+        position: relative;
+        top: 50px;
         }
 
 	</style>
     
 </head>
 <body>
-    <select id="selectButton" transform="translate(50,155)"></select>
+    <select id="selectButton"></select>
 	<svg id="main" width="2000" height="2000">
 		<text id='label' x='20' y='20'>Different stats for all the different Pokemon</text>
         <text transform="translate(89,134)rotate(43)">Dex Number</text>
@@ -50,7 +50,7 @@
 	
 
 	<script>
-        //Loading the data, want this to be phyiscally on the site, but still working towards a solution
+        //Loading the data
         data = d3.csv("Pokemon Data.csv", function(d){
             return{
                 Dex_No : +d['Dex Number'],
@@ -140,28 +140,28 @@
         var Spot_4_5_Text = '625 __ 80 _ _ _100 _ _ 123 _ _122 _ _120 _ _ 80';
         //Image/text 5
         var ImageSpot5 = "<p>Most recent image of Charmander</p><img src='https://archives.bulbagarden.net/media/upload/archive/2/27/20130810091956%210004Charmander.png'></img>";
-        var Spot_5_Text = '4 _ Charmander_Charmander___ FIRE__ -';
-        var Spot_5_5_Text = '309 __ 39 _ _ _52 _ _ _43 _ _ 60 _ _ _50 _ _ 65';
+        var Spot_5_Text = '4 _ CharmanderCharmander___ FIRE__ NONE';
+        var Spot_5_5_Text = '309 __ 39 _ _ _52 _ _ _43 _ _ 60 _ _ _50 _ _ _65';
         //Image/text 6
         var ImageSpot6 = "<p>Most recent image of Charmeleon</p><img src='https://archives.bulbagarden.net/media/upload/archive/0/05/20190404222345%210005Charmeleon.png'></img>";
-        var Spot_6_Text = '5 _ Charmeleon_Charmeleon___ FIRE__ -';
-        var Spot_6_5_Text = '405 __ 58 _ _ _64 _ _ _58 _ _ 80 _ _ 65 _ _ 80';
+        var Spot_6_Text = '5 _ CharmeleonCharmeleon___ FIRE__ NONE';
+        var Spot_6_5_Text = '405 __ 58 _ _ _64 _ _ _58 _ _ 80 _ _ _65 _ _ _80';
         //Image/text 7
         var ImageSpot7 = "<p>Most recent image of Charizard</p><img src='https://archives.bulbagarden.net/media/upload/archive/3/38/20130810070957%210006Charizard.png'></img>";
         var Spot_7_Text = '6 _ _Charizard_ Charizard___ FIRE__FLYING';
         var Spot_7_5_Text = '534 __ 78 _ _ _84 _ _ _78 _ _ 109 _ _ 85 _ _ 100';
         //Image/text 8
         var ImageSpot8 = "<p>Most recent image of Mega Charizard X</p><img src='https://archives.bulbagarden.net/media/upload/3/35/0006Charizard-Mega_X.png'></img>";
-        var Spot_8_Text = '6 __Charizard X_ Charizard___ FIRE_DRAGON';
+        var Spot_8_Text = '6 __Charizard X_ Charizard___FIRE__DRAGON';
         var Spot_8_5_Text = '634 __ 78 _ _ 130 _ _ _111 _ _130 _ _ 85 _ _ 100';
         //Image/text 9
         var ImageSpot9 = "<p>Most recent image of Mega Charizard Y</p><img src='https://archives.bulbagarden.net/media/upload/a/a0/0006Charizard-Mega_Y.png'></img>";
-        var Spot_9_Text = '6 __Charizard Y_ Charizard___ FIRE__FLYING';
+        var Spot_9_Text = '6 __Charizard Y_ Charizard___FIRE__FLYING';
         var Spot_9_5_Text = '634 __ 78 _ _ _104 _ _ _78 _ _159 _ _ 115 _ _ 100';
         //Image/text 10
         var ImageSpot10 = "<p>Most recent image of Squirtle</p><img src='https://archives.bulbagarden.net/media/upload/archive/5/54/20110414005311%210007Squirtle.png'></img>";
-        var Spot_10_Text = '7 _ _Squirtle_ __Squirtle___ WATER__ -';
-        var Spot_10_5_Text = '314 __ 44 _ _ _48 _ _ _65 _ _ _50 _ _ 64 _ _ 43';
+        var Spot_10_Text = '7 _ _Squirtle_ __Squirtle___ WATER__ NONE';
+        var Spot_10_5_Text = '314 __ 44 _ _ _48 _ _ _65 _ _ _50 _ _ 64 _ _ _ 43';
 
         //Basic Color Changer
         var currentColor = "white";
@@ -245,27 +245,125 @@
         //Spot 10_5
         var Spot_10_5 = svg.append('text').text(Spot_10_5_Text).style('font size', 13).attr('x',618).attr('y',883).attr('stroke', 'black')
         //Mega or Preface Spots
-        var Spot_Preface1 = svg.append('text').text('Mega').style('font size',13).attr('x',234).attr('y',366).attr('stroke', 'white')
-        var Spot_Preface2 = svg.append('text').text('Mega').style('font size',13).attr('x',234).attr('y',490).attr('stroke', 'white')
-        
-        //Start of Alpha1 & Alpha2 Functions
+        var display = null;
+        var Spot_Preface1 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',366).attr('stroke', 'black').style("display",display)
+        var Spot_Preface2 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',490).attr('stroke', 'black').style("display",display)
+        var Spot_Preface3 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',552).attr('stroke', 'black').style("display",display)
+        var Spot_Preface4 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',862).attr('stroke', 'black').style("display",display)
+
+        //Start of Alpha1 & Alpha2 Functions, they will be very long
         var svg = d3.select('svg');
         var toggleAlpha1 = (function(){
             return function(){
                 //Spot 1
-                var Replace_Spot1 = "718 10% Forme Zygarde __DRAGON GROUND";
                 var Replace_Image1 = "<p>Most recent image of 10% Forme Zygarde</p><img src='https://archives.bulbagarden.net/media/upload/f/f8/0718Zygarde-10Percent.png'></img>";
-                
                 Spot_1_Text = Spot_1_Text ? Replace_Spot1 : Spot_1_Text;
                 Spot_1.text(Spot_1_Text);
                 ImageSpot1 = ImageSpot1 ? Replace_Image1 : ImageSpot1;
                 Image1.html(ImageSpot1);
-
                 //Spot 1_5
                 var Spot_1_5_Text = '318 __ 45 _ _ _49 _ _ _49 _ _ _65 _ _ _65 _ _ 45';
                 var Replace_Spot_1_5 = '486 __ 54 _ _ _100 _ _ _71 _ _ 61 _ _ 85 _ _ 115';
                 Spot_1_5_Text = Spot_1_5_Text ? Replace_Spot_1_5 : Spot_1_5_Text;
                 Spot_1_5.text(Spot_1_5_Text);
+                //Spot 2
+                var Replace_Spot2 = "718 50% Forme Zygarde __DRAGON GROUND";
+                var Replace_Image2 = "<p>Most recent image of 50% Forme Zygarde</p><img src='https://archives.bulbagarden.net/media/upload/archive/9/92/20160701172621%210718Zygarde.png'></img>";
+                Spot_2_Text = Spot_2_Text ? Replace_Spot2 : Spot_2_Text;
+                Spot_2.text(Spot_2_Text);
+                ImageSpot2 = ImageSpot2 ? Replace_Image2 : ImageSpot2;
+                Image2.html(ImageSpot2);
+                //Spot 2_5
+                var Replace_Spot_2_5 = '600 __ 108_ _ _100 _ _ _121_ _ 81 _ _ 95 _ _ 95';
+                Spot_2_5_Text = Spot_2_5_Text ? Replace_Spot_2_5 : Spot_2_5_Text;
+                Spot_2_5.text(Spot_2_5_Text);
+                //Spot 3
+                var Replace_Spot3 = '460AbomasnowAbomasnow GRASS __ICE'
+                var Replace_Image3 = "<p>Most recent image of Abomasnow</p><img src='<p>Most recent image of Abomasnow</p><img src='https://archives.bulbagarden.net/media/upload/archive/1/14/20131115181505%210460Abomasnow.png'></img>";
+                Spot_3_Text = Spot_3_Text ? Replace_Spot3 : Spot_3_Text;
+                Spot_3.text(Spot_3_Text);
+                ImageSpot3 = ImageSpot3 ? Replace_Image3 : ImageSpot3;
+                Image3.html(ImageSpot3);
+                //Spot 3_5
+                var Replace_Spot_3_5 = '494 __ 90 _ _ _92 _ _ _75 _ _ 92 _ _ _85 _ _ _60';
+                Spot_3_5_Text = Spot_3_5_Text ? Replace_Spot_3_5 : Spot_3_5_Text;
+                Spot_3_5.text(Spot_3_5_Text);
+                //Spot 4
+                var Replace_Spot4 = "63 _Abra _ _ Abra__PSYCHIC";
+                var Replace_Image4 = "<p>Most recent image of Abra</p><img src='https://archives.bulbagarden.net/media/upload/archive/b/bd/20110722101745%210063Abra.png'></img>";
+                Spot_4_Text = Spot_4_Text ? Replace_Spot4 : Spot_4_Text;
+                Spot_4.text(Spot_4_Text);
+                ImageSpot4 = ImageSpot4 ? Replace_Image4 : ImageSpot4;
+                Image4.html(ImageSpot4);
+                //Spot 4_5
+                var Replace_Spot_4_5 = '310 __ 25 _ _ _20 _ _ _15 _ _ 105 _ _ _55 _ _ _90';
+                Spot_4_5_Text = Spot_4_5_Text ? Replace_Spot_4_5 : Spot_4_5_Text;
+                Spot_4_5.text(Spot_4_5_Text);
+                //Spot 5
+                var Replace_Spot5 = "359_Absol_ _Absol_ _DARK_ _NONE";
+                var Replace_Image5 = "<p>Most recent image of Mega Absol</p><img src='https://archives.bulbagarden.net/media/upload/d/d7/0359Absol-Mega.png'></img>";
+                Spot_5_Text = Spot_5_Text ? Replace_Spot5 : Spot_5_Text;
+                Spot_5.text(Spot_5_Text);
+                ImageSpot5 = ImageSpot5 ? Replace_Image5 : ImageSpot5;
+                Image5.html(ImageSpot5);
+                //Spot 5_5
+                var Replace_Spot_5_5 = '465 __ 65 _ _ _130 _ _ _60 _ _ 75 _ _ _60 _ _ _75';
+                Spot_5_5_Text = Spot_5_5_Text ? Replace_Spot_5_5 : Spot_5_5_Text;
+                Spot_5_5.text(Spot_5_5_Text);
+                //Spot 6
+                var Replace_Spot6 = '617_Accelgor_Accelgor_BUG_ _NONE'
+                var Replace_Image1 = "<p>Most recent image of Accelgor</p><img src='https://archives.bulbagarden.net/media/upload/archive/f/f4/20101218010857%210617Accelgor.png'></img>";
+                Spot_6_Text = Spot_6_Text ? Replace_Spot6 : Spot_6_Text;
+                Spot_6.text(Spot_6_Text);
+                //Spot 6_5
+                var Replace_Spot_6_5 = '495 __ 80 _ _ _70 _ _ _40 _ _100 _ _ _60 _ __145';
+                Spot_6_5_Text = Spot_6_5_Text ? Replace_Spot_6_5 : Spot_6_5_Textt;
+                Spot_6_5.text(Spot_6_5_Text);
+                //Spot 7
+                var Replace_Spot7 = "142AerodactylAerodactylROCK__FLYING";
+                var Replace_Image7 = "<p>Most recent image of Aerodactyl</p><img src='https://archives.bulbagarden.net/media/upload/archive/2/2c/20131115181516%210142Aerodactyl.png'></img>";
+                Spot_7_Text = Spot_7_Text ? Replace_Spot7 : Spot_7_Text;
+                Spot_7.text(Spot_7_Text);
+                ImageSpot7 = ImageSpot7 ? Replace_Image7 : ImageSpot7;
+                Image7.html(ImageSpot7);
+                //Spot 7_5
+                var Replace_Spot_7_5 = '515 __ 80_ _ _105 _ _ _65_ _85 _ _75 _ _ 130';
+                Spot_7_5_Text = Spot_7_5_Text ? Replace_Spot_7_5 : Spot_7_5_Text;
+                Spot_7_5.text(Spot_7_5_Text);
+                //Spot 8
+                var Replace_Spot8 = "306_Aggron_ Aggron_STEEL_ROCK";
+                var Replace_Image8 = "<p>Most recent image of Aggron</p><img src='https://archives.bulbagarden.net/media/upload/archive/1/1e/20150110193353%210306Aggron.png'></img>";
+                Spot_8_Text = Spot_8_Text ? Replace_Spot2 : Spot_8_Text;
+                Spot_8.text(Spot_8_Text);
+                ImageSpot8 = ImageSpot8 ? Replace_Image8 : ImageSpot8;
+                Image8.html(ImageSpot8);
+                //Spot 8_5
+                var Replace_Spot_8_5 = '530 __ 70 _ _ _110 _ _ _180 _ _ 60 _ _ 60_ _ _50';
+                Spot_8_5_Text = Spot_8_5_Text ? Replace_Spot_8_5 : Spot_8_5_Text;
+                Spot_8_5.text(Spot_8_5_Text);
+                //Spot 9
+                var Replace_Spot9 = "190__Aipom__Aipom__NORMAL__NONE";
+                var Replace_Image9 = "<p>Most recent image of Aipom</p><img src='https://archives.bulbagarden.net/media/upload/archive/0/0d/20100417191744%210190Aipom.png'></img>";
+                Spot_9_Text = Spot_9_Text ? Replace_Spot9 : Spot_9_Text;
+                Spot_9.text(Spot_9_Text);
+                ImageSpot9 = ImageSpot9 ? Replace_Image9 : ImageSpot9;
+                Image9.html(ImageSpot9);
+                //Spot 9_5
+                var Replace_Spot_9_5 = '360 __ 55_ _ _70 _ _ _55_ _40 _ _55 _ _ 85';
+                Spot_9_5_Text = Spot_9_5_Text ? Replace_Spot_9_5 : Spot_9_5_Text;
+                Spot_9_5.text(Spot_2_5_Text);
+                //Spot 10
+                var display_replace = 'block';
+                var Replace_Spot10 = "142AerodactylAerodactylROCK__FLYING";
+                var Replace_Image10 = "<p>Most recent image of Mega Aerodactyl</p><img src='https://archives.bulbagarden.net/media/upload/archive/1/18/20160403191216%210142Aerodactyl-Mega.png'></img>";
+                Spot_10_Text = Spot_10_Text ? Replace_Spot10 : Spot_10_Text;
+                Spot_10.text(Spot_10_Text);
+                ImageSpot10 = ImageSpot10 ? Replace_Image10 : ImageSpot10;
+                Image10.html(ImageSpot10);
+                //Spot 10_5
+                var Replace_Spot_10_5 = '500 __ 55_ _ _50 _ _ _45_ _135 _ _95 _ _ 120';
+                Spot_10_5_Text = Spot_10_5_Text ? Replace_Spot_10_5 : Spot_10_5_Text;
+                Spot_10_5.text(Spot_10_5_Text);
 
                 //ColorChanger
                 currentColor = currentColor === "white" ? "lime" : "white";
@@ -282,12 +380,114 @@
                 Spot_1.text(Spot_1_Text);
                 ImageSpot1 = ImageSpot1 ? Replace_Image1 : ImageSpot1;
                 Image1.html(ImageSpot1);
-
                 //Spot 1_5
-                var Spot_1_5_Text = '318 __ 45 _ _ _49 _ _ _49 _ _ 65 _ _ 65 _ 45';
-                var Replace_Spot_1_5 = '494 __ 90 _ _ _92 _ _ _75 _ _ 92 _ _ _85 _ _60';
+                var Replace_Spot_1_5 = '494 __ 90 _ _ _92 _ _ _75 _ _ 92 _ _ _85 _ _ _60';
                 Spot_1_5_Text = Spot_1_5_Text ? Replace_Spot_1_5 : Spot_1_5_Text;
                 Spot_1_5.text(Spot_1_5_Text);
+                //Spot 2
+                var display_replace = 'block';
+                var Replace_Spot2 = "460AbomasnowAbomasnow GRASS __ICE";
+                var Replace_Image2 = "<p>Most recent image of Mega Abomasonw</p><img src='https://archives.bulbagarden.net/media/upload/archive/9/92/20160701172621%210718Zygarde.png'></img>";
+                Spot_2_Text = Spot_2_Text ? Replace_Spot2 : Spot_2_Text;
+                Spot_2.text(Spot_2_Text);
+                ImageSpot2 = ImageSpot2 ? Replace_Image2 : ImageSpot2;
+                Image2.html(ImageSpot2);
+                display = display ? display_replace : display;
+                Spot_Preface1.style('display',display);
+                //Spot 2_5
+                var Replace_Spot_2_5 = '594 __ 108_ _ _132 _ _ _105_ _132 _ _105 _ _ 30';
+                Spot_2_5_Text = Spot_2_5_Text ? Replace_Spot_2_5 : Spot_2_5_Text;
+                Spot_2_5.text(Spot_2_5_Text);
+                //Spot 3
+                var Replace_Spot3 = '63 _Abra _ _ Abra__PSYCHIC'
+                var Replace_Image3 = "<p>Most recent image of Abra</p><img src='https://archives.bulbagarden.net/media/upload/archive/b/bd/20110722101745%210063Abra.png'></img>";
+                Spot_3_Text = Spot_3_Text ? Replace_Spot3 : Spot_3_Text;
+                Spot_3.text(Spot_3_Text);
+                ImageSpot3 = ImageSpot3 ? Replace_Image3 : ImageSpot3;
+                Image3.html(ImageSpot3);
+                //Spot 3_5
+                var Replace_Spot_3_5 = '310 __ 25 _ _ _20 _ _ _15 _ _ 105 _ _ _55 _ _ _90';
+                Spot_3_5_Text = Spot_3_5_Text ? Replace_Spot_3_5 : Spot_3_5_Text;
+                Spot_3_5.text(Spot_3_5_Text);
+                //Spot 4
+                var Replace_Spot4 = "359_Absol_ _Absol_ _DARK_ _NONE";
+                var Replace_Image4 = "<p>Most recent image of Absol</p><img src='https://archives.bulbagarden.net/media/upload/archive/9/9b/20130809124550%210359Absol.png'></img>";
+                Spot_4_Text = Spot_4_Text ? Replace_Spot4 : Spot_4_Text;
+                Spot_4.text(Spot_4_Text);
+                ImageSpot4 = ImageSpot4 ? Replace_Image4 : ImageSpot4;
+                Image4.html(ImageSpot4);
+                //Spot 4_5
+                var Replace_Spot_4_5 = '465 __ 65 _ _ _130 _ _ _60 _ _ 75 _ _ _60 _ _ _75';
+                Spot_4_5_Text = Spot_4_5_Text ? Replace_Spot_4_5 : Spot_4_5_Text;
+                Spot_4_5.text(Spot_4_5_Text);
+                //Spot 5
+                var display_replace = 'block';
+                var Replace_Spot5 = "359_Absol_ _Absol_ _DARK_ _NONE";
+                var Replace_Image5 = "<p>Most recent image of Mega Absol</p><img src='https://archives.bulbagarden.net/media/upload/d/d7/0359Absol-Mega.png'></img>";
+                Spot_5_Text = Spot_5_Text ? Replace_Spot5 : Spot_5_Text;
+                Spot_5.text(Spot_5_Text);
+                ImageSpot5 = ImageSpot5 ? Replace_Image5 : ImageSpot5;
+                Image5.html(ImageSpot5);
+                display = display ? display_replace : display;
+                Spot_Preface3.style('display',display);
+                //Spot 5_5
+                var Replace_Spot_5_5 = '565 __ 65_ _ _150 _ _ _60_ _115 _ _60 _ _115';
+                Spot_5_5_Text = Spot_5_5_Text ? Replace_Spot_5_5 : Spot_5_5_Text;
+                Spot_5_5.text(Spot_5_5_Text);
+                //Spot 6
+                var Replace_Spot6 = '617_Accelgor_Accelgor_BUG_ _NONE'
+                var Replace_Image1 = "<p>Most recent image of Accelgor</p><img src='https://archives.bulbagarden.net/media/upload/archive/f/f4/20101218010857%210617Accelgor.png'></img>";
+                Spot_6_Text = Spot_6_Text ? Replace_Spot6 : Spot_6_Text;
+                Spot_6.text(Spot_6_Text);
+                //Spot 6_5
+                var Replace_Spot_6_5 = '495 __ 80 _ _ _70 _ _ _40 _ _100 _ _ _60 _ __145';
+                Spot_6_5_Text = Spot_6_5_Text ? Replace_Spot_6_5 : Spot_6_5_Textt;
+                Spot_6_5.text(Spot_6_5_Text);
+                //Spot 7
+                var Replace_Spot7 = "681_Blade Form_ Aegislash_STEEL_GHOST";
+                var Replace_Image7 = "<p>Most recent image of Blade Form Aegislash</p><img src='https://archives.bulbagarden.net/media/upload/archive/9/99/20131017150843%210681Aegislash-Blade.png'></img>";
+                Spot_7_Text = Spot_7_Text ? Replace_Spot7 : Spot_7_Text;
+                Spot_7.text(Spot_7_Text);
+                ImageSpot7 = ImageSpot7 ? Replace_Image7 : ImageSpot7;
+                Image7.html(ImageSpot7);
+                //Spot 7_5
+                var Replace_Spot_7_5 = '500 __ 60 _ _ _50 _ _ _140 _ _ 50 _ _ 140_ _ _60';
+                Spot_7_5_Text = Spot_7_5_Text ? Replace_Spot_7_5 : Spot_7_5_Text;
+                Spot_7_5.text(Spot_7_5_Text);
+                //Spot 8
+                var Replace_Spot8 = "681_Shield Form_ Aegislash_STEEL_GHOST";
+                var Replace_Image8 = "<p>Most recent image of Shield Form Aegislash</p><img src='https://archives.bulbagarden.net/media/upload/archive/5/5a/20131018023621%210681Aegislash-Shield.png'></img>";
+                Spot_8_Text = Spot_8_Text ? Replace_Spot2 : Spot_8_Text;
+                Spot_8.text(Spot_8_Text);
+                ImageSpot8 = ImageSpot8 ? Replace_Image8 : ImageSpot8;
+                Image8.html(ImageSpot8);
+                //Spot 8_5
+                var Replace_Spot_8_5 = '500 __ 60 _ _ _140 _ _ _50 _ _ 140 _ _ 50_ _ _60';
+                Spot_8_5_Text = Spot_8_5_Text ? Replace_Spot_8_5 : Spot_8_5_Text;
+                Spot_8_5.text(Spot_8_5_Text);
+                //Spot 9
+                var Replace_Spot9 = "142AerodactylAerodactylROCK__FLYING";
+                var Replace_Image9 = "<p>Most recent image of Aerodactyl</p><img src='https://archives.bulbagarden.net/media/upload/archive/2/2c/20131115181516%210142Aerodactyl.png'></img>";
+                Spot_9_Text = Spot_9_Text ? Replace_Spot9 : Spot_9_Text;
+                Spot_9.text(Spot_9_Text);
+                ImageSpot9 = ImageSpot9 ? Replace_Image9 : ImageSpot9;
+                Image9.html(ImageSpot9);
+                //Spot 9_5
+                var Replace_Spot_9_5 = '515 __ 80_ _ _105 _ _ _65_ _85 _ _75 _ _ 130';
+                Spot_9_5_Text = Spot_9_5_Text ? Replace_Spot_9_5 : Spot_9_5_Text;
+                Spot_9_5.text(Spot_2_5_Text);
+                //Spot 10
+                var display_replace = 'block';
+                var Replace_Spot10 = "142AerodactylAerodactylROCK__FLYING";
+                var Replace_Image10 = "<p>Most recent image of Mega Aerodactyl</p><img src='https://archives.bulbagarden.net/media/upload/archive/1/18/20160403191216%210142Aerodactyl-Mega.png'></img>";
+                Spot_10_Text = Spot_10_Text ? Replace_Spot10 : Spot_10_Text;
+                Spot_10.text(Spot_10_Text);
+                ImageSpot10 = ImageSpot10 ? Replace_Image10 : ImageSpot10;
+                Image10.html(ImageSpot10);
+                //Spot 10_5
+                var Replace_Spot_10_5 = '615 __ 80_ _ _135 _ _ _85_ _70 _ _95 _ _ 150';
+                Spot_10_5_Text = Spot_10_5_Text ? Replace_Spot_10_5 : Spot_10_5_Text;
+                Spot_10_5.text(Spot_10_5_Text);
 
                 //ColorChanger
                 currentColor = currentColor == "white" ? "lime" : "white";
@@ -299,7 +499,6 @@
         var tooltip = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").text("Sort By Alphabetical");
         var sampleSVG = d3.select("main").append("svg:svg").attr("class", "sample").attr("width", 300).attr("height", 300);
         var tooltip2 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").text("Turn On Bar Chart");
-        
         //Section for Image tooltips
         var Image1 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").html(ImageSpot1);
         var Image2 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").html(ImageSpot2);
@@ -311,7 +510,6 @@
         var Image8 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").html(ImageSpot8);
         var Image9 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").html(ImageSpot9);
         var Image10 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").html(ImageSpot10);
-
         //Second Circle
         svg.append('circle').attr('id','CircleAlpha').attr('cx', 282).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click", toggleAlpha1)
@@ -366,7 +564,6 @@
             .on("mouseover", function(){return tooltip2.style("visibility", "visible");})
             .on("mousemove", function(){return tooltip2.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
             .on("mouseout", function(){return tooltip2.style("visibility", "hidden");});        
-        
         //Starting with Averages as they will be called a good amount going forward
         var BST_Avg = 441;
         var HP_Avg = 71;
@@ -386,10 +583,8 @@
         svg.append('line').attr('x1', 160).attr('y1', 762).attr('x2', 1400).attr('y2', 762).attr('stroke','black').style('stroke-width',3);
         svg.append('line').attr('x1', 160).attr('y1', 824).attr('x2', 1400).attr('y2', 824).attr('stroke','black').style('stroke-width',3);
         svg.append('line').attr('x1', 160).attr('y1', 886).attr('x2', 1400).attr('y2', 886).attr('stroke','black').style('stroke-width',3);
-        
         //This puts the top ten of each category on screen and replaces whatever text is currently on there 
         var TopTen = ['Top Ten Lists','Top Ten BST','Top Ten HP','Top Ten Attack','Top Ten Defense', 'Top Ten Sp Attack', 'Top Ten Sp Defense', 'Top Ten Speed']
-        
         d3.select("#selectButton").style("left", "10px").style("top", "5px").selectAll('myOptions').data(TopTen).enter().append('option').text(function (d) { return d; });
         //Everytime the buttons are clicked, want to have the corresponding bar chart become active
         //Also want to make it so when you hover over the bar it shows how much the difference is between the average and the number, blue for positive, red for negative
