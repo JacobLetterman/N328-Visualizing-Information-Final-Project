@@ -246,15 +246,21 @@
         var Spot_10_5 = svg.append('text').text(Spot_10_5_Text).style('font size', 13).attr('x',618).attr('y',883).attr('stroke', 'black')
         //Mega or Preface Spots
         var display = 'None';
+        var display2= 'block';
         var Spot_Preface1 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',366).attr('stroke', 'black').style("display",display)
-        var Spot_Preface2 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',490).attr('stroke', 'black').style("display",display)
-        var Spot_Preface3 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',552).attr('stroke', 'black').style("display",display)
+        var Spot_Preface2 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',490).attr('stroke', 'black').style("display",display2)
+        var Spot_Preface3 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',552).attr('stroke', 'black').style("display",display2)
         var Spot_Preface4 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',862).attr('stroke', 'black').style("display",display)
 
         //Start of Alpha1 & Alpha2 Functions, they will be very long
         var svg = d3.select('svg');
         var toggleAlpha1 = (function(){
             return function(){
+                //Change Vis for Mega
+                display2 = display2 ? display2_replace : display2;
+                Spot_Preface2.style('display',display2);
+                display2 = display2 ? display2_replace : display2;
+                Spot_Preface3.style('display',display2);
                 //Spot 1
                 var Replace_Spot1 = "718 10% Forme Zygarde __DRAGON GROUND";
                 var Replace_Image1 = "<p>Most recent image of 10% Forme Zygarde</p><img src='https://archives.bulbagarden.net/media/upload/f/f8/0718Zygarde-10Percent.png'></img>";
@@ -302,7 +308,7 @@
                 Spot_4_5.text(Spot_4_5_Text);
                 //Spot 5
                 var Replace_Spot5 = "359_Absol_ _Absol_ _DARK_ _NONE";
-                var Replace_Image5 = "<p>Most recent image of Mega Absol</p><img src='https://archives.bulbagarden.net/media/upload/d/d7/0359Absol-Mega.png'></img>";
+                var Replace_Image5 = "<p>Most recent image of Absol</p><img src='https://archives.bulbagarden.net/media/upload/archive/9/9b/20130812084640%210359Absol.png'></img>";
                 Spot_5_Text = Spot_5_Text ? Replace_Spot5 : Spot_5_Text;
                 Spot_5.text(Spot_5_Text);
                 ImageSpot5 = ImageSpot5 ? Replace_Image5 : ImageSpot5;
@@ -313,9 +319,11 @@
                 Spot_5_5.text(Spot_5_5_Text);
                 //Spot 6
                 var Replace_Spot6 = '617_Accelgor_Accelgor_BUG_ _NONE'
-                var Replace_Image1 = "<p>Most recent image of Accelgor</p><img src='https://archives.bulbagarden.net/media/upload/archive/f/f4/20101218010857%210617Accelgor.png'></img>";
+                var Replace_Image6 = "<p>Most recent image of Accelgor</p><img src='https://archives.bulbagarden.net/media/upload/archive/f/f4/20101218010857%210617Accelgor.png'></img>";
                 Spot_6_Text = Spot_6_Text ? Replace_Spot6 : Spot_6_Text;
                 Spot_6.text(Spot_6_Text);
+                ImageSpot6 = ImageSpot6 ? Replace_Image6 : ImageSpot6;
+                Image6.html(ImageSpot6);
                 //Spot 6_5
                 var Replace_Spot_6_5 = '495 __ 80 _ _ _70 _ _ _40 _ _100 _ _ _60 _ __145';
                 Spot_6_5_Text = Spot_6_5_Text ? Replace_Spot_6_5 : Spot_6_5_Textt;
@@ -354,8 +362,7 @@
                 Spot_9_5_Text = Spot_9_5_Text ? Replace_Spot_9_5 : Spot_9_5_Text;
                 Spot_9_5.text(Spot_2_5_Text);
                 //Spot 10
-                var display_replace = 'block';
-                var Replace_Spot10 = "142AerodactylAerodactylROCK__FLYING";
+                var Replace_Spot10 = "65AlakazamAlakazamPSYHCIC__NONE";
                 var Replace_Image10 = "<p>Most recent image of Mega Aerodactyl</p><img src='https://archives.bulbagarden.net/media/upload/archive/1/18/20160403191216%210142Aerodactyl-Mega.png'></img>";
                 Spot_10_Text = Spot_10_Text ? Replace_Spot10 : Spot_10_Text;
                 Spot_10.text(Spot_10_Text);
@@ -374,6 +381,11 @@
 
         var toggleAlpha2 = (function(){
             return function(){
+                //Change Vis for Mega
+                display2 = display2 ? display2_replace : display2;
+                Spot_Preface2.style('display',display2);
+                display2 = display2 ? display2_replace : display2;
+                Spot_Preface3.style('display',display2);
                 //Spot 1
                 var Replace_Spot1 = "460AbomasnowAbomasnow GRASS __ICE";
                 var Replace_Image1 = "<p>Most recent image of Abomasnow</p><img src='https://archives.bulbagarden.net/media/upload/archive/1/14/20131115181505%210460Abomasnow.png'></img>";
@@ -388,7 +400,7 @@
                 //Spot 2
                 var display_replace = 'block';
                 var Replace_Spot2 = "460AbomasnowAbomasnow GRASS __ICE";
-                var Replace_Image2 = "<p>Most recent image of Mega Abomasonw</p><img src='https://archives.bulbagarden.net/media/upload/archive/9/92/20160701172621%210718Zygarde.png'></img>";
+                var Replace_Image2 = "<p>Most recent image of Mega Abomasonw</p><img src='https://archives.bulbagarden.net/media/upload/archive/3/33/20160403192028%210460Abomasnow-Mega.png'></img>";
                 Spot_2_Text = Spot_2_Text ? Replace_Spot2 : Spot_2_Text;
                 Spot_2.text(Spot_2_Text);
                 ImageSpot2 = ImageSpot2 ? Replace_Image2 : ImageSpot2;
@@ -412,7 +424,7 @@
                 Spot_3_5.text(Spot_3_5_Text);
                 //Spot 4
                 var Replace_Spot4 = "359_Absol_ _Absol_ _DARK_ _NONE";
-                var Replace_Image4 = "<p>Most recent image of Absol</p><img src='https://archives.bulbagarden.net/media/upload/archive/9/9b/20130809124550%210359Absol.png'></img>";
+                var Replace_Image4 = "<p>Most recent image of Absol</p><img src='https://archives.bulbagarden.net/media/upload/archive/9/9b/20130812084640%210359Absol.png'></img>";
                 Spot_4_Text = Spot_4_Text ? Replace_Spot4 : Spot_4_Text;
                 Spot_4.text(Spot_4_Text);
                 ImageSpot4 = ImageSpot4 ? Replace_Image4 : ImageSpot4;
@@ -485,6 +497,8 @@
                 Spot_10.text(Spot_10_Text);
                 ImageSpot10 = ImageSpot10 ? Replace_Image10 : ImageSpot10;
                 Image10.html(ImageSpot10);
+                display = display ? display_replace : display;
+                Spot_Preface4.style('display',display);
                 //Spot 10_5
                 var Replace_Spot_10_5 = '615 __ 80_ _ _135 _ _ _85_ _70 _ _95 _ _ 150';
                 Spot_10_5_Text = Spot_10_5_Text ? Replace_Spot_10_5 : Spot_10_5_Text;
