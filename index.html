@@ -653,8 +653,8 @@
         var circle3 = d3.select("#CircleEta");
         var dataSets = [[20, 60, -40],[80, 30, 70],[50, -90, 20]];
         var allBarCharts = d3.selectAll(".barChart");
-        
-        function setAllBarHeights(data) {
+
+        function setAllBarHeights(dataSets) {
             allBarCharts.each(function(d, i) {
             var bar = d3.select(this).select(".myBar");
             bar.attr("height", dataSets[i]);
