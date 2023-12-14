@@ -258,11 +258,18 @@
         var toggleAlpha1 = (function(){
             return function(){
                 //Change Vis for Mega
+                var display_replace = 'block';
                 var display2_replace = 'None';
+                display = display ? display_replace : display;
+                Spot_Preface1.style('display',display);
                 display2 = display2 ? display2_replace : display2;
                 Spot_Preface2.style('display',display2);
                 display2 = display2 ? display2_replace : display2;
                 Spot_Preface3.style('display',display2);
+                display = display ? display_replace : display;
+                Spot_Preface3_5.style('display',display);
+                display2 = display2 ? display2_replace : display2;
+                Spot_Preface4.style('display',display2);
                 //Spot 1
                 var Replace_Spot1 = "718 10% Forme Zygarde __DRAGON GROUND";
                 var Replace_Image1 = "<p>Most recent image of 10% Forme Zygarde</p><img src='https://archives.bulbagarden.net/media/upload/f/f8/0718Zygarde-10Percent.png'></img>";
@@ -277,7 +284,7 @@
                 Spot_1_5.text(Spot_1_5_Text);
                 //Spot 2
                 var Replace_Spot2 = "718 50% Forme Zygarde __DRAGON GROUND";
-                var Replace_Image2 = "<p>Most recent image of 50% Forme Zygarde</p><img src='https://archives.bulbagarden.net/media/upload/archive/9/92/20160701172621%210718Zygarde.png'></img>";
+                var Replace_Image2 = "<p>Most recent image of 50% Forme Zygarde</p><img src='https://archives.bulbagarden.net/media/upload/9/92/0718Zygarde.png'></img>";
                 Spot_2_Text = Spot_2_Text ? Replace_Spot2 : Spot_2_Text;
                 Spot_2.text(Spot_2_Text);
                 ImageSpot2 = ImageSpot2 ? Replace_Image2 : ImageSpot2;
@@ -298,7 +305,7 @@
                 Spot_3_5_Text = Spot_3_5_Text ? Replace_Spot_3_5 : Spot_3_5_Text;
                 Spot_3_5.text(Spot_3_5_Text);
                 //Spot 4
-                var Replace_Spot4 = "63 _Abra _ _ _ _ Abra_ _PSYCHIC __NONE";
+                var Replace_Spot4 = "63 _Abra _ _ _ _ Abra_ _ _ PSYCHIC __NONE";
                 var Replace_Image4 = "<p>Most recent image of Abra</p><img src='https://archives.bulbagarden.net/media/upload/archive/b/bd/20110722101745%210063Abra.png'></img>";
                 Spot_4_Text = Spot_4_Text ? Replace_Spot4 : Spot_4_Text;
                 Spot_4.text(Spot_4_Text);
@@ -309,7 +316,7 @@
                 Spot_4_5_Text = Spot_4_5_Text ? Replace_Spot_4_5 : Spot_4_5_Text;
                 Spot_4_5.text(Spot_4_5_Text);
                 //Spot 5
-                var Replace_Spot5 = "359_Absol_ _ _Absol_ _DARK_ _NONE";
+                var Replace_Spot5 = "359_Absol_ _ _ Absol_ _ _ DARK_ _NONE";
                 var Replace_Image5 = "<p>Most recent image of Absol</p><img src='https://archives.bulbagarden.net/media/upload/archive/9/9b/20130812084640%210359Absol.png'></img>";
                 Spot_5_Text = Spot_5_Text ? Replace_Spot5 : Spot_5_Text;
                 Spot_5.text(Spot_5_Text);
@@ -320,8 +327,8 @@
                 Spot_5_5_Text = Spot_5_5_Text ? Replace_Spot_5_5 : Spot_5_5_Text;
                 Spot_5_5.text(Spot_5_5_Text);
                 //Spot 6
-                var Replace_Spot6 = '617_Accelgor _ _Accelgor_ BUG_ _NONE'
-                var Replace_Image6 = "<p>Most recent image of Accelgor</p><img src='https://archives.bulbagarden.net/media/upload/archive/f/f4/20101218010857%210617Accelgor.png'></img>";
+                var Replace_Spot6 = '617_Accelgor _ _Accelgor _ BUG_ _NONE'
+                var Replace_Image6 = "<p>Most recent image of Accelgor</p><img src='https://archives.bulbagarden.net/media/upload/f/f4/0617Accelgor.png'></img>";
                 Spot_6_Text = Spot_6_Text ? Replace_Spot6 : Spot_6_Text;
                 Spot_6.text(Spot_6_Text);
                 ImageSpot6 = ImageSpot6 ? Replace_Image6 : ImageSpot6;
@@ -331,7 +338,7 @@
                 Spot_6_5_Text = Spot_6_5_Text ? Replace_Spot_6_5 : Spot_6_5_Textt;
                 Spot_6_5.text(Spot_6_5_Text);
                 //Spot 7
-                var Replace_Spot7 = "142Aerodactyl _Aerodactyl _ _ROCK__FLYING";
+                var Replace_Spot7 = "142 Aerodactyl_Aerodactyl _ _ROCK__FLYING";
                 var Replace_Image7 = "<p>Most recent image of Aerodactyl</p><img src='https://archives.bulbagarden.net/media/upload/archive/2/2c/20131115181516%210142Aerodactyl.png'></img>";
                 Spot_7_Text = Spot_7_Text ? Replace_Spot7 : Spot_7_Text;
                 Spot_7.text(Spot_7_Text);
@@ -342,7 +349,7 @@
                 Spot_7_5_Text = Spot_7_5_Text ? Replace_Spot_7_5 : Spot_7_5_Text;
                 Spot_7_5.text(Spot_7_5_Text);
                 //Spot 8
-                var Replace_Spot8 = "306_Aggron _ _Aggron_ STEEL_ ROCK";
+                var Replace_Spot8 = "306_Aggron _ _Aggron _ _ STEEL_ ROCK";
                 var Replace_Image8 = "<p>Most recent image of Aggron</p><img src='https://archives.bulbagarden.net/media/upload/archive/1/1e/20150110193353%210306Aggron.png'></img>";
                 Spot_8_Text = Spot_8_Text ? Replace_Spot8 : Spot_8_Text;
                 Spot_8.text(Spot_8_Text);
@@ -353,7 +360,7 @@
                 Spot_8_5_Text = Spot_8_5_Text ? Replace_Spot_8_5 : Spot_8_5_Text;
                 Spot_8_5.text(Spot_8_5_Text);
                 //Spot 9
-                var Replace_Spot9 = "190__Aipom_ _ Aipom_ _ NORMAL_ _NONE";
+                var Replace_Spot9 = "190__Aipom_ _ Aipom_ _ _ NORMAL _NONE";
                 var Replace_Image9 = "<p>Most recent image of Aipom</p><img src='https://archives.bulbagarden.net/media/upload/archive/0/0d/20100417191744%210190Aipom.png'></img>";
                 Spot_9_Text = Spot_9_Text ? Replace_Spot9 : Spot_9_Text;
                 Spot_9.text(Spot_9_Text);
@@ -384,11 +391,18 @@
         var toggleAlpha2 = (function(){
             return function(){
                 //Change Vis for Mega
+                var display_replace = 'block';
                 var display2_replace = 'None';
+                display = display ? display_replace : display;
+                Spot_Preface1.style('display',display);
                 display2 = display2 ? display2_replace : display2;
                 Spot_Preface2.style('display',display2);
                 display2 = display2 ? display2_replace : display2;
                 Spot_Preface3.style('display',display2);
+                display = display ? display_replace : display;
+                Spot_Preface3_5.style('display',display);
+                display2 = display2 ? display2_replace : display2;
+                Spot_Preface4.style('display',display2);
                 //Spot 1
                 var Replace_Spot1 = "460AbomasnowAbomasnow GRASS __ICE";
                 var Replace_Image1 = "<p>Most recent image of Abomasnow</p><img src='https://archives.bulbagarden.net/media/upload/archive/1/14/20131115181505%210460Abomasnow.png'></img>";
@@ -473,7 +487,7 @@
                 //Spot 8
                 var Replace_Spot8 = "681_Shield Form_ Aegislash_STEEL_GHOST";
                 var Replace_Image8 = "<p>Most recent image of Shield Form Aegislash</p><img src='https://archives.bulbagarden.net/media/upload/archive/5/5a/20131018023621%210681Aegislash-Shield.png'></img>";
-                Spot_8_Text = Spot_8_Text ? Replace_Spot2 : Spot_8_Text;
+                Spot_8_Text = Spot_8_Text ? Replace_Spot8 : Spot_8_Text;
                 Spot_8.text(Spot_8_Text);
                 ImageSpot8 = ImageSpot8 ? Replace_Image8 : ImageSpot8;
                 Image8.html(ImageSpot8);
@@ -512,11 +526,13 @@
                 d3.select(this).style("fill", currentColor);
             }
         })();
-
+        //Misc. Functions
+        var toggleRefresh = (function() {location.reload();});
         //Section for tooltips
         var tooltip = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").text("Sort By Alphabetical");
         var sampleSVG = d3.select("main").append("svg:svg").attr("class", "sample").attr("width", 300).attr("height", 300);
         var tooltip2 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").text("Turn On Bar Chart");
+        var tooltip3 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").text("Reset Circles");
         //Section for Image tooltips
         var Image1 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").html(ImageSpot1);
         var Image2 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").html(ImageSpot2);
@@ -528,6 +544,12 @@
         var Image8 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").html(ImageSpot8);
         var Image9 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").html(ImageSpot9);
         var Image10 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").html(ImageSpot10);
+       //First Circle
+        svg.append('circle').attr('id','CircleAlpha').attr('cx', 282).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
+            .on("click", toggleRefresh)
+            .on("mouseover", function(){return tooltip3.style("visibility", "visible");})
+            .on("mousemove", function(){return tooltip3.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
+            .on("mouseout", function(){return tooltip3.style("visibility", "hidden");});
         //Second Circle
         svg.append('circle').attr('id','CircleAlpha').attr('cx', 282).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click", toggleAlpha1)
