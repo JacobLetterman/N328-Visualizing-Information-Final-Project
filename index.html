@@ -21,16 +21,10 @@
 			stroke: white;
 		}
         
-        #selectButton {
-        position: relative;
-        top: 50px;
-        }
-
 	</style>
     
 </head>
 <body>
-    <select id="selectButton"></select>
 	<svg id="main" width="2000" height="2000">
 		<text id='label' x='20' y='20'>Different stats for all the different Pokemon</text>
         <text transform="translate(89,134)rotate(43)">Dex Number</text>
@@ -646,10 +640,7 @@
         svg.append('line').attr('x1', 160).attr('y1', 762).attr('x2', 1400).attr('y2', 762).attr('stroke','black').style('stroke-width',3);
         svg.append('line').attr('x1', 160).attr('y1', 824).attr('x2', 1400).attr('y2', 824).attr('stroke','black').style('stroke-width',3);
         svg.append('line').attr('x1', 160).attr('y1', 886).attr('x2', 1400).attr('y2', 886).attr('stroke','black').style('stroke-width',3);
-        //This puts the top ten of each category on screen and replaces whatever text is currently on there 
-        var TopTen = ['Top Ten Lists','Top Ten BST','Top Ten HP','Top Ten Attack','Top Ten Defense', 'Top Ten Sp Attack', 'Top Ten Sp Defense', 'Top Ten Speed']
-        d3.select("#selectButton").style("left", "10px").style("top", "5px").selectAll('myOptions').data(TopTen).enter().append('option').text(function (d) { return d; });
-        //Everytime the buttons are clicked, want to have the corresponding bar chart become active
+         //Everytime the buttons are clicked, want to have the corresponding bar chart become active
         var circleOne = d3.select("#CircleEpislon");
         var circleTwo = d3.select("#CircleZeta");
         var circleThree = d3.select("#CircleEta");
