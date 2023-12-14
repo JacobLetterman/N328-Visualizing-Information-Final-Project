@@ -245,7 +245,7 @@
         //Spot 10_5
         var Spot_10_5 = svg.append('text').text(Spot_10_5_Text).style('font size', 13).attr('x',618).attr('y',883).attr('stroke', 'black')
         //Mega or Preface Spots
-        var display = null;
+        var display = 'None';
         var Spot_Preface1 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',366).attr('stroke', 'black').style("display",display)
         var Spot_Preface2 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',490).attr('stroke', 'black').style("display",display)
         var Spot_Preface3 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',552).attr('stroke', 'black').style("display",display)
@@ -256,6 +256,7 @@
         var toggleAlpha1 = (function(){
             return function(){
                 //Spot 1
+                var Replace_Spot1 = "718 10% Forme Zygarde __DRAGON GROUND";
                 var Replace_Image1 = "<p>Most recent image of 10% Forme Zygarde</p><img src='https://archives.bulbagarden.net/media/upload/f/f8/0718Zygarde-10Percent.png'></img>";
                 Spot_1_Text = Spot_1_Text ? Replace_Spot1 : Spot_1_Text;
                 Spot_1.text(Spot_1_Text);
