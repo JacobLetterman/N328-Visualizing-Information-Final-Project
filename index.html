@@ -665,10 +665,10 @@
             var isHidden = allBarCharts.style("display") === "none";
             allBarCharts.style("display", isHidden ? null : "none");  
             d3.selectAll(".toggleCircle").attr("fill", function() {
-        return d3.select(this).attr("id") === selectedCircle.attr("id") ? "green" : "blue";
+        return d3.select(this).attr("fill") === selectedCircle.attr("fill") ? "green" : "blue";
         });
             var selectedIndex = dataSets.findIndex(function(_, i) {
-        return d3.select("#circle" + (i + 1)).attr("id") === selectedCircle.attr("id");
+        return d3.select("#circle" + (i + 1)).attr("fill") === selectedCircle.attr("fill");
         });
         setAllBarHeights(dataSets[selectedIndex]);
         }
