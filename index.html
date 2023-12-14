@@ -641,13 +641,13 @@
         svg.append('line').attr('x1', 160).attr('y1', 824).attr('x2', 1400).attr('y2', 824).attr('stroke','black').style('stroke-width',3);
         svg.append('line').attr('x1', 160).attr('y1', 886).attr('x2', 1400).attr('y2', 886).attr('stroke','black').style('stroke-width',3);
          //Everytime the buttons are clicked, want to have the corresponding bar chart become active
-        var circleOne = d3.select("CircleEpislon");
-        var circleTwo = d3.select("CircleZeta");
-        var circleThree = d3.select("CircleEta");
-        var circleFour = d3.select("CircleTheta");
-        var circleFive = d3.select("CircleIota");
-        var circleSix = d3.select("CircleKappa");
-        var circleSeven = d3.select("CircleLambda");
+        var circleOne = d3.select(CircleEpislon);
+        var circleTwo = d3.select(CircleZeta);
+        var circleThree = d3.select(CircleEta);
+        var circleFour = d3.select(CircleTheta);
+        var circleFive = d3.select(CircleIota);
+        var circleSix = d3.select(CircleKappa);
+        var circleSeven = d3.select(CircleLambda);
 
         var circles = [circleOne, circleTwo, circleThree, circleFour, circleFive, circleSix, circleSeven];
 
@@ -656,7 +656,7 @@
         function setAllBarWidths(dataSets) {
             allBarCharts.each(function(d, i) {
                 var bar = d3.select(this).select(".myBar");
-                var tooltip = d3.select(this).select("tooltip4");
+                var tooltip = d3.select(this).select(tooltip4);
                 bar.attr("width", dataSets[i]);
                 tooltip.text(dataSets[i])
                 .attr("x", dataSets[i] / 2) 
@@ -673,14 +673,14 @@
 
             function toggleAllBarCharts(selectedCircle) {
             var isHidden = allBarCharts.style("display") === "none";
-            allBarCharts.style("display", isHidden ? null : "none");
+            allBarCharts.style("display", isHidden ? 'block' : "none");
 
             resetCircleColors();
 
             selectedCircle.attr("fill", "lime");
 
             var selectedIndex = dataSets.findIndex(function(_, i) {
-                return d3.select("#" + circles.nodes()[i].id).attr("id") === selectedCircle.attr("id");
+                return d3.select(circles.nodes()[i].id).attr("id") === selectedCircle.attr("id");
             });
 
             setAllBarWidths(dataSets[selectedIndex]);
