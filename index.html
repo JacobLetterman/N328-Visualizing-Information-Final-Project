@@ -45,6 +45,36 @@
         <text transform="translate(800,144)rotate(36)">Sp Attack</text>
         <text transform="translate(866,144)rotate(36)">Sp Defense</text>
         <text transform="translate(938,152)rotate(36)">Speed</text>
+        <g class="barChart" transform="translate(1068, 297)" style="display: none;">
+            <rect class="myBar" width="20" height="0" fill="green"></rect>
+          </g>
+          <g class="barChart" transform="translate(1068, 359)" style="display: none;">
+            <rect class="myBar" width="20" height="0" fill="green"></rect>
+          </g>
+          <g class="barChart" transform="translate(1068, 421)" style="display: none;">
+            <rect class="myBar" width="20" height="0" fill="green"></rect>
+          </g>
+          <g class="barChart" transform="translate(1068, 483)" style="display: none;">
+            <rect class="myBar" width="20" height="0" fill="green"></rect>
+          </g>
+          <g class="barChart" transform="translate(1068, 545)" style="display: none;">
+            <rect class="myBar" width="20" height="0" fill="green"></rect>
+          </g>
+          <g class="barChart" transform="translate(1068, 607)" style="display: none;">
+            <rect class="myBar" width="20" height="0" fill="green"></rect>
+          </g>
+          <g class="barChart" transform="translate(1068, 669)" style="display: none;">
+            <rect class="myBar" width="20" height="0" fill="green"></rect>
+          </g>
+          <g class="barChart" transform="translate(1068, 731)" style="display: none;">
+            <rect class="myBar" width="20" height="0" fill="green"></rect>
+          </g>
+          <g class="barChart" transform="translate(1068, 793)" style="display: none;">
+            <rect class="myBar" width="20" height="0" fill="green"></rect>
+          </g>
+          <g class="barChart" transform="translate(1068, 855)" style="display: none;">
+            <rect class="myBar" width="20" height="0" fill="green"></rect>
+          </g>
 	</svg>
     
 	
@@ -252,6 +282,7 @@
         var Spot_Preface3 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',738).attr('stroke', 'black').style("display",display2)
         var Spot_Preface3_5 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',800).attr('stroke', 'black').style("display",display2)
         var Spot_Preface4 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',862).attr('stroke', 'black').style("display",display)
+        var Spot_Preface5 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',924).attr('stroke', 'black').style("display",display)
 
         //Start of Alpha1 & Alpha2 Functions, they will be very long
         var svg = d3.select('svg');
@@ -260,14 +291,10 @@
                 //Change Vis for Mega
                 var display_replace = 'block';
                 var display2_replace = 'None';
-                display = display ? display_replace : display;
-                Spot_Preface1.style('display',display);
                 display2 = display2 ? display2_replace : display2;
                 Spot_Preface2.style('display',display2);
                 display2 = display2 ? display2_replace : display2;
                 Spot_Preface3.style('display',display2);
-                display = display ? display_replace : display;
-                Spot_Preface3_5.style('display',display);
                 display2 = display2 ? display2_replace : display2;
                 Spot_Preface4.style('display',display2);
                 //Spot 1
@@ -305,7 +332,7 @@
                 Spot_3_5_Text = Spot_3_5_Text ? Replace_Spot_3_5 : Spot_3_5_Text;
                 Spot_3_5.text(Spot_3_5_Text);
                 //Spot 4
-                var Replace_Spot4 = "63 _Abra _ _ _ _ _ _Abra_ _ _ PSYCHIC __NONE";
+                var Replace_Spot4 = "63 _Abra _ _ _ _ _Abra_ _ _ PSYCHIC __NONE";
                 var Replace_Image4 = "<p>Most recent image of Abra</p><img src='https://archives.bulbagarden.net/media/upload/archive/b/bd/20110722101745%210063Abra.png'></img>";
                 Spot_4_Text = Spot_4_Text ? Replace_Spot4 : Spot_4_Text;
                 Spot_4.text(Spot_4_Text);
@@ -316,7 +343,7 @@
                 Spot_4_5_Text = Spot_4_5_Text ? Replace_Spot_4_5 : Spot_4_5_Text;
                 Spot_4_5.text(Spot_4_5_Text);
                 //Spot 5
-                var Replace_Spot5 = "359_Absol_ _ _ Absol_ _ _ DARK_ _NONE";
+                var Replace_Spot5 = "359_Absol_ _ _ Absol_ _ _ _DARK_ _NONE";
                 var Replace_Image5 = "<p>Most recent image of Absol</p><img src='https://archives.bulbagarden.net/media/upload/archive/9/9b/20130812084640%210359Absol.png'></img>";
                 Spot_5_Text = Spot_5_Text ? Replace_Spot5 : Spot_5_Text;
                 Spot_5.text(Spot_5_Text);
@@ -349,7 +376,7 @@
                 Spot_7_5_Text = Spot_7_5_Text ? Replace_Spot_7_5 : Spot_7_5_Text;
                 Spot_7_5.text(Spot_7_5_Text);
                 //Spot 8
-                var Replace_Spot8 = "306_Aggron _ _Aggron _ _ STEEL_ ROCK";
+                var Replace_Spot8 = "306_Aggron _ _Aggron _ _ _STEEL_ ROCK";
                 var Replace_Image8 = "<p>Most recent image of Aggron</p><img src='https://archives.bulbagarden.net/media/upload/archive/1/1e/20150110193353%210306Aggron.png'></img>";
                 Spot_8_Text = Spot_8_Text ? Replace_Spot8 : Spot_8_Text;
                 Spot_8.text(Spot_8_Text);
@@ -401,8 +428,8 @@
                 Spot_Preface3.style('display',display2);
                 display = display ? display_replace : display;
                 Spot_Preface3_5.style('display',display);
-                display2 = display2 ? display2_replace : display2;
-                Spot_Preface4.style('display',display2);
+                display = display ? display_replace : display;
+                Spot_Preface5.style('display',display);
                 //Spot 1
                 var Replace_Spot1 = "460AbomasnowAbomasnow GRASS __ICE";
                 var Replace_Image1 = "<p>Most recent image of Abomasnow</p><img src='https://archives.bulbagarden.net/media/upload/archive/1/14/20131115181505%210460Abomasnow.png'></img>";
@@ -429,7 +456,7 @@
                 Spot_2_5_Text = Spot_2_5_Text ? Replace_Spot_2_5 : Spot_2_5_Text;
                 Spot_2_5.text(Spot_2_5_Text);
                 //Spot 3
-                var Replace_Spot3 = '63 _Abra _ _ Abra__PSYCHIC'
+                var Replace_Spot3 = '63 _Abra _ _ _ _Abra__PSYCHIC'
                 var Replace_Image3 = "<p>Most recent image of Abra</p><img src='https://gamepress.gg/pokemongo/sites/pokemongo/files/styles/240w/public/2018-01/pokemon_icon_063_00.png?itok=XJ71rE15'></img>";
                 Spot_3_Text = Spot_3_Text ? Replace_Spot3 : Spot_3_Text;
                 Spot_3.text(Spot_3_Text);
@@ -440,7 +467,7 @@
                 Spot_3_5_Text = Spot_3_5_Text ? Replace_Spot_3_5 : Spot_3_5_Text;
                 Spot_3_5.text(Spot_3_5_Text);
                 //Spot 4
-                var Replace_Spot4 = "359_Absol_ _Absol_ _DARK_ _NONE";
+                var Replace_Spot4 = "359_Absol_ _ _ Absol_ _DARK_ _NONE";
                 var Replace_Image4 = "<p>Most recent image of Absol</p><img src='https://gamepress.gg/pokemongo/sites/pokemongo/files/styles/240w/public/2018-01/pokemon_icon_359_00_1.png?itok=wyhTqN6Z'></img>";
                 Spot_4_Text = Spot_4_Text ? Replace_Spot4 : Spot_4_Text;
                 Spot_4.text(Spot_4_Text);
@@ -451,7 +478,7 @@
                 Spot_4_5_Text = Spot_4_5_Text ? Replace_Spot_4_5 : Spot_4_5_Text;
                 Spot_4_5.text(Spot_4_5_Text);
                 //Spot 5
-                var Replace_Spot5 = "359_Absol_ _Absol_ _DARK_ _NONE";
+                var Replace_Spot5 = "359_Absol_ _ _ Absol_ _DARK_ _NONE";
                 var Replace_Image5 = "<p>Most recent image of Mega Absol</p><img src='https://archives.bulbagarden.net/media/upload/d/d7/0359Absol-Mega.png'></img>";
                 Spot_5_Text = Spot_5_Text ? Replace_Spot5 : Spot_5_Text;
                 Spot_5.text(Spot_5_Text);
@@ -462,7 +489,7 @@
                 Spot_5_5_Text = Spot_5_5_Text ? Replace_Spot_5_5 : Spot_5_5_Text;
                 Spot_5_5.text(Spot_5_5_Text);
                 //Spot 6
-                var Replace_Spot6 = '617_Accelgor_Accelgor_BUG_ _NONE'
+                var Replace_Spot6 = '617_Accelgor_ _Accelgor_BUG_ _NONE'
                 var Replace_Image1 = "<p>Most recent image of Accelgor</p><img src='https://archives.bulbagarden.net/media/upload/archive/f/f4/20101218010857%210617Accelgor.png'></img>";
                 Spot_6_Text = Spot_6_Text ? Replace_Spot6 : Spot_6_Text;
                 Spot_6.text(Spot_6_Text);
