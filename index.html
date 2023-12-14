@@ -545,7 +545,7 @@
         var Image9 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").html(ImageSpot9);
         var Image10 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").html(ImageSpot10);
        //First Circle
-        svg.append('circle').attr('id','CircleAlpha').attr('cx', 282).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
+        svg.append('circle').attr('id','Circle1').attr('cx', 195).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click", toggleRefresh)
             .on("mouseover", function(){return tooltip3.style("visibility", "visible");})
             .on("mousemove", function(){return tooltip3.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
