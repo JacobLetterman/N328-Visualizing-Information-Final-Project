@@ -675,8 +675,10 @@
             });
         }
 
-            function resetCircleColors() {
-            circles.attr("fill", "white");
+        function resetCircleColors() {
+            circles.forEach(function(circle) {
+            circle.attr("fill", "white");
+            });
         }
 
             function toggleAllBarCharts(selectedCircle) {
@@ -694,11 +696,11 @@
             setAllBarWidths(dataSets[selectedIndex]);
             }
         allBarCharts.on("mouseover", function() {
-        var tooltip = d3.select(this).select(".tooltip");
+        var tooltip = d3.select(this).select("#tooltip4");
         tooltip.style("display", "block");
         })
         .on("mouseout", function() {
-        var tooltip = d3.select(this).select(".tooltip");
+        var tooltip = d3.select(this).select("#tooltip4");
         tooltip.style("display", "none");
         });
         //Also want to make it so when you hover over the bar it shows how much the difference is between the average and the number, blue for positive, red for negative
