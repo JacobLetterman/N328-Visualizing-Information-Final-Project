@@ -140,11 +140,11 @@
         var Spot_4_5_Text = '625 __ 80 _ _ _100 _ _ 123 _ _122 _ _120 _ _ 80';
         //Image/text 5
         var ImageSpot5 = "<p>Most recent image of Charmander</p><img src='https://archives.bulbagarden.net/media/upload/archive/2/27/20130810091956%210004Charmander.png'></img>";
-        var Spot_5_Text = '4 _ CharmanderCharmander___ FIRE__ NONE';
+        var Spot_5_Text = '4 _ CharmanderCharmander___FIRE__ NONE';
         var Spot_5_5_Text = '309 __ 39 _ _ _52 _ _ _43 _ _ 60 _ _ _50 _ _ _65';
         //Image/text 6
         var ImageSpot6 = "<p>Most recent image of Charmeleon</p><img src='https://archives.bulbagarden.net/media/upload/archive/0/05/20190404222345%210005Charmeleon.png'></img>";
-        var Spot_6_Text = '5 _ CharmeleonCharmeleon___ FIRE__ NONE';
+        var Spot_6_Text = '5 _ CharmeleonCharmeleon___FIRE__ NONE';
         var Spot_6_5_Text = '405 __ 58 _ _ _64 _ _ _58 _ _ 80 _ _ _65 _ _ _80';
         //Image/text 7
         var ImageSpot7 = "<p>Most recent image of Charizard</p><img src='https://archives.bulbagarden.net/media/upload/archive/3/38/20130810070957%210006Charizard.png'></img>";
@@ -152,11 +152,11 @@
         var Spot_7_5_Text = '534 __ 78 _ _ _84 _ _ _78 _ _ 109 _ _ 85 _ _ 100';
         //Image/text 8
         var ImageSpot8 = "<p>Most recent image of Mega Charizard X</p><img src='https://archives.bulbagarden.net/media/upload/3/35/0006Charizard-Mega_X.png'></img>";
-        var Spot_8_Text = '6 __Charizard X_ Charizard___FIRE__DRAGON';
+        var Spot_8_Text = '6 __Charizard X_ Charizard__FIRE__DRAGON';
         var Spot_8_5_Text = '634 __ 78 _ _ 130 _ _ _111 _ _130 _ _ 85 _ _ 100';
         //Image/text 9
         var ImageSpot9 = "<p>Most recent image of Mega Charizard Y</p><img src='https://archives.bulbagarden.net/media/upload/a/a0/0006Charizard-Mega_Y.png'></img>";
-        var Spot_9_Text = '6 __Charizard Y_ Charizard___FIRE__FLYING';
+        var Spot_9_Text = '6 __Charizard Y_ Charizard__FIRE__FLYING';
         var Spot_9_5_Text = '634 __ 78 _ _ _104 _ _ _78 _ _159 _ _ 115 _ _ 100';
         //Image/text 10
         var ImageSpot10 = "<p>Most recent image of Squirtle</p><img src='https://archives.bulbagarden.net/media/upload/archive/5/54/20110414005311%210007Squirtle.png'></img>";
@@ -249,7 +249,8 @@
         var display2= 'block';
         var Spot_Preface1 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',366).attr('stroke', 'black').style("display",display)
         var Spot_Preface2 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',490).attr('stroke', 'black').style("display",display2)
-        var Spot_Preface3 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',552).attr('stroke', 'black').style("display",display2)
+        var Spot_Preface3 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',738).attr('stroke', 'black').style("display",display2)
+        var Spot_Preface3_5 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',800).attr('stroke', 'black').style("display",display2)
         var Spot_Preface4 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',862).attr('stroke', 'black').style("display",display)
 
         //Start of Alpha1 & Alpha2 Functions, they will be very long
@@ -257,6 +258,7 @@
         var toggleAlpha1 = (function(){
             return function(){
                 //Change Vis for Mega
+                var display2_replace = 'None';
                 display2 = display2 ? display2_replace : display2;
                 Spot_Preface2.style('display',display2);
                 display2 = display2 ? display2_replace : display2;
