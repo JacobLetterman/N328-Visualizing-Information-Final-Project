@@ -648,41 +648,35 @@
         var TopTen = ['Top Ten Lists','Top Ten BST','Top Ten HP','Top Ten Attack','Top Ten Defense', 'Top Ten Sp Attack', 'Top Ten Sp Defense', 'Top Ten Speed']
         d3.select("#selectButton").style("left", "10px").style("top", "5px").selectAll('myOptions').data(TopTen).enter().append('option').text(function (d) { return d; });
         //Everytime the buttons are clicked, want to have the corresponding bar chart become active
-        var circle1 = d3.select("#CircleEpsilon");
-        var circle2 = d3.select("#CircleZeta");
-        var circle3 = d3.select("#CircleEta");
-        var dataSets = [[20, 60, 40],[80, 30, 70],[50, 90, 20]];
+        var circles = d3.selectAll("circle");
+        var updateDataButton = d3.select("#updateDataButton");
         var allBarCharts = d3.selectAll(".barChart");
-
-        function setAllBarHeights(dataSets) {
+        var dataSets = [[20, 60, 40, 80, 30, 70, 50, 90, 40, 10], [80, 30, 70, 50, 90, 20, 60, 90, 40, 10], [50, 90, 20, 60, 40, 80, 30, 90, 40, 10],[60, 40, 80, 30, 70, 50, 90, 90, 40, 10], [30, 70, 50, 90, 20, 60, 40, 90, 40, 10],[70, 50, 90, 20, 60, 40, 80, 90, 40, 10], [40, 80, 30, 70, 50, 90, 20, 90, 40, 10]];
+        function setAllBarWidths(dataSets) {
             allBarCharts.each(function(d, i) {
-            var bar = d3.select(this).select(".myBar");
-            bar.attr("height", dataSets[i]);
+                var bar = d3.select(this).select(".myBar");
+                bar.attr("width", dataSets[i]);
             });
-        }
-        function setAllBarProperties(dataSets) {
-            allBarCharts.each(function(d, i) {
-            var bar = d3.select(this).select(".myBar");
-            var color = dataSets[i] >= 0 ? d3.interpolateBlues(Math.abs(dataSets[i])/100) : d3.interpolateReds(Math.abs(dataSets[i])/100);
+            }
 
-            bar.attr("height", Math.abs(dataSets[i])).attr("fill", color);
-            });
-        }
-        function toggleAllBarCharts(selectedCircle) {
+            function resetCircleColors() {
+            circles.attr("fill", "white");
+            }
+
+            function toggleAllBarCharts(selectedCircle) {
             var isHidden = allBarCharts.style("display") === "none";
-            allBarCharts.style("display", isHidden ? null : "none");  
-            d3.selectAll(".toggleCircle").attr("fill", function() {
-        return d3.select(this).attr("fill") === selectedCircle.attr("fill") ? "green" : "blue";
-        });
-            var selectedIndex = dataSets.findIndex(function(_, i) {
-        return d3.select("#circle" + (i + 1)).attr("fill") === selectedCircle.attr("fill");
-        });
-        setAllBarHeights(dataSets[selectedIndex]);
-        }
-        circle1.on("click", function() { toggleAllBarCharts(d3.select(this)); });
-        circle2.on("click", function() { toggleAllBarCharts(d3.select(this)); });
-        circle3.on("click", function() { toggleAllBarCharts(d3.select(this)); });
+            allBarCharts.style("display", isHidden ? null : "none");
 
+            resetCircleColors();
+
+            selectedCircle.attr("fill", "lime");
+
+            var selectedIndex = dataSets.findIndex(function(_, i) {
+                return d3.select("#" + circles.nodes()[i].id).attr("id") === selectedCircle.attr("id");
+            });
+
+            setAllBarWidths(dataSets[selectedIndex]);
+            }
         //Also want to make it so when you hover over the bar it shows how much the difference is between the average and the number, blue for positive, red for negative
 	</script>
 </body>
