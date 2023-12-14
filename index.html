@@ -641,23 +641,22 @@
         svg.append('line').attr('x1', 160).attr('y1', 824).attr('x2', 1400).attr('y2', 824).attr('stroke','black').style('stroke-width',3);
         svg.append('line').attr('x1', 160).attr('y1', 886).attr('x2', 1400).attr('y2', 886).attr('stroke','black').style('stroke-width',3);
          //Everytime the buttons are clicked, want to have the corresponding bar chart become active
-        var circleOne = d3.select("#CircleEpislon");
-        var circleTwo = d3.select("#CircleZeta");
-        var circleThree = d3.select("#CircleEta");
-        var circleFour = d3.select("#CircleTheta");
-        var circleFive = d3.select("#CircleIota");
-        var circleSix = d3.select("#CircleKappa");
-        var circleSeven = d3.select("#CircleLambda");
+        var circleOne = d3.select("CircleEpislon");
+        var circleTwo = d3.select("CircleZeta");
+        var circleThree = d3.select("CircleEta");
+        var circleFour = d3.select("CircleTheta");
+        var circleFive = d3.select("CircleIota");
+        var circleSix = d3.select("CircleKappa");
+        var circleSeven = d3.select("CircleLambda");
 
         var circles = [circleOne, circleTwo, circleThree, circleFour, circleFive, circleSix, circleSeven];
 
-        var updateDataButton = d3.select("#updateDataButton");
         var allBarCharts = d3.selectAll(".barChart");
         var dataSets = [[20, 60, 40, 80, 30, 70, 50, 90, 40, 10], [80, 30, 70, 50, 90, 20, 60, 90, 40, 10], [50, 90, 20, 60, 40, 80, 30, 90, 40, 10],[60, 40, 80, 30, 70, 50, 90, 90, 40, 10], [30, 70, 50, 90, 20, 60, 40, 90, 40, 10],[70, 50, 90, 20, 60, 40, 80, 90, 40, 10], [40, 80, 30, 70, 50, 90, 20, 90, 40, 10]];
         function setAllBarWidths(dataSets) {
             allBarCharts.each(function(d, i) {
                 var bar = d3.select(this).select(".myBar");
-                var tooltip = d3.select(this).select("#tooltip4");
+                var tooltip = d3.select(this).select("tooltip4");
                 bar.attr("width", dataSets[i]);
                 tooltip.text(dataSets[i])
                 .attr("x", dataSets[i] / 2) 
@@ -674,7 +673,7 @@
 
             function toggleAllBarCharts(selectedCircle) {
             var isHidden = allBarCharts.style("display") === "none";
-            allBarCharts.style("display", isHidden ? 'block' : "none");
+            allBarCharts.style("display", isHidden ? null : "none");
 
             resetCircleColors();
 
@@ -687,11 +686,11 @@
             setAllBarWidths(dataSets[selectedIndex]);
             }
         allBarCharts.on("mouseover", function() {
-        var tooltip = d3.select(this).select("#tooltip4");
+        var tooltip = d3.select(this).select("tooltip4");
         tooltip.style("display", "block");
         })
         .on("mouseout", function() {
-        var tooltip = d3.select(this).select("#tooltip4");
+        var tooltip = d3.select(this).select("tooltip4");
         tooltip.style("display", "none");
         });
         //Also want to make it so when you hover over the bar it shows how much the difference is between the average and the number, blue for positive, red for negative
