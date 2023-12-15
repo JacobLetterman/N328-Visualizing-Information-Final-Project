@@ -656,65 +656,47 @@
         svg.append('line').attr('x1', 160).attr('y1', 824).attr('x2', 1400).attr('y2', 824).attr('stroke','black').style('stroke-width',3);
         svg.append('line').attr('x1', 160).attr('y1', 886).attr('x2', 1400).attr('y2', 886).attr('stroke','black').style('stroke-width',3);
         //Everytime the buttons are clicked, want to have the corresponding bar chart become active
-        var groups = ['group1','group2','group3']
-        d3.select("#groupSelector").style("left", "10px").style("top", "5px").selectAll('myOptions').data(groups).enter().append('option').text(function (d) { return d; });
-        //Also want to make it so when you hover over the bar it shows how much the difference is between the average and the number, blue for positive, red for negative
         var svg = d3.select("svg");
-
-        var group1Data = [50, 30, 80, 40, 60, 20, 70, 90, 45, 75];
-        var group2Data = [35, 65, 25, 55, 85, 40, 70, 20, 50, 80];
-        var group3Data = [75, 45, 65, 25, 85, 50, 30, 90, 40, 60];
-
         function generateRandomData(numBars) {
             return d3.range(numBars).map(function() {
-                return Math.floor(Math.random() * 100) + 20;
-            });
-            }
-        function createBarChartGroup(groupName, groupData) {
-            var group = svg.select("." + groupName);
-            console.log(group)
-            
-              svg.selectAll("#myBar")
-                .data(groupData)
-                .enter().append("rect")
-                .attr("class", "bar")
-                .attr("x", 1068)
-                .attr("y", function(groupData, i) { return i * 62; })
-                .attr("width", 45)
-                .attr("height", (function() {for (group in groups)({groupData})})) 
-                .attr("fill", function() {
-                    return groupData > 50 ? "blue" : "red"; 
-                })
-                .on("mouseover", function(groupData) {
-                tooltip4.style("display", "block")
-                    .text(groupData);
-                })
-                .on("mouseout", function() {
-                tooltip4.style("display", "none");
-                });
-              
-            var tooltip4 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").text("None");
+            return Math.floor(Math.random() * 100) + 20;
+          });
+        }
+        function createHorizontalBarChartGroup(groupName, groupdata) {
+          var group = svg.select("." + groupName);
+          var bars = group.selectAll(".bar")
+            .data(groupdata)
+            .enter().append("rect")
+            .attr("class", "bar")
+            .attr("x", 0)
+            .attr("y", function(d, i) { return i * 62; })
+            .attr("width", function(d) { return d; })
+            .attr("height", 60)
+            .attr("fill", "steelblue");
+          group.selectAll(".barLabel")
+            .data(groupdata)
+            .enter().append("text")
+            .attr("class", "barLabel")
+            .attr("x", function(d) { return d + 5; })
+            .attr("y", function(d, i) { return i * 62 + 30; })
+            .text(function(d) { return d; })
+            .attr("fill", "black")
+            .style("font-size", "12px")
+            .style("pointer-events", "none");
+        }
 
-            svg.selectAll("#barLabel")
-                .data(groupData)
-                .enter().append("text")
-                .attr("class", "barLabel")
-                .attr("x", function(groupData) { return groupData + 5; }) 
-                .attr("y", function(groupData, i) { return i * 62 + 30; })
-                .text(function(groupData) { return groupData; })
-                .attr("fill", "black")
-                .style("font-size", "12px")
-            }
-            
-            for (group of groups){ 
-              createBarChartGroup(group, group == "group1" ? group1Data : generateRandomData(10));
-            }
-            
-            d3.select("#groupSelector").on("change", function() {
-              var selectedGroup = d3.select(this).property("value");
-                for (group of groups) {
-                svg.select("." + group).style("display", group == selectedGroup ? null : "none");
-                }});
+
+        createHorizontalBarChartGroup("group1", generateRandomData(10));
+        createHorizontalBarChartGroup("group2", generateRandomData(10));
+        createHorizontalBarChartGroup("group3", generateRandomData(10));
+
+
+        d3.select("#groupSelector").on("change", function() {
+          var selectedGroup = d3.select(this).property("value");
+          svg.select(".group1").style("display", selectedGroup === "group1" ? null : "none");
+          svg.select(".group2").style("display", selectedGroup === "group2" ? null : "none");
+          svg.select(".group3").style("display", selectedGroup === "group3" ? null : "none");
+        });
     
     </script>
 </body>
