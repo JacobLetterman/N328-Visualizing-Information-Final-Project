@@ -706,7 +706,7 @@
             }
             
             groups.forEach(function(group) {
-            createBarChartGroup(group, group === "group1" ? group1Data : generateRandomData(10));
+            createBarChartGroup(group, group == "group1" ? group1Data : generateRandomData(10));
             });
 
             d3.select("#groupSelector").on("change", function() {
