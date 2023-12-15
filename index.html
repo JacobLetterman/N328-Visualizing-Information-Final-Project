@@ -499,7 +499,7 @@
                 display2 = display2 ? display2_replace : display2;
                 Spot_Preface3.style('display',display2);
                 display = display ? display_replace : display;
-                Spot_Preface3_5.style('display',display);
+                Spot_Preface4.style('display',display);
                 //Spot 1
                 var Replace_Spot1 = "460AbomasnowAbomasnow GRASS __ICE";
                 var Replace_Image1 = "<p>Most recent image of Abomasnow</p><img src='https://archives.bulbagarden.net/media/upload/archive/1/14/20131115181505%210460Abomasnow.png'></img>";
@@ -741,9 +741,9 @@
                 .attr("x", 0)
                 .attr("y", function(d, i) { return i * 62; })
                 .attr("width", function(d) { return d; })
-                .attr("height", 60) // Height of each bar
+                .attr("height", 60) 
                 .attr("fill", function(d) {
-                    return d > 50 ? "blue" : "red"; // Color bars based on data value
+                    return d > 50 ? "blue" : "red"; 
                 })
                 .on("mouseover", function(d) {
                 tooltip4.style("display", "block")
@@ -774,6 +774,10 @@
                 .style("font-size", "12px")
                 .style("pointer-events", "none");
             }
+            
+            groups.forEach(function(group) {
+            createBarChartGroup(group, group === "group1" ? group1Data : generateRandomData(10));
+            });
 
             d3.select("#groupSelector").on("change", function() {
             var selectedGroup = d3.select(this).property("value");
