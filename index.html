@@ -664,7 +664,7 @@
         var group1Data = [50, 30, 80, 40, 60, 20, 70, 90, 45, 75];
         var group2Data = [35, 65, 25, 55, 85, 40, 70, 20, 50, 80];
         var group3Data = [75, 45, 65, 25, 85, 50, 30, 90, 40, 60];
-        var dummy = 'dummy';
+
         function generateRandomData(numBars) {
             return d3.range(numBars).map(function() {
                 return Math.floor(Math.random() * 100) + 20;
@@ -673,7 +673,7 @@
         function createBarChartGroup(groupName, groupData) {
             var group = svg.select("." + groupName);
 
-            var bars = svg.selectAll(".myBar")
+            svg.selectAll(".myBar")
                 .data(groupData)
                 .enter().append("rect")
                 .attr("class", "bar")
@@ -706,14 +706,13 @@
             }
             
             for (group of groups){ 
-              createBarChartGroup(group);
+              createBarChartGroup(group, group == "group1" ? group1Data : generateRandomData(10));
             }
-            //, group == "group1" ? group1Data : generateRandomData(10)
-
+            
             d3.select("#groupSelector").on("change", function() {
               var selectedGroup = d3.select(this).property("value");
                 for (group of groups) {
-                svg.select("." + group).style("display", group === selectedGroup ? null : "none");
+                svg.select("." + group).style("display", group == selectedGroup ? null : "none");
                 }});
     
     
