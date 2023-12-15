@@ -705,16 +705,16 @@
                 .style("font-size", "12px")
             }
             
-            groups.forEach(function(group) {
-            createBarChartGroup(group, group == "group1" ? group1Data : generateRandomData(10));
-            });
+            for( group of groups ){ 
+              createBarChartGroup(group, group == "group1" ? group1Data : generateRandomData(10));
+            }
+            
 
             d3.select("#groupSelector").on("change", function() {
-            var selectedGroup = d3.select(this).property("value");
-                groups.forEach(function(group) {
+              var selectedGroup = d3.select(this).property("value");
+                for (group of groups) {
                 svg.select("." + group).style("display", group === selectedGroup ? null : "none");
-            });
-            });
+                }});
     
     
     </script>
