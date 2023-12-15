@@ -673,7 +673,7 @@
         function createBarChartGroup(groupName, groupData) {
             var group = svg.select("." + groupName);
 
-            group.selectAll("#.myBar")
+            group.selectAll("#myBar")
                 .data(groupData)
                 .enter().append("rect")
                 .attr("class", "bar")
@@ -694,7 +694,7 @@
 
             var tooltip4 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").text("None");
 
-            group.selectAll("#.barLabel")
+            group.selectAll("#barLabel")
                 .data(groupData)
                 .enter().append("text")
                 .attr("class", "barLabel")
