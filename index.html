@@ -773,7 +773,7 @@
             d3.select("#groupSelector").on("change", function() {
             var selectedGroup = d3.select(this).property("value");
                 groups.forEach(function(group) {
-                svg.select("." + group).style("display", group === selectedGroup ? null : "block");
+                svg.select("." + group).style("display", group === selectedGroup ? null : "none");
             });
             });
     
