@@ -671,20 +671,20 @@
             });
             }
         function createBarChartGroup(groupName, groupData) {
-            var group = svg.select("." + groupName);
+            //var group = svg.select("." + groupName);
 
-            group.selectAll("#myBar")
+            svg.selectAll("#myBar")
                 .data(groupData)
                 .enter().append("rect")
                 .attr("class", "bar")
                 .attr("x", 1068)
-                .attr("y", function(d, i) { return i * 62; })
+                .attr("y", function(groupData, i) { return i * 62; })
                 .attr("width", 60)
                 .attr("height", 60) 
                 .attr("fill", function() {
                     return groupData > 50 ? "blue" : "red"; 
                 })
-                .on("mouseover", function(d) {
+                .on("mouseover", function(groupData) {
                 tooltip4.style("display", "block")
                     .text(groupData);
                 })
