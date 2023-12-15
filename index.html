@@ -733,7 +733,7 @@
         function createBarChartGroup(groupName, groupData) {
             var group = svg.select("." + groupName);
 
-            var bars = group.selectAll(".barChart")
+            var bars = group.selectAll(".myBar")
                 .data(groupData)
                 .enter().append("rect")
                 .attr("class", "bar")
