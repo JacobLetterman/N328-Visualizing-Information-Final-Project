@@ -682,7 +682,7 @@
                 .attr("width", 60)
                 .attr("height", 60) 
                 .attr("fill", function() {
-                    return d > 50 ? "blue" : "red"; 
+                    return groupData > 50 ? "blue" : "red"; 
                 })
                 .on("mouseover", function(d) {
                 tooltip4.style("display", "block")
@@ -698,8 +698,8 @@
                 .data(groupData)
                 .enter().append("text")
                 .attr("class", "barLabel")
-                .attr("x", function(d) { return d + 5; }) 
-                .attr("y", function(d, i) { return i * 62 + 30; })
+                .attr("x", function(groupData) { return d + 5; }) 
+                .attr("y", function(groupData, i) { return i * 62 + 30; })
                 .text(function(groupData) { return groupData; })
                 .attr("fill", "black")
                 .style("font-size", "12px")
