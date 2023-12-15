@@ -724,7 +724,7 @@
         var group1Data = [50, 30, 80, 40, 60, 20, 70, 90, 45, 75];
         var group2Data = [35, 65, 25, 55, 85, 40, 70, 20, 50, 80];
         var group3Data = [75, 45, 65, 25, 85, 50, 30, 90, 40, 60];
-
+        var dummy = 'dummy';
         function generateRandomData(numBars) {
             return d3.range(numBars).map(function() {
                 return Math.floor(Math.random() * 100) + 20;
@@ -733,20 +733,20 @@
         function createBarChartGroup(groupName, groupData) {
             var group = svg.select("." + groupName);
 
-            var bars = group.selectAll(".myBar")
+            var bars = svg.selectAll(".myBar")
                 .data(groupData)
                 .enter().append("rect")
                 .attr("class", "bar")
                 .attr("x", 1068)
                 .attr("y", function(d, i) { return i * 62; })
                 .attr("width", 60)
-                .attr("height",60) 
+                .attr("height", 60) 
                 .attr("fill", function() {
                     return d > 50 ? "blue" : "red"; 
                 })
                 .on("mouseover", function(d) {
                 tooltip4.style("display", "block")
-                    .text(d);
+                    .text(groupData);
                 })
                 .on("mouseout", function() {
                 tooltip4.style("display", "none");
