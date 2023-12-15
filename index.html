@@ -718,7 +718,7 @@
         svg.append('line').attr('x1', 160).attr('y1', 886).attr('x2', 1400).attr('y2', 886).attr('stroke','black').style('stroke-width',3);
         //Everytime the buttons are clicked, want to have the corresponding bar chart become active
         var groups = ['group1','group2','group3']
-        d3.select("#groupSelector").style("left", "10px").style("top", "5px").selectAll('myOptions').data(TopTen).enter().append('option').text(function (d) { return d; });
+        d3.select("#groupSelector").style("left", "10px").style("top", "5px").selectAll('myOptions').data(groups).enter().append('option').text(function (d) { return d; });
         //Also want to make it so when you hover over the bar it shows how much the difference is between the average and the number, blue for positive, red for negative
         var svg = d3.select("svg");
 
