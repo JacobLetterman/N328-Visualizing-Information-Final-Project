@@ -717,7 +717,7 @@
         svg.append('line').attr('x1', 160).attr('y1', 824).attr('x2', 1400).attr('y2', 824).attr('stroke','black').style('stroke-width',3);
         svg.append('line').attr('x1', 160).attr('y1', 886).attr('x2', 1400).attr('y2', 886).attr('stroke','black').style('stroke-width',3);
         //Everytime the buttons are clicked, want to have the corresponding bar chart become active
-         var TopTen = ['Top Ten Lists','Top Ten BST','Top Ten HP','Top Ten Attack','Top Ten Defense', 'Top Ten Sp Attack', 'Top Ten Sp Defense', 'Top Ten Speed']
+         var TopTen = ['group1','group2','group3']
          d3.select("#groupSelector").style("left", "10px").style("top", "5px").selectAll('myOptions').data(TopTen).enter().append('option').text(function (d) { return d; });
         //Also want to make it so when you hover over the bar it shows how much the difference is between the average and the number, blue for positive, red for negative
         var svg = d3.select("svg");
@@ -777,7 +777,7 @@
 
             d3.select("#groupSelector").on("change", function() {
             var selectedGroup = d3.select(this).property("value");
-                groups.forEach(function(group) {
+                group.forEach(function(group) {
                 svg.select("." + group).style("display", group === selectedGroup ? null : "none");
             });
             });
