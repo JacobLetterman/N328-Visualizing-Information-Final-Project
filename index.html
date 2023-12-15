@@ -753,15 +753,7 @@
                 tooltip4.style("display", "none");
                 });
 
-            var tooltip4 = svg.append("text")
-                .attr("class", "tooltip")
-                .attr("x", 0)
-                .attr("y", 0)
-                .attr("dy", -10)
-                .attr("text-anchor", "middle")
-                .style("font-size", "12px")
-                .style("pointer-events", "none")
-                .style("display", "none");
+            var tooltip4 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").text("None");
 
             group.selectAll(".barLabel")
                 .data(groupData)
@@ -772,7 +764,6 @@
                 .text(function(d) { return d; })
                 .attr("fill", "black")
                 .style("font-size", "12px")
-                .style("pointer-events", "none");
             }
             
             groups.forEach(function(group) {
@@ -782,7 +773,7 @@
             d3.select("#groupSelector").on("change", function() {
             var selectedGroup = d3.select(this).property("value");
                 groups.forEach(function(group) {
-                svg.select("." + group).style("display", group === selectedGroup ? null : "none");
+                svg.select("." + group).style("display", group === selectedGroup ? null : "block");
             });
             });
     
