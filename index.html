@@ -26,6 +26,7 @@
             background-color: white;
             border: 1px solid #ccc;
             padding: 5px;
+            display: 'None';
         }
 
 	</style>
@@ -50,7 +51,7 @@
         <text transform="translate(938,152)rotate(36)">Speed</text>
         <g class="group1" transform="translate(50, 50)">
             <g class="barChart" transform="translate(1068, 297)" style="display: block;">
-                <rect class="myBar" width="20" height="0" fill="green"></rect>
+                <rect class="myBar" width="20" height=groupData fill="green"></rect>
               </g>
               <g class="barChart" transform="translate(1068, 359)" style="display: block;">
                 <rect class="myBar" width="20" height="0" fill="green"></rect>
@@ -80,7 +81,7 @@
                 <rect class="myBar" width="20" height="0" fill="green"></rect>
               </g>
           </g>
-          <g class="group2" transform="translate(50, 50)" style="display: block;">
+          <g class="group2" transform="translate(50, 50)" style="display: none;">
             <g class="barChart" transform="translate(1068, 297)" style="display: block;">
                 <rect class="myBar" width="20" height="0" fill="green"></rect>
               </g>
@@ -112,7 +113,7 @@
                 <rect class="myBar" width="20" height="0" fill="green"></rect>
               </g>
           </g>
-          <g class="group3" transform="translate(50, 50)" style="display: block;">
+          <g class="group3" transform="translate(50, 50)" style="display: none;">
             <g class="barChart" transform="translate(1068, 297)" style="display: block;">
                 <rect class="myBar" width="20" height="0" fill="green"></rect>
               </g>
@@ -623,7 +624,6 @@
         var sampleSVG = d3.select("main").append("svg:svg").attr("class", "sample").attr("width", 300).attr("height", 300);
         var tooltip2 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").text("Turn On Bar Chart");
         var tooltip3 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").text("Reset Circles");
-        var tooltip4 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").text("None");
         
         //Section for Image tooltips
         var Image1 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").html(ImageSpot1);
@@ -739,8 +739,8 @@
                 .attr("class", "bar")
                 .attr("x", 1068)
                 .attr("y", function(d, i) { return i * 62; })
-                .attr("width", function(d) { return d; })
-                .attr("height", 60) 
+                .attr("width", 60)
+                .attr("height", function(d) { return d;}) 
                 .attr("fill", function(d) {
                     return d > 50 ? "blue" : "red"; 
                 })
