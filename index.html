@@ -698,7 +698,7 @@
                 .data(groupData)
                 .enter().append("text")
                 .attr("class", "barLabel")
-                .attr("x", function(groupData) { return d + 5; }) 
+                .attr("x", function(groupData) { return groupData + 5; }) 
                 .attr("y", function(groupData, i) { return i * 62 + 30; })
                 .text(function(groupData) { return groupData; })
                 .attr("fill", "black")
