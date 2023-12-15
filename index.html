@@ -740,8 +740,8 @@
                 .attr("x", 1068)
                 .attr("y", function(d, i) { return i * 62; })
                 .attr("width", 60)
-                .attr("height", function(d) { return d;}) 
-                .attr("fill", function(d) {
+                .attr("height", function(groupData) { return groupData;}) 
+                .attr("fill", function() {
                     return d > 50 ? "blue" : "red"; 
                 })
                 .on("mouseover", function(d) {
@@ -760,7 +760,7 @@
                 .attr("class", "barLabel")
                 .attr("x", function(d) { return d + 5; }) 
                 .attr("y", function(d, i) { return i * 62 + 30; })
-                .text(function(d) { return d; })
+                .text(function(groupData) { return groupData; })
                 .attr("fill", "black")
                 .style("font-size", "12px")
             }
