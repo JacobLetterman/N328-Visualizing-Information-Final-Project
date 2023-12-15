@@ -673,7 +673,7 @@
         function createBarChartGroup(groupName, groupData) {
             var group = svg.select("." + groupName);
             console.log(group)
-            for (group in groups){
+            
               svg.selectAll("#myBar")
                 .data(groupData)
                 .enter().append("rect")
@@ -681,8 +681,7 @@
                 .attr("x", 1068)
                 .attr("y", function(groupData, i) { return i * 62; })
                 .attr("width", 45)
-                .attr("height", groupData) 
-                
+                .attr("height", (function() {for (group in groups)({groupData})})) 
                 .attr("fill", function() {
                     return groupData > 50 ? "blue" : "red"; 
                 })
@@ -693,7 +692,7 @@
                 .on("mouseout", function() {
                 tooltip4.style("display", "none");
                 });
-              };
+              
             var tooltip4 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").text("None");
 
             svg.selectAll("#barLabel")
@@ -708,7 +707,7 @@
             }
             
             for (group of groups){ 
-              createBarChartGroup(group, group == "group1" ? group1Data : generateRandomData(10));
+              createBarChartGroup(group, groupData);
             }
             
             d3.select("#groupSelector").on("change", function() {
