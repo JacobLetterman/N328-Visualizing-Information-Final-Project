@@ -49,7 +49,7 @@
         <text transform="translate(800,144)rotate(36)">Sp Attack</text>
         <text transform="translate(866,144)rotate(36)">Sp Defense</text>
         <text transform="translate(938,152)rotate(36)">Speed</text>
-        <g class="Top Ten Lists" transform="translate(1068, 297)" style="display: none;">
+        <g class="TopTenLists" transform="translate(1068, 297)" style="display: none;">
           <rect class="myBar" width="20" height='297' fill="green" transform="translate(1068, 297)" style="display: block;"></rect>
           <rect class="myBar" width="20" height='297' fill="green" transform="translate(1068, 359)" style="display: block;"></rect>
           <rect class="myBar" width="20" height='297' fill="green" transform="translate(1068, 421)" style="display: block;"></rect>
@@ -61,7 +61,7 @@
           <rect class="myBar" width="20" height='297' fill="green" transform="translate(1068, 793)" style="display: block;"></rect>
           <rect class="myBar" width="20" height='297' fill="green" transform="translate(1068, 855)" style="display: block;"></rect>
         </g>
-        <g class="Top Ten BST" transform="translate(1068, 297)">
+        <g class="TopTenBST" transform="translate(1068, 297)">
             <rect class="myBar" width="20" height='297' fill="green" transform="translate(1068, 297)" style="display: block;"></rect>
             <rect class="myBar" width="20" height='297' fill="green" transform="translate(1068, 359)" style="display: block;"></rect>
             <rect class="myBar" width="20" height='297' fill="green" transform="translate(1068, 421)" style="display: block;"></rect>
@@ -73,7 +73,7 @@
             <rect class="myBar" width="20" height='297' fill="green" transform="translate(1068, 793)" style="display: block;"></rect>
             <rect class="myBar" width="20" height='297' fill="green" transform="translate(1068, 855)" style="display: block;"></rect>
           </g>
-          <g class="Top Ten HP" transform="translate(1068, 297)" style="display: none;">
+          <g class="TopTenHP" transform="translate(1068, 297)" style="display: none;">
             <rect class="myBar" width="20" height='297' fill="green" transform="translate(1068, 297)" style="display: block;"></rect>
             <rect class="myBar" width="20" height='297' fill="green" transform="translate(1068, 359)" style="display: block;"></rect>
             <rect class="myBar" width="20" height='297' fill="green" transform="translate(1068, 421)" style="display: block;"></rect>
@@ -85,7 +85,7 @@
             <rect class="myBar" width="20" height='297' fill="green" transform="translate(1068, 793)" style="display: block;"></rect>
             <rect class="myBar" width="20" height='297' fill="green" transform="translate(1068, 855)" style="display: block;"></rect>
           </g>
-          <g class="Top Ten Attack" transform="translate(1068, 297)" style="display: none;">
+          <g class="TopTenAttack" transform="translate(1068, 297)" style="display: none;">
             <rect class="myBar" width="20" height='297' fill="green" transform="translate(1068, 297)" style="display: block;"></rect>
             <rect class="myBar" width="20" height='297' fill="green" transform="translate(1068, 359)" style="display: block;"></rect>
             <rect class="myBar" width="20" height='297' fill="green" transform="translate(1068, 421)" style="display: block;"></rect>
@@ -670,14 +670,8 @@
         svg.append('line').attr('x1', 160).attr('y1', 886).attr('x2', 1400).attr('y2', 886).attr('stroke','black').style('stroke-width',3);
         //Everytime the buttons are clicked, want to have the corresponding bar chart become active
 
-        var groups = ['Top Ten Lists','Top Ten BST','Top Ten HP','Top Ten Attack']
-        var dummy = [0,0,0,0,0,0,0,0,0,0];
-        var group1data = [1125,780,780,780,770,770,754,720,708,700];
-        var group2data = [255,255,250,223,216,200,190,170,170,165];
-        var group3data = [190,185,181,180,180,180,170,170,167,165];
         d3.select("#groupSelector").style("left", "10px").style("top", "5px").selectAll('myOptions').data(groups).enter().append('option').text(function (d) { return d; });
 
-        
         function createHorizontalBarChartGroup(groupName, groupdata) {
           var group = svg.select("." + groupName.replace(/\s+/g, ''));
           var bars = group.selectAll(".bar")
@@ -702,10 +696,10 @@
             .style("pointer-events", "none");
         }
 
-        createHorizontalBarChartGroup("Top Ten Lists", dummy);
-        createHorizontalBarChartGroup("Top Ten BST", group1data);
-        createHorizontalBarChartGroup("Top Ten HP", group2data);
-        createHorizontalBarChartGroup("Top Ten Attack", group3data);
+        createHorizontalBarChartGroup("TopTenLists", [0,0,0,0,0,0,0,0,0,0]);
+        createHorizontalBarChartGroup("TopTenBST", [1125,780,780,780,770,770,754,720,708,700]);
+        createHorizontalBarChartGroup("TopTenHP", [255,255,250,223,216,200,190,170,170,165]);
+        createHorizontalBarChartGroup("TopTenAttack", [190,185,181,180,180,180,170,170,167,165]);
 
 
         d3.select("#groupSelector").on("change", function() {
