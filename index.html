@@ -688,17 +688,8 @@
             .attr("y", function(d, i) { return i * 62; })
             .attr("width", function(d) { return d; })
             .attr("height", 45)
-            .attr("fill", "steelblue")
-            .on("mouseover", function(d) {
-              tooltip4.style("display", "block")
-                .text(d);
-            })
-            .on("mouseout", function() {
-              tooltip4.style("display", "none");
-            });
-
-          var tooltip4 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px");
-
+            .attr("fill", "steelblue");
+            
           group.selectAll(".barLabel")
             .data(groupdata)
             .enter().append("text")
