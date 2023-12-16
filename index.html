@@ -710,10 +710,10 @@
 
         d3.select("#groupSelector").on("change", function() {
           var selectedGroup = d3.select(this).property("value");
-          svg.select(".Top Ten Lists").style("display", selectedGroup === "Top Ten Lists" ? null : "none");
-          svg.select(".Top Ten BST").style("display", selectedGroup === "Top Ten BST" ? null : "none");
-          svg.select(".Top Ten HP").style("display", selectedGroup === "Top Ten HP" ? null : "none");
-          svg.select(".Top Ten Attack").style("display", selectedGroup === "Top Ten Attack" ? null : "none");
+          svg.select(".TopTenLists").style("display", selectedGroup === "Top Ten Lists" ? null : "none");
+          svg.select(".TopTenBST").style("display", selectedGroup === "Top Ten BST" ? null : "none");
+          svg.select(".TopTenHP").style("display", selectedGroup === "Top Ten HP" ? null : "none");
+          svg.select(".TopTenAttack").style("display", selectedGroup === "Top Ten Attack" ? null : "none");
         });
     
     </script>
