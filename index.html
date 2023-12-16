@@ -294,7 +294,6 @@
                 .data(heights)
                 .enter()
                 .append('rect')
-                .attr('class', 'barGraph')
                 .attr('x', 100)
                 .attr('y', function (d, index) { return 300 + index * 66; })
                 .attr('width', function (d) { return d; })
@@ -310,7 +309,13 @@
                 .attr('y', function (d, index) { return 300 + index * 66 + 15; })
                 .attr('text-anchor', 'middle')
                 .attr('alignment-baseline', 'middle')
-                .text(function (d) { return d; });
+                .text(function (d) { return d; })
+                .style('display', 'none'); // Initially set to invisible
+
+// Toggle bar graphs visibility based on circle click
+            var displayStyle = (svg.select('.barGraph').style('display') === 'none') ? 'block' : 'none';
+              svg.selectAll('.barGraph, .barLabel')
+              .style('display', displayStyle);;
         }
 
         //Start of Alpha1 & Alpha2 Functions, they will be very long
