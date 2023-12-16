@@ -288,9 +288,9 @@
             });
 
             function generateBarGraphs(circleIndex, heights) {
-            svg.selectAll('.barGraph').remove();
+            svg.selectAll('.mybar').remove();
             svg.selectAll('.barLabel').remove();
-            var bars = svg.selectAll('.barGraph')
+            var bars = svg.selectAll('.mybar')
                 .data(heights)
                 .enter()
                 .append('rect')
@@ -299,7 +299,8 @@
                 .attr('y', function (d, index) { return 300 + index * 66; })
                 .attr('width', function (d) { return d; })
                 .attr('height', 30)
-                .attr('fill', function () { return (Math.random() < 0.5) ? 'blue' : 'red'; });
+                .attr('fill', function () { return (Math.random() < 0.5) ? 'blue' : 'red'; })
+                .style('display', 'none');
             var labels = svg.selectAll('.barLabel')
                 .data(heights)
                 .enter()
@@ -311,7 +312,7 @@
                 .attr('alignment-baseline', 'middle')
                 .text(function (d) { return d; });
         }
-        
+
         //Start of Alpha1 & Alpha2 Functions, they will be very long
         var svg = d3.select('svg');
         var toggleAlpha1 = (function(){
