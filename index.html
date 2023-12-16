@@ -290,7 +290,7 @@
 
             // Label the bar graphs with their data
             barGroup.append('text')
-                .attr('x', function (d) { return d / 2; })
+                .attr('x', 'The difference between the average and stat is'+function (d) { return d / 2; })
                 .attr('y', 25)
                 .attr('dy', '0.35em')
                 .attr('fill', 'black')
@@ -731,6 +731,7 @@
         svg.append('circle').attr('id','CircleEpsilon').attr('cx', 639).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click", function(){
               toggleBarGraphs(1)
+              toggleColor
               toggleBSTGraph
             })
             .on("mouseover", function(){return tooltip2.style("visibility", "visible");})
