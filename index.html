@@ -288,12 +288,13 @@
             });
 
             function generateBarGraphs(circleIndex, heights) {
-            svg.selectAll('.mybar').remove();
+            svg.selectAll('.bar').remove();
             svg.selectAll('.barLabel').remove();
-            var bars = svg.selectAll('.mybar')
+            var bars = svg.selectAll('.bar')
                 .data(heights)
                 .enter()
                 .append('rect')
+                .attr("class", "bar")
                 .attr('x', 100)
                 .attr('y', function (d, index) { return 300 + index * 66; })
                 .attr('width', function (d) { return d; })
