@@ -264,7 +264,9 @@
             // Set data for bar heights based on circle number
             var barHeights;
             if (circleNumber == 1) {
-                barHeights = [684,339,339,339,329,329,313,279,267,259];
+                barHeights = [684,339,339,339,329,329,313,279,267,259]
+                toggleColor
+                toggleBSTGraph;
             } else if(circleNumber == 2) {
                 barHeights = [184,184,179,152,145,129,119,99,99,94];
             } else if(circleNumber == 3){
@@ -729,11 +731,7 @@
             .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
         //Sixth
         svg.append('circle').attr('id','CircleEpsilon').attr('cx', 639).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
-            .on("click", function(){
-              toggleBarGraphs(1)
-              toggleColor
-              toggleBSTGraph
-            })
+            .on("click", toggleBarGraphs(1))
             .on("mouseover", function(){return tooltip2.style("visibility", "visible");})
             .on("mousemove", function(){return tooltip2.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
             .on("mouseout", function(){return tooltip2.style("visibility", "hidden");});//Start of calling function for posting bar graphs, bar_function(d);
