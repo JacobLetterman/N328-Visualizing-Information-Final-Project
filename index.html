@@ -667,7 +667,7 @@
         
         function createHorizontalBarChartGroup(groupName, groupdata) {
           var group = svg.select("." + groupName);
-          var bars = group.selectAll(".bar")
+          var bars = group.selectAll(".mybar")
             .data(groupdata)
             .enter().append("rect")
             .attr("class", "bar")
