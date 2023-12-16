@@ -48,6 +48,16 @@
         <text transform="translate(800,144)rotate(36)">Sp Attack</text>
         <text transform="translate(866,144)rotate(36)">Sp Defense</text>
         <text transform="translate(938,152)rotate(36)">Speed</text>
+        <rect class="myBar" width="20" height='266' fill="green" transform="translate(1068, 281)" style="display: block;"></rect>
+        <rect class="myBar" width="20" height='266' fill="green" transform="translate(1068, 347)" style="display: block;"></rect>
+        <rect class="myBar" width="20" height='266' fill="green" transform="translate(1068, 413)" style="display: block;"></rect>
+        <rect class="myBar" width="20" height='266' fill="green" transform="translate(1068, 479)" style="display: block;"></rect>
+        <rect class="myBar" width="20" height='266' fill="green" transform="translate(1068, 545)" style="display: block;"></rect>
+        <rect class="myBar" width="20" height='266' fill="green" transform="translate(1068, 611)" style="display: block;"></rect>
+        <rect class="myBar" width="20" height='266' fill="green" transform="translate(1068, 677)" style="display: block;"></rect>
+        <rect class="myBar" width="20" height='266' fill="green" transform="translate(1068, 743)" style="display: block;"></rect>
+        <rect class="myBar" width="20" height='266' fill="green" transform="translate(1068, 809)" style="display: block;"></rect>
+        <rect class="myBar" width="20" height='266' fill="green" transform="translate(1068, 875)" style="display: block;"></rect>
 	</svg>
     
 	
@@ -273,17 +283,23 @@
             .on('click', function (d, i) {
             generateHorizontalBarGraphs(d.data, i);
             });
+
         function generateHorizontalBarGraphs(data, circleIndex) {
             svg.selectAll('.barGraph').remove();
+            svg.selectAll('.barLabel').remove();
 
             // Create new bar graphs
-            var barGraphData = data.map((value, index) => ({
+            var barGraphData = data.map(function(value, index) {
+                return {
                 x: 1068,
                 y: 270 + index * 66,
                 width: value,
-                height: 45
-            }));
-            var bars = svg.selectAll('.barGraph')
+                height: 45,
+                label: data
+            };
+          });
+
+            var bars = svg.selectAll('.mybar')
                 .data(barGraphData)
                 .enter()
                 .append('rect')
@@ -291,9 +307,30 @@
                 .attr('x', function (d) { return d.x; })
                 .attr('y', function (d) { return d.y; })
                 .attr('width', function (d) { return d.width; })
-                .attr('height', 30)
-                .attr('fill', function (d) { return d.color; });
+                .attr('height', 45);
+
+                var labels = svg.selectAll('.barLabel')
+                .data(barGraphData)
+                .enter()
+                .append('text')
+                .attr('class', 'barLabel')
+                .attr('x', function (d) { return d.x + d.width / 2; })
+                .attr('y', function (d) { return d.y + 15; })
+                .attr('text-anchor', 'middle')
+                .attr('alignment-baseline', 'middle')
+                .text(function (d) { return d.label; });
         }
+        var labels = svg.selectAll('.barLabel')
+                .data(barGraphData)
+                .enter()
+                .append('text')
+                .attr('class', 'barLabel')
+                .attr('x', function (d) { return d.x + d.width / 2; })
+                .attr('y', function (d) { return d.y + 15; })
+                .attr('text-anchor', 'middle')
+                .attr('alignment-baseline', 'middle')
+                .text(function (d) { return d.label; });
+
         //Start of Alpha1 & Alpha2 Functions, they will be very long
         var svg = d3.select('svg');
         var toggleAlpha1 = (function(){
@@ -785,39 +822,7 @@
         svg.append('line').attr('x1', 160).attr('y1', 762).attr('x2', 1400).attr('y2', 762).attr('stroke','black').style('stroke-width',3);
         svg.append('line').attr('x1', 160).attr('y1', 824).attr('x2', 1400).attr('y2', 824).attr('stroke','black').style('stroke-width',3);
         svg.append('line').attr('x1', 160).attr('y1', 886).attr('x2', 1400).attr('y2', 886).attr('stroke','black').style('stroke-width',3);
-        //Everytime the buttons are clicked, want to have the corresponding bar chart become active
 
-        function createHorizontalBarChartGroup(groupName, groupdata) {
-          var group = svg.select("." + groupName.replace(/\s+/g, ''));
-          var bars = group.selectAll(".bar")
-            .data(groupdata)
-            .enter().append("rect")
-            .attr("class", "bar")
-            .attr("x", 0)
-            .attr("y", function(d, i) { return i * 62; })
-            .attr("width", function(d) { return d; })
-            .attr("height", 45)
-            .attr("fill", "steelblue");
-
-
-          group.selectAll(".barLabel")
-            .data(groupdata)
-            .enter().append("text")
-            .attr("class", "barLabel")
-            .attr("x", function(d) { return d + 5; })
-            .attr("y", function(d, i) { return i * 62 + 30; })
-            .text(function(d) { return d; })
-            .attr("fill", "black")
-            .style("font-size", "12px")
-            .style("pointer-events", "none");
-          }
-        
-        HPDiffers = [184,184,179,152,145,129,119,99,99,94];
-        AtkDiffers = [109,101,100,99,99,99,89,89,86,84];
-        createHorizontalBarChartGroup("TopTenHP", HPDiffers);
-        createHorizontalBarChartGroup("TopTenAttack", AtkDiffers);
-               
-    
     </script>
 </body>
 </html>
