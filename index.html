@@ -579,8 +579,7 @@
         var sampleSVG = d3.select("main").append("svg:svg").attr("class", "sample").attr("width", 300).attr("height", 300);
         var tooltip2 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").text("Turn On Bar Chart");
         var tooltip3 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").text("Reset Circles");
-        var tooltip4 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px");
-
+      
         //Section for Image tooltips
         var Image1 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").html(ImageSpot1);
         var Image2 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").html(ImageSpot2);
@@ -693,32 +692,34 @@
             });
             
             
-          group.selectAll(".barLabel")
-            .data(groupdata)
-            .enter().append("text")
-            .attr("class", "barLabel")
-            .attr("x", function(d) { return d + 5; })
-            .attr("y", function(d, i) { return i * 62 + 30; })
-            .text(function(d) { return d; })
-            .attr("fill", "black")
-            .style("font-size", "12px")
-            .style("pointer-events", "none");
+            var tooltip4 = group.selectAll(".tooltip4")
+              .data(data)
+              .enter().append("text")
+              .attr("class", "tooltip")
+              .attr("x", function(d) { return d / 2; }) 
+              .attr("y", function(d, i) { return i * 62 + 30; })
+              .attr("text-anchor", "middle")
+              .attr("fill", "black")
+              .style("font-size", "12px")
+              .style("pointer-events", "none")
+              .style("display", "none")
+              .text(function(d) { return 'The difference between Stat and Average is'+d; });
         }
 
-        //createHorizontalBarChartGroup("TopTenLists", [0,0,0,0,0,0,0,0,0,0]);
+        createHorizontalBarChartGroup("TopTenLists", [0,0,0,0,0,0,0,0,0,0]);
         createHorizontalBarChartGroup("TopTenBST", [684,339,339,339,329,329,313,279,267,259]);
         createHorizontalBarChartGroup("TopTenHP", [184,184,179,152,145,129,119,99,99,94]);
         createHorizontalBarChartGroup("TopTenAttack", [109,101,100,99,99,99,89,89,86,84]);
 
-        document.getElementById("groupSelector").value = "TopTenLists";
-
         d3.select("#groupSelector").on("change", function() {
           var selectedGroup = d3.select(this).property("value");
-          svg.select(".TopTenLists").style("display", selectedGroup === "Top Ten Lists" ? null : "none");
-          svg.select(".TopTenBST").style("display", selectedGroup === "Top Ten BST" ? null : "none");
-          svg.select(".TopTenHP").style("display", selectedGroup === "Top Ten HP" ? null : "none");
-          svg.select(".TopTenAttack").style("display", selectedGroup === "Top Ten Attack" ? null : "none");
+          svg.selectAll("g").style("display", "none");
+
+          if (selectedGroup !== "default") {
+            svg.select("." + selectedGroup).style("display", null);
+          }
         });
+        
     
     </script>
 </body>
