@@ -701,27 +701,6 @@
         createHorizontalBarChartGroup("TopTenHP", [184,184,179,152,145,129,119,99,99,94]);
         createHorizontalBarChartGroup("TopTenAttack", [109,101,100,99,99,99,89,89,86,84]);
         
-            document.getElementById("Spot_1_Text").innerText = Spot_1_Text;
-            document.getElementById("Spot_1_5_Text").innerText = Spot_1_Text;
-            document.getElementById("Spot_2_Text").innerText = Spot_1_Text;
-            document.getElementById("Spot_2_5_Text").innerText = Spot_1_Text;
-            document.getElementById("Spot_3_Text").innerText = Spot_1_Text;
-            document.getElementById("Spot_3_5_Text").innerText = Spot_1_Text;
-            document.getElementById("Spot_4_Text").innerText = Spot_1_Text;
-            document.getElementById("Spot_4_5_Text").innerText = Spot_1_Text;
-            document.getElementById("Spot_5_Text").innerText = Spot_1_Text;
-            document.getElementById("Spot_5_5_Text").innerText = Spot_1_Text;
-            document.getElementById("Spot_6_Text").innerText = Spot_1_Text;
-            document.getElementById("Spot_6_5_Text").innerText = Spot_1_Text;
-            document.getElementById("Spot_7_Text").innerText = Spot_1_Text;
-            document.getElementById("Spot_7_5_Text").innerText = Spot_1_Text;
-            document.getElementById("Spot_8_Text").innerText = Spot_1_Text;
-            document.getElementById("Spot_8_5_Text").innerText = Spot_1_Text;
-            document.getElementById("Spot_9_Text").innerText = Spot_1_Text;
-            document.getElementById("Spot_9_5_Text").innerText = Spot_1_Text;
-            document.getElementById("Spot_10_Text").innerText = Spot_10_Text;
-            document.getElementById("Spot_10_5_Text").innerText = Spot_10_5_Text;
-        
         function updateText() {
             var dropdown = document.getElementById("groupSelector");
             var selectedOption = dropdown.value;
@@ -898,7 +877,9 @@
             this.Spot_10_5_Text = Spot_10_5_Text;
             this.Spot_10_Text = Spot_10_Text;
         }
-      
+        function callbackFunction() {
+            console.log("Callback executed!");
+        }
         d3.select("#groupSelector").on("change", function() {
           var selectedGroup = d3.select(this).property("value");
           svg.select(".TopTenLists").style("display", selectedGroup === "Top Ten Lists" ? null : "none");
