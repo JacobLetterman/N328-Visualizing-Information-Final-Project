@@ -684,9 +684,7 @@
             .attr("height", 45)
             .attr("fill", "steelblue");
 
-          var bstText = "Eternamax Mewtwo Eternamax Mewtwo Eternamax Mewtwo Eternamax Mewtwo Eternamax Mewtwo Eternamax Mewtwo Eternamax Mewtwo Eternamax Mewtwo Eternamax Mewtwo Eternamax Mewtwo".split(" ");
-          var hpText = "Eternamax Blissey Eternamax Blissey Eternamax Blissey Eternamax Blissey Eternamax Blissey Eternamax Blissey Eternamax Blissey Eternamax Blissey Eternamax Blissey Eternamax Blissey".split(" ");
-          var attackText = "Mewtwo Heracross Mewtwo Heracross Mewtwo Heracross Mewtwo Heracross Mewtwo Heracross Mewtwo Heracross Mewtwo Heracross Mewtwo Heracross Mewtwo Heracross Mewtwo Heracross".split("");
+          
 
           var textSet = 
                 groupName === "TopTenBST" ? bstText :
@@ -709,7 +707,180 @@
         createHorizontalBarChartGroup("TopTenBST", [684,339,339,339,329,329,313,279,267,259]);
         createHorizontalBarChartGroup("TopTenHP", [184,184,179,152,145,129,119,99,99,94]);
         createHorizontalBarChartGroup("TopTenAttack", [109,101,100,99,99,99,89,89,86,84]);
-
+        d3.select('#groupSelector').on("change", function(){
+          if (selectedGroup == 'TopTenBST')
+          {
+            (function(){
+            return function(){
+                //Change Vis for Mega
+                var display_replace = 'block';
+                var display2_replace = 'None';
+                display2 = display2 ? display2_replace : display2;
+                Spot_Preface2.style('display',display2);
+                display2 = display2 ? display2_replace : display2;
+                Spot_Preface3.style('display',display2);
+                display2 = display2 ? display2_replace : display2;
+                Spot_Preface3_5.style('display',display2);
+                display2 = display2 ? display2_replace : display2;
+                Spot_Preface4.style('display',display2);
+                //Spot 1
+                var Replace_Spot1 = "718 10% Forme Zygarde __DRAGON GROUND";
+                var Replace_Image1 = "<p>Most recent image of 10% Forme Zygarde</p><img src='https://archives.bulbagarden.net/media/upload/f/f8/0718Zygarde-10Percent.png'></img>";
+                Spot_1_Text = Spot_1_Text ? Replace_Spot1 : Spot_1_Text;
+                Spot_1.text(Spot_1_Text);
+                ImageSpot1 = ImageSpot1 ? Replace_Image1 : ImageSpot1;
+                Image1.html(ImageSpot1);
+                //Spot 1_5
+                var Spot_1_5_Text = '318 __ 45 _ _ _49 _ _ _49 _ _ _65 _ _ _65 _ _ 45';
+                var Replace_Spot_1_5 = '486 __ 54 _ _ _100 _ _ _71 _ _ 61 _ _ 85 _ _ 115';
+                Spot_1_5_Text = Spot_1_5_Text ? Replace_Spot_1_5 : Spot_1_5_Text;
+                Spot_1_5.text(Spot_1_5_Text);
+                //Spot 2
+                var Replace_Spot2 = "718 50% Forme Zygarde __DRAGON GROUND";
+                var Replace_Image2 = "<p>Most recent image of 50% Forme Zygarde</p><img src='https://archives.bulbagarden.net/media/upload/9/92/0718Zygarde.png'></img>";
+                Spot_2_Text = Spot_2_Text ? Replace_Spot2 : Spot_2_Text;
+                Spot_2.text(Spot_2_Text);
+                ImageSpot2 = ImageSpot2 ? Replace_Image2 : ImageSpot2;
+                Image2.html(ImageSpot2);
+                //Spot 2_5
+                var Replace_Spot_2_5 = '600 __ 108_ _ _100 _ _ _121_ _ 81 _ _ 95 _ _ 95';
+                Spot_2_5_Text = Spot_2_5_Text ? Replace_Spot_2_5 : Spot_2_5_Text;
+                Spot_2_5.text(Spot_2_5_Text);
+                //Spot 3
+                var Replace_Spot3 = '460AbomasnowAbomasnow GRASS __ICE'
+                var Replace_Image3 = "<p>Most recent image of Abomasnow</p><img src='<p>Most recent image of Abomasnow</p><img src='https://archives.bulbagarden.net/media/upload/archive/1/14/20131115181505%210460Abomasnow.png'></img>";
+                Spot_3_Text = Spot_3_Text ? Replace_Spot3 : Spot_3_Text;
+                Spot_3.text(Spot_3_Text);
+                ImageSpot3 = ImageSpot3 ? Replace_Image3 : ImageSpot3;
+                Image3.html(ImageSpot3);
+                //Spot 3_5
+                var Replace_Spot_3_5 = '494 __ 90 _ _ _92 _ _ _75 _ _ 92 _ _ _85 _ _ _60';
+                Spot_3_5_Text = Spot_3_5_Text ? Replace_Spot_3_5 : Spot_3_5_Text;
+                Spot_3_5.text(Spot_3_5_Text);
+                //Spot 4
+                var Replace_Spot4 = "63 _Abra _ _ _ _Abra _ _ _ PSYCHIC _NONE";
+                var Replace_Image4 = "<p>Most recent image of Abra</p><img src='https://archives.bulbagarden.net/media/upload/archive/b/bd/20110722101745%210063Abra.png'></img>";
+                Spot_4_Text = Spot_4_Text ? Replace_Spot4 : Spot_4_Text;
+                Spot_4.text(Spot_4_Text);
+                ImageSpot4 = ImageSpot4 ? Replace_Image4 : ImageSpot4;
+                Image4.html(ImageSpot4);
+                //Spot 4_5
+                var Replace_Spot_4_5 = '310 __ 25 _ _ _20 _ _ _15 _ _ 105 _ _ _55 _ _ _90';
+                Spot_4_5_Text = Spot_4_5_Text ? Replace_Spot_4_5 : Spot_4_5_Text;
+                Spot_4_5.text(Spot_4_5_Text);
+                //Spot 5
+                var Replace_Spot5 = "359_Absol_ _ _ Absol_ _ _ _DARK_ _NONE";
+                var Replace_Image5 = "<p>Most recent image of Absol</p><img src='https://archives.bulbagarden.net/media/upload/archive/9/9b/20130812084640%210359Absol.png'></img>";
+                Spot_5_Text = Spot_5_Text ? Replace_Spot5 : Spot_5_Text;
+                Spot_5.text(Spot_5_Text);
+                ImageSpot5 = ImageSpot5 ? Replace_Image5 : ImageSpot5;
+                Image5.html(ImageSpot5);
+                //Spot 5_5
+                var Replace_Spot_5_5 = 'beans';
+                Spot_5_5_Text = Spot_5_5_Text ? Replace_Spot_5_5 : Spot_5_5_Text;
+                Spot_5_5.text(Spot_5_5_Text);
+                //Spot 6
+                var Replace_Spot6 = '617_Accelgor _ _Accelgor _ BUG _ _ _ NONE'
+                var Replace_Image6 = "<p>Most recent image of Accelgor</p><img src='https://archives.bulbagarden.net/media/upload/f/f4/0617Accelgor.png'></img>";
+                Spot_6_Text = Spot_6_Text ? Replace_Spot6 : Spot_6_Text;
+                Spot_6.text(Spot_6_Text);
+                ImageSpot6 = ImageSpot6 ? Replace_Image6 : ImageSpot6;
+                Image6.html(ImageSpot6);
+                //Spot 6_5
+                var Replace_Spot_6_5 = 'beans';
+                Spot_6_5_Text = Spot_6_5_Text ? Replace_Spot_6_5 : Spot_6_5_Textt;
+                Spot_6_5.text(Spot_6_5_Text);
+                //Spot 7
+                var Replace_Spot7 = "142 Aerodactyl_Aerodactyl _ _ROCK__FLYING";
+                var Replace_Image7 = "<p>Most recent image of Aerodactyl</p><img src='https://archives.bulbagarden.net/media/upload/archive/2/2c/20131115181516%210142Aerodactyl.png'></img>";
+                Spot_7_Text = Spot_7_Text ? Replace_Spot7 : Spot_7_Text;
+                Spot_7.text(Spot_7_Text);
+                ImageSpot7 = ImageSpot7 ? Replace_Image7 : ImageSpot7;
+                Image7.html(ImageSpot7);
+                //Spot 7_5
+                var Replace_Spot_7_5 = 'beans';
+                Spot_7_5_Text = Spot_7_5_Text ? Replace_Spot_7_5 : Spot_7_5_Text;
+                Spot_7_5.text(Spot_7_5_Text);
+                //Spot 8
+                var Replace_Spot8 = "306_Aggron _ _Aggron _ _ _STEEL_ ROCK";
+                var Replace_Image8 = "<p>Most recent image of Aggron</p><img src='https://archives.bulbagarden.net/media/upload/archive/1/1e/20150110193353%210306Aggron.png'></img>";
+                Spot_8_Text = Spot_8_Text ? Replace_Spot8 : Spot_8_Text;
+                Spot_8.text(Spot_8_Text);
+                ImageSpot8 = ImageSpot8 ? Replace_Image8 : ImageSpot8;
+                Image8.html(ImageSpot8);
+                //Spot 8_5
+                var Replace_Spot_8_5 = 'beans';
+                Spot_8_5_Text = Spot_8_5_Text ? Replace_Spot_8_5 : Spot_8_5_Text;
+                Spot_8_5.text(Spot_8_5_Text);
+                //Spot 9
+                var Replace_Spot9 = "190__Aipom_ _ Aipom_ _ _ NORMAL _NONE";
+                var Replace_Image9 = "<p>Most recent image of Aipom</p><img src='https://archives.bulbagarden.net/media/upload/archive/0/0d/20100417191744%210190Aipom.png'></img>";
+                Spot_9_Text = Spot_9_Text ? Replace_Spot9 : Spot_9_Text;
+                Spot_9.text(Spot_9_Text);
+                ImageSpot9 = ImageSpot9 ? Replace_Image9 : ImageSpot9;
+                Image9.html(ImageSpot9);
+                //Spot 9_5
+                var Replace_Spot_9_5 = 'beans';
+                Spot_9_5_Text = Spot_9_5_Text ? Replace_Spot_9_5 : Spot_9_5_Text;
+                Spot_9_5.text(Spot_2_5_Text);
+                //Spot 10
+                var Replace_Spot10 = "65_ Alakazam _ Alakazam _PSYHCIC__NONE";
+                var Replace_Image10 = "<p>Most recent image of Alakazam</p><img src='https://gamepress.gg/pokemongo/sites/pokemongo/files/styles/240w/public/2018-01/pokemon_icon_065_00.png?itok=Kc5xyynr'></img>";
+                Spot_10_Text = Spot_10_Text ? Replace_Spot10 : Spot_10_Text;
+                Spot_10.text(Spot_10_Text);
+                ImageSpot10 = ImageSpot10 ? Replace_Image10 : ImageSpot10;
+                Image10.html(ImageSpot10);
+                //Spot 10_5
+                var Replace_Spot_10_5 = 'beans';
+                Spot_10_5_Text = Spot_10_5_Text ? Replace_Spot_10_5 : Spot_10_5_Text;
+                Spot_10_5.text(Spot_10_5_Text);
+            }
+        }
+        )}
+        if (selectedGroup == 'TopTenHP')
+        {
+          (function(){
+            return function(){
+                //Spot 1
+                var Replace_Spot1 = "cheese";
+                var Replace_Image1 = "<p>Most recent image of 10% Forme Zygarde</p><img src='https://archives.bulbagarden.net/media/upload/f/f8/0718Zygarde-10Percent.png'></img>";
+                Spot_1_Text = Spot_1_Text ? Replace_Spot1 : Spot_1_Text;
+                Spot_1.text(Spot_1_Text);
+                ImageSpot1 = ImageSpot1 ? Replace_Image1 : ImageSpot1;
+                Image1.html(ImageSpot1);
+                //Spot 1_5
+                var Spot_1_5_Text = 'cheese';
+                var Replace_Spot_1_5 = '486 __ 54 _ _ _100 _ _ _71 _ _ 61 _ _ 85 _ _ 115';
+                Spot_1_5_Text = Spot_1_5_Text ? Replace_Spot_1_5 : Spot_1_5_Text;
+                Spot_1_5.text(Spot_1_5_Text);
+              }
+        }
+        )}
+        if (selectedGroup == 'TopTenAttack ')
+        {
+          (function(){
+            return function(){
+          var Replace_Spot3 = 'beans'
+                var Replace_Image3 = "<p>Most recent image of Abomasnow</p><img src='<p>Most recent image of Abomasnow</p><img src='https://archives.bulbagarden.net/media/upload/archive/1/14/20131115181505%210460Abomasnow.png'></img>";
+                Spot_3_Text = Spot_3_Text ? Replace_Spot3 : Spot_3_Text;
+                Spot_3.text(Spot_3_Text);
+                ImageSpot3 = ImageSpot3 ? Replace_Image3 : ImageSpot3;
+                Image3.html(ImageSpot3);
+                //Spot 3_5
+                var Replace_Spot_3_5 = 'beans';
+                Spot_3_5_Text = Spot_3_5_Text ? Replace_Spot_3_5 : Spot_3_5_Text;
+                Spot_3_5.text(Spot_3_5_Text);
+                //Spot 4
+                var Replace_Spot4 = "beans";
+                var Replace_Image4 = "<p>Most recent image of Abra</p><img src='https://archives.bulbagarden.net/media/upload/archive/b/bd/20110722101745%210063Abra.png'></img>";
+                Spot_4_Text = Spot_4_Text ? Replace_Spot4 : Spot_4_Text;
+                Spot_4.text(Spot_4_Text);
+                ImageSpot4 = ImageSpot4 ? Replace_Image4 : ImageSpot4;
+                Image4.html(ImageSpot4);
+        }
+      }
+        )}
+        });  
         d3.select("#groupSelector").on("change", function() {
           var selectedGroup = d3.select(this).property("value");
           svg.select(".TopTenLists").style("display", selectedGroup === "Top Ten Lists" ? null : "none");
