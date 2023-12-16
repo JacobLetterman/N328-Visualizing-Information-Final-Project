@@ -700,49 +700,162 @@
         createHorizontalBarChartGroup("TopTenBST", [684,339,339,339,329,329,313,279,267,259]);
         createHorizontalBarChartGroup("TopTenHP", [184,184,179,152,145,129,119,99,99,94]);
         createHorizontalBarChartGroup("TopTenAttack", [109,101,100,99,99,99,89,89,86,84]);
-        d3.select('#groupSelector').on("change", function(){
-          if (selectedGroup == 'TopTenBST')
-          {
-            
-                var Spot_5_Text = 'beans'
-                var ImageSpot5 = "<p>Most recent image of Abomasnow</p><img src='<p>Most recent image of Abomasnow</p><img src='https://archives.bulbagarden.net/media/upload/archive/1/14/20131115181505%210460Abomasnow.png'></img>";
-                
-                //Spot 3_5
-                var Spot_5_5_Text = 'beans';
-                //Spot 4
-                var Spot_6_Text = "beans";
-                var ImageSpot4 = "<p>Most recent image of Abra</p><img src='https://archives.bulbagarden.net/media/upload/archive/b/bd/20110722101745%210063Abra.png'></img>";
-                console.log(selectedGroup)
+        function updateText() {
+            var dropdown = document.getElementById("groupSelector");
+            var selectedOption = dropdown.value;
+
+            // Check the selected option and update text accordingly
+            switch (selectedOption) {
+                case "Top Ten BST":
+                            //Image/Text 1
+        var ImageSpot1 = "<p>Most recent image of Bulbasaur</p><img src='https://archives.bulbagarden.net/media/upload/thumb/f/fb/0001Bulbasaur.png/240px-0001Bulbasaur.png'></img>";
+        var Spot_1_Text = 'beans';
+        var Spot_1_5_Text = '318 __ 45 _ _ _49 _ _ _49 _ _ 65 _ _ _65 _ _ _45';
+        //Image/text 2
+        var ImageSpot2 = "<p>Most recent image of Ivysaur</p><img src='https://archives.bulbagarden.net/media/upload/archive/8/81/20190404221349%210002Ivysaur.png'></img>";
+        var Spot_2_Text = 'beans';
+        var Spot_2_5_Text = '405 __ 60 _ _ _62 _ _ _63 _ _ 80 _ _ _80 _ _ _60';
+        //Image/text 3
+        var ImageSpot3 = "<p>Most recent image of Venusaur</p><img src='https://archives.bulbagarden.net/media/upload/archive/6/6b/20130810083010%210003Venusaur.png'></img>";
+        var Spot_3_Text = 'beans';
+        var Spot_3_5_Text = '525 __ 80 _ _ _82 _ _ _83 _ _ 100 _ _ 100 _ _ 80';
+        //Image/text 4
+        var ImageSpot4 = "<p>Most recent image of Mega Venusaur</p><img src='https://archives.bulbagarden.net/media/upload/f/f7/0003Venusaur-Mega.png'></img>";
+        var Spot_4_Text = '3 _ _Venusaur _Venusaur__GRASS__POISON';
+        var Spot_4_5_Text = '625 __ 80 _ _ _100 _ _ 123 _ _122 _ _120 _ _ 80';
+        //Image/text 5
+        var ImageSpot5 = "<p>Most recent image of Charmander</p><img src='https://archives.bulbagarden.net/media/upload/archive/2/27/20130810091956%210004Charmander.png'></img>";
+        var Spot_5_Text = '4 _ CharmanderCharmander__FIRE__ NONE';
+        var Spot_5_5_Text = '309 __ 39 _ _ _52 _ _ _43 _ _ 60 _ _ _50 _ _ _65';
+        //Image/text 6
+        var ImageSpot6 = "<p>Most recent image of Charmeleon</p><img src='https://archives.bulbagarden.net/media/upload/archive/0/05/20190404222345%210005Charmeleon.png'></img>";
+        var Spot_6_Text = '5 _ CharmeleonCharmeleon__FIRE__ NONE';
+        var Spot_6_5_Text = '405 __ 58 _ _ _64 _ _ _58 _ _ 80 _ _ _65 _ _ _80';
+        //Image/text 7
+        var ImageSpot7 = "<p>Most recent image of Charizard</p><img src='https://archives.bulbagarden.net/media/upload/archive/3/38/20130810070957%210006Charizard.png'></img>";
+        var Spot_7_Text = '6 _ _Charizard_ Charizard___ FIRE__FLYING';
+        var Spot_7_5_Text = '534 __ 78 _ _ _84 _ _ _78 _ _ 109 _ _ 85 _ _ 100';
+        //Image/text 8
+        var ImageSpot8 = "<p>Most recent image of Mega Charizard X</p><img src='https://archives.bulbagarden.net/media/upload/3/35/0006Charizard-Mega_X.png'></img>";
+        var Spot_8_Text = '6 __Charizard X_ Charizard__FIRE__DRAGON';
+        var Spot_8_5_Text = '634 __ 78 _ _ 130 _ _ _111 _ _130 _ _ 85 _ _ 100';
+        //Image/text 9
+        var ImageSpot9 = "<p>Most recent image of Mega Charizard Y</p><img src='https://archives.bulbagarden.net/media/upload/a/a0/0006Charizard-Mega_Y.png'></img>";
+        var Spot_9_Text = '6 __Charizard Y_ Charizard__FIRE__FLYING';
+        var Spot_9_5_Text = '634 __ 78 _ _ _104 _ _ _78 _ _159 _ _ 115 _ _ 100';
+        //Image/text 10
+        var ImageSpot10 = "<p>Most recent image of Squirtle</p><img src='https://archives.bulbagarden.net/media/upload/archive/5/54/20110414005311%210007Squirtle.png'></img>";
+        var Spot_10_Text = '7 _ _Squirtle_ __Squirtle___ WATER__ NONE';
+        var Spot_10_5_Text = '314 __ 44 _ _ _48 _ _ _65 _ _ _50 _ _ 64 _ _ _ 43';
+                    break;
+                case "Top Ten HP":
+                    //Image/Text 1
+        var ImageSpot1 = "<p>Most recent image of Bulbasaur</p><img src='https://archives.bulbagarden.net/media/upload/thumb/f/fb/0001Bulbasaur.png/240px-0001Bulbasaur.png'></img>";
+        var Spot_1_Text = 'beans';
+        var Spot_1_5_Text = '318 __ 45 _ _ _49 _ _ _49 _ _ 65 _ _ _65 _ _ _45';
+        //Image/text 2
+        var ImageSpot2 = "<p>Most recent image of Ivysaur</p><img src='https://archives.bulbagarden.net/media/upload/archive/8/81/20190404221349%210002Ivysaur.png'></img>";
+        var Spot_2_Text = 'beans';
+        var Spot_2_5_Text = '405 __ 60 _ _ _62 _ _ _63 _ _ 80 _ _ _80 _ _ _60';
+        //Image/text 3
+        var ImageSpot3 = "<p>Most recent image of Venusaur</p><img src='https://archives.bulbagarden.net/media/upload/archive/6/6b/20130810083010%210003Venusaur.png'></img>";
+        var Spot_3_Text = 'beans';
+        var Spot_3_5_Text = '525 __ 80 _ _ _82 _ _ _83 _ _ 100 _ _ 100 _ _ 80';
+        //Image/text 4
+        var ImageSpot4 = "<p>Most recent image of Mega Venusaur</p><img src='https://archives.bulbagarden.net/media/upload/f/f7/0003Venusaur-Mega.png'></img>";
+        var Spot_4_Text = '3 _ _Venusaur _Venusaur__GRASS__POISON';
+        var Spot_4_5_Text = '625 __ 80 _ _ _100 _ _ 123 _ _122 _ _120 _ _ 80';
+        //Image/text 5
+        var ImageSpot5 = "<p>Most recent image of Charmander</p><img src='https://archives.bulbagarden.net/media/upload/archive/2/27/20130810091956%210004Charmander.png'></img>";
+        var Spot_5_Text = '4 _ CharmanderCharmander__FIRE__ NONE';
+        var Spot_5_5_Text = '309 __ 39 _ _ _52 _ _ _43 _ _ 60 _ _ _50 _ _ _65';
+        //Image/text 6
+        var ImageSpot6 = "<p>Most recent image of Charmeleon</p><img src='https://archives.bulbagarden.net/media/upload/archive/0/05/20190404222345%210005Charmeleon.png'></img>";
+        var Spot_6_Text = 'beans';
+        var Spot_6_5_Text = '405 __ 58 _ _ _64 _ _ _58 _ _ 80 _ _ _65 _ _ _80';
+        //Image/text 7
+        var ImageSpot7 = "<p>Most recent image of Charizard</p><img src='https://archives.bulbagarden.net/media/upload/archive/3/38/20130810070957%210006Charizard.png'></img>";
+        var Spot_7_Text = 'beans';
+        var Spot_7_5_Text = '534 __ 78 _ _ _84 _ _ _78 _ _ 109 _ _ 85 _ _ 100';
+        //Image/text 8
+        var ImageSpot8 = "<p>Most recent image of Mega Charizard X</p><img src='https://archives.bulbagarden.net/media/upload/3/35/0006Charizard-Mega_X.png'></img>";
+        var Spot_8_Text = '6 __Charizard X_ Charizard__FIRE__DRAGON';
+        var Spot_8_5_Text = '634 __ 78 _ _ 130 _ _ _111 _ _130 _ _ 85 _ _ 100';
+        //Image/text 9
+        var ImageSpot9 = "<p>Most recent image of Mega Charizard Y</p><img src='https://archives.bulbagarden.net/media/upload/a/a0/0006Charizard-Mega_Y.png'></img>";
+        var Spot_9_Text = '6 __Charizard Y_ Charizard__FIRE__FLYING';
+        var Spot_9_5_Text = '634 __ 78 _ _ _104 _ _ _78 _ _159 _ _ 115 _ _ 100';
+        //Image/text 10
+        var ImageSpot10 = "<p>Most recent image of Squirtle</p><img src='https://archives.bulbagarden.net/media/upload/archive/5/54/20110414005311%210007Squirtle.png'></img>";
+        var Spot_10_Text = '7 _ _Squirtle_ __Squirtle___ WATER__ NONE';
+        var Spot_10_5_Text = '314 __ 44 _ _ _48 _ _ _65 _ _ _50 _ _ 64 _ _ _ 43';
+                    break;
+                case "Top Ten Attack":
+                    //Image/Text 1
+        var ImageSpot1 = "<p>Most recent image of Bulbasaur</p><img src='https://archives.bulbagarden.net/media/upload/thumb/f/fb/0001Bulbasaur.png/240px-0001Bulbasaur.png'></img>";
+        var Spot_1_Text = 'beans';
+        var Spot_1_5_Text = '318 __ 45 _ _ _49 _ _ _49 _ _ 65 _ _ _65 _ _ _45';
+        //Image/text 2
+        var ImageSpot2 = "<p>Most recent image of Ivysaur</p><img src='https://archives.bulbagarden.net/media/upload/archive/8/81/20190404221349%210002Ivysaur.png'></img>";
+        var Spot_2_Text = 'beans';
+        var Spot_2_5_Text = '405 __ 60 _ _ _62 _ _ _63 _ _ 80 _ _ _80 _ _ _60';
+        //Image/text 3
+        var ImageSpot3 = "<p>Most recent image of Venusaur</p><img src='https://archives.bulbagarden.net/media/upload/archive/6/6b/20130810083010%210003Venusaur.png'></img>";
+        var Spot_3_Text = 'beans';
+        var Spot_3_5_Text = '525 __ 80 _ _ _82 _ _ _83 _ _ 100 _ _ 100 _ _ 80';
+        //Image/text 4
+        var ImageSpot4 = "<p>Most recent image of Mega Venusaur</p><img src='https://archives.bulbagarden.net/media/upload/f/f7/0003Venusaur-Mega.png'></img>";
+        var Spot_4_Text = '3 _ _Venusaur _Venusaur__GRASS__POISON';
+        var Spot_4_5_Text = '625 __ 80 _ _ _100 _ _ 123 _ _122 _ _120 _ _ 80';
+        //Image/text 5
+        var ImageSpot5 = "<p>Most recent image of Charmander</p><img src='https://archives.bulbagarden.net/media/upload/archive/2/27/20130810091956%210004Charmander.png'></img>";
+        var Spot_5_Text = '4 _ CharmanderCharmander__FIRE__ NONE';
+        var Spot_5_5_Text = '309 __ 39 _ _ _52 _ _ _43 _ _ 60 _ _ _50 _ _ _65';
+        //Image/text 6
+        var ImageSpot6 = "<p>Most recent image of Charmeleon</p><img src='https://archives.bulbagarden.net/media/upload/archive/0/05/20190404222345%210005Charmeleon.png'></img>";
+        var Spot_6_Text = '5 _ CharmeleonCharmeleon__FIRE__ NONE';
+        var Spot_6_5_Text = '405 __ 58 _ _ _64 _ _ _58 _ _ 80 _ _ _65 _ _ _80';
+        //Image/text 7
+        var ImageSpot7 = "<p>Most recent image of Charizard</p><img src='https://archives.bulbagarden.net/media/upload/archive/3/38/20130810070957%210006Charizard.png'></img>";
+        var Spot_7_Text = '6 _ _Charizard_ Charizard___ FIRE__FLYING';
+        var Spot_7_5_Text = '534 __ 78 _ _ _84 _ _ _78 _ _ 109 _ _ 85 _ _ 100';
+        //Image/text 8
+        var ImageSpot8 = "<p>Most recent image of Mega Charizard X</p><img src='https://archives.bulbagarden.net/media/upload/3/35/0006Charizard-Mega_X.png'></img>";
+        var Spot_8_Text = '6 __Charizard X_ Charizard__FIRE__DRAGON';
+        var Spot_8_5_Text = '634 __ 78 _ _ 130 _ _ _111 _ _130 _ _ 85 _ _ 100';
+        //Image/text 9
+        var ImageSpot9 = "<p>Most recent image of Mega Charizard Y</p><img src='https://archives.bulbagarden.net/media/upload/a/a0/0006Charizard-Mega_Y.png'></img>";
+        var Spot_9_Text = 'beans';
+        var Spot_9_5_Text = '634 __ 78 _ _ _104 _ _ _78 _ _159 _ _ 115 _ _ 100';
+        //Image/text 10
+        var ImageSpot10 = "<p>Most recent image of Squirtle</p><img src='https://archives.bulbagarden.net/media/upload/archive/5/54/20110414005311%210007Squirtle.png'></img>";
+        var Spot_10_Text = 'beans';
+        var Spot_10_5_Text = '314 __ 44 _ _ _48 _ _ _65 _ _ _50 _ _ 64 _ _ _ 43';
+                    break;
             }
-        
-        else if (selectedGroup == 'TopTenHP')
-        {
-           
-                var Spot_1_Text = 'beans'
-                var ImageSpot1 = "<p>Most recent image of Abomasnow</p><img src='<p>Most recent image of Abomasnow</p><img src='https://archives.bulbagarden.net/media/upload/archive/1/14/20131115181505%210460Abomasnow.png'></img>";
-                
-                //Spot 3_5
-                var Spot_1_5_Text = 'beans';
-                //Spot 4
-                var Spot_2_Text = "beans";
-                var ImageSpot4 = "<p>Most recent image of Abra</p><img src='https://archives.bulbagarden.net/media/upload/archive/b/bd/20110722101745%210063Abra.png'></img>";
-                console.log(selectedGroup)
-              }
-              
-        else if (selectedGroup == 'TopTenAttack ')
-        {
-          
-                var Spot_3_Text = 'beans'
-                var ImageSpot3 = "<p>Most recent image of Abomasnow</p><img src='<p>Most recent image of Abomasnow</p><img src='https://archives.bulbagarden.net/media/upload/archive/1/14/20131115181505%210460Abomasnow.png'></img>";
-                
-                //Spot 3_5
-                var Spot_3_5_Text = 'beans';
-                //Spot 4
-                var Spot_4_Text = "beans";
-                var ImageSpot4 = "<p>Most recent image of Abra</p><img src='https://archives.bulbagarden.net/media/upload/archive/b/bd/20110722101745%210063Abra.png'></img>";
-                console.log(selectedGroup)
+        } 
+        function setText(ImageSpot1,Spot_1_Text,Spot_1_5_Text,ImageSpot2,Spot_2_Text,Spot_2_5_Text,ImageSpot3,Spot_3_Text,Spot_3_5_Text,ImageSpot4,Spot_4_Text,Spot_4_5_Text,ImageSpot5,Spot_5_Text,Spot_5_5_Text,ImageSpot6,Spot_6_Text,Spot_6_5_Text,ImageSpot7,Spot_7_Text,Spot_7_5_Text,ImageSpot8,Spot_8_Text,Spot_8_5_Text,ImageSpot9,Spot_9_Text,Spot_9_5_Text,ImageSpot10,Spot_10_Text,Spot_10_5_Text) {
+            document.getElementById("Spot_1_Text").innerText = Spot_1_Text;
+            document.getElementById("Spot_1_5_Text").innerText = Spot_1_Text;
+            document.getElementById("Spot_2_Text").innerText = Spot_1_Text;
+            document.getElementById("Spot_2_5_Text").innerText = Spot_1_Text;
+            document.getElementById("Spot_3_Text").innerText = Spot_1_Text;
+            document.getElementById("Spot_3_5_Text").innerText = Spot_1_Text;
+            document.getElementById("Spot_4_Text").innerText = Spot_1_Text;
+            document.getElementById("Spot_4_5_Text").innerText = Spot_1_Text;
+            document.getElementById("Spot_5_Text").innerText = Spot_1_Text;
+            document.getElementById("Spot_5_5_Text").innerText = Spot_1_Text;
+            document.getElementById("Spot_6_Text").innerText = Spot_1_Text;
+            document.getElementById("Spot_6_5_Text").innerText = Spot_1_Text;
+            document.getElementById("Spot_7_Text").innerText = Spot_1_Text;
+            document.getElementById("Spot_7_5_Text").innerText = Spot_1_Text;
+            document.getElementById("Spot_8_Text").innerText = Spot_1_Text;
+            document.getElementById("Spot_8_5_Text").innerText = Spot_1_Text;
+            document.getElementById("Spot_9_Text").innerText = Spot_1_Text;
+            document.getElementById("Spot_9_5_Text").innerText = Spot_1_Text;
+            document.getElementById("Spot_10_Text").innerText = Spot_10_Text;
+            document.getElementById("Spot_10_5_Text").innerText = Spot_10_5_Text;
         }
-      });  
         d3.select("#groupSelector").on("change", function() {
           var selectedGroup = d3.select(this).property("value");
           svg.select(".TopTenLists").style("display", selectedGroup === "Top Ten Lists" ? null : "none");
