@@ -180,11 +180,11 @@
         var Spot_4_5_Text = '625 __ 80 _ _ _100 _ _ 123 _ _122 _ _120 _ _ 80';
         //Image/text 5
         var ImageSpot5 = "<p>Most recent image of Charmander</p><img src='https://archives.bulbagarden.net/media/upload/archive/2/27/20130810091956%210004Charmander.png'></img>";
-        var Spot_5_Text = '4 _ CharmanderCharmander___FIRE__ NONE';
+        var Spot_5_Text = '4 _ CharmanderCharmander__FIRE__ NONE';
         var Spot_5_5_Text = '309 __ 39 _ _ _52 _ _ _43 _ _ 60 _ _ _50 _ _ _65';
         //Image/text 6
         var ImageSpot6 = "<p>Most recent image of Charmeleon</p><img src='https://archives.bulbagarden.net/media/upload/archive/0/05/20190404222345%210005Charmeleon.png'></img>";
-        var Spot_6_Text = '5 _ CharmeleonCharmeleon___FIRE__ NONE';
+        var Spot_6_Text = '5 _ CharmeleonCharmeleon__FIRE__ NONE';
         var Spot_6_5_Text = '405 __ 58 _ _ _64 _ _ _58 _ _ 80 _ _ _65 _ _ _80';
         //Image/text 7
         var ImageSpot7 = "<p>Most recent image of Charizard</p><img src='https://archives.bulbagarden.net/media/upload/archive/3/38/20130810070957%210006Charizard.png'></img>";
@@ -564,7 +564,8 @@
         var sampleSVG = d3.select("main").append("svg:svg").attr("class", "sample").attr("width", 300).attr("height", 300);
         var tooltip2 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").text("Turn On Bar Chart");
         var tooltip3 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").text("Reset Circles");
-        
+        var tooltip4 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px");
+
         //Section for Image tooltips
         var Image1 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").html(ImageSpot1);
         var Image2 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").html(ImageSpot2);
@@ -657,15 +658,13 @@
         svg.append('line').attr('x1', 160).attr('y1', 886).attr('x2', 1400).attr('y2', 886).attr('stroke','black').style('stroke-width',3);
         //Everytime the buttons are clicked, want to have the corresponding bar chart become active
 
-        var groups = ['group1','group2','group3']
+        var groups = ['Top Ten Lists','Top Ten BST','Top Ten HP','Top Ten Attack']
+        var group1data = [1125,780,780,780,770,770,754,720,708,700];
+        var group2data = [255,255,250,223,216,200,190,170,170,165];
+        var group3data = [190,185,181,180,180,180,170,170,167,165];
         d3.select("#groupSelector").style("left", "10px").style("top", "5px").selectAll('myOptions').data(groups).enter().append('option').text(function (d) { return d; });
 
-        var svg = d3.select("svg");
-        function generateRandomData(numBars) {
-            return d3.range(numBars).map(function() {
-            return Math.floor(Math.random() * 100) + 20;
-          });
-        }
+        
         function createHorizontalBarChartGroup(groupName, groupdata) {
           var group = svg.select("." + groupName);
           var bars = group.selectAll(".bar")
@@ -675,8 +674,18 @@
             .attr("x", 0)
             .attr("y", function(d, i) { return i * 62; })
             .attr("width", function(d) { return d; })
-            .attr("height", 60)
-            .attr("fill", "steelblue");
+            .attr("height", 45)
+            .attr("fill", "steelblue")
+            .on("mouseover", function(d) {
+              tooltip4.style("display", "block")
+                .text(d);
+            })
+            .on("mouseout", function() {
+              tooltip4.style("display", "none");
+            });
+
+          var tooltip4 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px");
+
           group.selectAll(".barLabel")
             .data(groupdata)
             .enter().append("text")
@@ -690,9 +699,9 @@
         }
 
 
-        createHorizontalBarChartGroup("group1", generateRandomData(10));
-        createHorizontalBarChartGroup("group2", generateRandomData(10));
-        createHorizontalBarChartGroup("group3", generateRandomData(10));
+        createHorizontalBarChartGroup("Top Ten BST", group1data);
+        createHorizontalBarChartGroup("Top Ten HP", group2data);
+        createHorizontalBarChartGroup("Top Ten Attack", group3data);
 
 
         d3.select("#groupSelector").on("change", function() {
