@@ -33,7 +33,7 @@
     
 </head>
 <body>
-  <select id="groupSelector" onchange="updateText()"">
+  <select id="groupSelector" onchange="updateText()">
     <option value="Top Ten Lists" selected>Top Ten Lists</option>
     <option value="Top Ten BST">Top Ten BST</option>
     <option value="Top Ten HP">Top Ten HP</option>
@@ -704,7 +704,7 @@
         
         var dropdown = document.getElementById("groupSelector");
         var selectedOption = dropdown.value;
-
+        function updateText() {
             // Check the selected option and update text accordingly
         switch (selectedOption) {
             case "Top Ten BST":
@@ -834,7 +834,7 @@
         var Spot_10_5_Text = '314 __ 44 _ _ _48 _ _ _65 _ _ _50 _ _ 64 _ _ _ 43';
                     break;
         }
-          
+      }
         function setText(ImageSpot1,Spot_1_Text,Spot_1_5_Text,ImageSpot2,Spot_2_Text,Spot_2_5_Text,ImageSpot3,Spot_3_Text,Spot_3_5_Text,ImageSpot4,Spot_4_Text,Spot_4_5_Text,ImageSpot5,Spot_5_Text,Spot_5_5_Text,ImageSpot6,Spot_6_Text,Spot_6_5_Text,ImageSpot7,Spot_7_Text,Spot_7_5_Text,ImageSpot8,Spot_8_Text,Spot_8_5_Text,ImageSpot9,Spot_9_Text,Spot_9_5_Text,ImageSpot10,Spot_10_Text,Spot_10_5_Text) {
             document.getElementById("Spot_1_Text").innerText = Spot_1_Text;
             document.getElementById("Spot_1_5_Text").innerText = Spot_1_Text;
