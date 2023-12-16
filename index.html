@@ -33,12 +33,6 @@
     
 </head>
 <body>
-  <select id="groupSelector" onchange="updateText()">
-    <option value="Top Ten Lists" selected>Top Ten Lists</option>
-    <option value="Top Ten BST">Top Ten BST</option>
-    <option value="Top Ten HP">Top Ten HP</option>
-    <option value="Top Ten Attack">Top Ten Attack</option>
-  </select>
 	<svg id="main" width="2000" height="2000">
         
 		<text id='label' x='20' y='20'>Different stats for all the different Pokemon</text>
@@ -303,7 +297,7 @@
         var display = 'None';
         var display2= 'block';
         var Spot_Preface1 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',366).attr('stroke', 'black').style("display",display)
-        var Spot_Preface1_5 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',432).attr('stroke', 'black').style("display",display2)
+        var Spot_Preface1_5 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',432).attr('stroke', 'black').style("display",display)
         var Spot_Preface2 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',490).attr('stroke', 'black').style("display",display2)
         var Spot_Preface3 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',738).attr('stroke', 'black').style("display",display2)
         var Spot_Preface3_5 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',800).attr('stroke', 'black').style("display",display2)
@@ -452,6 +446,8 @@
                 var display2_replace = 'None';
                 display = display ? display_replace : display;
                 Spot_Preface1.style('display',display);
+                display2 = display2 ? display2_replace : display2;
+                Spot_Preface1_5.style('display',display2);
                 display2 = display2 ? display2_replace : display2;
                 Spot_Preface2.style('display',display2);
                 display2 = display2 ? display2_replace : display2;
@@ -830,7 +826,6 @@
         
         HPDiffers = [184,184,179,152,145,129,119,99,99,94];
         AtkDiffers = [109,101,100,99,99,99,89,89,86,84];
-        createHorizontalBarChartGroup("TopTenBST", BSTDiffers);
         createHorizontalBarChartGroup("TopTenHP", HPDiffers);
         createHorizontalBarChartGroup("TopTenAttack", AtkDiffers);
                
