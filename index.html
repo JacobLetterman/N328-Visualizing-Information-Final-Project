@@ -1,7 +1,7 @@
 <html>
 <head>
     <title>Unfinished Code for Project</title>
-    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
     <style>
     	text { 
 			font-family: Arial; 
@@ -286,14 +286,14 @@
             barGroup.append('rect')
                 .attr('width', function (d) { return d; })
                 .attr('height', 45)
-                .attr('fill', 'green');
+                .attr('fill', 'steelblue');
 
             // Label the bar graphs with their data
             barGroup.append('text')
                 .attr('x', 25)
                 .attr('y', function (d) { return d / 2; })
                 .attr('dy', '0.35em')
-                .attr('fill', 'white')
+                .attr('fill', 'black')
                 .text(function (d) { return d; });
         }
 
@@ -731,7 +731,7 @@
         svg.append('circle').attr('id','CircleEpsilon').attr('cx', 639).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click", function(){
               toggleBarGraphs(1)
-              toggleBSTGraph;
+              toggleBSTGraph
             })
             .on("mouseover", function(){return tooltip2.style("visibility", "visible");})
             .on("mousemove", function(){return tooltip2.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
