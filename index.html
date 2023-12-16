@@ -273,16 +273,28 @@
                 barHeights = [175, 155, 155, 155, 136, 125, 125, 109, 109, 105];
             }
 
+            var barGroup = svg.selectAll('.barGroup')
+                .data(barHeights)
+                .enter()
+                .append('g')
+                .attr('class', 'barGroup')
+                .attr('transform', function (d, i) {
+                    return 'translate(1068, ' + (281 + i * 62) + ')';
+                });
+
             // Create new bar graphs with set data and dynamic height
-            for (var i = 0; i < barHeights.length; i++) {
-                svg.append('rect')
-                    .attr('class', 'barGraph')
-                    .attr('width', barHeights[i])
-                    .attr('height', 45)
-                    .attr('fill', 'steelblue')
-                    .attr('transform', 'translate(1068, ' + (875 + i * 62) + ')')
-                    .style('display', 'block');
-            }
+            barGroup.append('rect')
+                .attr('width', function (d) { return d; })
+                .attr('height', 45)
+                .attr('fill', 'green');
+
+            // Label the bar graphs with their data
+            barGroup.append('text')
+                .attr('x', 25)
+                .attr('y', function (d) { return d / 2; })
+                .attr('dy', '0.35em')
+                .attr('fill', 'white')
+                .text(function (d) { return d; });
         }
 
         //Start of Alpha1 & Alpha2 Functions, they will be very long
@@ -718,7 +730,7 @@
         //Sixth
         svg.append('circle').attr('id','CircleEpsilon').attr('cx', 639).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click", function(){
-              toggleBarGraphs(1);
+              toggleBarGraphs(1)
               toggleBSTGraph;
             })
             .on("mouseover", function(){return tooltip2.style("visibility", "visible");})
