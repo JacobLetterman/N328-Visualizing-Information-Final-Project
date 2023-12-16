@@ -49,7 +49,7 @@
         <text transform="translate(800,144)rotate(36)">Sp Attack</text>
         <text transform="translate(866,144)rotate(36)">Sp Defense</text>
         <text transform="translate(938,152)rotate(36)">Speed</text>
-        <g class="group1" transform="translate(1068, 297)">
+        <g class="Top Ten BST" transform="translate(1068, 297)">
             <rect class="myBar" width="20" height='297' fill="green" transform="translate(1068, 297)" style="display: block;"></rect>
             <rect class="myBar" width="20" height='297' fill="green" transform="translate(1068, 359)" style="display: block;"></rect>
             <rect class="myBar" width="20" height='297' fill="green" transform="translate(1068, 421)" style="display: block;"></rect>
@@ -61,7 +61,7 @@
             <rect class="myBar" width="20" height='297' fill="green" transform="translate(1068, 793)" style="display: block;"></rect>
             <rect class="myBar" width="20" height='297' fill="green" transform="translate(1068, 855)" style="display: block;"></rect>
           </g>
-          <g class="group2" transform="translate(1068, 297)" style="display: none;">
+          <g class="Top Ten HP" transform="translate(1068, 297)" style="display: none;">
             <rect class="myBar" width="20" height='297' fill="green" transform="translate(1068, 297)" style="display: block;"></rect>
             <rect class="myBar" width="20" height='297' fill="green" transform="translate(1068, 359)" style="display: block;"></rect>
             <rect class="myBar" width="20" height='297' fill="green" transform="translate(1068, 421)" style="display: block;"></rect>
@@ -73,7 +73,7 @@
             <rect class="myBar" width="20" height='297' fill="green" transform="translate(1068, 793)" style="display: block;"></rect>
             <rect class="myBar" width="20" height='297' fill="green" transform="translate(1068, 855)" style="display: block;"></rect>
           </g>
-          <g class="group3" transform="translate(1068, 297)" style="display: none;">
+          <g class="Top Ten Attack" transform="translate(1068, 297)" style="display: none;">
             <rect class="myBar" width="20" height='297' fill="green" transform="translate(1068, 297)" style="display: block;"></rect>
             <rect class="myBar" width="20" height='297' fill="green" transform="translate(1068, 359)" style="display: block;"></rect>
             <rect class="myBar" width="20" height='297' fill="green" transform="translate(1068, 421)" style="display: block;"></rect>
@@ -706,9 +706,9 @@
 
         d3.select("#groupSelector").on("change", function() {
           var selectedGroup = d3.select(this).property("value");
-          svg.select(".group1").style("display", selectedGroup === "group1" ? null : "none");
-          svg.select(".group2").style("display", selectedGroup === "group2" ? null : "none");
-          svg.select(".group3").style("display", selectedGroup === "group3" ? null : "none");
+          svg.select(".Top Ten BST").style("display", selectedGroup === "Top Ten BST" ? null : "none");
+          svg.select(".Top Ten HP").style("display", selectedGroup === "Top Ten HP" ? null : "none");
+          svg.select(".Top Ten Attack").style("display", selectedGroup === "Top Ten Attack" ? null : "none");
         });
     
     </script>
