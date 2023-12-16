@@ -54,7 +54,7 @@
         <text transform="translate(800,144)rotate(36)">Sp Attack</text>
         <text transform="translate(866,144)rotate(36)">Sp Defense</text>
         <text transform="translate(938,152)rotate(36)">Speed</text>
-        <g class="TopTenLists" transform="translate(1068, 266)">
+        <g class="TopTenLists" transform="translate(1068, 281)">
           <rect class="myBar" width="20" height='266' fill="green" transform="translate(1068, 281)" style="display: block;"></rect>
           <rect class="myBar" width="20" height='266' fill="green" transform="translate(1068, 347)" style="display: block;"></rect>
           <rect class="myBar" width="20" height='266' fill="green" transform="translate(1068, 413)" style="display: block;"></rect>
@@ -66,7 +66,7 @@
           <rect class="myBar" width="20" height='266' fill="green" transform="translate(1068, 809)" style="display: block;"></rect>
           <rect class="myBar" width="20" height='266' fill="green" transform="translate(1068, 875)" style="display: block;"></rect>
         </g>
-        <g class="TopTenBST" transform="translate(1068, 266)" style="display: none;">
+        <g class="TopTenBST" transform="translate(1068, 281)" style="display: none;">
           <rect class="myBar" width="20" height='266' fill="green" transform="translate(1068, 281)" style="display: block;"></rect>
           <rect class="myBar" width="20" height='266' fill="green" transform="translate(1068, 347)" style="display: block;"></rect>
           <rect class="myBar" width="20" height='266' fill="green" transform="translate(1068, 413)" style="display: block;"></rect>
@@ -78,7 +78,7 @@
           <rect class="myBar" width="20" height='266' fill="green" transform="translate(1068, 809)" style="display: block;"></rect>
           <rect class="myBar" width="20" height='266' fill="green" transform="translate(1068, 875)" style="display: block;"></rect>
         </g>
-          <g class="TopTenHP" transform="translate(1068, 266)" style="display: none;">
+          <g class="TopTenHP" transform="translate(1068, 281)" style="display: none;">
             <rect class="myBar" width="20" height='266' fill="green" transform="translate(1068, 281)" style="display: block;"></rect>
             <rect class="myBar" width="20" height='266' fill="green" transform="translate(1068, 347)" style="display: block;"></rect>
             <rect class="myBar" width="20" height='266' fill="green" transform="translate(1068, 413)" style="display: block;"></rect>
@@ -90,7 +90,7 @@
             <rect class="myBar" width="20" height='266' fill="green" transform="translate(1068, 809)" style="display: block;"></rect>
             <rect class="myBar" width="20" height='266' fill="green" transform="translate(1068, 875)" style="display: block;"></rect>
         </g>
-          <g class="TopTenAttack" transform="translate(1068, 266)" style="display: none;">
+          <g class="TopTenAttack" transform="translate(1068, 281)" style="display: none;">
             <rect class="myBar" width="20" height='266' fill="green" transform="translate(1068, 281)" style="display: block;"></rect>
             <rect class="myBar" width="20" height='266' fill="green" transform="translate(1068, 347)" style="display: block;"></rect>
             <rect class="myBar" width="20" height='266' fill="green" transform="translate(1068, 413)" style="display: block;"></rect>
@@ -696,9 +696,9 @@
               .data(groupdata)
               .enter().append("text")
               .attr("class", "tooltip")
-              .attr("x", function(d) { return d / 2; }) 
+              .attr("x", 5) 
               .attr("y", function(d, i) { return i * 62 + 30; })
-              .attr("text-anchor", "middle")
+              .attr("text-anchor", "start")
               .attr("fill", "black")
               .style("font-size", "12px")
               .style("pointer-events", "none")
