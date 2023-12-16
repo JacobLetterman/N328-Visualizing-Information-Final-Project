@@ -290,8 +290,8 @@
 
             // Label the bar graphs with their data
             barGroup.append('text')
-                .attr('x', 25)
-                .attr('y', function (d) { return d / 2; })
+                .attr('x', function (d) { return d / 2; })
+                .attr('y', 25)
                 .attr('dy', '0.35em')
                 .attr('fill', 'black')
                 .text(function (d) { return d; });
