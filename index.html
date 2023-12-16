@@ -54,7 +54,7 @@
         <text transform="translate(800,144)rotate(36)">Sp Attack</text>
         <text transform="translate(866,144)rotate(36)">Sp Defense</text>
         <text transform="translate(938,152)rotate(36)">Speed</text>
-        <g class="TopTenLists" transform="translate(1068, 266)" style="display: none;">
+        <g class="TopTenLists" transform="translate(1068, 266)">
           <rect class="myBar" width="20" height='266' fill="green" transform="translate(1068, 281)" style="display: block;"></rect>
           <rect class="myBar" width="20" height='266' fill="green" transform="translate(1068, 347)" style="display: block;"></rect>
           <rect class="myBar" width="20" height='266' fill="green" transform="translate(1068, 413)" style="display: block;"></rect>
@@ -66,7 +66,7 @@
           <rect class="myBar" width="20" height='266' fill="green" transform="translate(1068, 809)" style="display: block;"></rect>
           <rect class="myBar" width="20" height='266' fill="green" transform="translate(1068, 875)" style="display: block;"></rect>
         </g>
-        <g class="TopTenBST" transform="translate(1068, 266)">
+        <g class="TopTenBST" transform="translate(1068, 266)" style="display: none;">
           <rect class="myBar" width="20" height='266' fill="green" transform="translate(1068, 281)" style="display: block;"></rect>
           <rect class="myBar" width="20" height='266' fill="green" transform="translate(1068, 347)" style="display: block;"></rect>
           <rect class="myBar" width="20" height='266' fill="green" transform="translate(1068, 413)" style="display: block;"></rect>
@@ -712,12 +712,12 @@
 
         d3.select("#groupSelector").on("change", function() {
           var selectedGroup = d3.select(this).property("value");
-          svg.selectAll("g").style("display", "none"); // Hide all groups
-
-          if (selectedGroup !== "default") {
-            svg.select("." + selectedGroup).style("display", 'block'); // Show the selected group
-          }
+          svg.select(".TopTenLists").style("display", selectedGroup === "Top Ten Lists" ? null : "none");
+          svg.select(".TopTenBST").style("display", selectedGroup === "Top Ten BST" ? null : "none");
+          svg.select(".TopTenHP").style("display", selectedGroup === "Top Ten HP" ? null : "none");
+          svg.select(".TopTenAttack").style("display", selectedGroup === "Top Ten Attack" ? null : "none");
         });
+
         
     
     </script>
