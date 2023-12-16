@@ -692,8 +692,8 @@
             });
             
             
-            var tooltip4 = group.selectAll(".tooltip4")
-              .data(data)
+            var tooltip4 = group.select(".tooltip4")
+              .data(groupdata)
               .enter().append("text")
               .attr("class", "tooltip")
               .attr("x", function(d) { return d / 2; }) 
