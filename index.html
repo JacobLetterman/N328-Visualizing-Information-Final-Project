@@ -34,7 +34,7 @@
 </head>
 <body>
   <select id="groupSelector">
-    <option value="Top Ten Lists">Top Ten Lists</option>
+    <option value="Top Ten Lists" selected>Top Ten Lists</option>
     <option value="Top Ten BST">Top Ten BST</option>
     <option value="Top Ten HP">Top Ten HP</option>
     <option value="Top Ten Attack">Top Ten Attack</option>
@@ -705,7 +705,7 @@
             .style("pointer-events", "none");
         }
 
-        createHorizontalBarChartGroup("TopTenLists", [0,0,0,0,0,0,0,0,0,0]);
+        //createHorizontalBarChartGroup("TopTenLists", [0,0,0,0,0,0,0,0,0,0]);
         createHorizontalBarChartGroup("TopTenBST", [684,339,339,339,329,329,313,279,267,259]);
         createHorizontalBarChartGroup("TopTenHP", [184,184,179,152,145,129,119,99,99,94]);
         createHorizontalBarChartGroup("TopTenAttack", [109,101,100,99,99,99,89,89,86,84]);
@@ -713,10 +713,10 @@
 
         d3.select("#groupSelector").on("change", function() {
           var selectedGroup = d3.select(this).property("value");
-          svg.select(".TopTenLists").style("display", selectedGroup === "TopTenLists" ? null : "none");
-          svg.select(".TopTenBST").style("display", selectedGroup === "TopTenBST" ? null : "none");
-          svg.select(".TopTenHP").style("display", selectedGroup === "TopTenHP" ? null : "none");
-          svg.select(".TopTenAttack").style("display", selectedGroup === "TopTenAttack" ? null : "none");
+          svg.select(".TopTenLists").style("display", selectedGroup === "Top Ten Lists" ? null : "none");
+          svg.select(".TopTenBST").style("display", selectedGroup === "Top Ten BST" ? null : "none");
+          svg.select(".TopTenHP").style("display", selectedGroup === "Top Ten HP" ? null : "none");
+          svg.select(".TopTenAttack").style("display", selectedGroup === "Top Ten Attack" ? null : "none");
         });
     
     </script>
