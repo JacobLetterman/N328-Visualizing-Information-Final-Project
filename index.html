@@ -281,7 +281,9 @@
                 .attr('transform', function (d, i) {
                     return 'translate(1068, ' + (281 + i * 62) + ')';
                 });
-            var Spot_1_Text;
+
+            if (circleNumber == 1){
+                          var Spot_1_Text;
             var ImageSpot1;
             var Spot_1_5_Text;
             var Spot_2_Text;
@@ -311,8 +313,6 @@
             var Spot_10_Text;
             var ImageSpot10;
             var Spot_10_5_Text;
-            if (circleNumber == 1){
-                console.log(Spot_1_Text)
                 var display_replace = 'block';
                 var display2_replace = 'None';
                 display = display ? display_replace : display;
@@ -430,7 +430,6 @@
                 var Replace_Spot_10_5 = '700';
                 Spot_10_5_Text = Spot_10_5_Text ? Replace_Spot_10_5 : Spot_10_5_Text;
                 Spot_10_5.text(Spot_10_5_Text)
-                console.log(Spot_1_Text)
 
             }
             // Create new bar graphs with set data and dynamic height
