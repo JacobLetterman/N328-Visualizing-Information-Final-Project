@@ -701,13 +701,13 @@
         createHorizontalBarChartGroup("TopTenHP", [184,184,179,152,145,129,119,99,99,94]);
         createHorizontalBarChartGroup("TopTenAttack", [109,101,100,99,99,99,89,89,86,84]);
         
-        function updateText() {
-            var dropdown = document.getElementById("groupSelector");
-            var selectedOption = dropdown.value;
+        
+        var dropdown = document.getElementById("groupSelector");
+        var selectedOption = dropdown.value;
 
             // Check the selected option and update text accordingly
-            switch (selectedOption) {
-                case "Top Ten BST":
+        switch (selectedOption) {
+            case "Top Ten BST":
                             //Image/Text 1
         var ImageSpot1 = "<p>Most recent image of Bulbasaur</p><img src='https://archives.bulbagarden.net/media/upload/thumb/f/fb/0001Bulbasaur.png/240px-0001Bulbasaur.png'></img>";
         var Spot_1_Text = 'beans';
@@ -833,8 +833,8 @@
         var Spot_10_Text = 'beans';
         var Spot_10_5_Text = '314 __ 44 _ _ _48 _ _ _65 _ _ _50 _ _ 64 _ _ _ 43';
                     break;
-            }
-          }
+        }
+          
         function setText(ImageSpot1,Spot_1_Text,Spot_1_5_Text,ImageSpot2,Spot_2_Text,Spot_2_5_Text,ImageSpot3,Spot_3_Text,Spot_3_5_Text,ImageSpot4,Spot_4_Text,Spot_4_5_Text,ImageSpot5,Spot_5_Text,Spot_5_5_Text,ImageSpot6,Spot_6_Text,Spot_6_5_Text,ImageSpot7,Spot_7_Text,Spot_7_5_Text,ImageSpot8,Spot_8_Text,Spot_8_5_Text,ImageSpot9,Spot_9_Text,Spot_9_5_Text,ImageSpot10,Spot_10_Text,Spot_10_5_Text) {
             document.getElementById("Spot_1_Text").innerText = Spot_1_Text;
             document.getElementById("Spot_1_5_Text").innerText = Spot_1_Text;
