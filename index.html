@@ -281,7 +281,73 @@
                 .attr('transform', function (d, i) {
                     return 'translate(1068, ' + (281 + i * 62) + ')';
                 });
+            if (circleNumber == 1){
+              var display_replace = 'block';
+                var display2_replace = 'None';
+                display = display ? display_replace : display;
+                Spot_Preface1.style('display',display);
+                display = display ? display_replace : display;
+                Spot_Preface1_5.style('display',display);
+                display2 = display2 ? display2_replace : display2;
+                Spot_Preface2.style('display',display2);
+                display2 = display2 ? display2_replace : display2;
+                Spot_Preface3.style('display',display2);
+                //Spot 1
+                var Spot_1_Text = "890EternamaxEternatus__POISON__DRAGON";
+                var ImageSpot1 = "<p>Most recent image of Eternamax Eternatus</p><img src='https://archives.bulbagarden.net/media/upload/3/38/HOME0890E.png'></img>";
 
+                //Spot 1_5
+                var Spot_1_5_Text = '1125';
+                //Spot 2
+                var Spot_2_Text = "150Mewtwo XMewtwo__PSYCHIC__FIGHTING";
+                var ImageSpot2 = "<p>Most recent image of Mega MewTwo X</p><https://archives.bulbagarden.net/media/upload/archive/f/f8/20230418154327%210150Mewtwo-Mega_X.png'></img>";
+
+                //Spot 2_5
+                var Spot_2_5_Text = '780';
+                //Spot 3
+                var Spot_3_Text = '384RayquazaRayquaza__DRAGON__FLYING'
+                var ImageSpot3 = "<p>Most recent image of Mega Rayquaza</p><img src='https://archives.bulbagarden.net/media/upload/archive/d/de/20141014152059%210384Rayquaza-Mega.png'></img>";
+
+                //Spot 3_5
+                var Spot_3_5_Text = '780';
+                //Spot 4
+                var Spot_4_Text = "150Mewtwo YMewtwo__PSYCHIC__NONE";
+                var ImageSpot4 = "<p>Most recent image of Mega MewTwo Y</p><img src='https://archives.bulbagarden.net/media/upload/3/30/0150Mewtwo-Mega_Y.png'></img>";
+
+                //Spot 4_5
+                var Replace_Spot_4_5 = '780';
+                //Spot 5
+                var Spot_5_Text = "383PrimalGroudon__GROUND__NONE";
+                var ImageSpot5 = "<p>Most recent image of Primal Groudon</p><img src='https://archives.bulbagarden.net/media/upload/e/e5/0383Groudon-Primal.png'></img>";
+
+                //Spot 5_5
+                var Spot_5_5_Text = '770';
+                //Spot 6
+                var Spot_6_Text = '382PrimalKyogre__WATER__NONE'
+                var ImageSpot6 = "<p>Most recent image of Primal Kyogre</p><img src='https://archives.bulbagarden.net/media/upload/9/9a/0382Kyogre-Primal.png'></img>";
+                //Spot 6_5
+                var Spot_6_5_Text = '770';
+                //Spot 7
+                var Spot_7_Text = "800UltraNecrozma__PSYCHIC__DRAGON";
+                var ImageSpot7 = "<p>Most recent image of Ultra Necrozma</p><img src='https://archives.bulbagarden.net/media/upload/e/e9/0800Necrozma-Ultra.png'></img>";
+                //Spot 7_5
+                var Spot_7_5_Text = '754';
+                //Spot 8
+                var Spot_8_Text = "493ArceusArceus__NORMAL__NONE";
+                var ImageSpot8 = "<p>Most recent image of Arceus/p><img src='https://archives.bulbagarden.net/media/upload/9/9e/0493Arceus.png'></img>";
+                //Spot 8_5
+                var Spot_8_5_Text = '720';
+                //Spot 9
+                var Spot_9_Text = "718Complete FormeZygarde__DRAGON__GROUND";
+                var ImageSpot9 = "<p>Most recent image of Complete Forme Zygarde</p><img src='https://archives.bulbagarden.net/media/upload/f/fb/0718Zygarde-Complete.png'></img>";
+                //Spot 9_5
+                var Spot_9_5_Text = '708';
+                //Spot 10
+                var Spot_10_Text = "646Black Ver.Kyurem__DRAGON__ICE";
+                var ImageSpot10 = "<p>Most recent image of Black Kyurem</p><img src='https://archives.bulbagarden.net/media/upload/e/e8/0646Kyurem-Black.png'></img>";
+                //Spot 10_5
+                var Spot_10_5_Text = '700';
+            }
             // Create new bar graphs with set data and dynamic height
             barGroup.append('rect')
                 .attr('width', function (d) { return d; })
@@ -504,7 +570,7 @@
                 Spot_5_5.text(Spot_5_5_Text);
                 //Spot 6
                 var Replace_Spot6 = '617_Accelgor_ _Accelgor_ _ BUG_ _ _ NONE'
-                var Replace_Image1 = "<p>Most recent image of Accelgor</p><img src='https://archives.bulbagarden.net/media/upload/archive/f/f4/20101218010857%210617Accelgor.png'></img>";
+                var Replace_Image6 = "<p>Most recent image of Accelgor</p><img src='https://archives.bulbagarden.net/media/upload/archive/f/f4/20101218010857%210617Accelgor.png'></img>";
                 Spot_6_Text = Spot_6_Text ? Replace_Spot6 : Spot_6_Text;
                 Spot_6.text(Spot_6_Text);
                 //Spot 6_5
