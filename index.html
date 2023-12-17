@@ -1568,7 +1568,7 @@
             .on("mousemove", function(){return tooltip2.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
             .on("mouseout", function(){return tooltip2.style("visibility", "hidden");});        
             svg.append('circle').attr('id','CircleWinners').attr('cx', 85).attr('cy', 425).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
-            .on("click",  function(){
+            .on("click",  function(){toggleBarGraphs(8)
               var display_replace = 'block';
               var display2_replace = 'None';
               display = display ? display_replace : display;
@@ -1620,7 +1620,7 @@
                 ImageSpot3 = ImageSpot3 ? Replace_Image3 : ImageSpot3;
                 Image3.html(ImageSpot3);
                 //Spot 3_5
-                var Replace_Spot_3_5 = '_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 194_ _ _ _ _ _ _ _ _ _This won one category';
+                var Replace_Spot_3_5 = '_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 194_ _ _ _ _ _ _ _ _ _ _This won one category';
                 Spot_3_5_Text = Spot_3_5_Text ? Replace_Spot_3_5 : Spot_3_5_Text;
                 Spot_3_5.text(Spot_3_5_Text);
                 //Spot 4
