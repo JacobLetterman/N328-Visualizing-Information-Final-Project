@@ -36,15 +36,15 @@
 	<svg id="main" width="2000" height="2000">
         
 		<text id='label' x='20' y='20'>Different stats for all the different Pokemon</text>
-        <text transform="translate(84,130)rotate(41)">Dex Number</text>
+        <text transform="translate(81,130)rotate(41)">Dex Number</text>
         <text transform="translate(188,160)rotate(37)">Name</text>
         <text transform="translate(256,142)rotate(36)">Base Name</text>
         <text transform="translate(383,158)rotate(34)">Type 1</text>
         <text transform="translate(471,158)rotate(35)">Type 2</text>
         <text transform="translate(562,159)rotate(35)">BST</text>
-        <text transform="translate(602,161)rotate(34)">HP</text>
+        <text transform="translate(630,161)rotate(34)">HP</text>
         <text transform="translate(668,144)rotate(36)">Attack</text>
-        <text transform="translate(734,144)rotate(36)">Defense</text>
+        <text transform="translate(738,150)rotate(36)">Defense</text>
         <text transform="translate(800,144)rotate(36)">Sp Attack</text>
         <text transform="translate(866,144)rotate(36)">Sp Defense</text>
         <text transform="translate(938,152)rotate(36)">Speed</text>
@@ -339,6 +339,8 @@
                 Spot_Preface3_5.style('display',display2);
                 display2 = display2 ? display2_replace : display2;
                 Spot_Preface4.style('display',display2);
+                display = display ? display_replace : display;
+                Spot_Preface2_5.style('display',display);
                 //Spot 1
                 var Replace_Spot1 = "718 10% Forme Zygarde __DRAGON GROUND";
                 var Replace_Image1 = "<p>Most recent image of 10% Forme Zygarde</p><img src='https://archives.bulbagarden.net/media/upload/f/f8/0718Zygarde-10Percent.png'></img>";
@@ -596,7 +598,7 @@
         var sampleSVG = d3.select("main").append("svg:svg").attr("class", "sample").attr("width", 300).attr("height", 300);
         var tooltip2 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").text("Turn On Top Ten List");
         var tooltip3 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").text("Reset Circles");
-      
+        var tooltip4 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").text("Reveal Best Pokemon");
         //Section for Image tooltips
         var Image1 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").html(ImageSpot1);
         var Image2 = d3.select("body").append("div").style("position", "absolute").style("z-index", "10").style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "10px").html(ImageSpot2);
@@ -667,7 +669,7 @@
                 Spot_2_5.text(Spot_2_5_Text);
                 //Spot 3
                 var Replace_Spot3 = '384 Rayquaza  _ Rayquaza_DRAGON__FLYING'
-                var Replace_Image3 = "<p>Most recent image of Mega Rayquaza</p><img src='https://archives.bulbagarden.net/media/upload/archive/d/de/20141014180325%210384Rayquaza-Mega.png'></img>";
+                var Replace_Image3 = "<p>Most recent image of Mega Rayquaza</p><img src='https://www.google.com/url?sa=i&url=https%3A%2F%2Fmarriland.com%2Fpokedex%2Fmega-rayquaza%2F&psig=AOvVaw0LaVzklM33OVNJ_7PiU1pb&ust=1702882394884000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCID-_7LxlYMDFQAAAAAdAAAAABAM'></img>";
                 Spot_3_Text = Spot_3_Text ? Replace_Spot3 : Spot_3_Text;
                 Spot_3.text(Spot_3_Text);
                 ImageSpot3 = ImageSpot3 ? Replace_Image3 : ImageSpot3;
@@ -941,7 +943,7 @@
                 Spot_3_5.text(Spot_3_5_Text);
                 //Spot 4
                 var Replace_Spot4 = "384 Rayquaza  _ Rayquaza_DRAGON__FLYING";
-                var Replace_Image4 = "<p>Most recent image of Mega Rayquaza</p><img src='https://archives.bulbagarden.net/media/upload/1/10/0799Guzzlord.png'></img>";
+                var Replace_Image4 = "<p>Most recent image of Mega Rayquaza</p><img src='https://www.google.com/url?sa=i&url=https%3A%2F%2Fmarriland.com%2Fpokedex%2Fmega-rayquaza%2F&psig=AOvVaw0LaVzklM33OVNJ_7PiU1pb&ust=1702882394884000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCID-_7LxlYMDFQAAAAAdAAAAABAM'></img>";
                 Spot_4_Text = Spot_4_Text ? Replace_Spot4 : Spot_4_Text;
                 Spot_4.text(Spot_4_Text);
                 ImageSpot4 = ImageSpot4 ? Replace_Image4 : ImageSpot4;
@@ -1069,7 +1071,7 @@
                 Spot_3_5_Text = Spot_3_5_Text ? Replace_Spot_3_5 : Spot_3_5_Text;
                 Spot_3_5.text(Spot_3_5_Text);
                 //Spot 4
-                var Replace_Spot4 = "213 Shuckle _ _ Shuckle _ _ BUG _ ROCK";
+                var Replace_Spot4 = "213 Shuckle _ _ Shuckle _ _ BUG _ _ ROCK";
                 var Replace_Image4 = "<p>Most recent image of Shuckle</p><img src='https://archives.bulbagarden.net/media/upload/5/59/0213Shuckle.png'></img>";
                 Spot_4_Text = Spot_4_Text ? Replace_Spot4 : Spot_4_Text;
                 Spot_4.text(Spot_4_Text);
@@ -1102,7 +1104,7 @@
                 Spot_6_5_Text = Spot_6_5_Text ? Replace_Spot_6_5 : Spot_6_5_Text;
                 Spot_6_5.text(Spot_6_5_Text);
                 //Spot 7
-                var Replace_Spot7 = "208 Steelix _ _ Steelix _ _ _ STEEL _ GROUND";
+                var Replace_Spot7 = "208 Steelix _ _ Steelix _ _ _ STEEL _ _GROUND";
                 var Replace_Image7 = "<p>Most recent image of Steelix</p><img src='https://archives.bulbagarden.net/media/upload/2/2a/0208Steelix.png'></img>";
                 Spot_7_Text = Spot_7_Text ? Replace_Spot7 : Spot_7_Text;
                 Spot_7.text(Spot_7_Text);
@@ -1113,7 +1115,7 @@
                 Spot_7_5_Text = Spot_7_5_Text ? Replace_Spot_7_5 : Spot_7_5_Text;
                 Spot_7_5.text(Spot_7_5_Text);
                 //Spot 8
-                var Replace_Spot8 = "713 Hisuian _ _ Avalugg _ _ ICE _ ROCK";
+                var Replace_Spot8 = "713 Hisuian _ _ Avalugg _ _ ICE _ _ _ROCK";
                 var Replace_Image8 = "<p>Most recent image of Hisuian Avalugg</p><img src='https://archives.bulbagarden.net/media/upload/e/ef/0713Avalugg-Hisui.png'></img>";
                 Spot_8_Text = Spot_8_Text ? Replace_Spot8 : Spot_8_Text;
                 Spot_8.text(Spot_8_Text);
@@ -1124,7 +1126,7 @@
                 Spot_8_5_Text = Spot_8_5_Text ? Replace_Spot_8_5 : Spot_8_5_Text;
                 Spot_8_5.text(Spot_8_5_Text);
                 //Spot 9
-                var Replace_Spot9 = "713 Avalugg _ _ Avalugg _ _ ICE _ NONE";
+                var Replace_Spot9 = "713 Avalugg _ _ Avalugg _ _ ICE _ _ _NONE";
                 var Replace_Image9 = "<p>Most recent image of Avalugg</p><img src='https://archives.bulbagarden.net/media/upload/e/ed/0713Avalugg.png'></img>";
                 Spot_9_Text = Spot_9_Text ? Replace_Spot9 : Spot_9_Text;
                 Spot_9.text(Spot_9_Text);
@@ -1157,8 +1159,8 @@
               var display2_replace = 'None';
               display = display ? display_replace : display;
               Spot_Preface_5 .style('display',display);
-              display2 = display2 ? display2_replace : display2;
-              Spot_Preface1_5 .style('display',display2);
+              display = display ? display_replace : display;
+              Spot_Preface1_5 .style('display',display);
               display2 = display2 ? display2_replace : display2;
               Spot_Preface2.style('display',display2);
               display = display ? display_replace : display;
@@ -1167,8 +1169,8 @@
               Spot_Preface2_75.style('display',display);
               display2 = display2 ? display2_replace : display2;
               Spot_Preface3.style('display',display2);
-              var Replace_Spot1 = "150 Mewtwo X_ Mewtwo__ PSYCHIC FIGHTING";
-                var Replace_Image1 = "<p>Most recent image of Mega MewTwo X</p><img src='https://archives.bulbagarden.net/media/upload/archive/f/f8/20230418154327%210150Mewtwo-Mega_X.png'></img>";
+              var Replace_Spot1 = "150 Mewtwo Y  _Mewtwo__ PSYCHIC_NONE";
+                var Replace_Image1 = "<p>Most recent image of Mega MewTwo Y</p><img src='https://archives.bulbagarden.net/media/upload/3/30/0150Mewtwo-Mega_Y.png'></img>";
                 Spot_1_Text = Spot_1_Text ? Replace_Spot1 : Spot_1_Text;
                 Spot_1.text(Spot_1_Text);
                 ImageSpot1 = ImageSpot1 ? Replace_Image1 : ImageSpot1;
@@ -1190,7 +1192,7 @@
                 Spot_2_5.text(Spot_2_5_Text);
                 //Spot 3
                 var Replace_Spot3 = '384 Rayquaza  _ Rayquaza_DRAGON__FLYING'
-                var Replace_Image3 = "<p>Most recent image of Mega Rayquaza</p><img src='https://archives.bulbagarden.net/media/upload/1/10/0799Guzzlord.png'></img>";
+                var Replace_Image3 = "<p>Most recent image of Mega Rayquaza</p><img src='https://www.google.com/url?sa=i&url=https%3A%2F%2Fmarriland.com%2Fpokedex%2Fmega-rayquaza%2F&psig=AOvVaw0LaVzklM33OVNJ_7PiU1pb&ust=1702882394884000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCID-_7LxlYMDFQAAAAAdAAAAABAM'></img>";
                 Spot_3_Text = Spot_3_Text ? Replace_Spot3 : Spot_3_Text;
                 Spot_3.text(Spot_3_Text);
                 ImageSpot3 = ImageSpot3 ? Replace_Image3 : ImageSpot3;
@@ -1222,7 +1224,7 @@
                 Spot_5_5_Text = Spot_5_5_Text ? Replace_Spot_5_5 : Spot_5_5_Text;
                 Spot_5_5.text(Spot_5_5_Text);
                 //Spot 6
-                var Replace_Spot6 = '796 Xurkitree _ _ Xurkitree _ ELECTRIC_NONE'
+                var Replace_Spot6 = '796 Xurkitree _ _Xurkitree _ELECTRIC_NONE'
                 var Replace_Image6 = "<p>Most recent image of Xurkitree</p><img src='https://archives.bulbagarden.net/media/upload/7/78/0796Xurkitree.png'></img>";
                 Spot_6_Text = Spot_6_Text ? Replace_Spot6 : Spot_6_Text;
                 Spot_6.text(Spot_6_Text);
@@ -1266,7 +1268,7 @@
                 Spot_9_5_Text = Spot_9_5_Text ? Replace_Spot_9_5 : Spot_9_5_Text;
                 Spot_9_5.text(Spot_2_5_Text);
                 //Spot 10
-                var Replace_Spot10 = "800 Ultra_ _ _ _Necrozma  _PSYCHIC _DRAGON";
+                var Replace_Spot10 = "800 Ultra_ _ _ _Necrozma  _PSYCHIC DRAGON";
                 var Replace_Image10 = "<p>Most recent image of Ultra Necrozma</p><img src='https://archives.bulbagarden.net/media/upload/e/e9/0800Necrozma-Ultra.png'></img>";
                 Spot_10_Text = Spot_10_Text ? Replace_Spot10 : Spot_10_Text;
                 Spot_10.text(Spot_10_Text);
@@ -1288,6 +1290,8 @@
               var display2_replace = 'None';
               display2 = display2 ? display2_replace : display2;
               Spot_Preface_5 .style('display',display2);
+              display2 = display2 ? display_replace : display2;
+              Spot_Preface1 .style('display',display2);
               display2 = display2 ? display2_replace : display2;
               Spot_Preface1_5 .style('display',display2);
               display2 = display2 ? display2_replace : display2;
@@ -1419,8 +1423,8 @@
             .on("click",  function(){toggleBarGraphs(7)
               var display_replace = 'block';
               var display2_replace = 'None';
-              display = display ? display_replace : display;
-              Spot_Preface1_5 .style('display',display);
+              display2 = display2 ? display2_replace : display2;
+              Spot_Preface1_5 .style('display',display2);
               display2 = display2 ? display2_replace : display2;
               Spot_Preface2.style('display',display);
               display2 = display2 ? display2_replace : display2;
@@ -1435,6 +1439,8 @@
               Spot_Preface3.style('display',display2);
               display2 = display2 ? display2_replace : display2;
               Spot_Preface3_5.style('display',display);
+              display2 = display2 ? display2_replace : display2;
+              Spot_Preface4.style('display',display);
                 var Replace_Spot1 = "894 Regieleki _ Regieleki_ _ELECTRIC _NONE";
                 var Replace_Image1 = "<p>Most recent image of Regieleki</p><img src='https://archives.bulbagarden.net/media/upload/5/51/0894Regieleki.png'></img>";
                 Spot_1_Text = Spot_1_Text ? Replace_Spot1 : Spot_1_Text;
@@ -1457,7 +1463,7 @@
                 Spot_2_5_Text = Spot_2_5_Text ? Replace_Spot_2_5 : Spot_2_5_Text;
                 Spot_2_5.text(Spot_2_5_Text);
                 //Spot 3
-                var Replace_Spot3 = '291 Ninjask _ Ninjask _ BUG _ FLYING'
+                var Replace_Spot3 = '291 Ninjask _ _ _Ninjask _ _ _BUG _ FLYING'
                 var Replace_Image3 = "<p>Most recent image of Ninjask</p><img src='https://archives.bulbagarden.net/media/upload/5/5c/0291Ninjask.png'></img>";
                 Spot_3_Text = Spot_3_Text ? Replace_Spot3 : Spot_3_Text;
                 Spot_3.text(Spot_3_Text);
@@ -1468,7 +1474,7 @@
                 Spot_3_5_Text = Spot_3_5_Text ? Replace_Spot_3_5 : Spot_3_5_Text;
                 Spot_3_5.text(Spot_3_5_Text);
                 //Spot 4
-                var Replace_Spot4 = "795 Pheromosa Pheromosa _ BUG FIGHTING";
+                var Replace_Spot4 = "795 Pheromosa Pheromosa _BUG _ _FIGHTING";
                 var Replace_Image4 = "<p>Most recent image of Pheromosa</p><img src='https://archives.bulbagarden.net/media/upload/8/85/0795Pheromosa.png'></img>";
                 Spot_4_Text = Spot_4_Text ? Replace_Spot4 : Spot_4_Text;
                 Spot_4.text(Spot_4_Text);
@@ -1490,7 +1496,7 @@
                 Spot_5_5_Text = Spot_5_5_Text ? Replace_Spot_5_5 : Spot_5_5_Text;
                 Spot_5_5.text(Spot_5_5_Text);
                 //Spot 6
-                var Replace_Spot6 = '898 ShadowRider_ _Calyrex _ _PSYCHIC _ ICE'
+                var Replace_Spot6 = '898 Sha.Rider __Calyrex __PSYCHIC _ ICE'
                 var Replace_Image6 = "<p>Most recent image of Shadow Rider Calyrex</p><img src='https://archives.bulbagarden.net/media/upload/9/9b/0898Calyrex-Shadow_Rider.png'></img>";
                 Spot_6_Text = Spot_6_Text ? Replace_Spot6 : Spot_6_Text;
                 Spot_6.text(Spot_6_Text);
@@ -1512,7 +1518,7 @@
                 Spot_7_5_Text = Spot_7_5_Text ? Replace_Spot_7_5 : Spot_7_5_Text;
                 Spot_7_5.text(Spot_7_5_Text);
                 //Spot 8
-                var Replace_Spot8 = "101 Electrode Electrode ELECTRIC_NONE";
+                var Replace_Spot8 = "101 Electrode _ _Electrode _ELECTRIC_NONE";
                 var Replace_Image8 = "<p>Most recent image of Electrode</p><img src='https://archives.bulbagarden.net/media/upload/d/db/0101Electrode.png'></img>";
                 Spot_8_Text = Spot_8_Text ? Replace_Spot8 : Spot_8_Text;
                 Spot_8.text(Spot_8_Text);
@@ -1523,7 +1529,7 @@
                 Spot_8_5_Text = Spot_8_5_Text ? Replace_Spot_8_5 : Spot_8_5_Text;
                 Spot_8_5.text(Spot_8_5_Text);
                 //Spot 9
-                var Replace_Spot9 = "101 Hisuian Electrode ELECTRIC_GRASS";
+                var Replace_Spot9 = "101 Hisuian _ _ Electrode _ELECTRIC_GRASS";
                 var Replace_Image9 = "<p>Most recent image of Hisuian</p><img src='https://archives.bulbagarden.net/media/upload/b/be/0101Electrode-Hisui.png'></img>";
                 Spot_9_Text = Spot_9_Text ? Replace_Spot9 : Spot_9_Text;
                 Spot_9.text(Spot_9_Text);
@@ -1549,7 +1555,78 @@
             .on("mouseover", function(){return tooltip2.style("visibility", "visible");})
             .on("mousemove", function(){return tooltip2.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
             .on("mouseout", function(){return tooltip2.style("visibility", "hidden");});        
-
+            svg.append('circle').attr('id','CircleWinners').attr('cx', 1035).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
+            .on("click",  function(){
+              var display_replace = 'block';
+              var display2_replace = 'None';
+              display = display ? display_replace : display;
+              Spot_Preface1 .style('display',display2);
+              display = display ? display_replace : display;
+              Spot_Preface1_5.style('display',display);
+              display2 = display2 ? display2_replace : display2;
+              Spot_Preface2.style('display',display);
+              display2 = display2 ? display2_replace : display2;
+              Spot_Preface3.style('display',display);
+              display2 = display2 ? display2_replace : display2;
+              Spot_Preface_5 .style('display',display2);
+              display2 = display2 ? display2_replace : display2;
+              Spot_Preface2_5.style('display',display2);
+              display2 = display2 ? display2_replace : display2;
+              Spot_Preface2_75.style('display',display2);
+              display2 = display2 ? display2_replace : display2;
+              Spot_Preface3.style('display',display2);
+              display2 = display2 ? display2_replace : display2;
+              Spot_Preface3_5.style('display',display);
+              display2 = display2 ? display2_replace : display2;
+              Spot_Preface4.style('display',display);
+                var Replace_Spot1 = "890 Eternamax _ Eternatus_ POISON_DRAGON";
+                var Replace_Image1 = "<p>Most recent image of Eternamax Eternatus</p><img src='https://archives.bulbagarden.net/media/upload/3/38/HOME0890E.png'></img>";
+                Spot_1_Text = Spot_1_Text ? Replace_Spot1 : Spot_1_Text;
+                Spot_1.text(Spot_1_Text);
+                ImageSpot1 = ImageSpot1 ? Replace_Image1 : ImageSpot1;
+                Image1.html(ImageSpot1);
+                //Spot 1_5
+                var Replace_Spot_1_5 = '1125 255 _ _ _ _250 _ _ _ _250';
+                Spot_1_5_Text = Spot_1_5_Text ? Replace_Spot_1_5 : Spot_1_5_Text;
+                Spot_1_5.text(Spot_1_5_Text);
+                //Spot 2
+                var Replace_Spot2 = "150 Mewtwo X_ Mewtwo__ PSYCHIC FIGHTING";
+                var Replace_Image2 = "<p>Most recent image of Speed Forme Deoxys</p><img src='https://archives.bulbagarden.net/media/upload/1/17/0386Deoxys-Speed.png'></img>";
+                Spot_2_Text = Spot_2_Text ? Replace_Spot2 : Spot_2_Text;
+                Spot_2.text(Spot_2_Text);
+                ImageSpot2 = ImageSpot2 ? Replace_Image2 : ImageSpot2;
+                Image2.html(ImageSpot2);
+                //Spot 2_5
+                var Replace_Spot_2_5 = '_ _ _ _ _ _ _ _190';
+                Spot_2_5_Text = Spot_2_5_Text ? Replace_Spot_2_5 : Spot_2_5_Text;
+                Spot_2_5.text(Spot_2_5_Text);
+                //Spot 3
+                var Replace_Spot3 = '150 Mewtwo Y  _Mewtwo__ PSYCHIC_NONE'
+                var Replace_Image3 = "<p>Most recent image of Mega MewTwo Y</p><img src='https://archives.bulbagarden.net/media/upload/3/30/0150Mewtwo-Mega_Y.png'></img>";
+                Spot_3_Text = Spot_3_Text ? Replace_Spot3 : Spot_3_Text;
+                Spot_3.text(Spot_3_Text);
+                ImageSpot3 = ImageSpot3 ? Replace_Image3 : ImageSpot3;
+                Image3.html(ImageSpot3);
+                //Spot 3_5
+                var Replace_Spot_3_5 = '_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _160';
+                Spot_3_5_Text = Spot_3_5_Text ? Replace_Spot_3_5 : Spot_3_5_Text;
+                Spot_3_5.text(Spot_3_5_Text);
+                //Spot 4
+                var Replace_Spot4 = "894 Regieleki _ Regieleki_ _ELECTRIC _NONE";
+                var Replace_Image4 = "<p>Most recent image of Regieleki</p><img src='https://archives.bulbagarden.net/media/upload/5/51/0894Regieleki.png'></img>";
+                Spot_4_Text = Spot_4_Text ? Replace_Spot4 : Spot_4_Text;
+                Spot_4.text(Spot_4_Text);
+                ImageSpot4 = ImageSpot4 ? Replace_Image4 : ImageSpot4;
+                Image4.html(ImageSpot4);
+                //Spot 4_5
+                var Replace_Spot_4_5 = '_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _200';
+                Spot_4_5_Text = Spot_4_5_Text ? Replace_Spot_4_5 : Spot_4_5_Text;
+                Spot_4_5.text(Spot_4_5_Text);
+              currentColor = currentColor === "white" ? "gold" : "white";
+              d3.select(this).style("fill", currentColor);})
+            .on("mouseover", function(){return tooltip4.style("visibility", "visible");})
+            .on("mousemove", function(){return tooltip4.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
+            .on("mouseout", function(){return tooltip4.style("visibility", "hidden");});  
         //Lines for the different rows
         svg.append('line').attr('x1', 160).attr('y1', 328).attr('x2', 1400).attr('y2', 328).attr('stroke','black').style('stroke-width',3);
         svg.append('line').attr('x1', 160).attr('y1', 390).attr('x2', 1400).attr('y2', 390).attr('stroke','black').style('stroke-width',3);
@@ -1562,6 +1639,11 @@
         svg.append('line').attr('x1', 160).attr('y1', 824).attr('x2', 1400).attr('y2', 824).attr('stroke','black').style('stroke-width',3);
         svg.append('line').attr('x1', 160).attr('y1', 886).attr('x2', 1400).attr('y2', 886).attr('stroke','black').style('stroke-width',3);
         
+        //Box for best pokemon
+        svg.append('line').attr('x1',50).attr('y1',390).attr('x2',120).attr('y2',390).attr('stroke','black');
+        svg.append('line').attr('x1',50).attr('y1',460).attr('x2',120).attr('y2',460).attr('stroke','black');
+        svg.append('line').attr('x1',50).attr('y1',390).attr('x2',50).attr('y2',460).attr('stroke','black');
+        svg.append('line').attr('x1',120).attr('y1',390).attr('x2',120).attr('y2',460).attr('stroke','black');
     </script>
 </body>
 </html>
