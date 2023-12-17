@@ -254,6 +254,7 @@
         var Spot_Preface3 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',738).attr('stroke', 'black').style("display",display2)
         var Spot_Preface3_5 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',800).attr('stroke', 'black').style("display",display2)
         var Spot_Preface4 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',862).attr('stroke', 'black').style("display",display)
+        var Text_Average = svg.append('text').text(' ').style('font size',13).attr('x',1070).attr('y',263).attr('stroke', 'black')
         //var Spot_Preface5 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',924).attr('stroke', 'black').style("display",display2)
       
         
@@ -263,14 +264,28 @@
 
             // Set data for bar heights based on circle number
             var barHeights;
+            var Average;
             if (circleNumber == 1) {
                 barHeights = [684,339,339,339,329,329,313,279,267,259];
+                Average = 441;
             } else if(circleNumber == 2) {
                 barHeights = [184,184,179,152,145,129,119,99,99,94];
+                Average = 71;
             } else if(circleNumber == 3){
                 barHeights = [109,101,100,99,99,99,89,89,86,84];
+                Average = 81;
             } else if(circleNumber == 4){
                 barHeights = [175, 155, 155, 155, 136, 125, 125, 109, 109, 105];
+                Average = 75;
+            } else if(circleNumber == 5){
+                barHeights = [121,107,107,107,102,100,97,97,97,94];
+                Average = 73;
+            } else if(circleNumber == 6){
+                barHeights = [178,158,128,88,88,82,82,82,78,78];
+                Average = 72;
+            } else if(circleNumber == 7){
+                barHeights = [130,110,90,81,80,80,80,80,80,80];
+                Average = 70;
             }
 
             var barGroup = svg.selectAll('.barGroup')
@@ -281,7 +296,6 @@
                 .attr('transform', function (d, i) {
                     return 'translate(1068, ' + (281 + i * 62) + ')';
                 });
-
 
             // Create new bar graphs with set data and dynamic height
             barGroup.append('rect')
@@ -604,6 +618,18 @@
         svg.append('circle').attr('id','CircleEpsilon').attr('cx', 639).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click", function(){
               toggleBarGraphs(1)
+              TextAverage.text('The average is '+Average);
+                Spot_Preface1.style('display',display);
+                var display_replace = 'block';
+                var display2_replace = 'None';
+                display = display ? display_replace : display;
+                Spot_Preface1.style('display',display);
+                display = display ? display_replace : display;
+                Spot_Preface1_5.style('display',display);
+                display2 = display2 ? display2_replace : display2;
+                Spot_Preface2.style('display',display2);
+                display2 = display2 ? display2_replace : display2;
+                Spot_Preface3.style('display',display2);
                 var Replace_Spot1 = "890EternamaxEternatus__POISON__DRAGON";
                 var Replace_Image1 = "<p>Most recent image of Eternamax Eternatus</p><img src='https://archives.bulbagarden.net/media/upload/3/38/HOME0890E.png'></img>";
                 Spot_1_Text = Spot_1_Text ? Replace_Spot1 : Spot_1_Text;
@@ -708,7 +734,6 @@
                 ImageSpot10 = ImageSpot10 ? Replace_Image10 : ImageSpot10;
                 Image10.html(ImageSpot10);
                 //Spot 10_5
-
                 var Replace_Spot_10_5 = '700';
                 Spot_10_5_Text = Spot_10_5_Text ? Replace_Spot_10_5 : Spot_10_5_Text;
                 Spot_10_5.text(Spot_10_5_Text)
@@ -720,48 +745,61 @@
             .on("mouseout", function(){return tooltip2.style("visibility", "hidden");});//Start of calling function for posting bar graphs, bar_function(d);
         //Seventh
         svg.append('circle').attr('id','CircleZeta').attr('cx', 705).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
-            .on("click", toggleColor)
+            .on("click", function(){
+              toggleBarGraphs(2)
+              TextAverage.text('The average is '+Average);
+              currentColor = currentColor === "white" ? "lime" : "white";
+              d3.select(this).style("fill", currentColor);
+            })
             .on("mouseover", function(){return tooltip2.style("visibility", "visible");})
             .on("mousemove", function(){return tooltip2.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
             .on("mouseout", function(){return tooltip2.style("visibility", "hidden");});
         //Eighth
         svg.append('circle').attr('id','CircleEta').attr('cx', 771).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
-            .on("click", toggleColor)
+            .on("click", function(){toggleBarGraphs(3)
+              TextAverage.text('The average is '+Average);
+              currentColor = currentColor === "white" ? "lime" : "white";
+              d3.select(this).style("fill", currentColor);})
             .on("mouseover", function(){return tooltip2.style("visibility", "visible");})
             .on("mousemove", function(){return tooltip2.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
             .on("mouseout", function(){return tooltip2.style("visibility", "hidden");});
         //Ninth
         svg.append('circle').attr('id','CircleTheta').attr('cx', 837).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
-            .on("click", toggleColor)
+            .on("click",  function(){toggleBarGraphs(4)
+              TextAverage.text('The average is '+Average);
+              currentColor = currentColor === "white" ? "lime" : "white";
+              d3.select(this).style("fill", currentColor);})
             .on("mouseover", function(){return tooltip2.style("visibility", "visible");})
             .on("mousemove", function(){return tooltip2.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
             .on("mouseout", function(){return tooltip2.style("visibility", "hidden");});
         //Tenth
         svg.append('circle').attr('id','CircleIota').attr('cx', 903).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
-            .on("click", toggleColor)
+            .on("click",  function(){toggleBarGraphs(5)
+              TextAverage.text('The average is '+Average);
+              currentColor = currentColor === "white" ? "lime" : "white";
+              d3.select(this).style("fill", currentColor);})
             .on("mouseover", function(){return tooltip2.style("visibility", "visible");})
             .on("mousemove", function(){return tooltip2.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
             .on("mouseout", function(){return tooltip2.style("visibility", "hidden");});
         //Eleventh
         svg.append('circle').attr('id','CircleKappa').attr('cx', 969).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
-            .on("click", toggleColor)
+            .on("click",  function(){toggleBarGraphs(6)
+              TextAverage.text('The average is '+Average);
+              currentColor = currentColor === "white" ? "lime" : "white";
+              d3.select(this).style("fill", currentColor);})
             .on("mouseover", function(){return tooltip2.style("visibility", "visible");})
             .on("mousemove", function(){return tooltip2.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
             .on("mouseout", function(){return tooltip2.style("visibility", "hidden");});
         //Twelfth
         svg.append('circle').attr('id','CircleLambda').attr('cx', 1035).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
-            .on("click", toggleColor)
+            .on("click",  function(){toggleBarGraphs(7)
+              TextAverage.text('The average is '+Average);
+              currentColor = currentColor === "white" ? "lime" : "white";
+              d3.select(this).style("fill", currentColor);})
             .on("mouseover", function(){return tooltip2.style("visibility", "visible");})
             .on("mousemove", function(){return tooltip2.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
             .on("mouseout", function(){return tooltip2.style("visibility", "hidden");});        
-        //Starting with Averages as they will be called a good amount going forward
-        var BST_Avg = 441;
-        var HP_Avg = 71;
-        var Atk_Avg = 81;
-        var Def_Avg = 75;
-        var SpAtk_Avg = 73;
-        var SpDef_Avg = 72;
-        var Speed_Avg = 70;
+
         //Lines for the different rows
         svg.append('line').attr('x1', 160).attr('y1', 328).attr('x2', 1400).attr('y2', 328).attr('stroke','black').style('stroke-width',3);
         svg.append('line').attr('x1', 160).attr('y1', 390).attr('x2', 1400).attr('y2', 390).attr('stroke','black').style('stroke-width',3);
