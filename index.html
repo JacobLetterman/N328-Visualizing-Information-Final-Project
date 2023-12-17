@@ -257,7 +257,7 @@
         var Spot_Preface3 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',738).attr('stroke', 'black').style("display",display2)
         var Spot_Preface3_5 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',800).attr('stroke', 'black').style("display",display2)
         var Spot_Preface4 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',862).attr('stroke', 'black').style("display",display)
-        var Text_Average = svg.append('text').text(' ').style('font size',13).attr('x',1070).attr('y',263).attr('stroke', 'black')
+        var Text_Average = svg.append('text').text(' ').style('font size',13).attr('x',1070).attr('y',263).attr('stroke', 'black').style('display',display2)
         //var Spot_Preface5 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',924).attr('stroke', 'black').style("display",display2)
       
         
@@ -296,8 +296,6 @@
                 barHeights = [130,110,90,81,80,80,80,80,80,80];
                 Average = 70;
                 Text_Average.text('The average is '+Average);
-            } else if(circleNumber == 8){
-                barHeights = [0,0,0,0,0,0,0,0,0,0]
             }
 
             var barGroup = svg.selectAll('.barGroup')
@@ -1568,7 +1566,8 @@
             .on("mousemove", function(){return tooltip2.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
             .on("mouseout", function(){return tooltip2.style("visibility", "hidden");});        
             svg.append('circle').attr('id','CircleWinners').attr('cx', 85).attr('cy', 425).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
-            .on("click",  function(){toggleBarGraphs(8)
+            .on("click",  function(){
+              svg.selectAll('.barGroup').remove();
               var display_replace = 'block';
               var display2_replace = 'None';
               display = display ? display_replace : display;
@@ -1591,6 +1590,8 @@
               Spot_Preface3_5.style('display',display2);
               display2 = display2 ? display2_replace : display2;
               Spot_Preface4.style('display',display2);
+              display2 = display2 ? display2_replace : display2;
+              Text_Average.style('display',display2)
                 var Replace_Spot1 = "890 Eternamax _ Eternatus_ POISON_DRAGON";
                 var Replace_Image1 = "<p>Most recent image of Eternamax Eternatus</p><img src='https://archives.bulbagarden.net/media/upload/3/38/HOME0890E.png'></img>";
                 Spot_1_Text = Spot_1_Text ? Replace_Spot1 : Spot_1_Text;
@@ -1598,7 +1599,7 @@
                 ImageSpot1 = ImageSpot1 ? Replace_Image1 : ImageSpot1;
                 Image1.html(ImageSpot1);
                 //Spot 1_5
-                var Replace_Spot_1_5 = '1125 _ 255 _ _ _ _ _ _ 250 _ _ _ _ _ _250_ _ _ _ _ _ _ _This won four categories';
+                var Replace_Spot_1_5 = '1125 _ 255 _ _ _ _ _ _ 250 _ _ _ _ _ _250_ _ _ _ _ _ _This won four categories';
                 Spot_1_5_Text = Spot_1_5_Text ? Replace_Spot_1_5 : Spot_1_5_Text;
                 Spot_1_5.text(Spot_1_5_Text);
                 //Spot 2
