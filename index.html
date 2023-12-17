@@ -1555,7 +1555,7 @@
             .on("mouseover", function(){return tooltip2.style("visibility", "visible");})
             .on("mousemove", function(){return tooltip2.style("top", (event.pageY+10)+"px").style("left",(event.pageX+10)+"px");})
             .on("mouseout", function(){return tooltip2.style("visibility", "hidden");});        
-            svg.append('circle').attr('id','CircleWinners').attr('cx', 55).attr('cy', 395).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
+            svg.append('circle').attr('id','CircleWinners').attr('cx', 85).attr('cy', 425).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click",  function(){
               var display_replace = 'block';
               var display2_replace = 'None';
@@ -1586,7 +1586,7 @@
                 ImageSpot1 = ImageSpot1 ? Replace_Image1 : ImageSpot1;
                 Image1.html(ImageSpot1);
                 //Spot 1_5
-                var Replace_Spot_1_5 = '1125 255 _ _ _ _250 _ _ _ _250';
+                var Replace_Spot_1_5 = '1125 _ 255 _ _ _ 250 _ _ _ _ _ _250';
                 Spot_1_5_Text = Spot_1_5_Text ? Replace_Spot_1_5 : Spot_1_5_Text;
                 Spot_1_5.text(Spot_1_5_Text);
                 //Spot 2
@@ -1622,6 +1622,72 @@
                 var Replace_Spot_4_5 = '_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _200';
                 Spot_4_5_Text = Spot_4_5_Text ? Replace_Spot_4_5 : Spot_4_5_Text;
                 Spot_4_5.text(Spot_4_5_Text);
+                //Spot 5
+                var Replace_Spot5 = " ";
+                var Replace_Image5 = " ";
+                Spot_5_Text = Spot_5_Text ? Replace_Spot5 : Spot_5_Text;
+                Spot_5.text(Spot_5_Text);
+                ImageSpot5 = ImageSpot5 ? Replace_Image5 : ImageSpot5;
+                Image5.html(ImageSpot5);
+                //Spot 5_5
+                var Replace_Spot_5_5 = ' ';
+                Spot_5_5_Text = Spot_5_5_Text ? Replace_Spot_5_5 : Spot_5_5_Text;
+                Spot_5_5.text(Spot_5_5_Text);
+                //Spot 6
+                var Replace_Spot6 = ' '
+                var Replace_Image6 = " ";
+                Spot_6_Text = Spot_6_Text ? Replace_Spot6 : Spot_6_Text;
+                Spot_6.text(Spot_6_Text);
+                ImageSpot6 = ImageSpot6 ? Replace_Image6 : ImageSpot6;
+                Image6.html(ImageSpot6);
+                //Spot 6_5
+                var Replace_Spot_6_5 = ' ';
+                Spot_6_5_Text = Spot_6_5_Text ? Replace_Spot_6_5 : Spot_6_5_Text;
+                Spot_6_5.text(Spot_6_5_Text);
+                //Spot 7
+                var Replace_Spot7 = " ";
+                var Replace_Image7 = " ";
+                Spot_7_Text = Spot_7_Text ? Replace_Spot7 : Spot_7_Text;
+                Spot_7.text(Spot_7_Text);
+                ImageSpot7 = ImageSpot7 ? Replace_Image7 : ImageSpot7;
+                Image7.html(ImageSpot7);
+                //Spot 7_5
+                var Replace_Spot_7_5 = ' ';
+                Spot_7_5_Text = Spot_7_5_Text ? Replace_Spot_7_5 : Spot_7_5_Text;
+                Spot_7_5.text(Spot_7_5_Text);
+                //Spot 8
+                var Replace_Spot8 = " ";
+                var Replace_Image8 = " ";
+                Spot_8_Text = Spot_8_Text ? Replace_Spot8 : Spot_8_Text;
+                Spot_8.text(Spot_8_Text);
+                ImageSpot8 = ImageSpot8 ? Replace_Image8 : ImageSpot8;
+                Image8.html(ImageSpot8);
+                //Spot 8_5
+                var Replace_Spot_8_5 = ' ';
+                Spot_8_5_Text = Spot_8_5_Text ? Replace_Spot_8_5 : Spot_8_5_Text;
+                Spot_8_5.text(Spot_8_5_Text);
+                //Spot 9
+                var Replace_Spot9 = " ";
+                var Replace_Image9 = " ";
+                Spot_9_Text = Spot_9_Text ? Replace_Spot9 : Spot_9_Text;
+                Spot_9.text(Spot_9_Text);
+                ImageSpot9 = ImageSpot9 ? Replace_Image9 : ImageSpot9;
+                Image9.html(ImageSpot9);
+                //Spot 9_5
+                var Replace_Spot_9_5 = ' ';
+                Spot_9_5_Text = Spot_9_5_Text ? Replace_Spot_9_5 : Spot_9_5_Text;
+                Spot_9_5.text(Spot_2_5_Text);
+                //Spot 10
+                var Replace_Spot10 = " ";
+                var Replace_Image10 = " ";
+                Spot_10_Text = Spot_10_Text ? Replace_Spot10 : Spot_10_Text;
+                Spot_10.text(Spot_10_Text);
+                ImageSpot10 = ImageSpot10 ? Replace_Image10 : ImageSpot10;
+                Image10.html(ImageSpot10);
+                //Spot 10_5
+                var Replace_Spot_10_5 = ' ';
+                Spot_10_5_Text = Spot_10_5_Text ? Replace_Spot_10_5 : Spot_10_5_Text;
+                Spot_10_5.text(Spot_10_5_Text)
               currentColor = currentColor === "white" ? "gold" : "white";
               d3.select(this).style("fill", currentColor);})
             .on("mouseover", function(){return tooltip4.style("visibility", "visible");})
