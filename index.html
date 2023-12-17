@@ -797,7 +797,7 @@
                 Spot_1_5.text(Spot_1_5_Text);
                 //Spot 2
                 var Replace_Spot2 = "242 Blissey _ _ _ Blissey__ NORMAL _ _NONE";
-                var Replace_Image2 = "<p>Most recent image of Blissey</p><img src='https://archives.bulbagarden.net/media/upload/3/38/HOME0890E.png'></img>";
+                var Replace_Image2 = "<p>Most recent image of Blissey</p><img src='https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pokemon.com%2Ffi%2Fpokedex%2Fblissey&psig=AOvVaw34TJcp540rY_Z1m-qkOVkj&ust=1702894723084000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCIi4waqfloMDFQAAAAAdAAAAABAD'></img>";
                 Spot_2_Text = Spot_2_Text ? Replace_Spot2 : Spot_2_Text;
                 Spot_2.text(Spot_2_Text);
                 ImageSpot2 = ImageSpot2 ? Replace_Image2 : ImageSpot2;
@@ -1637,7 +1637,7 @@
                 Spot_4_5.text(Spot_4_5_Text);
                 //Spot 5
                 var Replace_Spot5 = "242 Blissey _ _ _ Blissey__ NORMAL _ _NONE";
-                var Replace_Image5 = "<p>Most recent image of Blissey</p><img src='https://archives.bulbagarden.net/media/upload/3/38/HOME0890E.png'></img>";
+                var Replace_Image5 = "<p>Most recent image of Blissey</p><img src='https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pokemon.com%2Ffi%2Fpokedex%2Fblissey&psig=AOvVaw34TJcp540rY_Z1m-qkOVkj&ust=1702894723084000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCIi4waqfloMDFQAAAAAdAAAAABAD'></img>";
                 Spot_5_Text = Spot_5_Text ? Replace_Spot5 : Spot_5_Text;
                 Spot_5.text(Spot_5_Text);
                 ImageSpot5 = ImageSpot5 ? Replace_Image5 : ImageSpot5;
@@ -1723,6 +1723,9 @@
         svg.append('line').attr('x1',50).attr('y1',460).attr('x2',120).attr('y2',460).attr('stroke','black');
         svg.append('line').attr('x1',50).attr('y1',390).attr('x2',50).attr('y2',460).attr('stroke','black');
         svg.append('line').attr('x1',120).attr('y1',390).attr('x2',120).attr('y2',460).attr('stroke','black');
+
+        //Text for Video
+        var TextVideo = svg.append('text').text('Link to Video: https://iu.mediaspace.kaltura.com/media/t/1_g4r48tqb').style('font size',13).attr('x', 160).attr('y',950).attr('stroke', 'black')
     </script>
 </body>
 </html>
