@@ -618,7 +618,7 @@
         svg.append('circle').attr('id','CircleEpsilon').attr('cx', 639).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click", function(){
               toggleBarGraphs(1)
-              TextAverage.text('The average is '+Average);
+              Text_Average.text('The average is '+Average);
                 Spot_Preface1.style('display',display);
                 var display_replace = 'block';
                 var display2_replace = 'None';
@@ -747,7 +747,7 @@
         svg.append('circle').attr('id','CircleZeta').attr('cx', 705).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click", function(){
               toggleBarGraphs(2)
-              TextAverage.text('The average is '+Average);
+              Text_Average.text('The average is '+Average);
               currentColor = currentColor === "white" ? "lime" : "white";
               d3.select(this).style("fill", currentColor);
             })
@@ -757,7 +757,7 @@
         //Eighth
         svg.append('circle').attr('id','CircleEta').attr('cx', 771).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click", function(){toggleBarGraphs(3)
-              TextAverage.text('The average is '+Average);
+              Text_Average.text('The average is '+Average);
               currentColor = currentColor === "white" ? "lime" : "white";
               d3.select(this).style("fill", currentColor);})
             .on("mouseover", function(){return tooltip2.style("visibility", "visible");})
@@ -766,7 +766,7 @@
         //Ninth
         svg.append('circle').attr('id','CircleTheta').attr('cx', 837).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click",  function(){toggleBarGraphs(4)
-              TextAverage.text('The average is '+Average);
+              Text_Average.text('The average is '+Average);
               currentColor = currentColor === "white" ? "lime" : "white";
               d3.select(this).style("fill", currentColor);})
             .on("mouseover", function(){return tooltip2.style("visibility", "visible");})
@@ -775,7 +775,7 @@
         //Tenth
         svg.append('circle').attr('id','CircleIota').attr('cx', 903).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click",  function(){toggleBarGraphs(5)
-              TextAverage.text('The average is '+Average);
+              Text_Average.text('The average is '+Average);
               currentColor = currentColor === "white" ? "lime" : "white";
               d3.select(this).style("fill", currentColor);})
             .on("mouseover", function(){return tooltip2.style("visibility", "visible");})
@@ -784,7 +784,7 @@
         //Eleventh
         svg.append('circle').attr('id','CircleKappa').attr('cx', 969).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click",  function(){toggleBarGraphs(6)
-              TextAverage.text('The average is '+Average);
+              Text_Average.text('The average is '+Average);
               currentColor = currentColor === "white" ? "lime" : "white";
               d3.select(this).style("fill", currentColor);})
             .on("mouseover", function(){return tooltip2.style("visibility", "visible");})
@@ -793,7 +793,7 @@
         //Twelfth
         svg.append('circle').attr('id','CircleLambda').attr('cx', 1035).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click",  function(){toggleBarGraphs(7)
-              TextAverage.text('The average is '+Average);
+              Text_Average.text('The average is '+Average);
               currentColor = currentColor === "white" ? "lime" : "white";
               d3.select(this).style("fill", currentColor);})
             .on("mouseover", function(){return tooltip2.style("visibility", "visible");})
