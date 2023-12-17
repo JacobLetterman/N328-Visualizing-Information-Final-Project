@@ -248,6 +248,7 @@
         //Mega or Preface Spots
         var display = 'None';
         var display2= 'block';
+        var Spot_Preface_5 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',300).attr('stroke', 'black').style("display",display)
         var Spot_Preface1 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',366).attr('stroke', 'black').style("display",display)
         var Spot_Preface1_5 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',432).attr('stroke', 'black').style("display",display)
         var Spot_Preface2 = svg.append('text').text('Mega').style('font size',13).attr('x',240).attr('y',490).attr('stroke', 'black').style("display",display2)
@@ -651,7 +652,7 @@
                 Spot_1_5.text(Spot_1_5_Text);
                 //Spot 2
                 var Replace_Spot2 = "150 Mewtwo X_ Mewtwo__ PSYCHIC FIGHTING";
-                var Replace_Image2 = "<p>Most recent image of Mega MewTwo X</p><https://archives.bulbagarden.net/media/upload/archive/f/f8/20230418154327%210150Mewtwo-Mega_X.png'></img>";
+                var Replace_Image2 = "<p>Most recent image of Mega MewTwo X</p><img src=https://archives.bulbagarden.net/media/upload/archive/f/f8/20230418154327%210150Mewtwo-Mega_X.png'></img>";
                 Spot_2_Text = Spot_2_Text ? Replace_Spot2 : Spot_2_Text;
                 Spot_2.text(Spot_2_Text);
                 ImageSpot2 = ImageSpot2 ? Replace_Image2 : ImageSpot2;
@@ -761,6 +762,14 @@
                 var display_replace = 'block';
                 var display2_replace = 'None';
                 display2 = display2 ? display2_replace : display2;
+                Spot_Preface1.style('display',display2);
+                display2 = display2 ? display2_replace : display2;
+                Spot_Preface1_5.style('display',display2);
+                display2 = display2 ? display2_replace : display2;
+                Spot_Preface2.style('display',display2);
+                display2 = display2 ? display2_replace : display2;
+                Spot_Preface3.style('display',display2);
+                display2 = display2 ? display2_replace : display2;
                 Spot_Preface3_5.style('display',display2);
                 var Replace_Spot1 = "890 Eternamax _ Eternatus_ POISON_DRAGON";
                 var Replace_Image1 = "<p>Most recent image of Eternamax Eternatus</p><img src='https://archives.bulbagarden.net/media/upload/3/38/HOME0890E.png'></img>";
@@ -774,7 +783,7 @@
                 Spot_1_5.text(Spot_1_5_Text);
                 //Spot 2
                 var Replace_Spot2 = "242 Blissey _ _ _ Blissey__ NORMAL _ _NONE";
-                var Replace_Image2 = "<p>Most recent image of Blissey</p><https://archives.bulbagarden.net/media/upload/archive/5/54/20130823042149%210242Blissey.png'></img>";
+                var Replace_Image2 = "<p>Most recent image of Blissey</p><img src=https://archives.bulbagarden.net/media/upload/archive/5/54/20130823042149%210242Blissey.png'></img>";
                 Spot_2_Text = Spot_2_Text ? Replace_Spot2 : Spot_2_Text;
                 Spot_2.text(Spot_2_Text);
                 ImageSpot2 = ImageSpot2 ? Replace_Image2 : ImageSpot2;
@@ -880,6 +889,127 @@
         //Eighth
         svg.append('circle').attr('id','CircleEta').attr('cx', 771).attr('cy', 233).attr('r', 30).attr('stroke', 'white').attr('fill', 'white')
             .on("click", function(){toggleBarGraphs(3)
+              var display_replace = 'block';
+              var display2_replace = 'None';
+              display = display ? display_replace : display;
+              Spot_Preface_5 .style('display',display);
+              display = display ? display_replace : display;
+              Spot_Preface1.style('display',display);
+              display = display ? display_replace : display;
+              Spot_Preface1_5.style('display',display);
+              display = display ? display_replace : display;
+              Spot_Preface2.style('display',display);
+              display = display ? display_replace : display;
+              Spot_Preface3.style('display',display);
+              var Replace_Spot1 = "150 Mewtwo X_ Mewtwo__ PSYCHIC FIGHTING";
+                var Replace_Image1 = "<p>Most recent image of Mega MewTwo X</p><img src='https://archives.bulbagarden.net/media/upload/archive/f/f8/20230418154327%210150Mewtwo-Mega_X.png'></img>";
+                Spot_1_Text = Spot_1_Text ? Replace_Spot1 : Spot_1_Text;
+                Spot_1.text(Spot_1_Text);
+                ImageSpot1 = ImageSpot1 ? Replace_Image1 : ImageSpot1;
+                Image1.html(ImageSpot1);
+                //Spot 1_5
+                var Replace_Spot_1_5 = '_ _ _ _ _ _ _ _ 190';
+                Spot_1_5_Text = Spot_1_5_Text ? Replace_Spot_1_5 : Spot_1_5_Text;
+                Spot_1_5.text(Spot_1_5_Text);
+                //Spot 2
+                var Replace_Spot2 = "214 Heracross_ Heracross _ BUG _ FIGHTING";
+                var Replace_Image2 = "<p>Most recent image of Mega Heracross</p><img src=https://archives.bulbagarden.net/media/upload/archive/8/83/20140214104813%210214Heracross-Mega.png'></img>";
+                Spot_2_Text = Spot_2_Text ? Replace_Spot2 : Spot_2_Text;
+                Spot_2.text(Spot_2_Text);
+                ImageSpot2 = ImageSpot2 ? Replace_Image2 : ImageSpot2;
+                Image2.html(ImageSpot2);
+                //Spot 2_5
+                var Replace_Spot_2_5 = '_ _ _ _ _ _ _ _ 185';
+                Spot_2_5_Text = Spot_2_5_Text ? Replace_Spot_2_5 : Spot_2_5_Text;
+                Spot_2_5.text(Spot_2_5_Text);
+                //Spot 3
+                var Replace_Spot3 = '798_ Kartana _ Kartana GRASS_ STEEL'
+                var Replace_Image3 = "<p>Most recent image of Kartana</p><img src='https://archives.bulbagarden.net/media/upload/archive/7/7c/20190409021714%210798Kartana.png'></img>";
+                Spot_3_Text = Spot_3_Text ? Replace_Spot3 : Spot_3_Text;
+                Spot_3.text(Spot_3_Text);
+                ImageSpot3 = ImageSpot3 ? Replace_Image3 : ImageSpot3;
+                Image3.html(ImageSpot3);
+                //Spot 3_5
+                var Replace_Spot_3_5 = '_ _ _ _ _ _ _ _ 181';
+                Spot_3_5_Text = Spot_3_5_Text ? Replace_Spot_3_5 : Spot_3_5_Text;
+                Spot_3_5.text(Spot_3_5_Text);
+                //Spot 4
+                var Replace_Spot4 = "384 Rayquaza  _ Rayquaza_DRAGON__FLYING";
+                var Replace_Image4 = "<p>Most recent image of Mega Rayquaza</p><img src='https://archives.bulbagarden.net/media/upload/1/10/0799Guzzlord.png'></img>";
+                Spot_4_Text = Spot_4_Text ? Replace_Spot4 : Spot_4_Text;
+                Spot_4.text(Spot_4_Text);
+                ImageSpot4 = ImageSpot4 ? Replace_Image4 : ImageSpot4;
+                Image4.html(ImageSpot4);
+                //Spot 4_5
+                var Replace_Spot_4_5 = '_ _ _ _ _ _ _ _ 180';
+                Spot_4_5_Text = Spot_4_5_Text ? Replace_Spot_4_5 : Spot_4_5_Text;
+                Spot_4_5.text(Spot_4_5_Text);
+                //Spot 5
+                var Replace_Spot5 = "383 Primal _ _ _Groudon__ GROUND__NONE";
+                var Replace_Image5 = "<p>Most recent image of Primal Groudon</p><img src='https://archives.bulbagarden.net/media/upload/e/e5/0383Groudon-Primal.png'></img>";
+                Spot_5_Text = Spot_5_Text ? Replace_Spot5 : Spot_5_Text;
+                Spot_5.text(Spot_5_Text);
+                ImageSpot5 = ImageSpot5 ? Replace_Image5 : ImageSpot5;
+                Image5.html(ImageSpot5);
+                //Spot 5_5
+                var Replace_Spot_5_5 = '_ _ _ _ _ _ _ _ 180';
+                Spot_5_5_Text = Spot_5_5_Text ? Replace_Spot_5_5 : Spot_5_5_Text;
+                Spot_5_5.text(Spot_5_5_Text);
+                //Spot 6
+                var Replace_Spot6 = '386 Attack Forme _Deoxys PSYCHIC _ NONE'
+                var Replace_Image6 = "<p>Most recent image of Attack Forme Deoxys</p><img src='https://archives.bulbagarden.net/media/upload/c/c6/0386Deoxys-Attack.png'></img>";
+                Spot_6_Text = Spot_6_Text ? Replace_Spot6 : Spot_6_Text;
+                Spot_6.text(Spot_6_Text);
+                ImageSpot6 = ImageSpot6 ? Replace_Image6 : ImageSpot6;
+                Image6.html(ImageSpot6);
+                //Spot 6_5
+                var Replace_Spot_6_5 = '_ _ _ _ _ _ _ _ 180';
+                Spot_6_5_Text = Spot_6_5_Text ? Replace_Spot_6_5 : Spot_6_5_Text;
+                Spot_6_5.text(Spot_6_5_Text);
+                //Spot 7
+                var Replace_Spot7 = "646 Black Ver. _ Kyurem_ _ DRAGON__ICE";
+                var Replace_Image7 = "<p>Most recent image of Black Kyurem</p><img src='https://archives.bulbagarden.net/media/upload/e/e8/0646Kyurem-Black.png'></img>";
+                Spot_7_Text = Spot_7_Text ? Replace_Spot7 : Spot_7_Text;
+                Spot_7.text(Spot_7_Text);
+                ImageSpot7 = ImageSpot7 ? Replace_Image7 : ImageSpot7;
+                Image7.html(ImageSpot7);
+                //Spot 7_5
+                var Replace_Spot_7_5 = '_ _ _ _ _ _ _ _ 170';
+                Spot_7_5_Text = Spot_7_5_Text ? Replace_Spot_7_5 : Spot_7_5_Text;
+                Spot_7_5.text(Spot_7_5_Text);
+                //Spot 8
+                var Replace_Spot8 = "445 Garchomp Garchomp _ DRAGON _ GROUND";
+                var Replace_Image8 = "<p>Most recent image of Mega Garchomp</p><img src='https://archives.bulbagarden.net/media/upload/6/66/0445Garchomp-Mega.png'></img>";
+                Spot_8_Text = Spot_8_Text ? Replace_Spot8 : Spot_8_Text;
+                Spot_8.text(Spot_8_Text);
+                ImageSpot8 = ImageSpot8 ? Replace_Image8 : ImageSpot8;
+                Image8.html(ImageSpot8);
+                //Spot 8_5
+                var Replace_Spot_8_5 = '_ _ _ _ _ _ _ _ 170';
+                Spot_8_5_Text = Spot_8_5_Text ? Replace_Spot_8_5 : Spot_8_5_Text;
+                Spot_8_5.text(Spot_8_5_Text);
+                //Spot 9
+                var Replace_Spot9 = "800 Ultra_ _ _ _Necrozma  PSYCHIC DRAGON";
+                var Replace_Image9 = "<p>Most recent image of Ultra Necrozma</p><img src='https://archives.bulbagarden.net/media/upload/e/e9/0800Necrozma-Ultra.png'></img>";
+                Spot_9_Text = Spot_9_Text ? Replace_Spot9 : Spot_9_Text;
+                Spot_9.text(Spot_9_Text);
+                ImageSpot9 = ImageSpot9 ? Replace_Image9 : ImageSpot9;
+                Image9.html(ImageSpot9);
+                //Spot 9_5
+                var Replace_Spot_9_5 = '_ _ _ _ _ _ _ _ 167';
+                Spot_9_5_Text = Spot_9_5_Text ? Replace_Spot_9_5 : Spot_9_5_Text;
+                Spot_9_5.text(Spot_2_5_Text);
+                //Spot 10
+                var Replace_Spot10 = "898 Ice Rider _ Calyrex _ PSYCHIC ICE";
+                var Replace_Image10 = "<p>Most recent image of Ice Rider Calyrex</p><img src='https://archives.bulbagarden.net/media/upload/6/6b/0898Calyrex-Ice_Rider.png'></img>";
+                Spot_10_Text = Spot_10_Text ? Replace_Spot10 : Spot_10_Text;
+                Spot_10.text(Spot_10_Text);
+                ImageSpot10 = ImageSpot10 ? Replace_Image10 : ImageSpot10;
+                Image10.html(ImageSpot10);
+                //Spot 10_5
+                var Replace_Spot_10_5 = '_ _ _ _ _ _ _ _ 165';
+                Spot_10_5_Text = Spot_10_5_Text ? Replace_Spot_10_5 : Spot_10_5_Text;
+                Spot_10_5.text(Spot_10_5_Text)
               currentColor = currentColor === "white" ? "lime" : "white";
               d3.select(this).style("fill", currentColor);})
             .on("mouseover", function(){return tooltip2.style("visibility", "visible");})
